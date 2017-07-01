@@ -160,9 +160,6 @@
     </Content>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <Content Include="wwwroot\app.config.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SchoolExpress.Domain\SchoolExpress.Domain.csproj">

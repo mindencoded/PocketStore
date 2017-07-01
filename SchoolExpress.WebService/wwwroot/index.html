@@ -3,41 +3,36 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title></title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" rel="stylesheet" />
+    <script>
+        var baseService = "http://localhost:9000/";
+    </script>
 </head>
 
 <body>
-<div>
-    <h1>Welcome to my Api</h1>
-    <h3>Courses</h3>
-    <ul id="courses"></ul>
-</div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-<script>
-    var CONFIG = "";
-    $.getJSON({
-        url: 'app.config.json',
-        success: function(config) {
-            CONFIG = config;
-        },
-        async: false
-    });
-</script>
-<script>
-    $.ajax({
-        url: CONFIG.baseService + 'api/courses',
-        success: function(courses) {
-            var list = $('#courses');
-            for (var i = 0; i < courses.length; i++) {
-                var course = courses[i];
-                list.append('<li>' + course.title + '</li>');
-            }
-        }
-    });
-</script>
-</body>
+    <div>
+        <h1>Welcome</h1>
+        <h3>Courses</h3>
+        <ul id="courses"></ul>
+    </div>
 
+
+    <!-- Content here -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $.ajax({
+            url: baseService + 'api/courses',
+            success: function (courses) {
+                var list = $('#courses');
+                for (var i = 0; i < courses.length; i++) {
+                    var course = courses[i];
+                    list.append('<li>' + course.title + '</li>');
+                }
+            }
+        });
+    </script>
+</body>
 </html>

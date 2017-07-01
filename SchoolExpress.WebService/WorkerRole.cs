@@ -8,8 +8,8 @@ namespace SchoolExpress.WebService
 {
     public class WorkerRole : RoleEntryPoint
     {
-        private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        private readonly ManualResetEvent _runCompleteEvent = new ManualResetEvent(false);
 
         public override void Run()
         {
@@ -17,11 +17,11 @@ namespace SchoolExpress.WebService
 
             try
             {
-                RunAsync(cancellationTokenSource.Token).Wait();
+                RunAsync(_cancellationTokenSource.Token).Wait();
             }
             finally
             {
-                runCompleteEvent.Set();
+                _runCompleteEvent.Set();
             }
         }
 
@@ -44,8 +44,8 @@ namespace SchoolExpress.WebService
         {
             Trace.TraceInformation("SchoolExpress.WebService is stopping");
 
-            cancellationTokenSource.Cancel();
-            runCompleteEvent.WaitOne();
+            _cancellationTokenSource.Cancel();
+            _runCompleteEvent.WaitOne();
 
             base.OnStop();
 

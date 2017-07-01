@@ -24,7 +24,7 @@ namespace SchoolExpress.WebService
                     }
                 }
 
-                context.Response = context.Request.CreateResponse<JObject>(HttpStatusCode.BadRequest, errors);
+                context.Response = context.Request.CreateResponse(HttpStatusCode.BadRequest, errors);
             }
         }
     }
