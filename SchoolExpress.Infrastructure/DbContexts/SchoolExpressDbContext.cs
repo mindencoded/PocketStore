@@ -13,9 +13,10 @@ namespace SchoolExpress.Infrastructure.DbContexts
             Configuration.LazyLoadingEnabled = false;
             //Database.SetInitializer(new SchoolExpressInitializer());
         }
-        public IDbSet<T> DbSet<T>() where T : class 
+
+        public IDbSet<T> DbSet<T>() where T : class
         {
-                return Set<T>(); 
+            return Set<T>();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

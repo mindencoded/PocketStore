@@ -9,7 +9,7 @@ namespace SchoolExpress.WebService
     {
         private static readonly ILog Log = LogManager.GetLogger<Program>();
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             var baseAddress = ConfigurationManager.AppSettings["BaseUri"];
             // Start OWIN host 

@@ -15,6 +15,7 @@ namespace SchoolExpress.WebService
         public static string ApiControllerId = "ApiControllerId";
         public static string ApiControllerAction = "ApiControllerAction";
         public static string ApiControllerActionId = "ApiControllerActionId";
+
         public void Configuration(IAppBuilder appBuilder)
         {
             var config = new HttpConfiguration();
@@ -47,15 +48,15 @@ namespace SchoolExpress.WebService
                 new {id = @"^\d+$"}
             );
 
-
             config.DependencyResolver = new UnityResolver(UnityConfig.GetConfiguredContainer());
 
             var serializerSettings = config.Formatters.JsonFormatter.SerializerSettings;
             serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             serializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
+            serializerSettings.NullValueHandling = NullValueHandling.Ignore;
             serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            config.Filters.Add(new ValidationActionFilter()); 
+            config.Filters.Add(new ValidationActionFilter());
             appBuilder.UseWebApi(config);
 
             appBuilder.UseFileServer(new FileServerOptions

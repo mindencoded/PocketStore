@@ -33,7 +33,7 @@ namespace SchoolExpress.Infrastructure.Helpers
         /// </remarks>
         public RepositoryFactories(IDictionary<Type, Func<DbContext, object>> factories)
         {
-            Factories = factories;
+            _factories = factories;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SchoolExpress.Infrastructure.Helpers
         ///     that takes a <see cref="DbContext" /> argument and returns
         ///     a repository object. Caller must know how to cast it.
         /// </remarks>
-        public IDictionary<Type, Func<DbContext, object>> Factories { get; set; }
+        private readonly IDictionary<Type, Func<DbContext, object>> _factories;
 
         /// <summary>
         ///     Get the repository factory function for the type.
@@ -59,7 +59,7 @@ namespace SchoolExpress.Infrastructure.Helpers
         public Func<DbContext, object> GetRepositoryFactory<T>()
         {
             Func<DbContext, object> factory;
-            Factories.TryGetValue(typeof(T), out factory);
+            _factories.TryGetValue(typeof(T), out factory);
             return factory;
         }
 
@@ -71,10 +71,10 @@ namespace SchoolExpress.Infrastructure.Helpers
         ///     A factory that creates the <see cref="IRepository{T}" />, given an EF <see cref="DbContext" />.
         /// </returns>
         /// <remarks>
-        ///     Looks first for a custom factory in <see cref="Factories" />.
+        ///     Looks first for a custom factory in <see cref="_factories" />.
         ///     If not, falls back to the <see cref="DefaultEntityRepositoryFactory{T}" />.
         ///     You can substitute an alternative factory for the default one by adding
-        ///     a repository factory for type "T" to <see cref="Factories" />.
+        ///     a repository factory for type "T" to <see cref="_factories" />.
         /// </remarks>
         public Func<DbContext, object> GetRepositoryFactoryForEntityType<T>() where T : class
         {

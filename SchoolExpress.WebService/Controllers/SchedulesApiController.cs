@@ -8,6 +8,7 @@ namespace SchoolExpress.WebService.Controllers
     public class SchedulesApiController : BaseApiController<Schedule>
     {
         private readonly ISchoolExpressUow _uow;
+
         public SchedulesApiController(ISchoolExpressUow uow) : base(uow)
         {
             _uow = uow;

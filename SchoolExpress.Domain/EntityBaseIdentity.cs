@@ -6,7 +6,7 @@
 
         public override int[] IdentityKey()
         {
-            return new [] { Id };
+            return new[] {Id};
         }
     }
 }

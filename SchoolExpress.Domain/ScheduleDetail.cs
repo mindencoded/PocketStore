@@ -14,7 +14,7 @@ namespace SchoolExpress.Domain
 
         public string JoinDays
         {
-            get { return _joinDays; }
+            get => _joinDays;
             set
             {
                 SplitDays(_joinDays);

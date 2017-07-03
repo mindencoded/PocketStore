@@ -8,6 +8,7 @@ namespace SchoolExpress.WebService.Controllers
     public class GradesApiController : BaseApiController<Grade>
     {
         private readonly ISchoolExpressUow _uow;
+
         public GradesApiController(ISchoolExpressUow uow) : base(uow)
         {
             _uow = uow;

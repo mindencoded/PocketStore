@@ -11,6 +11,7 @@
         public virtual Enrollment Enrollment { get; set; }
 
         public decimal Discount { get; set; }
+
         public override int[] IdentityKey()
         {
             return new[] {AssignmentId, EnrollmentId};

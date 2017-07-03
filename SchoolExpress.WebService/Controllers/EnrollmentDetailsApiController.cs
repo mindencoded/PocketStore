@@ -12,6 +12,7 @@ namespace SchoolExpress.WebService.Controllers
     public class EnrollmentDetailsApiController : BaseApiController<EnrollmentDetail>
     {
         private readonly ISchoolExpressUow _uow;
+
         public EnrollmentDetailsApiController(ISchoolExpressUow uow) : base(uow)
         {
             _uow = uow;

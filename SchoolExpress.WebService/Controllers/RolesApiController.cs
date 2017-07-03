@@ -8,6 +8,7 @@ namespace SchoolExpress.WebService.Controllers
     public class RolesApiController : BaseApiController<Role>
     {
         private readonly ISchoolExpressUow _uow;
+
         public RolesApiController(ISchoolExpressUow uow) : base(uow)
         {
             _uow = uow;

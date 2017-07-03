@@ -11,8 +11,8 @@ namespace SchoolExpress.WebService.Controllers
 {
     public abstract class BaseApiController<T> : ApiController where T : class, IEntityBase
     {
-        protected ILog Log;
         private readonly IUow _uow;
+        protected ILog Log;
 
         protected BaseApiController(IUow uow)
         {
