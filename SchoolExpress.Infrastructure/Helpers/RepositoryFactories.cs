@@ -23,6 +23,17 @@ namespace SchoolExpress.Infrastructure.Helpers
     public class RepositoryFactories
     {
         /// <summary>
+        ///     Get the dictionary of repository factory functions.
+        /// </summary>
+        /// <remarks>
+        ///     A dictionary key is a System.Type, typically a repository type.
+        ///     A value is a repository factory function
+        ///     that takes a <see cref="DbContext" /> argument and returns
+        ///     a repository object. Caller must know how to cast it.
+        /// </remarks>
+        private readonly IDictionary<Type, Func<DbContext, object>> _factories;
+
+        /// <summary>
         ///     Constructor that initializes with an arbitrary collection of factories
         /// </summary>
         /// <param name="factories">
@@ -35,17 +46,6 @@ namespace SchoolExpress.Infrastructure.Helpers
         {
             _factories = factories;
         }
-
-        /// <summary>
-        ///     Get the dictionary of repository factory functions.
-        /// </summary>
-        /// <remarks>
-        ///     A dictionary key is a System.Type, typically a repository type.
-        ///     A value is a repository factory function
-        ///     that takes a <see cref="DbContext" /> argument and returns
-        ///     a repository object. Caller must know how to cast it.
-        /// </remarks>
-        private readonly IDictionary<Type, Func<DbContext, object>> _factories;
 
         /// <summary>
         ///     Get the repository factory function for the type.

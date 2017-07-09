@@ -7,15 +7,17 @@ namespace SchoolExpress.Infrastructure.Helpers
 {
     public class RepositoryProvider : IRepositoryProvider
     {
-        private readonly RepositoryFactories _repositoryFactories;
         private readonly Dictionary<Type, object> _repositories = new Dictionary<Type, object>();
+        private readonly RepositoryFactories _repositoryFactories;
 
-        public RepositoryProvider(RepositoryFactories repositoryFactories)
+        public RepositoryProvider(DbContext dbContext, RepositoryFactories repositoryFactories)
         {
+            DbContext = dbContext;
             _repositoryFactories = repositoryFactories;
         }
 
-        public DbContext DbContext { get; set; }
+
+        public DbContext DbContext { get; }
 
         public IRepository<T> GetRepositoryForEntityType<T>() where T : class
         {
@@ -28,7 +30,7 @@ namespace SchoolExpress.Infrastructure.Helpers
             object repoObj;
             _repositories.TryGetValue(typeof(T), out repoObj);
             if (repoObj != null)
-                return (T)repoObj;
+                return (T) repoObj;
 
             // Not found or null; make one, add to dictionary cache, and return it.
             return MakeRepository<T>(factory, DbContext);

@@ -6,7 +6,7 @@ namespace SchoolExpress.Infrastructure.Helpers
 {
     public interface IRepositoryProvider
     {
-        DbContext DbContext { get; set; }
+        DbContext DbContext { get; }
 
         IRepository<T> GetRepositoryForEntityType<T>() where T : class;
 
