@@ -12,7 +12,7 @@ namespace SchoolExpress.Infrastructure.Uows
     {
         private readonly DbContext _dbContext;
 
-        private readonly IDictionary<Type, Func<DbContext, object>> _factories = new Dictionary
+        private readonly RepositoryFactories _repositoryFactories = new RepositoryFactories(new Dictionary
             <Type, Func<DbContext, object>>
             {
                 {typeof(IAcademicTermRepository), dbContext => new AcademicTermRepository(dbContext)},
@@ -27,14 +27,14 @@ namespace SchoolExpress.Infrastructure.Uows
                 {typeof(IScheduleDetailRepository), dbContext => new ScheduleDetailRepository(dbContext)},
                 {typeof(IScheduleRepository), dbContext => new ScheduleRepository(dbContext)},
                 {typeof(IUserRepository), dbContext => new UserRepository(dbContext)}
-            };
+            });
 
         private readonly IRepositoryProvider _repositoryProvider;
 
         public SchoolExpressUow(DbContext dbContext)
         {
             _dbContext = dbContext;
-            _repositoryProvider = new RepositoryProvider(dbContext, new RepositoryFactories(_factories));
+            _repositoryProvider = new RepositoryProvider(dbContext, _repositoryFactories);
         }
 
         public void Commit()
@@ -67,9 +67,9 @@ namespace SchoolExpress.Infrastructure.Uows
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
-                if (_dbContext != null)
-                    _dbContext.Dispose();
+            if (!disposing) return;
+            if (_dbContext != null)
+                _dbContext.Dispose();
         }
 
         #endregion

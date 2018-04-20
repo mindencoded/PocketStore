@@ -7,7 +7,7 @@ using Common.Logging;
 using SchoolExpress.Domain;
 using SchoolExpress.Infrastructure.Contracts;
 
-namespace SchoolExpress.WebService.Controllers
+namespace SchoolExpress.WebService.Controllers.Api
 {
     public abstract class BaseApiController<T> : ApiController where T : class, IEntityBase
     {

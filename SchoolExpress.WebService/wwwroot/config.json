@@ -1,0 +1,24 @@
+{
+  "build_dir": "dist",
+  "vendor_files":
+  {
+    "js": [
+      "node_modules/knockout/build/output/knockout-latest.js"
+    ],
+    "css": [
+      "node_modules/normalize.css/normalize.css"
+    ]
+  },
+  "build_files": {
+    "js": [
+      "app/js/knockout-latest.js",
+      "app/js/main.js",
+      "app/js/secondary.js"
+    ],
+    "css": [
+      "app/css/normalize.css",
+      "app/css/main.css",
+      "app/css/secondary.css"
+    ]
+  }
+}

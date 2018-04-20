@@ -1,7 +1,8 @@
-using Microsoft.Practices.Unity;
 using SchoolExpress.Infrastructure.Contracts;
 using SchoolExpress.Infrastructure.DbContexts;
 using SchoolExpress.Infrastructure.Uows;
+using Unity;
+using Unity.Injection;
 
 namespace SchoolExpress.WebService
 {

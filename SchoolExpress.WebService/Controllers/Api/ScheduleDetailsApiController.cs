@@ -2,7 +2,7 @@
 using SchoolExpress.Domain;
 using SchoolExpress.Infrastructure.Contracts;
 
-namespace SchoolExpress.WebService.Controllers
+namespace SchoolExpress.WebService.Controllers.Api
 {
     [RoutePrefix("api/scheduledetails")]
     public class ScheduleDetailsApiController : BaseApiController<ScheduleDetail>

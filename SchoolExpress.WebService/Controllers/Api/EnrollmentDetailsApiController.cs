@@ -6,7 +6,7 @@ using System.Web.Http;
 using SchoolExpress.Domain;
 using SchoolExpress.Infrastructure.Contracts;
 
-namespace SchoolExpress.WebService.Controllers
+namespace SchoolExpress.WebService.Controllers.Api
 {
     [RoutePrefix("api/enrollmentdetails")]
     public class EnrollmentDetailsApiController : BaseApiController<EnrollmentDetail>
@@ -51,6 +51,7 @@ namespace SchoolExpress.WebService.Controllers
                 _uow.Commit();
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
             }
+
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
         }
     }

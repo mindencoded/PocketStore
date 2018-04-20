@@ -1,0 +1,23 @@
+{
+    // Utilizar IntelliSense para aprender acerca de los posibles atributos.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "name": "Launch",
+            "type": "mono",
+            "request": "launch",
+            "program": "${workspaceRoot}\\SchoolExpress.WebService\\bin\\Debug\\SchoolExpress.WebService.exe",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "name": "Attach",
+            "type": "mono",
+            "request": "attach",
+            "address": "localhost",
+            "port": 55555
+        }
+    ]
+}

@@ -2,16 +2,13 @@
 using SchoolExpress.Domain;
 using SchoolExpress.Infrastructure.Contracts;
 
-namespace SchoolExpress.WebService.Controllers
+namespace SchoolExpress.WebService.Controllers.Api
 {
     [RoutePrefix("api/persons")]
     public class PersonsApiController : BaseApiController<Person>
     {
-        private readonly ISchoolExpressUow _uow;
-
         public PersonsApiController(ISchoolExpressUow uow) : base(uow)
         {
-            uow = _uow;
         }
     }
 }

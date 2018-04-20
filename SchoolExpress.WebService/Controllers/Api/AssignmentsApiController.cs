@@ -2,7 +2,7 @@
 using SchoolExpress.Domain;
 using SchoolExpress.Infrastructure.Contracts;
 
-namespace SchoolExpress.WebService.Controllers
+namespace SchoolExpress.WebService.Controllers.Api
 {
     [RoutePrefix("api/assignments")]
     public class AssignmentsApiController : BaseApiController<Assignment>
