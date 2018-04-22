@@ -68,7 +68,6 @@
     <Compile Include="Configurations\ScheduleDetailConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
-    <Compile Include="DbContexts\SchoolExpressIdentityDbContext.cs" />
     <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\PredicateBuilder.cs" />

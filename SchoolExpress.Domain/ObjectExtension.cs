@@ -12,6 +12,7 @@ namespace SchoolExpress.Domain
             {
                 return property.GetValue(src, null);
             }
+
             return null;
         }
     }

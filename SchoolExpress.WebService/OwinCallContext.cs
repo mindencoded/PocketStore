@@ -1,5 +1,4 @@
-﻿
-using System.Runtime.Remoting.Messaging;
+﻿using System.Runtime.Remoting.Messaging;
 using Microsoft.Owin;
 
 namespace SchoolExpress.WebService
@@ -10,7 +9,7 @@ namespace SchoolExpress.WebService
 
         public static IOwinContext Current
         {
-            get { return (IOwinContext)CallContext.LogicalGetData(OwinContextKey); }
+            get { return (IOwinContext) CallContext.LogicalGetData(OwinContextKey); }
         }
 
         public static void Set(IOwinContext context)

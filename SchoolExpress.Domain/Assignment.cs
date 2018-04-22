@@ -19,6 +19,7 @@ namespace SchoolExpress.Domain
         public decimal CostByPoint { get; set; }
 
         public virtual ICollection<EnrollmentDetail> EnrollmentDetails { get; set; }
+
         public override object[] GetId()
         {
             return new object[] {Id};

@@ -29,7 +29,7 @@ namespace SchoolExpress.Domain
 
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

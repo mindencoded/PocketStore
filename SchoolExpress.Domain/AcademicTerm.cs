@@ -9,9 +9,10 @@ namespace SchoolExpress.Domain
         public string Description { get; set; }
 
         public virtual ICollection<Schedule> Schedules { get; set; }
+
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

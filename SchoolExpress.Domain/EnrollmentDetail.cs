@@ -2,7 +2,6 @@
 {
     public class EnrollmentDetail : Entity
     {
-
         public int AssignmentId { get; set; }
 
         public virtual Assignment Assignment { get; set; }
@@ -15,7 +14,7 @@
 
         public override object[] GetId()
         {
-            return new object[] { AssignmentId, EnrollmentId };
+            return new object[] {AssignmentId, EnrollmentId};
         }
     }
 }

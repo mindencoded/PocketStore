@@ -1,6 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using SchoolExpress.Infrastructure.Configurations;
+using System.Linq;
+using System.Reflection;
 
 namespace SchoolExpress.Infrastructure.DbContexts
 {
@@ -8,7 +11,6 @@ namespace SchoolExpress.Infrastructure.DbContexts
     {
         public SchoolExpressDbContext() : base("SchoolExpressConnection")
         {
-            //Configuration.ValidateOnSaveEnabled = false;
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
             //Database.SetInitializer(new SchoolExpressInitializer());
@@ -22,18 +24,16 @@ namespace SchoolExpress.Infrastructure.DbContexts
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Configurations.Add(new EnrollmentConfiguration());
-            modelBuilder.Configurations.Add(new EnrollmentDetailConfiguration());
-            modelBuilder.Configurations.Add(new CourseConfiguration());
-            modelBuilder.Configurations.Add(new ScheduleConfiguration());
-            modelBuilder.Configurations.Add(new ScheduleDetailConfiguration());
-            modelBuilder.Configurations.Add(new AssignmentConfiguration());
-            modelBuilder.Configurations.Add(new UserConfiguration());
-            modelBuilder.Configurations.Add(new PersonConfiguration());
-            modelBuilder.Configurations.Add(new ClassRoomConfiguration());
-            modelBuilder.Configurations.Add(new AcademicTermConfiguration());
-            modelBuilder.Configurations.Add(new RoleConfiguration());
-            modelBuilder.Configurations.Add(new GradeConfiguration());
+            var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
+                .Where(type => !String.IsNullOrEmpty(type.Namespace))
+                .Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
+                               type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
+            foreach (var type in typesToRegister)
+            {
+                dynamic configInstance = Activator.CreateInstance(type);
+                modelBuilder.Configurations.Add(configInstance);
+            }
+
             base.OnModelCreating(modelBuilder);
         }
     }

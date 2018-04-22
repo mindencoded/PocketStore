@@ -1,5 +1,4 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Owin;
 
 namespace SchoolExpress.WebService
@@ -23,5 +22,4 @@ namespace SchoolExpress.WebService
             }
         }
     }
-
 }
