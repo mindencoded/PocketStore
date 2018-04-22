@@ -9,27 +9,28 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
-    public abstract class BaseApiController<T> : ApiController where T : class, IEntityBase
+    public abstract class BaseApiController<T> : ApiController where T : class, IEntity
     {
-        private readonly IUow _uow;
+        protected readonly IUow Uow;
         protected ILog Log;
 
         protected BaseApiController(IUow uow)
         {
-            _uow = uow;
+            Uow = uow;
             Log = LogManager.GetLogger(GetType());
+            Console.Write(GetType());
         }
 
         [Route("")]
         public virtual IEnumerable<T> Get()
         {
-            return _uow.GetGenericRepository<T>().GetAll();
+            return Uow.GetGenericRepository<T>().GetAll();
         }
 
         [Route("{id:int}")]
         public virtual T Get(int id)
         {
-            var entity = _uow.GetGenericRepository<T>().GetById(id);
+            var entity = Uow.GetGenericRepository<T>().GetById(id);
             if (entity != null)
                 return entity;
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
@@ -38,21 +39,21 @@ namespace SchoolExpress.WebService.Controllers.Api
         [Route("")]
         public virtual HttpResponseMessage Put(T entity)
         {
-            _uow.GetGenericRepository<T>().Update(entity);
-            _uow.Commit();
+            Uow.GetGenericRepository<T>().Update(entity);
+            Uow.Commit();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         [Route("")]
         public virtual HttpResponseMessage Post(T entity)
         {
-            _uow.GetGenericRepository<T>().Add(entity);
-            _uow.Commit();
+            Uow.GetGenericRepository<T>().Add(entity);
+            Uow.Commit();
             var response = Request.CreateResponse(HttpStatusCode.Created);
             response.Headers.Location =
                 new Uri(Request.RequestUri.AbsoluteUri +
-                        (entity.IdentityKey() != null
-                            ? "/" + string.Join("/", entity.IdentityKey())
+                        (entity.GetId() != null
+                            ? "/" + string.Join("/", entity.GetId())
                             : ""));
             return response;
         }
@@ -60,8 +61,8 @@ namespace SchoolExpress.WebService.Controllers.Api
         [Route("{id:int}")]
         public virtual HttpResponseMessage Delete(int id)
         {
-            _uow.GetGenericRepository<T>().Delete(id);
-            _uow.Commit();
+            Uow.GetGenericRepository<T>().Delete(id);
+            Uow.Commit();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }

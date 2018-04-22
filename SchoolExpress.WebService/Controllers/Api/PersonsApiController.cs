@@ -4,6 +4,7 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
+    [Authorize]
     [RoutePrefix("api/persons")]
     public class PersonsApiController : BaseApiController<Person>
     {

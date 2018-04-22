@@ -40,13 +40,12 @@
   <ItemGroup>
     <Compile Include="AcademicTerm.cs" />
     <Compile Include="Assignment.cs" />
-    <Compile Include="EntityBase.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="EnrollmentDetail.cs" />
-    <Compile Include="IEntityBase.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="ObjectExtension.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="ScheduleDetail.cs" />
-    <Compile Include="EntityBaseIdentity.cs" />
     <Compile Include="ClassRoom.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Enrollment.cs" />

@@ -2,8 +2,10 @@
 
 namespace SchoolExpress.Domain
 {
-    public class Assignment : EntityBaseIdentity
+    public class Assignment : Entity
     {
+        public int Id { get; set; }
+
         public int CourseId { get; set; }
 
         public virtual Course Course { get; set; }
@@ -17,5 +19,9 @@ namespace SchoolExpress.Domain
         public decimal CostByPoint { get; set; }
 
         public virtual ICollection<EnrollmentDetail> EnrollmentDetails { get; set; }
+        public override object[] GetId()
+        {
+            return new object[] {Id};
+        }
     }
 }

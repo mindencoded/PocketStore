@@ -1,22 +1,32 @@
 ﻿using System;
-using System.Configuration;
 using Common.Logging;
-using Microsoft.Owin.Hosting;
+using Topshelf;
 
 namespace SchoolExpress.WebService
 {
-    internal class Program
+    public class Program
     {
         private static readonly ILog Log = LogManager.GetLogger<Program>();
 
-        private static void Main()
+        static int Main()
         {
-            var baseAddress = ConfigurationManager.AppSettings["BaseUri"];
-            // Start OWIN host 
-            using (WebApp.Start<Startup>(baseAddress))
+            try
             {
-                Log.InfoFormat("Server running in: {0}", baseAddress);
-                Console.ReadLine();
+                return (int) HostFactory.Run(c =>
+                {
+                    c.RunAsLocalService();
+                    c.Service<OwinService>(s =>
+                    {
+                        s.ConstructUsing(() => new OwinService());
+                        s.WhenStarted((service) => service.Start());
+                        s.WhenStopped((service) => service.Stop());
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
+                throw;
             }
         }
     }

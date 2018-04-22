@@ -11,11 +11,6 @@ namespace SchoolExpress.WebService
 {
     public class Startup
     {
-        public static string ApiController = "ApiController";
-        public static string ApiControllerId = "ApiControllerId";
-        public static string ApiControllerAction = "ApiControllerAction";
-        public static string ApiControllerActionId = "ApiControllerActionId";
-
         public void Configuration(IAppBuilder appBuilder)
         {
             var config = new HttpConfiguration();
@@ -25,40 +20,39 @@ namespace SchoolExpress.WebService
             config.MapHttpAttributeRoutes(new CustomDirectRouteProvider());
 
             config.Routes.MapHttpRoute(
-                ApiController,
+                "ApiController",
                 "api/{controller}"
             );
 
             config.Routes.MapHttpRoute(
-                ApiControllerId,
+                "ApiControllerId",
                 "api/{controller}/{id}",
                 null,
                 new {id = @"^\d+$"}
             );
 
             config.Routes.MapHttpRoute(
-                ApiControllerAction,
+                "ApiControllerAction",
                 "api/{controller}/{action}"
             );
 
             config.Routes.MapHttpRoute(
-                ApiControllerActionId,
+                "ApiControllerActionId",
                 "api/{controller}/{action}/{id}",
                 null,
                 new {id = @"^\d+$"}
             );
 
             config.DependencyResolver = new UnityResolver(UnityConfig.GetConfiguredContainer());
-
             var serializerSettings = config.Formatters.JsonFormatter.SerializerSettings;
             serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             serializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
             serializerSettings.NullValueHandling = NullValueHandling.Ignore;
             serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
             config.Filters.Add(new ValidationActionFilter());
+            config.MessageHandlers.Add(new AuthenticationHandler());
+            appBuilder.Use<OwinContextMiddleware>();
             appBuilder.UseWebApi(config);
-
             appBuilder.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),

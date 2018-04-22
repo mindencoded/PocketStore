@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Domain
 {
-    public abstract class EntityBase : IEntityBase
+    public abstract class Entity : IEntity
     {
         public DateTime LastModified { get; set; }
 
@@ -10,6 +10,6 @@ namespace SchoolExpress.Domain
 
         public bool Status { get; set; }
 
-        public abstract int[] IdentityKey();
+        public abstract object[] GetId();
     }
 }

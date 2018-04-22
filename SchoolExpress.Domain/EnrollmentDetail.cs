@@ -1,7 +1,8 @@
 ﻿namespace SchoolExpress.Domain
 {
-    public class EnrollmentDetail : EntityBase
+    public class EnrollmentDetail : Entity
     {
+
         public int AssignmentId { get; set; }
 
         public virtual Assignment Assignment { get; set; }
@@ -12,9 +13,9 @@
 
         public decimal Discount { get; set; }
 
-        public override int[] IdentityKey()
+        public override object[] GetId()
         {
-            return new[] {AssignmentId, EnrollmentId};
+            return new object[] { AssignmentId, EnrollmentId };
         }
     }
 }

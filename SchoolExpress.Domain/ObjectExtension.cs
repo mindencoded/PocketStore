@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace SchoolExpress.Domain
 {
@@ -6,14 +7,12 @@ namespace SchoolExpress.Domain
     {
         public static object GetPropValue(this object src, string propName)
         {
-            try
+            PropertyInfo property = src.GetType().GetProperty(propName);
+            if (property != null)
             {
-                return src.GetType().GetProperty(propName).GetValue(src, null);
+                return property.GetValue(src, null);
             }
-            catch (Exception)
-            {
-                return null;
-            }
+            return null;
         }
     }
 }

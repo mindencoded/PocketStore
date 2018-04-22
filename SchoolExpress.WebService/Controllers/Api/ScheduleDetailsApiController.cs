@@ -4,14 +4,12 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
+    [Authorize]
     [RoutePrefix("api/scheduledetails")]
     public class ScheduleDetailsApiController : BaseApiController<ScheduleDetail>
     {
-        private readonly ISchoolExpressUow _uow;
-
         public ScheduleDetailsApiController(ISchoolExpressUow uow) : base(uow)
         {
-            _uow = uow;
         }
     }
 }

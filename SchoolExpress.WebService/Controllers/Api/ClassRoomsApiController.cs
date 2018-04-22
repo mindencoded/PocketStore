@@ -4,14 +4,12 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
+    [Authorize]
     [RoutePrefix("api/classrooms")]
     public class ClassRoomsApiController : BaseApiController<ClassRoom>
     {
-        private readonly ISchoolExpressUow _uow;
-
         public ClassRoomsApiController(ISchoolExpressUow uow) : base(uow)
         {
-            _uow = uow;
         }
     }
 }

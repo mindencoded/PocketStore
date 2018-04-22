@@ -4,9 +4,11 @@ using System.Linq;
 
 namespace SchoolExpress.Domain
 {
-    public class ScheduleDetail : EntityBaseIdentity
+    public class ScheduleDetail : Entity
     {
         private string _joinDays;
+
+        public int Id { get; set; }
 
         public TimeSpan StartTime { get; set; }
 
@@ -45,6 +47,11 @@ namespace SchoolExpress.Domain
             var days = joinDays.Split(',').ToList();
             foreach (var day in days)
                 Days.Add(EnumUtil.Parse<Day>(day));
+        }
+
+        public override object[] GetId()
+        {
+            return new object[] { Id };
         }
     }
 }

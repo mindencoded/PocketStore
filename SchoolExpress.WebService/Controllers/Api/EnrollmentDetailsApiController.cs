@@ -8,14 +8,12 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
+    [Authorize]
     [RoutePrefix("api/enrollmentdetails")]
     public class EnrollmentDetailsApiController : BaseApiController<EnrollmentDetail>
     {
-        private readonly ISchoolExpressUow _uow;
-
         public EnrollmentDetailsApiController(ISchoolExpressUow uow) : base(uow)
         {
-            _uow = uow;
         }
 
         public override EnrollmentDetail Get(int id)
@@ -27,7 +25,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         public EnrollmentDetail Get(int assignment, int enrollmentId)
         {
             var enrollmentDetail =
-                _uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
+                Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
                     .FirstOrDefault(x => x.AssignmentId == assignment && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
                 return enrollmentDetail;
@@ -43,12 +41,12 @@ namespace SchoolExpress.WebService.Controllers.Api
         public HttpResponseMessage Delete(int assignment, int enrollmentId)
         {
             var enrollmentDetail =
-                _uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
+                Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
                     .FirstOrDefault(x => x.AssignmentId == assignment && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
             {
-                _uow.GetRepository<IEnrollmentDetailRepository>().Delete(enrollmentDetail);
-                _uow.Commit();
+                Uow.GetRepository<IEnrollmentDetailRepository>().Delete(enrollmentDetail);
+                Uow.Commit();
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
             }
 

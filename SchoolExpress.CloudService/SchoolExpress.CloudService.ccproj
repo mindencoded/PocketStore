@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>2.9</ProductVersion>
-    <ProjectGuid>793e618b-905f-44b8-a419-feb2f69e1ffa</ProjectGuid>
+    <ProjectGuid>5f487f51-411b-416f-baf1-cf867843424d</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchoolExpress.CloudService</RootNamespace>

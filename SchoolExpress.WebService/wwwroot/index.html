@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <title>Responsive Site Menu</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" rel="stylesheet"/>
-    <link href="./style.css" rel="stylesheet"/>
+    <link href="./app/css/normalize.min.css" rel="stylesheet"/>
+    <link href="./app/css/style.css" rel="stylesheet"/>
     <script>
         var baseService = "http://localhost:9000/";
     </script>
@@ -17,9 +18,9 @@
     <span class="open-slide">
         <a href="#" onclick="openSlideMenu()">
             <svg width="30" height="30">
-                <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-                <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-                <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                <path d="M0,5 30,5" stroke="#fff" stroke-width="5"></path>
+                <path d="M0,14 30,14" stroke="#fff" stroke-width="5"></path>
+                <path d="M0,23 30,23" stroke="#fff" stroke-width="5"></path>
             </svg>
         </a>
     </span>
@@ -48,10 +49,49 @@
 <div id="main">
     <h1>Responsive Side Menu</h1>
     <ul id="courses"></ul>
-
 </div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<div>
+    <label for="courseId">Search by ID</label>
+    <input type="text" id="courseId" size="5"/>
+    <input type="button" value="Search" onclick="search();"/>
+    <p id="course"></p>
+</div>
+<script src="./app/js/jquery.js"></script>
 <script>
+
+    var uri = baseService + 'api/courses';
+
+    $(document).ready(function() {
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function(data) {
+                // On success, 'data' contains a list of contacts.
+                $.each(data,
+                    function(key, course) {
+                        // Add a list item for the contact.
+                        $('<li>',
+                            {
+                                text: formatItem(course)
+                            }).appendTo($('#courses'));
+                    });
+            });
+    });
+
+    function formatItem(course) {
+        return 'Description: ' + course['Description'] + ', GradeId: ' + course['GradeId'];
+    }
+
+    function search() {
+        var id = $('#courseId').val();
+        $.getJSON(uri + '/' + id)
+            .done(function(data) {
+                $('#course').text(formatItem(data));
+            })
+            .fail(function(jqXHR, textStatus, err) {
+                $('#course').text('Error: ' + err);
+            });
+    }
+
     function openSlideMenu() {
         document.getElementById('side-menu').style.width = '250px';
         document.getElementById('main').style.marginLeft = '250px';
@@ -61,17 +101,6 @@
         document.getElementById('side-menu').style.width = '0';
         document.getElementById('main').style.marginLeft = '0';
     }
-
-    $.ajax({
-        url: baseService + 'api/courses',
-        success: function(courses) {
-            var list = $('#courses');
-            for (var i = 0; i < courses.length; i++) {
-                var course = courses[i];
-                list.append('<li>' + course.description + '</li>');
-            }
-        }
-    });
 </script>
 </body>
 </html>

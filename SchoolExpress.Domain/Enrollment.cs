@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
-    public class Enrollment : EntityBaseIdentity
+    public class Enrollment : Entity
     {
+        public int Id { get; set; }
+
         public DateTime InscriptionDate { get; set; }
 
         public decimal TotalAmount { get; set; }
@@ -14,5 +16,10 @@ namespace SchoolExpress.Domain
         public virtual Person Student { get; set; }
 
         public virtual ICollection<EnrollmentDetail> EnrollmentDetails { get; set; }
+
+        public override object[] GetId()
+        {
+            return new object[] { Id };
+        }
     }
 }
