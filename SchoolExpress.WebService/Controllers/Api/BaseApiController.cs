@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Http;
 using Common.Logging;
-using SchoolExpress.Infrastructure.Uows;
+using SchoolExpress.Data.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {

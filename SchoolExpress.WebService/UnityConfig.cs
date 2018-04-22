@@ -1,5 +1,5 @@
-using SchoolExpress.Infrastructure.DbContexts;
-using SchoolExpress.Infrastructure.Uows;
+using SchoolExpress.Data.DbContexts;
+using SchoolExpress.Data.Uows;
 using Unity;
 using Unity.Injection;
 

@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SchoolExpress.Domain;
-using SchoolExpress.Infrastructure.Uows;
+using SchoolExpress.Data.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
