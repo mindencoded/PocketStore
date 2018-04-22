@@ -23,7 +23,7 @@ namespace SchoolExpress.Domain
 
         public virtual ICollection<User> Users { get; set; }
 
-        public virtual ICollection<ScheduleDetail> ScheduleDetails { get; set; }
+        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 

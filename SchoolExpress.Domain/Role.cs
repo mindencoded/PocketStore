@@ -6,7 +6,11 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
+        public int? ParentRolId { get; set; }
+        
         public string Description { get; set; }
+
+        public virtual Role ParentRole { get; set; }
 
         public virtual ICollection<Person> Persons { get; set; }
 
@@ -14,5 +18,7 @@ namespace SchoolExpress.Domain
         {
             return new object[] {Id};
         }
+
+
     }
 }

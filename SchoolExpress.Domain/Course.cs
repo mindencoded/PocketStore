@@ -12,7 +12,7 @@ namespace SchoolExpress.Domain
 
         public virtual Grade Grade { get; set; }
 
-        public virtual ICollection<ScheduleDetail> ScheduleDetails { get; set; }
+        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
 
         public virtual ICollection<Assignment> Assignments { get; set; }
 

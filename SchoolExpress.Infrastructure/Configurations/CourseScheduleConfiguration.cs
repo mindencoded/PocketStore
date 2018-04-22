@@ -3,7 +3,7 @@ using SchoolExpress.Domain;
 
 namespace SchoolExpress.Infrastructure.Configurations
 {
-    internal class ScheduleConfiguration : EntityTypeConfiguration<Schedule>
+    internal class CourseScheduleConfiguration : EntityTypeConfiguration<CourseSchedule>
     {
     }
 }

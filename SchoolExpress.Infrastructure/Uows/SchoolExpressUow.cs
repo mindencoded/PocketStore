@@ -24,8 +24,8 @@ namespace SchoolExpress.Infrastructure.Uows
                 {typeof(IGradeRepository), dbContext => new GradeRepository(dbContext)},
                 {typeof(IPersonRepository), dbContext => new PersonRepository(dbContext)},
                 {typeof(IRoleRepository), dbContext => new RoleRepository(dbContext)},
-                {typeof(IScheduleDetailRepository), dbContext => new ScheduleDetailRepository(dbContext)},
-                {typeof(IScheduleRepository), dbContext => new ScheduleRepository(dbContext)},
+                {typeof(ICourseScheduleDetailRepository), dbContext => new CourseScheduleDetailRepository(dbContext)},
+                {typeof(ICourseScheduleRepository), dbContext => new CourseScheduleRepository(dbContext)},
                 {typeof(IUserRepository), dbContext => new UserRepository(dbContext)}
             });
 

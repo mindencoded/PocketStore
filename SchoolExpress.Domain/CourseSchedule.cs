@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Domain
 {
-    public class Schedule : Entity
+    public class CourseSchedule : Entity
     {
         public int Id { get; set; }
 
@@ -16,7 +16,7 @@ namespace SchoolExpress.Domain
 
         public virtual Grade Grade { get; set; }
 
-        public virtual ICollection<ScheduleDetail> ScheduleDetails { get; set; }
+        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
 
         public override object[] GetId()
         {

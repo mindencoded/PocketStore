@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SchoolExpress.Domain
 {
-    public class ScheduleDetail : Entity
+    public class CourseScheduleDetail : Entity
     {
         private string _joinDays;
 
@@ -24,9 +24,9 @@ namespace SchoolExpress.Domain
             }
         }
 
-        public int ScheduleId { get; set; }
+        public int CourseScheduleId { get; set; }
 
-        public virtual Schedule Schedule { get; set; }
+        public virtual CourseSchedule CourseSchedule { get; set; }
 
         public int CourseId { get; set; }
 

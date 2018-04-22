@@ -8,7 +8,7 @@ namespace SchoolExpress.Domain
 
         public string Description { get; set; }
 
-        public virtual ICollection<Schedule> Schedules { get; set; }
+        public virtual ICollection<CourseSchedule> CourseSchedules { get; set; }
 
         public override object[] GetId()
         {

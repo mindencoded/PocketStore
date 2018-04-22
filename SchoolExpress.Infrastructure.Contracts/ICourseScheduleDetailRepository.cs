@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Infrastructure.Contracts
 {
-    public interface IScheduleRepository : IRepository<Schedule>
+    public interface ICourseScheduleDetailRepository : IRepository<CourseScheduleDetail>
     {
     }
 }

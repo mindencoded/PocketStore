@@ -7,12 +7,10 @@ namespace SchoolExpress.Infrastructure.Configurations
     {
         public EnrollmentConfiguration()
         {
-            //HasKey(x => x.Id);
             HasRequired(x => x.Student)
                 .WithMany(x => x.Enrollments)
                 .HasForeignKey(x => x.StudentId)
                 .WillCascadeOnDelete(false);
-            ;
         }
     }
 }

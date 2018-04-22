@@ -4,9 +4,9 @@ using SchoolExpress.Infrastructure.Contracts;
 
 namespace SchoolExpress.Infrastructure.Repositories
 {
-    public class ScheduleRepository : Repository<Schedule>, IScheduleRepository
+    public class CourseScheduleRepository : Repository<CourseSchedule>, ICourseScheduleRepository
     {
-        public ScheduleRepository(DbContext dbContext) : base(dbContext)
+        public CourseScheduleRepository(DbContext dbContext) : base(dbContext)
         {
         }
     }

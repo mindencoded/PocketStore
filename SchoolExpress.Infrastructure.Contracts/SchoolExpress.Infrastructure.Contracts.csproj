@@ -46,8 +46,8 @@
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRoleRepository.cs" />
-    <Compile Include="IScheduleDetailRepository.cs" />
-    <Compile Include="IScheduleRepository.cs" />
+    <Compile Include="ICourseScheduleDetailRepository.cs" />
+    <Compile Include="ICourseScheduleRepository.cs" />
     <Compile Include="ISchoolExpressUow.cs" />
     <Compile Include="IUow.cs" />
     <Compile Include="IUserRepository.cs" />
