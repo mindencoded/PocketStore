@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06341735-C14D-4898-A7EC-842B36D37202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolExpress.Data</RootNamespace>
+    <AssemblyName>SchoolExpress.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.4\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\AcademicTermConfiguration.cs" />
+    <Compile Include="Configurations\AssignmentConfiguration.cs" />
+    <Compile Include="Configurations\ClassRoomConfiguration.cs" />
+    <Compile Include="Configurations\CourseConfiguration.cs" />
+    <Compile Include="Configurations\EnrollmentConfiguration.cs" />
+    <Compile Include="Configurations\EnrollmentDetailConfiguration.cs" />
+    <Compile Include="Configurations\GradeConfiguration.cs" />
+    <Compile Include="Configurations\PersonConfiguration.cs" />
+    <Compile Include="Configurations\RoleConfiguration.cs" />
+    <Compile Include="Configurations\CourseScheduleConfiguration.cs" />
+    <Compile Include="Configurations\CourseScheduleDetailConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
+    <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
+    <Compile Include="Helpers\IRepositoryProvider.cs" />
+    <Compile Include="Helpers\PredicateBuilder.cs" />
+    <Compile Include="Helpers\RepositoryFactories.cs" />
+    <Compile Include="Migrations\201703251619496_InitialCreate.cs" />
+    <Compile Include="Migrations\201703251619496_InitialCreate.Designer.cs">
+      <DependentUpon>201703251619496_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703251845027_Rename_Persons_to_People.cs" />
+    <Compile Include="Migrations\201703251845027_Rename_Persons_to_People.Designer.cs">
+      <DependentUpon>201703251845027_Rename_Persons_to_People.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703252141133_Rename_People_To_Persons.cs" />
+    <Compile Include="Migrations\201703252141133_Rename_People_To_Persons.Designer.cs">
+      <DependentUpon>201703252141133_Rename_People_To_Persons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs" />
+    <Compile Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.Designer.cs">
+      <DependentUpon>201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs" />
+    <Compile Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.Designer.cs">
+      <DependentUpon>201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AcademicTermRepository.cs" />
+    <Compile Include="Repositories\AssignmentRepository.cs" />
+    <Compile Include="Repositories\ClassRoomRepository.cs" />
+    <Compile Include="Repositories\CourseRepository.cs" />
+    <Compile Include="Repositories\EnrollmentDetailRepository.cs" />
+    <Compile Include="Repositories\EnrollmentRepository.cs" />
+    <Compile Include="Repositories\GradeRepository.cs" />
+    <Compile Include="Repositories\IAcademicTermRepository.cs" />
+    <Compile Include="Repositories\IAssignmentRepository.cs" />
+    <Compile Include="Repositories\IClassRoomRepository.cs" />
+    <Compile Include="Repositories\ICourseRepository.cs" />
+    <Compile Include="Repositories\ICourseScheduleDetailRepository.cs" />
+    <Compile Include="Repositories\ICourseScheduleRepository.cs" />
+    <Compile Include="Repositories\IEnrollmentDetailRepository.cs" />
+    <Compile Include="Repositories\IEnrollmentRepository.cs" />
+    <Compile Include="Repositories\IGradeRepository.cs" />
+    <Compile Include="Repositories\IPersonRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Helpers\RepositoryProvider.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\CourseScheduleDetailRepository.cs" />
+    <Compile Include="Repositories\CourseScheduleRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Uows\ISchoolExpressUow.cs" />
+    <Compile Include="Uows\IUow.cs" />
+    <Compile Include="Uows\SchoolExpressUow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolExpress.Domain\SchoolExpress.Domain.csproj">
+      <Project>{cefc3b36-8e9a-40f3-8c36-b1a78d93fbe6}</Project>
+      <Name>SchoolExpress.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703251619496_InitialCreate.resx">
+      <DependentUpon>201703251619496_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703251845027_Rename_Persons_to_People.resx">
+      <DependentUpon>201703251845027_Rename_Persons_to_People.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703252141133_Rename_People_To_Persons.resx">
+      <DependentUpon>201703252141133_Rename_People_To_Persons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.resx">
+      <DependentUpon>201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.resx">
+      <DependentUpon>201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

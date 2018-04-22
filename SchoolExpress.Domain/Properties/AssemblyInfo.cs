@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 
-[assembly: AssemblyTitle("PocketStore.Domain")]
+[assembly: AssemblyTitle("SchoolExpress.Domain")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PocketStore.Domain")]
+[assembly: AssemblyProduct("SchoolExpress.Domain")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

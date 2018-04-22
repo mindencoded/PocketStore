@@ -217,13 +217,9 @@
       <Project>{cefc3b36-8e9a-40f3-8c36-b1a78d93fbe6}</Project>
       <Name>SchoolExpress.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SchoolExpress.Infrastructure.Contracts\SchoolExpress.Infrastructure.Contracts.csproj">
-      <Project>{ecb50d9f-aba2-4f00-9ad2-7a26091686c4}</Project>
-      <Name>SchoolExpress.Infrastructure.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SchoolExpress.Infrastructure\SchoolExpress.Infrastructure.csproj">
+    <ProjectReference Include="..\SchoolExpress.Data\SchoolExpress.Data.csproj">
       <Project>{06341735-c14d-4898-a7ec-842b36d37202}</Project>
-      <Name>SchoolExpress.Infrastructure</Name>
+      <Name>SchoolExpress.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
