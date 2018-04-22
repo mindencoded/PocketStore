@@ -17,12 +17,6 @@ namespace SchoolExpress.Domain
 
         public DateTime Birthday { get; set; }
 
-        public int RoleId { get; set; }
-
-        public virtual Role Role { get; set; }
-
-        public virtual ICollection<User> Users { get; set; }
-
         public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }

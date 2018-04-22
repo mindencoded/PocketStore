@@ -161,10 +161,8 @@
     <Compile Include="Controllers\Api\EnrollmentsApiController.cs" />
     <Compile Include="Controllers\Api\GradesApiController.cs" />
     <Compile Include="Controllers\Api\PersonsApiController.cs" />
-    <Compile Include="Controllers\Api\RolesApiController.cs" />
     <Compile Include="Controllers\Api\CourseScheduleDetailsApiController.cs" />
     <Compile Include="Controllers\Api\CourseSchedulesApiController.cs" />
-    <Compile Include="Controllers\Api\UsersApiController.cs" />
     <Compile Include="Credentials.cs" />
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomDirectRouteProvider.cs" />

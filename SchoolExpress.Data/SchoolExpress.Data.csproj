@@ -63,34 +63,16 @@
     <Compile Include="Configurations\EnrollmentDetailConfiguration.cs" />
     <Compile Include="Configurations\GradeConfiguration.cs" />
     <Compile Include="Configurations\PersonConfiguration.cs" />
-    <Compile Include="Configurations\RoleConfiguration.cs" />
     <Compile Include="Configurations\CourseScheduleConfiguration.cs" />
     <Compile Include="Configurations\CourseScheduleDetailConfiguration.cs" />
-    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
     <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\PredicateBuilder.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
-    <Compile Include="Migrations\201703251619496_InitialCreate.cs" />
-    <Compile Include="Migrations\201703251619496_InitialCreate.Designer.cs">
-      <DependentUpon>201703251619496_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703251845027_Rename_Persons_to_People.cs" />
-    <Compile Include="Migrations\201703251845027_Rename_Persons_to_People.Designer.cs">
-      <DependentUpon>201703251845027_Rename_Persons_to_People.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703252141133_Rename_People_To_Persons.cs" />
-    <Compile Include="Migrations\201703252141133_Rename_People_To_Persons.Designer.cs">
-      <DependentUpon>201703252141133_Rename_People_To_Persons.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs" />
-    <Compile Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.Designer.cs">
-      <DependentUpon>201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs" />
-    <Compile Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.Designer.cs">
-      <DependentUpon>201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs</DependentUpon>
+    <Compile Include="Migrations\201804222324552_Initial.cs" />
+    <Compile Include="Migrations\201804222324552_Initial.Designer.cs">
+      <DependentUpon>201804222324552_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,15 +94,11 @@
     <Compile Include="Repositories\IGradeRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IRoleRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Helpers\RepositoryProvider.cs" />
-    <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\CourseScheduleDetailRepository.cs" />
     <Compile Include="Repositories\CourseScheduleRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Uows\ISchoolExpressUow.cs" />
     <Compile Include="Uows\IUow.cs" />
     <Compile Include="Uows\SchoolExpressUow.cs" />
@@ -136,23 +114,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703251619496_InitialCreate.resx">
-      <DependentUpon>201703251619496_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703251845027_Rename_Persons_to_People.resx">
-      <DependentUpon>201703251845027_Rename_Persons_to_People.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703252141133_Rename_People_To_Persons.resx">
-      <DependentUpon>201703252141133_Rename_People_To_Persons.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804221349431_Rename_Table_Schedule_And_ScheduleDetail.resx">
-      <DependentUpon>201804221349431_Rename_Table_Schedule_And_ScheduleDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.resx">
-      <DependentUpon>201804221707480_Add_Self_Reference_One_To_One_On_Table_Role.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804222324552_Initial.resx">
+      <DependentUpon>201804222324552_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

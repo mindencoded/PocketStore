@@ -22,10 +22,8 @@ namespace SchoolExpress.Data.Uows
                 {typeof(IEnrollmentRepository), dbContext => new EnrollmentRepository(dbContext)},
                 {typeof(IGradeRepository), dbContext => new GradeRepository(dbContext)},
                 {typeof(IPersonRepository), dbContext => new PersonRepository(dbContext)},
-                {typeof(IRoleRepository), dbContext => new RoleRepository(dbContext)},
                 {typeof(ICourseScheduleDetailRepository), dbContext => new CourseScheduleDetailRepository(dbContext)},
-                {typeof(ICourseScheduleRepository), dbContext => new CourseScheduleRepository(dbContext)},
-                {typeof(IUserRepository), dbContext => new UserRepository(dbContext)}
+                {typeof(ICourseScheduleRepository), dbContext => new CourseScheduleRepository(dbContext)}
             });
 
         private readonly IRepositoryProvider _repositoryProvider;
