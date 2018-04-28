@@ -15,33 +15,7 @@
         <e p="ServiceConfiguration.Local.cscfg" t="Include" />
         <e p="ServiceDefinition.csdef" t="Include" />
       </e>
-      <e p="SchoolExpress.Domain" t="IncludeRecursive">
-        <e p="AcademicTerm.cs" t="Include" />
-        <e p="Assignment.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="ClassRoom.cs" t="Include" />
-        <e p="Course.cs" t="Include" />
-        <e p="Day.cs" t="Include" />
-        <e p="Enrollment.cs" t="Include" />
-        <e p="EnrollmentDetail.cs" t="Include" />
-        <e p="EntityBase.cs" t="Include" />
-        <e p="EntityBaseIdentity.cs" t="Include" />
-        <e p="EnumUtil.cs" t="Include" />
-        <e p="Grade.cs" t="Include" />
-        <e p="IEntityBase.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="ObjectExtension.cs" t="Include" />
-        <e p="Person.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="Role.cs" t="Include" />
-        <e p="Schedule.cs" t="Include" />
-        <e p="ScheduleDetail.cs" t="Include" />
-        <e p="SchoolExpress.Domain.csproj" t="IncludeRecursive" />
-        <e p="User.cs" t="Include" />
-      </e>
-      <e p="SchoolExpress.Infrastructure" t="IncludeRecursive">
+      <e p="SchoolExpress.Data" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configurations" t="Include">
@@ -49,14 +23,12 @@
           <e p="AssignmentConfiguration.cs" t="Include" />
           <e p="ClassRoomConfiguration.cs" t="Include" />
           <e p="CourseConfiguration.cs" t="Include" />
+          <e p="CourseScheduleConfiguration.cs" t="Include" />
+          <e p="CourseScheduleDetailConfiguration.cs" t="Include" />
           <e p="EnrollmentConfiguration.cs" t="Include" />
           <e p="EnrollmentDetailConfiguration.cs" t="Include" />
           <e p="GradeConfiguration.cs" t="Include" />
           <e p="PersonConfiguration.cs" t="Include" />
-          <e p="RoleConfiguration.cs" t="Include" />
-          <e p="ScheduleConfiguration.cs" t="Include" />
-          <e p="ScheduleDetailConfiguration.cs" t="Include" />
-          <e p="UserConfiguration.cs" t="Include" />
         </e>
         <e p="DbContexts" t="Include">
           <e p="SchoolExpressDbContext.cs" t="Include" />
@@ -69,15 +41,9 @@
           <e p="RepositoryProvider.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="201703251619496_InitialCreate.cs" t="Include" />
-          <e p="201703251619496_InitialCreate.Designer.cs" t="Include" />
-          <e p="201703251619496_InitialCreate.resx" t="Include" />
-          <e p="201703251845027_Rename_Persons_to_People.cs" t="Include" />
-          <e p="201703251845027_Rename_Persons_to_People.Designer.cs" t="Include" />
-          <e p="201703251845027_Rename_Persons_to_People.resx" t="Include" />
-          <e p="201703252141133_Rename_People_To_Persons.cs" t="Include" />
-          <e p="201703252141133_Rename_People_To_Persons.Designer.cs" t="Include" />
-          <e p="201703252141133_Rename_People_To_Persons.resx" t="Include" />
+          <e p="201804230224542_Initial.cs" t="Include" />
+          <e p="201804230224542_Initial.Designer.cs" t="Include" />
+          <e p="201804230224542_Initial.resx" t="Include" />
           <e p="Configuration.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
@@ -90,43 +56,55 @@
           <e p="AssignmentRepository.cs" t="Include" />
           <e p="ClassRoomRepository.cs" t="Include" />
           <e p="CourseRepository.cs" t="Include" />
+          <e p="CourseScheduleDetailRepository.cs" t="Include" />
+          <e p="CourseScheduleRepository.cs" t="Include" />
           <e p="EnrollmentDetailRepository.cs" t="Include" />
           <e p="EnrollmentRepository.cs" t="Include" />
           <e p="GradeRepository.cs" t="Include" />
+          <e p="IAcademicTermRepository.cs" t="Include" />
+          <e p="IAssignmentRepository.cs" t="Include" />
+          <e p="IClassRoomRepository.cs" t="Include" />
+          <e p="ICourseRepository.cs" t="Include" />
+          <e p="ICourseScheduleDetailRepository.cs" t="Include" />
+          <e p="ICourseScheduleRepository.cs" t="Include" />
+          <e p="IEnrollmentDetailRepository.cs" t="Include" />
+          <e p="IEnrollmentRepository.cs" t="Include" />
+          <e p="IGradeRepository.cs" t="Include" />
+          <e p="IPersonRepository.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
           <e p="PersonRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
-          <e p="RoleRepository.cs" t="Include" />
-          <e p="ScheduleDetailRepository.cs" t="Include" />
-          <e p="ScheduleRepository.cs" t="Include" />
-          <e p="UserRepository.cs" t="Include" />
         </e>
-        <e p="SchoolExpress.Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="SchoolExpress.Data.csproj" t="IncludeRecursive" />
         <e p="Uows" t="Include">
+          <e p="ISchoolExpressUow.cs" t="Include" />
+          <e p="IUow.cs" t="Include" />
           <e p="SchoolExpressUow.cs" t="Include" />
         </e>
       </e>
-      <e p="SchoolExpress.Infrastructure.Contracts" t="IncludeRecursive">
+      <e p="SchoolExpress.Domain" t="IncludeRecursive">
+        <e p="AcademicTerm.cs" t="Include" />
+        <e p="Assignment.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="IAcademicTermRepository.cs" t="Include" />
-        <e p="IAssignmentRepository.cs" t="Include" />
-        <e p="IClassRoomRepository.cs" t="Include" />
-        <e p="ICourseRepository.cs" t="Include" />
-        <e p="IEnrollmentDetailRepository.cs" t="Include" />
-        <e p="IEnrollmentRepository.cs" t="Include" />
-        <e p="IGradeRepository.cs" t="Include" />
-        <e p="IPersonRepository.cs" t="Include" />
-        <e p="IRepository.cs" t="Include" />
-        <e p="IRoleRepository.cs" t="Include" />
-        <e p="IScheduleDetailRepository.cs" t="Include" />
-        <e p="IScheduleRepository.cs" t="Include" />
-        <e p="ISchoolExpressUow.cs" t="Include" />
-        <e p="IUow.cs" t="Include" />
-        <e p="IUserRepository.cs" t="Include" />
+        <e p="ClassRoom.cs" t="Include" />
+        <e p="Course.cs" t="Include" />
+        <e p="CourseSchedule.cs" t="Include" />
+        <e p="CourseScheduleDetail.cs" t="Include" />
+        <e p="Day.cs" t="Include" />
+        <e p="Enrollment.cs" t="Include" />
+        <e p="EnrollmentDetail.cs" t="Include" />
+        <e p="Entity.cs" t="Include" />
+        <e p="EnumUtil.cs" t="Include" />
+        <e p="Grade.cs" t="Include" />
+        <e p="IEntity.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="ObjectExtension.cs" t="Include" />
+        <e p="Person.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="SchoolExpress.Infrastructure.Contracts.csproj" t="IncludeRecursive" />
+        <e p="SchoolExpress.Domain.csproj" t="IncludeRecursive" />
+        <e p="User.cs" t="Include" />
       </e>
       <e p="SchoolExpress.sln" t="IncludeFlat" />
       <e p="SchoolExpress.WebService" t="IncludeRecursive">
@@ -140,21 +118,25 @@
             <e p="BaseApiController.cs" t="Include" />
             <e p="ClassRoomsApiController.cs" t="Include" />
             <e p="CoursesApiController.cs" t="Include" />
+            <e p="CourseScheduleDetailsApiController.cs" t="Include" />
+            <e p="CourseSchedulesApiController.cs" t="Include" />
+            <e p="CrudApiController.cs" t="Include" />
             <e p="EnrollmentDetailsApiController.cs" t="Include" />
             <e p="EnrollmentsApiController.cs" t="Include" />
             <e p="GradesApiController.cs" t="Include" />
             <e p="PersonsApiController.cs" t="Include" />
-            <e p="RolesApiController.cs" t="Include" />
-            <e p="ScheduleDetailsApiController.cs" t="Include" />
-            <e p="SchedulesApiController.cs" t="Include" />
-            <e p="UsersApiController.cs" t="Include" />
           </e>
           <e p="OData" t="Include" />
         </e>
         <e p="Credentials.cs" t="Include" />
         <e p="CustomContentTypeProvider.cs" t="Include" />
         <e p="CustomDirectRouteProvider.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="UserModel.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="OwinCallContext.cs" t="Include" />
+        <e p="OwinContextMiddleware.cs" t="Include" />
         <e p="OwinService.cs" t="Include" />
         <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
@@ -166,7 +148,6 @@
         <e p="UnityConfig.cs" t="Include" />
         <e p="UnityResolver.cs" t="Include" />
         <e p="ValidationActionFilter.cs" t="Include" />
-        <e p="WorkerRole.cs" t="Include" />
         <e p="wwwroot" t="Include">
           <e p="app" t="Include">
             <e p="css" t="Include">

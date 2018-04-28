@@ -9,8 +9,7 @@ namespace SchoolExpress.Data.Configurations
         {
             HasRequired(x => x.Student)
                 .WithMany(x => x.Enrollments)
-                .HasForeignKey(x => x.StudentId)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(x => x.StudentId);
         }
     }
 }

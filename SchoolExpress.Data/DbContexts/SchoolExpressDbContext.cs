@@ -4,10 +4,11 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Reflection;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SchoolExpress.Data.DbContexts
 {
-    public class SchoolExpressDbContext : DbContext
+    public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
     {
         public SchoolExpressDbContext() : base("SchoolExpressConnection")
         {
@@ -16,16 +17,14 @@ namespace SchoolExpress.Data.DbContexts
             //Database.SetInitializer(new SchoolExpressInitializer());
         }
 
-        public IDbSet<T> DbSet<T>() where T : class
-        {
-            return Set<T>();
-        }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(type => !String.IsNullOrEmpty(type.Namespace))
+                .Where(type => !string.IsNullOrEmpty(type.Namespace))
                 .Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
                                type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
             foreach (var type in typesToRegister)
@@ -33,8 +32,12 @@ namespace SchoolExpress.Data.DbContexts
                 dynamic configInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configInstance);
             }
+            modelBuilder.Entity<IdentityUser>().ToTable("User");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogin");
 
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

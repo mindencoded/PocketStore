@@ -12,7 +12,7 @@ namespace SchoolExpress.WebService
     public class Startup
     {
         public void Configuration(IAppBuilder appBuilder)
-        {
+        {           
             var config = new HttpConfiguration();
 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));

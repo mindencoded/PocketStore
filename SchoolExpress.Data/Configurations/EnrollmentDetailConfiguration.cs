@@ -8,14 +8,14 @@ namespace SchoolExpress.Data.Configurations
         public EnrollmentDetailConfiguration()
         {
             HasKey(x => new {x.AssignmentId, x.EnrollmentId});
+            
             HasRequired(x => x.Assignment)
                 .WithMany(x => x.EnrollmentDetails)
-                .HasForeignKey(x => x.AssignmentId)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(x => x.AssignmentId);
+            
             HasRequired(x => x.Enrollment)
                 .WithMany(x => x.EnrollmentDetails)
-                .HasForeignKey(x => x.EnrollmentId)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(x => x.EnrollmentId);
         }
     }
 }

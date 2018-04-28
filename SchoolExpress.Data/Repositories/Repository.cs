@@ -12,21 +12,21 @@ namespace SchoolExpress.Data.Repositories
             DbSet = DbContext.Set<T>();
         }
 
-        protected DbContext DbContext { get; set; }
+        protected DbContext DbContext { get; }
 
-        protected DbSet<T> DbSet { get; set; }
+        protected DbSet<T> DbSet { get; }
 
-        public IQueryable<T> GetAll()
+        public virtual IQueryable<T> GetAll()
         {
             return DbSet;
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return DbSet.Find(id);
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
             if (dbEntityEntry.State != EntityState.Detached)
@@ -35,7 +35,7 @@ namespace SchoolExpress.Data.Repositories
                 DbSet.Add(entity);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
             if (dbEntityEntry.State == EntityState.Detached)
@@ -43,7 +43,7 @@ namespace SchoolExpress.Data.Repositories
             dbEntityEntry.State = EntityState.Modified;
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
             if (dbEntityEntry.State != EntityState.Deleted)
@@ -57,7 +57,7 @@ namespace SchoolExpress.Data.Repositories
             }
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var entity = GetById(id);
             if (entity == null) return;
