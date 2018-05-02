@@ -20,6 +20,19 @@ namespace SchoolExpress.Data.DbContexts
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUser>().ToTable("User");
+            modelBuilder.Entity<IdentityRole>().ToTable("Role");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogin");
+            modelBuilder.Properties<string>()
+                .Configure(s => s.HasMaxLength(100).HasColumnType("NVARCHAR"));
+            modelBuilder.Entity<IdentityUser>().Property(p => p.Id).HasMaxLength(36);
+            modelBuilder.Entity<IdentityRole>().Property(p => p.Id).HasMaxLength(36);
+            modelBuilder.Entity<IdentityUserClaim>().Property(p => p.UserId).HasMaxLength(36);
+            modelBuilder.Entity<IdentityUserLogin>().Property(p => p.UserId).HasMaxLength(36);
+            modelBuilder.Entity<IdentityUserRole>().Property(p => p.UserId).HasMaxLength(36);
+            modelBuilder.Entity<IdentityUserRole>().Property(p => p.RoleId).HasMaxLength(36);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
@@ -32,12 +45,6 @@ namespace SchoolExpress.Data.DbContexts
                 dynamic configInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configInstance);
             }
-            modelBuilder.Entity<IdentityUser>().ToTable("User");
-            modelBuilder.Entity<IdentityRole>().ToTable("Role");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogin");
-
         }
     }
 }

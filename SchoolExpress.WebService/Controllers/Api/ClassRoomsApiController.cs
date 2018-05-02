@@ -22,7 +22,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectClassRoom")]
-        public override ClassRoom Get(int id)
+        public override ClassRoom Get(object id)
         {
             return base.Get(id);
         }
@@ -42,7 +42,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteClassRoom")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);
         }

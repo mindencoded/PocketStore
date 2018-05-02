@@ -72,8 +72,18 @@
           <e p="IGradeRepository.cs" t="Include" />
           <e p="IPersonRepository.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
+          <e p="IRoleRepository.cs" t="Include" />
+          <e p="IUserClaimRepository.cs" t="Include" />
+          <e p="IUserLoginRepository.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+          <e p="IUserRoleRepository.cs" t="Include" />
           <e p="PersonRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
+          <e p="RoleRepository.cs" t="Include" />
+          <e p="UserClaimRepository.cs" t="Include" />
+          <e p="UserLoginRepository.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+          <e p="UserRoleRepository.cs" t="Include" />
         </e>
         <e p="SchoolExpress.Data.csproj" t="IncludeRecursive" />
         <e p="Uows" t="Include">
@@ -104,16 +114,15 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="SchoolExpress.Domain.csproj" t="IncludeRecursive" />
-        <e p="User.cs" t="Include" />
       </e>
       <e p="SchoolExpress.sln" t="IncludeFlat" />
       <e p="SchoolExpress.WebService" t="IncludeRecursive">
         <e p="App.config" t="Include" />
-        <e p="AuthenticationHandler.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="Api" t="Include">
             <e p="AcademicTermsApiController.cs" t="Include" />
+            <e p="AccountApiController.cs" t="Include" />
             <e p="AssignmentsApiController.cs" t="Include" />
             <e p="BaseApiController.cs" t="Include" />
             <e p="ClassRoomsApiController.cs" t="Include" />
@@ -128,20 +137,23 @@
           </e>
           <e p="OData" t="Include" />
         </e>
-        <e p="Credentials.cs" t="Include" />
-        <e p="CustomContentTypeProvider.cs" t="Include" />
-        <e p="CustomDirectRouteProvider.cs" t="Include" />
+        <e p="Credential.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="UserModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
-        <e p="OwinCallContext.cs" t="Include" />
         <e p="OwinContextMiddleware.cs" t="Include" />
+        <e p="OwinHttpContext.cs" t="Include" />
         <e p="OwinService.cs" t="Include" />
         <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Providers" t="Include">
+          <e p="CustomContentTypeProvider.cs" t="Include" />
+          <e p="CustomDirectRouteProvider.cs" t="Include" />
+          <e p="CustomOAuthAuthorizationServerProvider.cs" t="Include" />
         </e>
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
         <e p="Startup.cs" t="Include" />

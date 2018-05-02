@@ -7,13 +7,13 @@ namespace SchoolExpress.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class Set_MaxLength_String_Ids : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Set_MaxLength_String_Ids));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804230224542_Initial"; }
+            get { return "201805020710246_Set_MaxLength_String_Ids"; }
         }
         
         string IMigrationMetadata.Source

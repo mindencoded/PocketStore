@@ -1,45 +1,44 @@
 namespace SchoolExpress.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Role",
-                c => new
+                    "dbo.Role",
+                    c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.String(nullable: false, maxLength: 100),
                         Name = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
-            
+
             CreateTable(
-                "dbo.UserRole",
-                c => new
+                    "dbo.UserRole",
+                    c => new
                     {
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(nullable: false, maxLength: 100),
+                        RoleId = c.String(nullable: false, maxLength: 100),
                     })
-                .PrimaryKey(t => new { t.UserId, t.RoleId })
+                .PrimaryKey(t => new {t.UserId, t.RoleId})
                 .ForeignKey("dbo.Role", t => t.RoleId)
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
+
             CreateTable(
-                "dbo.User",
-                c => new
+                    "dbo.User",
+                    c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
+                        Id = c.String(nullable: false, maxLength: 100),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
-                        PasswordHash = c.String(),
-                        SecurityStamp = c.String(),
-                        PhoneNumber = c.String(),
+                        PasswordHash = c.String(maxLength: 100),
+                        SecurityStamp = c.String(maxLength: 100),
+                        PhoneNumber = c.String(maxLength: 100),
                         PhoneNumberConfirmed = c.Boolean(nullable: false),
                         TwoFactorEnabled = c.Boolean(nullable: false),
                         LockoutEndDateUtc = c.DateTime(),
@@ -49,50 +48,50 @@ namespace SchoolExpress.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
-            
+
             CreateTable(
-                "dbo.UserClaim",
-                c => new
+                    "dbo.UserClaim",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        ClaimType = c.String(),
-                        ClaimValue = c.String(),
+                        UserId = c.String(nullable: false, maxLength: 100),
+                        ClaimType = c.String(maxLength: 100),
+                        ClaimValue = c.String(maxLength: 100),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId);
-            
+
             CreateTable(
-                "dbo.UserLogin",
-                c => new
+                    "dbo.UserLogin",
+                    c => new
                     {
-                        LoginProvider = c.String(nullable: false, maxLength: 128),
-                        ProviderKey = c.String(nullable: false, maxLength: 128),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        LoginProvider = c.String(nullable: false, maxLength: 100),
+                        ProviderKey = c.String(nullable: false, maxLength: 100),
+                        UserId = c.String(nullable: false, maxLength: 100),
                     })
-                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
+                .PrimaryKey(t => new {t.LoginProvider, t.ProviderKey, t.UserId})
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId);
-            
+
             CreateTable(
-                "dbo.AcademicTerm",
-                c => new
+                    "dbo.AcademicTerm",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(maxLength: 100),
                         LastModified = c.DateTime(nullable: false),
                         Created = c.DateTime(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
-                "dbo.CourseSchedule",
-                c => new
+                    "dbo.CourseSchedule",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(maxLength: 100),
                         AcademicTermId = c.Int(nullable: false),
                         GradeId = c.Int(nullable: false),
                         LastModified = c.DateTime(nullable: false),
@@ -104,15 +103,15 @@ namespace SchoolExpress.Data.Migrations
                 .ForeignKey("dbo.Grade", t => t.GradeId)
                 .Index(t => t.AcademicTermId)
                 .Index(t => t.GradeId);
-            
+
             CreateTable(
-                "dbo.CourseScheduleDetail",
-                c => new
+                    "dbo.CourseScheduleDetail",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         StartTime = c.Time(nullable: false, precision: 7),
                         EndTime = c.Time(nullable: false, precision: 7),
-                        JoinDays = c.String(),
+                        JoinDays = c.String(maxLength: 100),
                         CourseScheduleId = c.Int(nullable: false),
                         CourseId = c.Int(nullable: false),
                         ClassRoomId = c.Int(nullable: false),
@@ -130,25 +129,25 @@ namespace SchoolExpress.Data.Migrations
                 .Index(t => t.CourseId)
                 .Index(t => t.ClassRoomId)
                 .Index(t => t.TeacherId);
-            
+
             CreateTable(
-                "dbo.ClassRoom",
-                c => new
+                    "dbo.ClassRoom",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(maxLength: 100),
                         LastModified = c.DateTime(nullable: false),
                         Created = c.DateTime(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
-                "dbo.Course",
-                c => new
+                    "dbo.Course",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(maxLength: 100),
                         GradeId = c.Int(nullable: false),
                         LastModified = c.DateTime(nullable: false),
                         Created = c.DateTime(nullable: false),
@@ -157,10 +156,10 @@ namespace SchoolExpress.Data.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Grade", t => t.GradeId)
                 .Index(t => t.GradeId);
-            
+
             CreateTable(
-                "dbo.Assignment",
-                c => new
+                    "dbo.Assignment",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         CourseId = c.Int(nullable: false),
@@ -175,10 +174,10 @@ namespace SchoolExpress.Data.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Course", t => t.CourseId)
                 .Index(t => t.CourseId);
-            
+
             CreateTable(
-                "dbo.EnrollmentDetail",
-                c => new
+                    "dbo.EnrollmentDetail",
+                    c => new
                     {
                         AssignmentId = c.Int(nullable: false),
                         EnrollmentId = c.Int(nullable: false),
@@ -187,15 +186,15 @@ namespace SchoolExpress.Data.Migrations
                         Created = c.DateTime(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => new { t.AssignmentId, t.EnrollmentId })
+                .PrimaryKey(t => new {t.AssignmentId, t.EnrollmentId})
                 .ForeignKey("dbo.Assignment", t => t.AssignmentId)
                 .ForeignKey("dbo.Enrollment", t => t.EnrollmentId)
                 .Index(t => t.AssignmentId)
                 .Index(t => t.EnrollmentId);
-            
+
             CreateTable(
-                "dbo.Enrollment",
-                c => new
+                    "dbo.Enrollment",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         InscriptionDate = c.DateTime(nullable: false),
@@ -208,37 +207,46 @@ namespace SchoolExpress.Data.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Person", t => t.StudentId)
                 .Index(t => t.StudentId);
-            
+
             CreateTable(
-                "dbo.Person",
-                c => new
+                    "dbo.Person",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Document = c.String(),
-                        InternalCode = c.String(),
-                        Name = c.String(),
-                        LastName = c.String(),
+                        Document = c.String(maxLength: 100),
+                        InternalCode = c.String(maxLength: 100),
+                        Name = c.String(maxLength: 100),
+                        LastName = c.String(maxLength: 100),
                         Birthday = c.DateTime(nullable: false),
                         LastModified = c.DateTime(nullable: false),
                         Created = c.DateTime(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
             CreateTable(
-                "dbo.Grade",
-                c => new
+                    "dbo.Grade",
+                    c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Description = c.String(),
+                        Description = c.String(maxLength: 100),
                         LastModified = c.DateTime(nullable: false),
                         Created = c.DateTime(nullable: false),
                         Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            
+
+            CreateTable(
+                    "dbo.Audience",
+                    c => new
+                    {
+                        ClientId = c.String(nullable: false, maxLength: 32),
+                        Base64Secret = c.String(maxLength: 100),
+                        Name = c.String(maxLength: 100),
+                    })
+                .PrimaryKey(t => t.ClientId);
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.CourseScheduleDetail", "TeacherId", "dbo.Person");
@@ -256,23 +264,24 @@ namespace SchoolExpress.Data.Migrations
             DropForeignKey("dbo.UserLogin", "UserId", "dbo.User");
             DropForeignKey("dbo.UserClaim", "UserId", "dbo.User");
             DropForeignKey("dbo.UserRole", "RoleId", "dbo.Role");
-            DropIndex("dbo.Enrollment", new[] { "StudentId" });
-            DropIndex("dbo.EnrollmentDetail", new[] { "EnrollmentId" });
-            DropIndex("dbo.EnrollmentDetail", new[] { "AssignmentId" });
-            DropIndex("dbo.Assignment", new[] { "CourseId" });
-            DropIndex("dbo.Course", new[] { "GradeId" });
-            DropIndex("dbo.CourseScheduleDetail", new[] { "TeacherId" });
-            DropIndex("dbo.CourseScheduleDetail", new[] { "ClassRoomId" });
-            DropIndex("dbo.CourseScheduleDetail", new[] { "CourseId" });
-            DropIndex("dbo.CourseScheduleDetail", new[] { "CourseScheduleId" });
-            DropIndex("dbo.CourseSchedule", new[] { "GradeId" });
-            DropIndex("dbo.CourseSchedule", new[] { "AcademicTermId" });
-            DropIndex("dbo.UserLogin", new[] { "UserId" });
-            DropIndex("dbo.UserClaim", new[] { "UserId" });
+            DropIndex("dbo.Enrollment", new[] {"StudentId"});
+            DropIndex("dbo.EnrollmentDetail", new[] {"EnrollmentId"});
+            DropIndex("dbo.EnrollmentDetail", new[] {"AssignmentId"});
+            DropIndex("dbo.Assignment", new[] {"CourseId"});
+            DropIndex("dbo.Course", new[] {"GradeId"});
+            DropIndex("dbo.CourseScheduleDetail", new[] {"TeacherId"});
+            DropIndex("dbo.CourseScheduleDetail", new[] {"ClassRoomId"});
+            DropIndex("dbo.CourseScheduleDetail", new[] {"CourseId"});
+            DropIndex("dbo.CourseScheduleDetail", new[] {"CourseScheduleId"});
+            DropIndex("dbo.CourseSchedule", new[] {"GradeId"});
+            DropIndex("dbo.CourseSchedule", new[] {"AcademicTermId"});
+            DropIndex("dbo.UserLogin", new[] {"UserId"});
+            DropIndex("dbo.UserClaim", new[] {"UserId"});
             DropIndex("dbo.User", "UserNameIndex");
-            DropIndex("dbo.UserRole", new[] { "RoleId" });
-            DropIndex("dbo.UserRole", new[] { "UserId" });
+            DropIndex("dbo.UserRole", new[] {"RoleId"});
+            DropIndex("dbo.UserRole", new[] {"UserId"});
             DropIndex("dbo.Role", "RoleNameIndex");
+            DropTable("dbo.Audience");
             DropTable("dbo.Grade");
             DropTable("dbo.Person");
             DropTable("dbo.Enrollment");

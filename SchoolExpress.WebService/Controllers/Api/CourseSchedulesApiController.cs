@@ -21,7 +21,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectCourseSchedule")]
-        public override CourseSchedule Get(int id)
+        public override CourseSchedule Get(object id)
         {
             return base.Get(id);
         }
@@ -41,11 +41,9 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteCourseSchedule")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);
         }
-
-
     }
 }

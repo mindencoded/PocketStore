@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,6 +18,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
         }
 
+        [HttpGet]
         [Authorize(Roles = "SelectEnrollmentDetail")]
         [Route("{assignment:int}/{enrollmentId:int}")]
         public EnrollmentDetail Get(int assignment, int enrollmentId)
@@ -29,6 +31,7 @@ namespace SchoolExpress.WebService.Controllers.Api
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
         }
 
+        [HttpDelete]
         [Authorize(Roles = "DeleteEnrollmentDetail")]
         [Route("{assignment:int}/{enrollmentId:int}")]
         public HttpResponseMessage Delete(int assignment, int enrollmentId)
@@ -53,9 +56,9 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectEnrollmentDetail")]
-        public override EnrollmentDetail Get(int id)
+        public override EnrollmentDetail Get(object id)
         {
-            return base.Get(id);
+            throw new NotImplementedException();
         }
 
 
@@ -73,9 +76,9 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteEnrollmentDetail")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
-            return base.Delete(id);
+            throw new NotImplementedException();
         }
     }
 }

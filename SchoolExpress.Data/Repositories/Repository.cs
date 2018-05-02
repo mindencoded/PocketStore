@@ -21,7 +21,7 @@ namespace SchoolExpress.Data.Repositories
             return DbSet;
         }
 
-        public virtual T GetById(int id)
+        public virtual T GetById(object id)
         {
             return DbSet.Find(id);
         }
@@ -57,11 +57,21 @@ namespace SchoolExpress.Data.Repositories
             }
         }
 
-        public virtual void Delete(int id)
+        public virtual void Delete(object id)
         {
-            var entity = GetById(id);
-            if (entity == null) return;
-            Delete(entity);
+            T entity = GetById(id);
+            if (entity != null)
+            {
+                Delete(entity);
+            }
+        }
+
+        public virtual void Dispose()
+        {
+            if (DbContext != null)
+            {
+                DbContext.Dispose();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Owin.StaticFiles.ContentTypes;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Providers
 {
     public class CustomContentTypeProvider : FileExtensionContentTypeProvider
     {

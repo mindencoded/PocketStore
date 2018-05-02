@@ -2,7 +2,7 @@
 using System.Web.Http.Controllers;
 using System.Web.Http.Routing;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Providers
 {
     public class CustomDirectRouteProvider : DefaultDirectRouteProvider
     {

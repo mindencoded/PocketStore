@@ -21,7 +21,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectGrade")]
-        public override Grade Get(int id)
+        public override Grade Get(object id)
         {
             return base.Get(id);
         }
@@ -41,7 +41,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteGrade")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);
         }

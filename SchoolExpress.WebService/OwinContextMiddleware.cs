@@ -13,12 +13,12 @@ namespace SchoolExpress.WebService
         {
             try
             {
-                OwinCallContext.Set(context);
+                HttpContext.Set(context);
                 await Next.Invoke(context);
             }
             finally
             {
-                OwinCallContext.Remove(context);
+                HttpContext.Remove(context);
             }
         }
     }

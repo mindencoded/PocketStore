@@ -3,7 +3,7 @@ using Microsoft.Owin;
 
 namespace SchoolExpress.WebService
 {
-    public class OwinCallContext
+    public class HttpContext
     {
         private const string OwinContextKey = "owin.IOwinContext";
 

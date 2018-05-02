@@ -9,7 +9,6 @@ namespace SchoolExpress.Domain
         public DateTime Created { get; set; }
 
         public bool Status { get; set; }
-
         public abstract object[] GetId();
     }
 }

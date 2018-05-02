@@ -20,7 +20,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectAcademicTerm")]
-        public override AcademicTerm Get(int id)
+        public override AcademicTerm Get(object id)
         {
             return base.Get(id);
         }
@@ -40,10 +40,9 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteAcademicTerm")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);
         }
-
     }
 }

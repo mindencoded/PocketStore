@@ -51,21 +51,17 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -85,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Configurations\AcademicTermConfiguration.cs" />
     <Compile Include="Configurations\AssignmentConfiguration.cs" />
+    <Compile Include="Configurations\AudienceConfiguration.cs" />
     <Compile Include="Configurations\ClassRoomConfiguration.cs" />
     <Compile Include="Configurations\CourseConfiguration.cs" />
     <Compile Include="Configurations\EnrollmentConfiguration.cs" />
@@ -98,14 +95,19 @@
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\PredicateBuilder.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
-    <Compile Include="Migrations\201804230224542_Initial.cs" />
-    <Compile Include="Migrations\201804230224542_Initial.Designer.cs">
-      <DependentUpon>201804230224542_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201805012333370_Initial.cs" />
+    <Compile Include="Migrations\201805012333370_Initial.Designer.cs">
+      <DependentUpon>201805012333370_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020710246_Set_MaxLength_String_Ids.cs" />
+    <Compile Include="Migrations\201805020710246_Set_MaxLength_String_Ids.Designer.cs">
+      <DependentUpon>201805020710246_Set_MaxLength_String_Ids.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AcademicTermRepository.cs" />
     <Compile Include="Repositories\AssignmentRepository.cs" />
+    <Compile Include="Repositories\AudienceRepository.cs" />
     <Compile Include="Repositories\ClassRoomRepository.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
     <Compile Include="Repositories\EnrollmentDetailRepository.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Repositories\GradeRepository.cs" />
     <Compile Include="Repositories\IAcademicTermRepository.cs" />
     <Compile Include="Repositories\IAssignmentRepository.cs" />
+    <Compile Include="Repositories\IAudienceRepository.cs" />
     <Compile Include="Repositories\IClassRoomRepository.cs" />
     <Compile Include="Repositories\ICourseRepository.cs" />
     <Compile Include="Repositories\ICourseScheduleDetailRepository.cs" />
@@ -152,8 +155,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804230224542_Initial.resx">
-      <DependentUpon>201804230224542_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805012333370_Initial.resx">
+      <DependentUpon>201805012333370_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020710246_Set_MaxLength_String_Ids.resx">
+      <DependentUpon>201805020710246_Set_MaxLength_String_Ids.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

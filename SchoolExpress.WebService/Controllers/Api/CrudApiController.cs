@@ -15,32 +15,36 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Route("")]
+        [HttpGet]
         public virtual IEnumerable<T> Get()
         {
-            return Uow.GetGenericRepository<T>().GetAll();
+            return Uow.GetRepositoryForEntityType<T>().GetAll();
         }
 
-        [Route("{id:int}")]
-        public virtual T Get(int id)
+        [Route("{id}")]
+        [HttpGet]
+        public virtual T Get(object id)
         {
-            var entity = Uow.GetGenericRepository<T>().GetById(id);
+            var entity = Uow.GetRepositoryForEntityType<T>().GetById(id);
             if (entity != null)
                 return entity;
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
         }
 
         [Route("")]
+        [HttpPut]
         protected virtual HttpResponseMessage Put(T entity)
         {
-            Uow.GetGenericRepository<T>().Update(entity);
+            Uow.GetRepositoryForEntityType<T>().Update(entity);
             Uow.Commit();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         [Route("")]
+        [HttpPost]
         public virtual HttpResponseMessage Post(T entity)
         {
-            Uow.GetGenericRepository<T>().Add(entity);
+            Uow.GetRepositoryForEntityType<T>().Add(entity);
             Uow.Commit();
             var response = Request.CreateResponse(HttpStatusCode.Created);
             response.Headers.Location =
@@ -52,9 +56,10 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Route("{id:int}")]
-        public virtual HttpResponseMessage Delete(int id)
+        [HttpDelete]
+        public virtual HttpResponseMessage Delete(object id)
         {
-            Uow.GetGenericRepository<T>().Delete(id);
+            Uow.GetRepositoryForEntityType<T>().Delete(id);
             Uow.Commit();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }

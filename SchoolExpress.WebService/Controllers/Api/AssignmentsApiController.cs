@@ -22,7 +22,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "SelectAssignment")]
-        public override Assignment Get(int id)
+        public override Assignment Get(object id)
         {
             return base.Get(id);
         }
@@ -42,7 +42,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "DeleteAssignment")]
-        public override HttpResponseMessage Delete(int id)
+        public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);
         }

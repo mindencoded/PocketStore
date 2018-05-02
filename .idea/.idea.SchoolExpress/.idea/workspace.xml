@@ -2,23 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7865693d-3bd9-4ae1-9789-fa5a589e06e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.Domain/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml___jb_tmp___" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleDetailConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleDetailConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentDetailConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentDetailConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/App.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Migrations/201804222324552_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Migrations/201804222324552_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Migrations/201804222324552_Initial.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Helpers/IRepositoryProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Helpers/IRepositoryProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Helpers/RepositoryProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Helpers/RepositoryProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/RoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/RoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Repositories/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/SchoolExpress.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/SchoolExpress.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Uows/IUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Uows/IUow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/Uows/SchoolExpressUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/Uows/SchoolExpressUow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.Data/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Data/packages.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.Domain/SchoolExpress.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.Domain/SchoolExpress.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/AuthenticationHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/CoursesApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/CoursesApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/CrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/CrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Credentials.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/CustomContentTypeProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/CustomDirectRouteProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/OwinCallContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/OwinContextMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/OwinContextMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/app.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/packages.config" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,34 +55,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SchoolExpressDbContext.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-              <folding>
-                <marker date="1524555020703" expanded="false" signature="6:234" ph="..." />
-                <marker date="1524555020703" expanded="true" signature="275:1942" ph="{...}" />
-                <marker date="1524555020703" expanded="true" signature="351:1940" ph="{...}" />
-                <marker date="1524555020703" expanded="true" signature="431:632" ph="{...}" />
-                <marker date="1524555020703" expanded="true" signature="710:1934" ph="{...}" />
-                <marker date="1524555020703" expanded="true" signature="1405:1571" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SchoolExpress.Domain/User.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,12 +68,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.Domain/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/App.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/CoursesApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/Repository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/OwinService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/ValidationActionFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,14 +85,17 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/packages.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/PersonConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/CustomContentTypeProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/GradeConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/AssignmentConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Credentials.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRoleRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/RoleRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Domain/CourseScheduleDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Domain/Enrollment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationServerProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.Domain/Course.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -139,6 +127,11 @@
         <option value="$PROJECT_DIR$/SchoolExpress.Data/Configurations/EnrollmentDetailConfiguration.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.Domain/User.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.Data/Repositories/RoleRepository.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRoleRepository.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.Data/Repositories/IUserRepository.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationServerProvider.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.Data/Repositories/UserRepository.cs" />
       </list>
     </option>
   </component>
@@ -171,7 +164,7 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="SchoolExpress (4 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SchoolExpress.Domain" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="SchoolExpress.WebService" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -324,11 +317,12 @@
       <workItem from="1524353180353" duration="1080000" />
       <workItem from="1524440741520" duration="4472000" />
       <workItem from="1524554399277" duration="1823000" />
+      <workItem from="1525059731049" duration="4053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45202000" />
+    <option name="totallyTimeSpent" value="49255000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,30 +335,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32894737" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3237519" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.67624813" weight="0.32838285" />
       <window_info anchor="bottom" id="NuGet" order="11" sideWeight="0.4969743" weight="0.4950495" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21482602" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21785174" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="12" weight="0.32894737" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76260763" weight="0.49339935" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="12" weight="0.32894737" />
       <window_info anchor="bottom" id="Find" order="2" />
     </layout>
     <layout-to-restore>
@@ -374,7 +367,7 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32838285" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21482602" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21785174" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32894737" />
@@ -384,8 +377,8 @@
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76260763" weight="0.49339935" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.67624813" visible="true" weight="0.32838285" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3237519" side_tool="true" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.67624813" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3237519" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="12" weight="0.32894737" />
@@ -407,20 +400,35 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <marker date="1525048094258" expanded="false" signature="6:234" ph="..." />
+            <marker date="1525048094258" expanded="true" signature="351:1940" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="431:632" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="710:1934" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="1405:1571" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Domain/User.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleDetailConfiguration.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <marker date="1524554940023" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524554940023" expanded="true" signature="117:484" ph="{...}" />
-            <marker date="1524554940023" expanded="true" signature="220:482" ph="{...}" />
-            <marker date="1524554940023" expanded="true" signature="277:476" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -428,12 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <marker date="1524442624825" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524442624825" expanded="true" signature="117:411" ph="{...}" />
-            <marker date="1524442624825" expanded="true" signature="200:409" ph="{...}" />
-            <marker date="1524442624825" expanded="true" signature="247:403" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -441,12 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding>
-            <marker date="1524442660220" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524442660220" expanded="true" signature="117:678" ph="{...}" />
-            <marker date="1524442660220" expanded="true" signature="212:676" ph="{...}" />
-            <marker date="1524442660220" expanded="true" signature="265:670" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,24 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/AcademicTermConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/AssignmentConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/ClassRoomConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/PersonConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.Domain/CourseScheduleDetail.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
@@ -623,19 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/GradeConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Configurations/CourseScheduleDetailConfiguration.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <marker date="1524554940023" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524554940023" expanded="true" signature="117:484" ph="{...}" />
-            <marker date="1524554940023" expanded="true" signature="220:482" ph="{...}" />
-            <marker date="1524554940023" expanded="true" signature="277:476" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -643,12 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <marker date="1524442624825" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524442624825" expanded="true" signature="117:411" ph="{...}" />
-            <marker date="1524442624825" expanded="true" signature="200:409" ph="{...}" />
-            <marker date="1524442624825" expanded="true" signature="247:403" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,34 +619,126 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <marker date="1524442660220" expanded="false" signature="6:72" ph="..." />
-            <marker date="1524442660220" expanded="true" signature="117:678" ph="{...}" />
-            <marker date="1524442660220" expanded="true" signature="212:676" ph="{...}" />
-            <marker date="1524442660220" expanded="true" signature="265:670" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Domain/User.cs" />
     <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/DbContexts/SchoolExpressDbContext.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        <state relative-caret-position="225">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
           <folding>
-            <marker date="1524555020703" expanded="false" signature="6:234" ph="..." />
-            <marker date="1524555020703" expanded="true" signature="275:1942" ph="{...}" />
-            <marker date="1524555020703" expanded="true" signature="351:1940" ph="{...}" />
-            <marker date="1524555020703" expanded="true" signature="431:632" ph="{...}" />
-            <marker date="1524555020703" expanded="true" signature="710:1934" ph="{...}" />
-            <marker date="1524555020703" expanded="true" signature="1405:1571" ph="{...}" />
+            <marker date="1525048094258" expanded="false" signature="6:234" ph="..." />
+            <marker date="1525048094258" expanded="true" signature="351:1940" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="431:632" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="710:1934" ph="{...}" />
+            <marker date="1525048094258" expanded="true" signature="1405:1571" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.Domain/User.cs">
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/Repository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="-75">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <marker date="1524990374267" expanded="false" signature="6:99" ph="..." />
+            <marker date="1524990374267" expanded="true" signature="142:1963" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="208:1961" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="261:356" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="494:540" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="582:637" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="680:937" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="983:1225" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1271:1626" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1408:1495" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1512:1616" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1670:1796" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1835:1955" ph="{...}" />
+            <marker date="1524990374267" expanded="true" signature="1880:1945" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/IRoleRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <marker date="1525061344477" expanded="true" signature="6:111" ph="..." />
+            <marker date="1525061344477" expanded="true" signature="154:406" ph="{...}" />
+            <marker date="1525061344477" expanded="true" signature="221:404" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/RoleRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding>
+            <marker date="1525061298368" expanded="true" signature="6:151" ph="..." />
+            <marker date="1525061298368" expanded="true" signature="194:915" ph="{...}" />
+            <marker date="1525061298368" expanded="true" signature="272:913" ph="{...}" />
+            <marker date="1525061298368" expanded="true" signature="347:499" ph="{...}" />
+            <marker date="1525061298368" expanded="true" signature="683:752" ph="{...}" />
+            <marker date="1525061298368" expanded="true" signature="828:906" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/IUserRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <folding>
+            <marker date="1525062008663" expanded="false" signature="6:145" ph="..." />
+            <marker date="1525062008663" expanded="true" signature="188:663" ph="{...}" />
+            <marker date="1525062008663" expanded="true" signature="255:661" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.Data/Repositories/UserRepository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding>
+            <marker date="1525062862087" expanded="false" signature="6:185" ph="..." />
+            <marker date="1525062862087" expanded="true" signature="228:1737" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="306:1735" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="503:655" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="748:836" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="891:960" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1044:1132" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1203:1283" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1377:1464" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1504:1729" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1549:1614" ph="{...}" />
+            <marker date="1525062862087" expanded="true" signature="1652:1719" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationServerProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+          <folding>
+            <marker date="1525062039524" expanded="false" signature="6:282" ph="..." />
+            <marker date="1525062039524" expanded="true" signature="328:2088" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="421:2086" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="554:598" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="707:820" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="937:2080" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="1138:2070" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="1305:1888" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="1688:1815" ph="{...}" />
+            <marker date="1525062039524" expanded="true" signature="1909:2043" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
