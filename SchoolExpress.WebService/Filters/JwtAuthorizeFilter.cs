@@ -11,7 +11,7 @@ using SchoolExpress.WebService.Providers;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
+    public class JwtAuthorizeFilter : AuthorizationFilterAttribute
     {
         public override void OnAuthorization(HttpActionContext filterContext)
         {
@@ -53,6 +53,7 @@ namespace SchoolExpress.WebService.Filters
                                 claims.Add(roleClaim);
                             }
                         }
+
                         actionContext.RequestContext.Principal =
                             new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
                         return true;

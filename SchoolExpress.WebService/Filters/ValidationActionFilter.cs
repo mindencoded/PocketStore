@@ -6,7 +6,7 @@ using System.Web.Http.Filters;
 using System.Web.Http.ModelBinding;
 using Newtonsoft.Json.Linq;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Filters
 {
     public class ValidationActionFilter : ActionFilterAttribute
     {

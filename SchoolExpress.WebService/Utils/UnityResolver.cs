@@ -4,7 +4,7 @@ using System.Web.Http.Dependencies;
 using Unity;
 using Unity.Exceptions;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Utils
 {
     public class UnityResolver : IDependencyResolver
     {

@@ -9,6 +9,7 @@ namespace SchoolExpress.Data.Repositories
     public class UserRepository : Repository<IdentityUser>, IUserRepository
     {
         private readonly UserManager<IdentityUser> _userManager;
+
         public UserRepository(DbContext dbContext) : base(dbContext)
         {
             _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(dbContext));

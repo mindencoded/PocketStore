@@ -39,6 +39,7 @@ namespace SchoolExpress.WebService.Providers
                     {
                         claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
                     }
+
                     context.Validated(claimsIdentity);
                 }
                 else

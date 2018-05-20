@@ -1,6 +1,6 @@
-﻿namespace SchoolExpress.WebService
+﻿namespace SchoolExpress.WebService.Models
 {
-    public class Credential
+    public class CredentialModel
     {
         public string UserName { get; set; }
         public string Password { get; set; }

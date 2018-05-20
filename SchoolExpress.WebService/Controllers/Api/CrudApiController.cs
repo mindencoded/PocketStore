@@ -14,7 +14,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
         }
 
-        [Route("")] 
+        [Route("")]
         [HttpGet]
         public virtual IEnumerable<T> Get()
         {

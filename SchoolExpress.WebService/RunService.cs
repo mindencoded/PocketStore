@@ -6,9 +6,9 @@ using Microsoft.Owin.Hosting;
 
 namespace SchoolExpress.WebService
 {
-    public class OwinService : IDisposable
+    public class RunService : IDisposable
     {
-        private static readonly ILog Log = LogManager.GetLogger<OwinService>();
+        private static readonly ILog Log = LogManager.GetLogger<RunService>();
         private IDisposable _app;
 
         public void Start()

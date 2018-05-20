@@ -17,9 +17,9 @@ namespace SchoolExpress.WebService
                 {
                     c.UseCommonLogging();
                     c.RunAsLocalService();
-                    c.Service<OwinService>(s =>
+                    c.Service<RunService>(s =>
                     {
-                        s.ConstructUsing(() => new OwinService());
+                        s.ConstructUsing(() => new RunService());
                         s.WhenStarted((service) => service.Start());
                         s.WhenStopped((service) => service.Stop());
                     });

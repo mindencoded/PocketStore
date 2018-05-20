@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Remoting.Messaging;
 using Microsoft.Owin;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Utils
 {
     public class HttpContext
     {

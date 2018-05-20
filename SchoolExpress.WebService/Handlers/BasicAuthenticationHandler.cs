@@ -5,6 +5,8 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SchoolExpress.WebService.Models;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Handlers
 {
@@ -39,7 +41,7 @@ namespace SchoolExpress.WebService.Handlers
             });
         }
 
-        protected virtual Credential ParseAuthorizationHeader(HttpRequestMessage request)
+        protected virtual CredentialModel ParseAuthorizationHeader(HttpRequestMessage request)
         {
             string authorizationHeader = null;
             var authorization = request.Headers.Authorization;
@@ -60,7 +62,7 @@ namespace SchoolExpress.WebService.Handlers
                 return null;
             }
 
-            return new Credential()
+            return new CredentialModel()
             {
                 UserName = authenticationTokens[0],
                 Password = authenticationTokens[1]

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Owin;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Utils
 {
     public class OwinContextMiddleware : OwinMiddleware
     {

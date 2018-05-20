@@ -28,8 +28,8 @@ namespace SchoolExpress.WebService.Utils
             {
                 result.Append(hash[i].ToString("X2"));
             }
+
             return result.ToString();
         }
-
     }
 }

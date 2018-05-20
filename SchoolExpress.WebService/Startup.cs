@@ -11,6 +11,7 @@ using Owin;
 using SchoolExpress.WebService.Controllers.Api;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Providers;
+using SchoolExpress.WebService.Utils;
 using Unity;
 
 namespace SchoolExpress.WebService
@@ -73,11 +74,11 @@ namespace SchoolExpress.WebService
             }
             else if (authenticationMode == "JWT")
             {
-                config.Filters.Add(new JwtAuthorizeAttribute());
+                config.Filters.Add(new JwtAuthorizeFilter());
             }
             else
             {
-                config.Filters.Add(new AnonymousAuthorizeAttribute());
+                config.Filters.Add(new AnonymousAuthorizeFilter());
             }
 
             appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());

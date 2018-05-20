@@ -10,7 +10,6 @@ namespace SchoolExpress.WebService.Providers
 {
     public static class CustomJwtAuthorizationProvider
     {
-
         public static string Issuer { get; set; }
 
         public static string Audience { get; set; }
@@ -21,7 +20,8 @@ namespace SchoolExpress.WebService.Providers
             Audience = "http://www.example.com";
         }
 
-        public static string GenerateToken(string secretKey, string userId, string userName, IEnumerable<string> roles, double expiration)
+        public static string GenerateToken(string secretKey, string userId, string userName, IEnumerable<string> roles,
+            double expiration)
         {
             ClaimsIdentity identity = new ClaimsIdentity(new List<Claim>
             {
@@ -80,4 +80,4 @@ namespace SchoolExpress.WebService.Providers
             return tokenHandler.WriteToken(plainToken);
         }
     }
-}             
+}
