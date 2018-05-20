@@ -33,30 +33,33 @@ namespace SchoolExpress.WebService.Filters
                     ClaimsPrincipal principal = CustomJwtAuthorizationProvider.GetPrincipal(secretKey, token);
                     if (principal != null)
                     {
-                        Claim nameIdentifierClaim = principal.Claims.FirstOrDefault(m => m.Type == "nameid");
-                        Claim nameClaim = principal.Claims.FirstOrDefault(m => m.Type == "unique_name");
-                        IList<Claim> roleClaims = principal.Claims.Where(m => m.Type == "role").ToList();
-                        /*
-                        Claim nameClaim = identity.FindFirst(ClaimTypes.Name);
-                        Claim nameIdentifierClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-                        IList<Claim> roleClaims = identity.FindAll(ClaimTypes.Role).ToList();
-                        */
-                        IList<Claim> claims = new List<Claim>
+                        //Claim nameIdentifierClaim = principal.Claims.FirstOrDefault(m => m.Type == "nameid");
+                        //Claim nameClaim = principal.Claims.FirstOrDefault(m => m.Type == "unique_name");
+                        //IList<Claim> roleClaims = principal.Claims.Where(m => m.Type == "role").ToList();
+                        ClaimsIdentity identity = principal.Identity as ClaimsIdentity;
+                        if (identity != null)
                         {
-                            nameClaim,
-                            nameIdentifierClaim
-                        };
-                        if (roleClaims.Any())
-                        {
-                            foreach (Claim roleClaim in roleClaims)
-                            {
-                                claims.Add(roleClaim);
-                            }
-                        }
+                            Claim nameClaim = identity.FindFirst(ClaimTypes.Name);
+                            Claim nameIdentifierClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+                            IList<Claim> roleClaims = identity.FindAll(ClaimTypes.Role).ToList();
 
-                        actionContext.RequestContext.Principal =
-                            new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
-                        return true;
+                            IList<Claim> claims = new List<Claim>
+                            {
+                                nameClaim,
+                                nameIdentifierClaim
+                            };
+                            if (roleClaims.Any())
+                            {
+                                foreach (Claim roleClaim in roleClaims)
+                                {
+                                    claims.Add(roleClaim);
+                                }
+                            }
+
+                            actionContext.RequestContext.Principal =
+                                new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
+                            return true;
+                        }
                     }
                 }
             }

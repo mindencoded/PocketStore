@@ -8,7 +8,6 @@ using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Owin;
-using SchoolExpress.WebService.Controllers.Api;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Providers;
 using SchoolExpress.WebService.Utils;
@@ -82,6 +81,8 @@ namespace SchoolExpress.WebService
             }
 
             appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            config.Filters.Add(new ValidationActionFilter());
+            appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
@@ -91,9 +92,7 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
-            config.Filters.Add(new ValidationActionFilter());
-            appBuilder.UseWebApi(config);
-            //config.MessageHandlers.Add(new BasicAuthenticationHandler());
+
             //Configure SSL
             //https://github.com/tonysneed/FloridaPower.Samples/blob/master/07-Web%20API%20Security/07a-Transport%20Security/Owin%20Self-Host%20SSL%20ReadMe.txt
         }

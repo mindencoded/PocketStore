@@ -186,10 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filters\AnonymousAuthorizeFilter.cs" />
+    <Compile Include="Utils\ColoredConsoleOutLogger.cs" />
+    <Compile Include="Utils\ColoresConsoleOutLoggerFactoryAdapter.cs" />
     <Compile Include="Utils\HttpActionResult.cs" />
     <Compile Include="Providers\CustomJwtAuthorizationProvider.cs" />
     <Compile Include="Filters\JwtAuthorizeFilter.cs" />
-    <Compile Include="Handlers\BasicAuthenticationHandler.cs" />
     <Compile Include="Controllers\Api\AcademicTermsApiController.cs" />
     <Compile Include="Controllers\Api\AccountsApiController.cs" />
     <Compile Include="Controllers\Api\AssignmentsApiController.cs" />
@@ -204,7 +205,6 @@
     <Compile Include="Controllers\Api\PersonsApiController.cs" />
     <Compile Include="Controllers\Api\CourseScheduleDetailsApiController.cs" />
     <Compile Include="Controllers\Api\CourseSchedulesApiController.cs" />
-    <Compile Include="Models\CredentialModel.cs" />
     <Compile Include="Models\AudienceModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Providers\CustomContentTypeProvider.cs" />

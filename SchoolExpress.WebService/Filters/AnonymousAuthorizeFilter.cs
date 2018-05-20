@@ -48,8 +48,7 @@ namespace SchoolExpress.WebService.Filters
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
-            actionContext.RequestContext.Principal =
-                new ClaimsPrincipal(new ClaimsIdentity(claims));
+            actionContext.RequestContext.Principal = new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
             return true;
         }
     }
