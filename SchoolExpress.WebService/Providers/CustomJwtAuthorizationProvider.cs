@@ -6,16 +6,16 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using SchoolExpress.WebService.Utils;
 
-namespace SchoolExpress.WebService.Filters
+namespace SchoolExpress.WebService.Providers
 {
-    public static class JwtAuthorizeModule
+    public static class CustomJwtAuthorizationProvider
     {
 
         public static string Issuer { get; set; }
 
         public static string Audience { get; set; }
 
-        static JwtAuthorizeModule()
+        static CustomJwtAuthorizationProvider()
         {
             Issuer = "self";
             Audience = "http://www.example.com";

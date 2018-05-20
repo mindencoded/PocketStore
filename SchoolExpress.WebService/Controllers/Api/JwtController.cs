@@ -37,7 +37,7 @@ namespace SchoolExpress.WebService.Controllers.Api
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpiration"]);
                 string token = JwtAuthenticationModule.GenerateToken(secretKey, user.Id, user.UserName, roles, tokenExpiration);
-                //string token = JwtAuthorizeModule.GenerateTokenForUser(secretKey, user.Id, user.UserName, roles, tokenExpiration);
+                //string token = CustomJwtAuthorizationProvider.GenerateTokenForUser(secretKey, user.Id, user.UserName, roles, tokenExpiration);
                 return Ok(new {Token = token});
             }
             return Unauthorized();
@@ -60,7 +60,7 @@ namespace SchoolExpress.WebService.Controllers.Api
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpiration"]);
                 string token = JwtAuthenticationModule.GenerateToken(secretKey, user.Id, user.UserName, roles.ToArray(), tokenExpiration);
-                //string token = JwtAuthorizeModule.GenerateTokenForUser(secretKey, user.Id, user.UserName, roles, tokenExpiration);
+                //string token = CustomJwtAuthorizationProvider.GenerateTokenForUser(secretKey, user.Id, user.UserName, roles, tokenExpiration);
                 return Request.CreateResponse(HttpStatusCode.OK, new { Token = token }, Configuration.Formatters.JsonFormatter);
             }
             return Request.CreateResponse(HttpStatusCode.Unauthorized, Configuration.Formatters.JsonFormatter);

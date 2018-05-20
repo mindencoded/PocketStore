@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using SchoolExpress.WebService.Providers;
 
 namespace SchoolExpress.WebService.Filters
 {
@@ -29,7 +30,7 @@ namespace SchoolExpress.WebService.Filters
                 if (!string.IsNullOrEmpty(token))
                 {
                     string secretKey = ConfigurationManager.AppSettings["SecretKey"];
-                    ClaimsPrincipal principal = JwtAuthorizeModule.GetPrincipal(secretKey, token);
+                    ClaimsPrincipal principal = CustomJwtAuthorizationProvider.GetPrincipal(secretKey, token);
                     if (principal != null)
                     {
                         Claim nameIdentifierClaim = principal.Claims.FirstOrDefault(m => m.Type == "nameid");
