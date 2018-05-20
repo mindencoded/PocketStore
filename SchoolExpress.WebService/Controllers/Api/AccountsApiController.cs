@@ -1,22 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolExpress.Data.Repositories;
 using SchoolExpress.Data.Uows;
 using SchoolExpress.WebService.Models;
-using SchoolExpress.WebService.Security;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
-    [RoutePrefix("api/account")]
-    public class AccountApiController : BaseApiController
+    [RoutePrefix("api/accounts")]
+    public class AccountsApiController : BaseApiController
     {
-        public AccountApiController(ISchoolExpressUow uow) : base(uow)
+        public AccountsApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 
@@ -51,32 +46,6 @@ namespace SchoolExpress.WebService.Controllers.Api
             }
 
             return Ok();
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        [Route("login")]
-        public async Task<HttpResponseMessage> Login([FromBody] UserLoginModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState,
-                    Configuration.Formatters.JsonFormatter);
-            }
-
-            IUserRepository repository = Uow.GetRepository<IUserRepository>();
-            IdentityUser user = await repository.FindUser(model.UserName, model.Password);
-            if (user != null)
-            {
-                IList<string> roles = await repository.GetRolesAsync(user.Id);
-                string secretKey = ConfigurationManager.AppSettings["SecretKey"];
-                AuthenticationModule authentication = new AuthenticationModule(secretKey);
-                string token = authentication.GenerateTokenForUser(model.UserName, roles);
-                return Request.CreateResponse(HttpStatusCode.OK, new {Token = token},
-                    Configuration.Formatters.JsonFormatter);
-            }
-
-            return Request.CreateResponse(HttpStatusCode.Unauthorized, Configuration.Formatters.JsonFormatter);
         }
     }
 }

@@ -41,9 +41,15 @@
           <e p="RepositoryProvider.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="201804230224542_Initial.cs" t="Include" />
-          <e p="201804230224542_Initial.Designer.cs" t="Include" />
-          <e p="201804230224542_Initial.resx" t="Include" />
+          <e p="201805012333370_Initial.cs" t="Include" />
+          <e p="201805012333370_Initial.Designer.cs" t="Include" />
+          <e p="201805012333370_Initial.resx" t="Include" />
+          <e p="201805020710246_Set_MaxLength_String_Ids.cs" t="Include" />
+          <e p="201805020710246_Set_MaxLength_String_Ids.Designer.cs" t="Include" />
+          <e p="201805020710246_Set_MaxLength_String_Ids.resx" t="Include" />
+          <e p="201805180726319_RemoveTableAudience.cs" t="Include" />
+          <e p="201805180726319_RemoveTableAudience.Designer.cs" t="Include" />
+          <e p="201805180726319_RemoveTableAudience.resx" t="Include" />
           <e p="Configuration.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
@@ -108,7 +114,6 @@
         <e p="Grade.cs" t="Include" />
         <e p="IEntity.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
-        <e p="ObjectExtension.cs" t="Include" />
         <e p="Person.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
@@ -122,7 +127,7 @@
         <e p="Controllers" t="Include">
           <e p="Api" t="Include">
             <e p="AcademicTermsApiController.cs" t="Include" />
-            <e p="AccountApiController.cs" t="Include" />
+            <e p="AccountsApiController.cs" t="Include" />
             <e p="AssignmentsApiController.cs" t="Include" />
             <e p="BaseApiController.cs" t="Include" />
             <e p="ClassRoomsApiController.cs" t="Include" />
@@ -133,17 +138,27 @@
             <e p="EnrollmentDetailsApiController.cs" t="Include" />
             <e p="EnrollmentsApiController.cs" t="Include" />
             <e p="GradesApiController.cs" t="Include" />
+            <e p="JwtController.cs" t="Include" />
             <e p="PersonsApiController.cs" t="Include" />
           </e>
           <e p="OData" t="Include" />
         </e>
         <e p="Credential.cs" t="Include" />
+        <e p="Filters" t="Include">
+          <e p="JwtAuthenticationAttribute.cs" t="Include" />
+          <e p="JwtAuthorizeAttribute.cs" t="Include" />
+        </e>
+        <e p="Handlers" t="Include">
+          <e p="BasicAuthenticationHandler.cs" t="Include" />
+        </e>
+        <e p="HttpContext.cs" t="Include" />
         <e p="Models" t="Include">
-          <e p="UserModel.cs" t="Include" />
+          <e p="AudienceModel.cs" t="Include" />
+          <e p="UserLoginModel.cs" t="Include" />
+          <e p="UserRegisterModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="OwinContextMiddleware.cs" t="Include" />
-        <e p="OwinHttpContext.cs" t="Include" />
         <e p="OwinService.cs" t="Include" />
         <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
@@ -155,7 +170,14 @@
           <e p="CustomDirectRouteProvider.cs" t="Include" />
           <e p="CustomOAuthAuthorizationServerProvider.cs" t="Include" />
         </e>
+        <e p="ResponseMessageResult.cs" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
+        <e p="Security" t="Include">
+          <e p="AddChallengeOnUnauthorizedResult.cs" t="Include" />
+          <e p="JwtAuthenticationModule.cs" t="Include" />
+          <e p="JwtAuthorizeModule.cs" t="Include" />
+          <e p="SHA.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="UnityConfig.cs" t="Include" />
         <e p="UnityResolver.cs" t="Include" />

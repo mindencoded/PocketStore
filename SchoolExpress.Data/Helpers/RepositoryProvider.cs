@@ -43,7 +43,7 @@ namespace SchoolExpress.Data.Helpers
             _repositories.TryGetValue(typeof(T), out repoObj);
             if (repoObj != null)
                 return (T) repoObj;
-            var factory = _repositoryFactories.GetRepositoryFactory<T>();
+            Func<DbContext, object> factory = _repositoryFactories.GetRepositoryFactory<T>();
             // Not found or null; make one, add to dictionary cache, and return it.
             return MakeRepository<T>(factory, DbContext);
         }
@@ -55,10 +55,10 @@ namespace SchoolExpress.Data.Helpers
 
         protected virtual T MakeRepository<T>(Func<DbContext, object> factory, DbContext dbContext)
         {
-            var f = factory ?? _repositoryFactories.GetRepositoryFactory<T>();
+            Func<DbContext, object> f = factory ?? _repositoryFactories.GetRepositoryFactory<T>();
             if (f == null)
                 throw new NotImplementedException("No factory for repository type, " + typeof(T).FullName);
-            var repo = (T) f(dbContext);
+            T repo = (T) f(dbContext);
             _repositories[typeof(T)] = repo;
             return repo;
         }

@@ -6,7 +6,6 @@ using SchoolExpress.Data.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
-    [Authorize]
     [RoutePrefix("api/classrooms")]
     public class ClassRoomsApiController : CrudApiController<ClassRoom>
     {
@@ -15,33 +14,33 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
 
-        [Authorize(Roles = "SelectClassRoom")]
+        [Authorize(Roles = "api.classrooms.get")]
         public override IEnumerable<ClassRoom> Get()
         {
             return base.Get();
         }
 
-        [Authorize(Roles = "SelectClassRoom")]
+        [Authorize(Roles = "api.classrooms.get")]
         public override ClassRoom Get(object id)
         {
             return base.Get(id);
         }
 
 
-        [Authorize(Roles = "UpdateClassRoom")]
+        [Authorize(Roles = "api.classrooms.put")]
         protected override HttpResponseMessage Put(ClassRoom entity)
         {
             return base.Put(entity);
         }
 
 
-        [Authorize(Roles = "InsertClassRoom")]
+        [Authorize(Roles = "api.classrooms.post")]
         public override HttpResponseMessage Post(ClassRoom entity)
         {
             return base.Post(entity);
         }
 
-        [Authorize(Roles = "DeleteClassRoom")]
+        [Authorize(Roles = "api.classrooms.delete")]
         public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);

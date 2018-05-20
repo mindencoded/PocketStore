@@ -7,12 +7,12 @@ namespace SchoolExpress.Data.Helpers
     {
         public static Expression<Func<T, bool>> GetByIdPredicate<T>(int id)
         {
-            var itemParam = Expression.Parameter(typeof(T), "item");
-            var itemPropertyExpr = Expression.Property(itemParam, "Id");
-            var idParam = Expression.Constant(id);
-            var newBody = Expression.MakeBinary(ExpressionType.Equal, itemPropertyExpr, idParam);
-            var newLambda = Expression.Lambda(newBody, itemParam);
-            return newLambda as Expression<Func<T, bool>>;
+            ParameterExpression parameter = Expression.Parameter(typeof(T), "item");
+            MemberExpression property = Expression.Property(parameter, "Id");
+            ConstantExpression constant = Expression.Constant(id);
+            BinaryExpression binaryExpression = Expression.MakeBinary(ExpressionType.Equal, property, constant);
+            Expression expression = Expression.Lambda(binaryExpression, parameter);
+            return expression as Expression<Func<T, bool>>;
         }
     }
 }

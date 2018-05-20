@@ -2,9 +2,10 @@
 
 namespace SchoolExpress.WebService.Models
 {
-    public class UserModel
+    public class UserRegisterModel
     {
         [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 

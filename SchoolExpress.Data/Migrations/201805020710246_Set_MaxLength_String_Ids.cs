@@ -2,7 +2,7 @@ namespace SchoolExpress.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class Set_MaxLength_String_Ids : DbMigration
     {
         public override void Up()
@@ -11,10 +11,10 @@ namespace SchoolExpress.Data.Migrations
             DropForeignKey("dbo.UserClaim", "UserId", "dbo.User");
             DropForeignKey("dbo.UserLogin", "UserId", "dbo.User");
             DropForeignKey("dbo.UserRole", "UserId", "dbo.User");
-            DropIndex("dbo.UserRole", new[] { "UserId" });
-            DropIndex("dbo.UserRole", new[] { "RoleId" });
-            DropIndex("dbo.UserClaim", new[] { "UserId" });
-            DropIndex("dbo.UserLogin", new[] { "UserId" });
+            DropIndex("dbo.UserRole", new[] {"UserId"});
+            DropIndex("dbo.UserRole", new[] {"RoleId"});
+            DropIndex("dbo.UserClaim", new[] {"UserId"});
+            DropIndex("dbo.UserLogin", new[] {"UserId"});
             DropPrimaryKey("dbo.Role");
             DropPrimaryKey("dbo.UserRole");
             DropPrimaryKey("dbo.User");
@@ -28,9 +28,9 @@ namespace SchoolExpress.Data.Migrations
             AlterColumn("dbo.UserLogin", "UserId", c => c.String(nullable: false, maxLength: 36));
             AlterColumn("dbo.Audience", "ClientId", c => c.String(nullable: false, maxLength: 36));
             AddPrimaryKey("dbo.Role", "Id");
-            AddPrimaryKey("dbo.UserRole", new[] { "UserId", "RoleId" });
+            AddPrimaryKey("dbo.UserRole", new[] {"UserId", "RoleId"});
             AddPrimaryKey("dbo.User", "Id");
-            AddPrimaryKey("dbo.UserLogin", new[] { "LoginProvider", "ProviderKey", "UserId" });
+            AddPrimaryKey("dbo.UserLogin", new[] {"LoginProvider", "ProviderKey", "UserId"});
             AddPrimaryKey("dbo.Audience", "ClientId");
             CreateIndex("dbo.UserRole", "UserId");
             CreateIndex("dbo.UserRole", "RoleId");
@@ -41,17 +41,17 @@ namespace SchoolExpress.Data.Migrations
             AddForeignKey("dbo.UserLogin", "UserId", "dbo.User", "Id");
             AddForeignKey("dbo.UserRole", "UserId", "dbo.User", "Id");
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.UserRole", "UserId", "dbo.User");
             DropForeignKey("dbo.UserLogin", "UserId", "dbo.User");
             DropForeignKey("dbo.UserClaim", "UserId", "dbo.User");
             DropForeignKey("dbo.UserRole", "RoleId", "dbo.Role");
-            DropIndex("dbo.UserLogin", new[] { "UserId" });
-            DropIndex("dbo.UserClaim", new[] { "UserId" });
-            DropIndex("dbo.UserRole", new[] { "RoleId" });
-            DropIndex("dbo.UserRole", new[] { "UserId" });
+            DropIndex("dbo.UserLogin", new[] {"UserId"});
+            DropIndex("dbo.UserClaim", new[] {"UserId"});
+            DropIndex("dbo.UserRole", new[] {"RoleId"});
+            DropIndex("dbo.UserRole", new[] {"UserId"});
             DropPrimaryKey("dbo.Audience");
             DropPrimaryKey("dbo.UserLogin");
             DropPrimaryKey("dbo.User");
@@ -65,9 +65,9 @@ namespace SchoolExpress.Data.Migrations
             AlterColumn("dbo.UserRole", "UserId", c => c.String(nullable: false, maxLength: 100));
             AlterColumn("dbo.Role", "Id", c => c.String(nullable: false, maxLength: 100));
             AddPrimaryKey("dbo.Audience", "ClientId");
-            AddPrimaryKey("dbo.UserLogin", new[] { "LoginProvider", "ProviderKey", "UserId" });
+            AddPrimaryKey("dbo.UserLogin", new[] {"LoginProvider", "ProviderKey", "UserId"});
             AddPrimaryKey("dbo.User", "Id");
-            AddPrimaryKey("dbo.UserRole", new[] { "UserId", "RoleId" });
+            AddPrimaryKey("dbo.UserRole", new[] {"UserId", "RoleId"});
             AddPrimaryKey("dbo.Role", "Id");
             CreateIndex("dbo.UserLogin", "UserId");
             CreateIndex("dbo.UserClaim", "UserId");

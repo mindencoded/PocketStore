@@ -13,33 +13,32 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
         }
 
-        [Authorize(Roles = "SelectAcademicTerm")]
+        [Authorize(Roles = "api.academicterms.get")]
         public override IEnumerable<AcademicTerm> Get()
         {
             return base.Get();
         }
 
-        [Authorize(Roles = "SelectAcademicTerm")]
+        [Authorize(Roles = "api.academicterms.get")]
         public override AcademicTerm Get(object id)
         {
             return base.Get(id);
         }
 
 
-        [Authorize(Roles = "UpdateAcademicTerm")]
+        [Authorize(Roles = "api.academicterms.put")]
         protected override HttpResponseMessage Put(AcademicTerm entity)
         {
             return base.Put(entity);
         }
 
-
-        [Authorize(Roles = "InsertAcademicTerm")]
+        [Authorize(Roles = "api.academicterms.post")]
         public override HttpResponseMessage Post(AcademicTerm entity)
         {
             return base.Post(entity);
         }
 
-        [Authorize(Roles = "DeleteAcademicTerm")]
+        [Authorize(Roles = "api.academicterms.delete")]
         public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);

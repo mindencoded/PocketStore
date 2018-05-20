@@ -8,11 +8,11 @@ using SchoolExpress.Data.Uows;
 
 namespace SchoolExpress.WebService.Providers
 {
-    public class CustomOAuthAuthorizationServerProvider : OAuthAuthorizationServerProvider
+    public class CustomOAuthAuthorizationProvider : OAuthAuthorizationServerProvider
     {
         private readonly ISchoolExpressUow _uow;
 
-        public CustomOAuthAuthorizationServerProvider(ISchoolExpressUow uow)
+        public CustomOAuthAuthorizationProvider(ISchoolExpressUow uow)
         {
             _uow = uow;
         }
@@ -28,18 +28,17 @@ namespace SchoolExpress.WebService.Providers
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] {"*"});
             using (IUserRepository userRepository = _uow.GetRepository<IUserRepository>())
             {
-                IdentityUser identityUser = await userRepository.FindUser(context.UserName, context.Password);
-                if (identityUser != null)
+                IdentityUser user = await userRepository.FindUser(context.UserName, context.Password);
+                if (user != null)
                 {
-                    IList<string> roles = await userRepository.GetRolesAsync(identityUser.Id);
+                    IList<string> roles = await userRepository.GetRolesAsync(user.Id);
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
-                    claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
-                    claimsIdentity.AddClaim(new Claim("sub", context.UserName));
+                    claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
+                    claimsIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
                     foreach (string role in roles)
                     {
                         claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
                     }
-
                     context.Validated(claimsIdentity);
                 }
                 else

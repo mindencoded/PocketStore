@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SchoolExpress.WebService
+namespace SchoolExpress.WebService.Handlers
 {
     public class BasicAuthenticationHandler : DelegatingHandler
     {

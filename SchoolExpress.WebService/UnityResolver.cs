@@ -41,7 +41,7 @@ namespace SchoolExpress.WebService
 
         public IDependencyScope BeginScope()
         {
-            var child = Container.CreateChildContainer();
+            IUnityContainer child = Container.CreateChildContainer();
             return new UnityResolver(child);
         }
 

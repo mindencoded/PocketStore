@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Common.Logging;
 using Microsoft.AspNet.Identity;
 using SchoolExpress.Data.Uows;
@@ -15,17 +14,6 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
             Uow = uow;
             Log = LogManager.GetLogger(GetType());
-            Console.Write(GetType());
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                Uow.Dispose();
-            }
-
-            base.Dispose(disposing);
         }
 
         protected IHttpActionResult GetErrorResult(IdentityResult result)

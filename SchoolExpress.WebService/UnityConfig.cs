@@ -9,7 +9,6 @@ using SchoolExpress.Data.Uows;
 using Unity;
 using Unity.Injection;
 using Unity.Lifetime;
-using Unity.Resolution;
 
 namespace SchoolExpress.WebService
 {
@@ -38,7 +37,6 @@ namespace SchoolExpress.WebService
                 }
             }
 
-            //container.RegisterInstance(new RepositoryFactories(factories));
             container.RegisterType<RepositoryFactories>(new InjectionConstructor(factories));
             container.RegisterType<ISchoolExpressUow, SchoolExpressUow>();
             return container;

@@ -7,8 +7,9 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Owin;
+using SchoolExpress.WebService.Controllers.Api;
+using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Providers;
 using Unity;
 
@@ -18,7 +19,7 @@ namespace SchoolExpress.WebService
     {
         public void Configuration(IAppBuilder appBuilder)
         {
-            var config = new HttpConfiguration();
+            HttpConfiguration config = new HttpConfiguration();
 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 
@@ -49,25 +50,37 @@ namespace SchoolExpress.WebService
             );
 
             IUnityContainer container = UnityConfig.GetContainer();
-            config.DependencyResolver = new UnityResolver(container);
-            var serializerSettings = config.Formatters.JsonFormatter.SerializerSettings;
-            serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            serializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
-            serializerSettings.NullValueHandling = NullValueHandling.Ignore;
-            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            UnityResolver dependencyResolver = new UnityResolver(container);
+            config.DependencyResolver = dependencyResolver;
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
+                PreserveReferencesHandling.None;
+            // config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            // config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             appBuilder.Use<OwinContextMiddleware>();
-            config.Filters.Add(new ValidationActionFilter());
-            appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+            string authenticationMode = ConfigurationManager.AppSettings["AuthenticationMode"];
+            if (authenticationMode == "OAUTH")
             {
-                ApplicationCanDisplayErrors = true,
-                AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan =
-                    TimeSpan.FromSeconds(double.Parse(ConfigurationManager.AppSettings["AccessTokenExpire"])),
-                Provider = container.Resolve<CustomOAuthAuthorizationServerProvider>()
-            });
+                appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+                {
+                    ApplicationCanDisplayErrors = true,
+                    AllowInsecureHttp = true,
+                    TokenEndpointPath = new PathString("/oauth"),
+                    AccessTokenExpireTimeSpan =
+                        TimeSpan.FromMinutes(double.Parse(ConfigurationManager.AppSettings["TokenExpiration"])),
+                    Provider = container.Resolve<CustomOAuthAuthorizationProvider>()
+                });
+            }
+            else if (authenticationMode == "JWT")
+            {
+                config.Filters.Add(new JwtAuthorizeAttribute());
+            }
+            else
+            {
+                config.Filters.Add(new AnonymousAuthorizeAttribute());
+            }
+
             appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
-            appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
@@ -77,7 +90,9 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
-
+            config.Filters.Add(new ValidationActionFilter());
+            appBuilder.UseWebApi(config);
+            //config.MessageHandlers.Add(new BasicAuthenticationHandler());
             //Configure SSL
             //https://github.com/tonysneed/FloridaPower.Samples/blob/master/07-Web%20API%20Security/07a-Transport%20Security/Owin%20Self-Host%20SSL%20ReadMe.txt
         }

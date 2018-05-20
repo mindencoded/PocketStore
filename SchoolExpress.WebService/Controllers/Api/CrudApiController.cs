@@ -14,7 +14,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
         }
 
-        [Route("")]
+        [Route("")] 
         [HttpGet]
         public virtual IEnumerable<T> Get()
         {
@@ -25,7 +25,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         [HttpGet]
         public virtual T Get(object id)
         {
-            var entity = Uow.GetRepositoryForEntityType<T>().GetById(id);
+            T entity = Uow.GetRepositoryForEntityType<T>().GetById(id);
             if (entity != null)
                 return entity;
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
@@ -46,7 +46,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
             Uow.GetRepositoryForEntityType<T>().Add(entity);
             Uow.Commit();
-            var response = Request.CreateResponse(HttpStatusCode.Created);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
             response.Headers.Location =
                 new Uri(Request.RequestUri.AbsoluteUri +
                         (entity.GetId() != null

@@ -40,11 +40,9 @@
   <ItemGroup>
     <Compile Include="AcademicTerm.cs" />
     <Compile Include="Assignment.cs" />
-    <Compile Include="Audience.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EnrollmentDetail.cs" />
     <Compile Include="IEntity.cs" />
-    <Compile Include="ObjectExtension.cs" />
     <Compile Include="CourseScheduleDetail.cs" />
     <Compile Include="ClassRoom.cs" />
     <Compile Include="Course.cs" />
@@ -57,11 +55,4 @@
     <Compile Include="Day.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

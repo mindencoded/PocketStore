@@ -9,8 +9,11 @@
             "name": "Launch",
             "type": "mono",
             "request": "launch",
-            "program": "${workspaceRoot}\\SchoolExpress.WebService\\bin\\Debug\\SchoolExpress.WebService.exe",
-            "cwd": "${workspaceRoot}"
+            //"preLaunchTask": "build",
+            "program": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/SchoolExpress.WebService.exe",
+            "cwd": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/",
+            "runtimeExecutable": null,
+            "env": {},
         },
         {
             "name": "Attach",

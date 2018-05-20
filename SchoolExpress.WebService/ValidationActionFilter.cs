@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using System.Web.Http.ModelBinding;
 using Newtonsoft.Json.Linq;
 
 namespace SchoolExpress.WebService
@@ -11,13 +12,13 @@ namespace SchoolExpress.WebService
     {
         public override void OnActionExecuting(HttpActionContext context)
         {
-            var modelState = context.ModelState;
+            ModelStateDictionary modelState = context.ModelState;
             if (!modelState.IsValid)
             {
-                var errors = new JObject();
-                foreach (var key in modelState.Keys)
+                JObject errors = new JObject();
+                foreach (string key in modelState.Keys)
                 {
-                    var state = modelState[key];
+                    ModelState state = modelState[key];
                     if (state.Errors.Any())
                         errors[key] = state.Errors.First().ErrorMessage;
                 }

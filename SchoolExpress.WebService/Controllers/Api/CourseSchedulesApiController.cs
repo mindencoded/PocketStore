@@ -14,33 +14,33 @@ namespace SchoolExpress.WebService.Controllers.Api
         {
         }
 
-        [Authorize(Roles = "SelectCourseSchedule")]
+        [Authorize(Roles = "api.courseschedules.get")]
         public override IEnumerable<CourseSchedule> Get()
         {
             return base.Get();
         }
 
-        [Authorize(Roles = "SelectCourseSchedule")]
+        [Authorize(Roles = "api.courseschedules.get")]
         public override CourseSchedule Get(object id)
         {
             return base.Get(id);
         }
 
 
-        [Authorize(Roles = "UpdateCourseSchedule")]
+        [Authorize(Roles = "api.courseschedules.put")]
         protected override HttpResponseMessage Put(CourseSchedule entity)
         {
             return base.Put(entity);
         }
 
 
-        [Authorize(Roles = "InsertCourseSchedule")]
+        [Authorize(Roles = "api.courseschedules.post")]
         public override HttpResponseMessage Post(CourseSchedule entity)
         {
             return base.Post(entity);
         }
 
-        [Authorize(Roles = "DeleteCourseSchedule")]
+        [Authorize(Roles = "api.courseschedules.delete")]
         public override HttpResponseMessage Delete(object id)
         {
             return base.Delete(id);

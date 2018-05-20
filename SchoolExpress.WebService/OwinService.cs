@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using Common.Logging;
 using Microsoft.Owin.Hosting;
 
@@ -15,6 +16,10 @@ namespace SchoolExpress.WebService
             string uri = ConfigurationManager.AppSettings["BaseUri"];
             _app = WebApp.Start<Startup>(uri);
             Log.InfoFormat("Server running in: {0}", uri);
+            if (Debugger.IsAttached)
+            {
+                Process.Start("chrome.exe", uri);
+            }
         }
 
         public void Stop()

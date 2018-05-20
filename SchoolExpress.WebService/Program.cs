@@ -1,6 +1,7 @@
 ﻿using System;
 using Common.Logging;
 using Topshelf;
+using Topshelf.Common.Logging;
 
 namespace SchoolExpress.WebService
 {
@@ -8,12 +9,13 @@ namespace SchoolExpress.WebService
     {
         private static readonly ILog Log = LogManager.GetLogger<Program>();
 
-        static int Main()
+        static void Main()
         {
             try
             {
-                return (int) HostFactory.Run(c =>
+                HostFactory.Run(c =>
                 {
+                    c.UseCommonLogging();
                     c.RunAsLocalService();
                     c.Service<OwinService>(s =>
                     {

@@ -44,8 +44,8 @@ namespace SchoolExpress.Domain
 
         public void SplitDays(string joinDays)
         {
-            var days = joinDays.Split(',').ToList();
-            foreach (var day in days)
+            IList<string> days = joinDays.Split(',').ToList();
+            foreach (string day in days)
                 Days.Add(EnumUtil.Parse<Day>(day));
         }
 

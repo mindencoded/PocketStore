@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -36,11 +37,11 @@ namespace SchoolExpress.Data.DbContexts
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-            var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
+            IEnumerable<Type> typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(type => !string.IsNullOrEmpty(type.Namespace))
                 .Where(type => type.BaseType != null && type.BaseType.IsGenericType &&
                                type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
-            foreach (var type in typesToRegister)
+            foreach (Type type in typesToRegister)
             {
                 dynamic configInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configInstance);

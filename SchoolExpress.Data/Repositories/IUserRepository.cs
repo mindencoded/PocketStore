@@ -14,5 +14,7 @@ namespace SchoolExpress.Data.Repositories
         Task<IList<string>> GetRolesAsync(string userId);
 
         Task<IdentityResult> AddToRoleAsync(string userId, string role);
+
+        Task<bool> IsInRole(string userId, string role);
     }
 }

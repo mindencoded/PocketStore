@@ -19,11 +19,11 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [HttpGet]
-        [Authorize(Roles = "SelectEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.get")]
         [Route("{assignment:int}/{enrollmentId:int}")]
         public EnrollmentDetail Get(int assignment, int enrollmentId)
         {
-            var enrollmentDetail =
+            EnrollmentDetail enrollmentDetail =
                 Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
                     .FirstOrDefault(x => x.AssignmentId == assignment && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
@@ -32,11 +32,11 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [HttpDelete]
-        [Authorize(Roles = "DeleteEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.delete")]
         [Route("{assignment:int}/{enrollmentId:int}")]
         public HttpResponseMessage Delete(int assignment, int enrollmentId)
         {
-            var enrollmentDetail =
+            EnrollmentDetail enrollmentDetail =
                 Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
                     .FirstOrDefault(x => x.AssignmentId == assignment && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
@@ -49,33 +49,33 @@ namespace SchoolExpress.WebService.Controllers.Api
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
         }
 
-        [Authorize(Roles = "SelectEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.get")]
         public override IEnumerable<EnrollmentDetail> Get()
         {
             return base.Get();
         }
 
-        [Authorize(Roles = "SelectEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.get")]
         public override EnrollmentDetail Get(object id)
         {
             throw new NotImplementedException();
         }
 
 
-        [Authorize(Roles = "UpdateEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.put")]
         protected override HttpResponseMessage Put(EnrollmentDetail entity)
         {
             return base.Put(entity);
         }
 
 
-        [Authorize(Roles = "InsertEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.post")]
         public override HttpResponseMessage Post(EnrollmentDetail entity)
         {
             return base.Post(entity);
         }
 
-        [Authorize(Roles = "DeleteEnrollmentDetail")]
+        [Authorize(Roles = "api.enrollmentdetails.delete")]
         public override HttpResponseMessage Delete(object id)
         {
             throw new NotImplementedException();
