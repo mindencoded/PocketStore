@@ -22,11 +22,6 @@ namespace SchoolExpress.WebService.Controllers.Api
         [AllowAnonymous]
         public async Task<IHttpActionResult> Post([FromBody] UserLoginModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             IUserRepository repository = Uow.GetRepository<IUserRepository>();
             IdentityUser user = await repository.FindUser(model.UserName, model.Password);
             if (user != null)

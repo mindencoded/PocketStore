@@ -21,30 +21,14 @@ namespace SchoolExpress.WebService.Controllers.Api
         [Route("register")]
         public async Task<IHttpActionResult> Register([FromBody] UserRegisterModel userRegisterModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             IdentityUser identityUser = new IdentityUser
             {
                 UserName = userRegisterModel.UserName
             };
 
             IUserRepository repository = Uow.GetRepository<IUserRepository>();
-            IdentityResult result = await repository.CreateAsync(identityUser, userRegisterModel.Password);
+            await repository.CreateAsync(identityUser, userRegisterModel.Password);
             Uow.Commit();
-
-            if (result != null)
-            {
-                IHttpActionResult errorResult = GetErrorResult(result);
-
-                if (errorResult != null)
-                {
-                    return errorResult;
-                }
-            }
-
             return Ok();
         }
     }

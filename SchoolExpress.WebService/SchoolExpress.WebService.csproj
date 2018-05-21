@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filters\AnonymousAuthorizeFilter.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Utils\ColoredConsoleOutLogger.cs" />
     <Compile Include="Utils\ColoresConsoleOutLoggerFactoryAdapter.cs" />
     <Compile Include="Utils\HttpActionResult.cs" />
@@ -202,7 +203,6 @@
     <Compile Include="Controllers\Api\PersonsApiController.cs" />
     <Compile Include="Controllers\Api\CourseScheduleDetailsApiController.cs" />
     <Compile Include="Controllers\Api\CourseSchedulesApiController.cs" />
-    <Compile Include="Models\AudienceModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Providers\CustomContentTypeProvider.cs" />
     <Compile Include="Providers\CustomDirectRouteProvider.cs" />
