@@ -10,7 +10,7 @@ namespace SchoolExpress.WebService.Utils
     {
         private static readonly Dictionary<LogLevel, ConsoleColor> Colors = new Dictionary<LogLevel, ConsoleColor>
         {
-            {LogLevel.Fatal, ConsoleColor.Red},
+            {LogLevel.Fatal, ConsoleColor.DarkRed},
             {LogLevel.Error, ConsoleColor.Red},
             {LogLevel.Warn, ConsoleColor.Yellow},
             {LogLevel.Info, ConsoleColor.Cyan},

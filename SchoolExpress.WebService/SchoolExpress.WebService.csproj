@@ -159,9 +159,6 @@
     <Reference Include="Topshelf.Common.Logging, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Topshelf.Common.Logging.4.0.1\lib\net452\Topshelf.Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Topshelf.Owin, Version=1.4.39.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Topshelf.Owin.1.4.39\lib\net452\Topshelf.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Abstractions.3.3.0\lib\net45\Unity.Abstractions.dll</HintPath>
     </Reference>

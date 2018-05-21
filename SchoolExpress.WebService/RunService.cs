@@ -10,7 +10,6 @@ namespace SchoolExpress.WebService
     {
         private static readonly ILog Log = LogManager.GetLogger<RunService>();
         private IDisposable _app;
-
         public void Start()
         {
             string uri = ConfigurationManager.AppSettings["BaseUri"];
