@@ -4,7 +4,6 @@ using Common.Logging;
 using SchoolExpress.WebService.Utils;
 using Topshelf;
 using Topshelf.Common.Logging;
-using Topshelf.HostConfigurators;
 
 namespace SchoolExpress.WebService
 {
@@ -14,11 +13,16 @@ namespace SchoolExpress.WebService
 
         private static void Main()
         {
+            if (Environment.UserInteractive && Debugger.IsAttached)
+            {
+                LogManager.Adapter = new ColoredConsoleOutLoggerFactoryAdapter();
+            }
+
             try
             {
                 HostFactory.Run(c =>
                 {
-                    UseCommonLogging(c);
+                    c.UseCommonLogging();
                     c.Service<RunService>(s =>
                     {
                         s.ConstructUsing(() => new RunService());
@@ -31,15 +35,6 @@ namespace SchoolExpress.WebService
             catch (Exception ex)
             {
                 Log.Error(ex);
-            }
-        }
-
-        private static void UseCommonLogging(HostConfigurator hostConfigurator)
-        {
-            if (Environment.UserInteractive && Debugger.IsAttached)
-            {
-                hostConfigurator.UseCommonLogging();
-                LogManager.Adapter = new ColoredConsoleOutLoggerFactoryAdapter();
             }
         }
     }

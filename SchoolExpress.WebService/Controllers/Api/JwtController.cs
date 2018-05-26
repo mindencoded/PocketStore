@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -28,11 +29,11 @@ namespace SchoolExpress.WebService.Controllers.Api
             {
                 IEnumerable<string> roles = await repository.GetRolesAsync(user.Id);
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
-                double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpiration"]);
+                double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
                 string token =
                     CustomJwtAuthorizationProvider.GenerateToken(secretKey, user.Id, user.UserName, roles,
                         tokenExpiration);
-                return Ok(new {Token = token});
+                return Ok(new { access_token = token, token_type = "bearer", expires_in = TimeSpan.FromMinutes(tokenExpiration).TotalSeconds });
             }
 
             return Unauthorized();

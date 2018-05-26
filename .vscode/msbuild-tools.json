@@ -13,7 +13,7 @@
     "debugConfigurations": [
         {
             "name": "test",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/",
             "program": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/SchoolExpress.WebService.exe",
             "args": []
         }

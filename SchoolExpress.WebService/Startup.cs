@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Microsoft.Owin;
@@ -56,33 +57,42 @@ namespace SchoolExpress.WebService
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
                 PreserveReferencesHandling.None;
-            // config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
             appBuilder.Use<OwinContextMiddleware>();
-            string authenticationMode = ConfigurationManager.AppSettings["AuthenticationMode"];
-            if (authenticationMode == "OAUTH")
+            string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
+
+            if (authenticationModes.Contains("NONE"))
             {
+                config.Filters.Add(new AnonymousAuthorizeFilter());
+            }
+
+            if (authenticationModes.Contains("BASIC"))
+            {
+                config.Filters.Add(container.Resolve<BasicAuthorizeFilter>());
+            }
+
+            if (authenticationModes.Contains("JWT"))
+            {
+                config.Filters.Add(new JwtAuthorizeFilter());
+            }
+
+            if (authenticationModes.Contains("OAUTH"))
+            {
+                double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
                 appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
                 {
                     ApplicationCanDisplayErrors = true,
                     AllowInsecureHttp = true,
                     TokenEndpointPath = new PathString("/oauth"),
                     AccessTokenExpireTimeSpan =
-                        TimeSpan.FromMinutes(double.Parse(ConfigurationManager.AppSettings["TokenExpiration"])),
+                        TimeSpan.FromMinutes(tokenExpiration),
                     Provider = container.Resolve<CustomOAuthAuthorizationProvider>()
                 });
-            }
-            else if (authenticationMode == "JWT")
-            {
-                config.Filters.Add(new JwtAuthorizeFilter());
-            }
-            else
-            {
-                config.Filters.Add(new AnonymousAuthorizeFilter());
+                appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             }
 
-            appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             config.Filters.Add(new ValidationActionFilter());
             appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions

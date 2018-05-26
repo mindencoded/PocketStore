@@ -123,6 +123,8 @@
       <e p="SchoolExpress.sln" t="IncludeFlat" />
       <e p="SchoolExpress.WebService" t="IncludeRecursive">
         <e p="App.config" t="Include" />
+        <e p="App.Debug.config" t="Include" />
+        <e p="App.Release.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="Api" t="Include">
@@ -143,23 +145,18 @@
           </e>
           <e p="OData" t="Include" />
         </e>
-        <e p="Credential.cs" t="Include" />
         <e p="Filters" t="Include">
-          <e p="JwtAuthenticationAttribute.cs" t="Include" />
-          <e p="JwtAuthorizeAttribute.cs" t="Include" />
+          <e p="AnonymousAuthorizeFilter.cs" t="Include" />
+          <e p="BasicAuthorizeFilter.cs" t="Include" />
+          <e p="JwtAuthorizeFilter.cs" t="Include" />
+          <e p="ValidationActionFilter.cs" t="Include" />
         </e>
-        <e p="Handlers" t="Include">
-          <e p="BasicAuthenticationHandler.cs" t="Include" />
-        </e>
-        <e p="HttpContext.cs" t="Include" />
         <e p="Models" t="Include">
-          <e p="AudienceModel.cs" t="Include" />
+          <e p="ChangePasswordModel.cs" t="Include" />
           <e p="UserLoginModel.cs" t="Include" />
           <e p="UserRegisterModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
-        <e p="OwinContextMiddleware.cs" t="Include" />
-        <e p="OwinService.cs" t="Include" />
         <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -168,20 +165,22 @@
         <e p="Providers" t="Include">
           <e p="CustomContentTypeProvider.cs" t="Include" />
           <e p="CustomDirectRouteProvider.cs" t="Include" />
-          <e p="CustomOAuthAuthorizationServerProvider.cs" t="Include" />
+          <e p="CustomJwtAuthorizationProvider.cs" t="Include" />
+          <e p="CustomOAuthAuthorizationProvider.cs" t="Include" />
         </e>
-        <e p="ResponseMessageResult.cs" t="Include" />
+        <e p="RunService.cs" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
-        <e p="Security" t="Include">
-          <e p="AddChallengeOnUnauthorizedResult.cs" t="Include" />
-          <e p="JwtAuthenticationModule.cs" t="Include" />
-          <e p="JwtAuthorizeModule.cs" t="Include" />
-          <e p="SHA.cs" t="Include" />
-        </e>
         <e p="Startup.cs" t="Include" />
         <e p="UnityConfig.cs" t="Include" />
-        <e p="UnityResolver.cs" t="Include" />
-        <e p="ValidationActionFilter.cs" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="ColoredConsoleOutLogger.cs" t="Include" />
+          <e p="ColoresConsoleOutLoggerFactoryAdapter.cs" t="Include" />
+          <e p="HttpActionResult.cs" t="Include" />
+          <e p="HttpContext.cs" t="Include" />
+          <e p="OwinContextMiddleware.cs" t="Include" />
+          <e p="SHA.cs" t="Include" />
+          <e p="UnityResolver.cs" t="Include" />
+        </e>
         <e p="wwwroot" t="Include">
           <e p="app" t="Include">
             <e p="css" t="Include">

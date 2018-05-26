@@ -55,7 +55,10 @@ namespace SchoolExpress.WebService.Providers
                 IssuerSigningKey = signingKey
             };
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-            return tokenHandler.ValidateToken(token, tokenValidationParameters, out _);
+            SecurityToken securityToken;
+            ClaimsPrincipal principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken);
+            JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;
+            return principal;
         }
 
         private static string CreateToken(string secretKey, ClaimsIdentity identity, double expiration)

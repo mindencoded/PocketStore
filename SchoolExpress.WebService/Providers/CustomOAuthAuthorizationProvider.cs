@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security.OAuth;
-using SchoolExpress.Data.Repositories;
-using SchoolExpress.Data.Uows;
 
 namespace SchoolExpress.WebService.Providers
 {
     public class CustomOAuthAuthorizationProvider : OAuthAuthorizationServerProvider
     {
-        private readonly ISchoolExpressUow _uow;
+        private readonly UserManager<IdentityUser> _manager;
 
-        public CustomOAuthAuthorizationProvider(ISchoolExpressUow uow)
+        public CustomOAuthAuthorizationProvider(UserManager<IdentityUser> manager)
         {
-            _uow = uow;
+            _manager = manager;
         }
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -26,26 +25,23 @@ namespace SchoolExpress.WebService.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] {"*"});
-            using (IUserRepository userRepository = _uow.GetRepository<IUserRepository>())
-            {
-                IdentityUser user = await userRepository.FindUser(context.UserName, context.Password);
-                if (user != null)
-                {
-                    IList<string> roles = await userRepository.GetRolesAsync(user.Id);
-                    ClaimsIdentity claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
-                    claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-                    claimsIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
-                    foreach (string role in roles)
-                    {
-                        claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role));
-                    }
 
-                    context.Validated(claimsIdentity);
-                }
-                else
+            IdentityUser user = await _manager.FindAsync(context.UserName, context.Password);
+            if (user != null)
+            {
+                IList<string> roles = await _manager.GetRolesAsync(user.Id);
+                ClaimsIdentity identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
+                foreach (string role in roles)
                 {
-                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
+                context.Validated(identity);
+            }
+            else
+            {
+                context.SetError("invalid_grant", "The user name or password is incorrect.");
             }
         }
     }

@@ -13,7 +13,7 @@
             "program": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/SchoolExpress.WebService.exe",
             "cwd": "${workspaceRoot}/SchoolExpress.WebService/bin/Debug/",
             "runtimeExecutable": null,
-            "env": {},
+            "env": {}
         },
         {
             "name": "Attach",
