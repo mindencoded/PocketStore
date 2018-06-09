@@ -6,14 +6,12 @@ using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using Common.Logging;
 using SchoolExpress.WebService.Providers;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class JwtAuthorizeFilter : AuthorizationFilterAttribute
+    public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
     {
-        private static readonly ILog Log = LogManager.GetLogger<JwtAuthorizeFilter>();
         public override void OnAuthorization(HttpActionContext actionContext)
         {
             AuthenticationHeaderValue authRequest = actionContext.Request.Headers.Authorization;
@@ -28,16 +26,13 @@ namespace SchoolExpress.WebService.Filters
                     {
                         principal = CustomJwtAuthorizationProvider.GetPrincipal(secretKey, token);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        Log.Error(ex);
+                        // ignored
                     }
 
                     if (principal != null)
                     {
-                        //Claim nameIdentifierClaim = principal.Claims.FirstOrDefault(m => m.Type == "nameid");
-                        //Claim nameClaim = principal.Claims.FirstOrDefault(m => m.Type == "unique_name");
-                        //IList<Claim> roleClaims = principal.Claims.Where(m => m.Type == "role").ToList();
                         ClaimsIdentity identity = principal.Identity as ClaimsIdentity;
                         if (identity != null)
                         {

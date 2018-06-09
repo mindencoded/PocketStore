@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 
 namespace SchoolExpress.WebService.Providers
@@ -19,29 +20,31 @@ namespace SchoolExpress.WebService.Providers
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
-            return OnValidateClientAuthentication(context);
+            return Task.FromResult<object>(null);
+            //return OnValidateClientAuthentication(context);
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] {"*"});
-
             IdentityUser user = await _manager.FindAsync(context.UserName, context.Password);
             if (user != null)
             {
                 IList<string> roles = await _manager.GetRolesAsync(user.Id);
                 ClaimsIdentity identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("sub", user.UserName));
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
                 foreach (string role in roles)
                 {
                     identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
-                context.Validated(identity);
+                AuthenticationTicket ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
+                context.Validated(ticket);
             }
             else
             {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                context.Rejected();
+                //context.SetError("invalid_grant", "The user name or password is incorrect.");
             }
         }
     }

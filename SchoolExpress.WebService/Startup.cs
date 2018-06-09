@@ -50,34 +50,34 @@ namespace SchoolExpress.WebService
                 "ApiControllerAction",
                 "api/{controller}/{action}"
             );
-
             IUnityContainer container = UnityConfig.GetContainer();
             UnityResolver dependencyResolver = new UnityResolver(container);
             config.DependencyResolver = dependencyResolver;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
-                PreserveReferencesHandling.None;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
             appBuilder.Use<OwinContextMiddleware>();
+
             string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
 
             if (authenticationModes.Contains("NONE"))
             {
-                config.Filters.Add(new AnonymousAuthorizeFilter());
+                config.Filters.Add(new AnonymousAuthorizeAttribute());
             }
 
             if (authenticationModes.Contains("BASIC"))
             {
-                config.Filters.Add(container.Resolve<BasicAuthorizeFilter>());
+                config.Filters.Add(container.Resolve<BasicAuthorizeAttribute>());
             }
 
             if (authenticationModes.Contains("JWT"))
             {
-                config.Filters.Add(new JwtAuthorizeFilter());
+                config.Filters.Add(new JwtAuthorizeAttribute());
             }
-
+            
             if (authenticationModes.Contains("OAUTH"))
             {
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
@@ -93,7 +93,13 @@ namespace SchoolExpress.WebService
                 appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             }
 
-            config.Filters.Add(new ValidationActionFilter());
+            bool httpsRequired = bool.Parse(ConfigurationManager.AppSettings["HttpsRequired"]);
+            if (httpsRequired)
+            {
+                config.Filters.Add(new RequireHttpsAttribute());
+            }
+
+            config.Filters.Add(new ValidationActionAttribute());
             appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions
             {
@@ -104,9 +110,6 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
-
-            //Configure SSL
-            //https://github.com/tonysneed/FloridaPower.Samples/blob/master/07-Web%20API%20Security/07a-Transport%20Security/Owin%20Self-Host%20SSL%20ReadMe.txt
         }
     }
 }

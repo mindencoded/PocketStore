@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using Common.Logging;
-using SchoolExpress.WebService.Utils;
 using Topshelf;
 using Topshelf.Common.Logging;
 
@@ -13,11 +13,7 @@ namespace SchoolExpress.WebService
 
         private static void Main()
         {
-            if (Environment.UserInteractive && Debugger.IsAttached)
-            {
-                LogManager.Adapter = new ColoredConsoleOutLoggerFactoryAdapter();
-            }
-
+            string appId = GetAppId();
             try
             {
                 HostFactory.Run(c =>
@@ -26,8 +22,8 @@ namespace SchoolExpress.WebService
                     c.Service<RunService>(s =>
                     {
                         s.ConstructUsing(() => new RunService());
-                        s.WhenStarted((service) => service.Start());
-                        s.WhenStopped((service) => service.Stop());
+                        s.WhenStarted((a) => a.Start());
+                        s.WhenStopped((a) => a.Stop());
                     });
                     c.RunAsLocalService();
                 });
@@ -36,6 +32,14 @@ namespace SchoolExpress.WebService
             {
                 Log.Error(ex);
             }
+        }
+
+        private static string GetAppId()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+            var id = attribute.Value;
+            return id;
         }
     }
 }

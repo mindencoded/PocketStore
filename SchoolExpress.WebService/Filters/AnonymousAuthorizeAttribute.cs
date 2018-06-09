@@ -8,7 +8,7 @@ using System.Web.Http.Filters;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class AnonymousAuthorizeFilter : AuthorizationFilterAttribute
+    public class AnonymousAuthorizeAttribute : AuthorizationFilterAttribute
     {
         public override void OnAuthorization(HttpActionContext filterContext)
         {

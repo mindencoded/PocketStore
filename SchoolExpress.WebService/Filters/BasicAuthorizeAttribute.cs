@@ -12,11 +12,11 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class BasicAuthorizeFilter : ActionFilterAttribute
+    public class BasicAuthorizeAttribute : ActionFilterAttribute
     {
         private readonly UserManager<IdentityUser> _manager;
 
-        public BasicAuthorizeFilter(UserManager<IdentityUser> manager)
+        public BasicAuthorizeAttribute(UserManager<IdentityUser> manager)
         {
             _manager = manager;
         }

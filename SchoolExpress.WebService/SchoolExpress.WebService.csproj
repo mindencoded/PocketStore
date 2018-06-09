@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -182,16 +181,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filters\AnonymousAuthorizeFilter.cs" />
-    <Compile Include="Filters\BasicAuthorizeFilter.cs" />
+    <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
+    <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
+    <Compile Include="Filters\RequireHttpsAttribute.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Utils\ColoredConsoleOutLogger.cs" />
     <Compile Include="Utils\ColoresConsoleOutLoggerFactoryAdapter.cs" />
     <Compile Include="Utils\HttpActionResult.cs" />
     <Compile Include="Providers\CustomJwtAuthorizationProvider.cs" />
-    <Compile Include="Filters\JwtAuthorizeFilter.cs" />
+    <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
     <Compile Include="Controllers\Api\AcademicTermsApiController.cs" />
-    <Compile Include="Controllers\Api\AccountsApiController.cs" />
+    <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\AssignmentsApiController.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
     <Compile Include="Controllers\Api\CrudApiController.cs" />
@@ -217,10 +217,25 @@
     <Compile Include="Startup.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="Utils\UnityResolver.cs" />
-    <Compile Include="Filters\ValidationActionFilter.cs" />
+    <Compile Include="Filters\ValidationActionAttribute.cs" />
     <Compile Include="RunService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tools\libeay32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="migrate.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\netsh.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\openssl.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\ssleay32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="wwwroot\app\css\main.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -256,6 +271,27 @@
     <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
     </None>
+    <None Include="Tools\AddHost.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DbMigration.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tools\ca.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tools\AddSslCertificate.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tools\AddUrl.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tools\DeleteSslCertificate.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Tools\DeleteUrl.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="wwwroot\config.json" />
     <None Include="wwwroot\package.json" />
@@ -271,8 +307,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tools\CreateSslCertificate.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Controllers\OData\" />
     <Folder Include="wwwroot\app\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
