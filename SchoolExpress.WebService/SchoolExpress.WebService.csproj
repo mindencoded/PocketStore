@@ -183,7 +183,6 @@
   <ItemGroup>
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
-    <Compile Include="Filters\RequireHttpsAttribute.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Utils\ColoredConsoleOutLogger.cs" />
     <Compile Include="Utils\ColoresConsoleOutLoggerFactoryAdapter.cs" />
@@ -221,19 +220,19 @@
     <Compile Include="RunService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tools\libeay32.dll">
+    <Content Include="libeay32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="migrate.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Tools\netsh.exe">
+    <Content Include="netsh.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Tools\openssl.exe">
+    <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Tools\ssleay32.dll">
+    <Content Include="ssleay32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="wwwroot\app\css\main.css">
@@ -271,25 +270,25 @@
     <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
     </None>
-    <None Include="Tools\AddHost.cmd">
+    <None Include="AddHost.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DbMigration.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tools\ca.conf">
+    <None Include="ca.conf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tools\AddSslCertificate.cmd">
+    <None Include="AddSslCertificate.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tools\AddUrl.cmd">
+    <None Include="AddUrl.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tools\DeleteSslCertificate.cmd">
+    <None Include="DeleteSslCertificate.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Tools\DeleteUrl.cmd">
+    <None Include="DeleteUrl.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -307,7 +306,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tools\CreateSslCertificate.cmd">
+    <Content Include="CreateSslCertificate.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

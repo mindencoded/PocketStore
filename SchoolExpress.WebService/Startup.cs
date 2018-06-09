@@ -92,13 +92,6 @@ namespace SchoolExpress.WebService
                 });
                 appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             }
-
-            bool httpsRequired = bool.Parse(ConfigurationManager.AppSettings["HttpsRequired"]);
-            if (httpsRequired)
-            {
-                config.Filters.Add(new RequireHttpsAttribute());
-            }
-
             config.Filters.Add(new ValidationActionAttribute());
             appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions
