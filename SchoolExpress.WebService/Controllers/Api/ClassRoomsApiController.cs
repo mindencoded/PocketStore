@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.Domain;
 using SchoolExpress.Data.Uows;
@@ -21,29 +22,29 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "api.classrooms.get")]
-        public override ClassRoom Get(object id)
+        public override async Task<ClassRoom> Get(object id)
         {
-            return base.Get(id);
+            return await base.Get(id);
         }
 
 
         [Authorize(Roles = "api.classrooms.put")]
-        protected override HttpResponseMessage Put(ClassRoom entity)
+        protected override async Task<HttpResponseMessage> Put(ClassRoom entity)
         {
-            return base.Put(entity);
+            return await base.Put(entity);
         }
 
 
         [Authorize(Roles = "api.classrooms.post")]
-        public override HttpResponseMessage Post(ClassRoom entity)
+        public override async Task<HttpResponseMessage> Post(ClassRoom entity)
         {
-            return base.Post(entity);
+            return await base.Post(entity);
         }
 
         [Authorize(Roles = "api.classrooms.delete")]
-        public override HttpResponseMessage Delete(object id)
+        public override async Task<HttpResponseMessage> Delete(object id)
         {
-            return base.Delete(id);
+            return await base.Delete(id);
         }
     }
 }

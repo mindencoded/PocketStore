@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.Domain;
 using SchoolExpress.Data.Uows;
@@ -22,29 +23,29 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "api.assignments.get")]
-        public override Assignment Get(object id)
+        public override async Task<Assignment> Get(object id)
         {
-            return base.Get(id);
+            return await base.Get(id);
         }
 
 
         [Authorize(Roles = "api.assignments.put")]
-        protected override HttpResponseMessage Put(Assignment entity)
+        protected override async Task<HttpResponseMessage> Put(Assignment entity)
         {
-            return base.Put(entity);
+            return await base.Put(entity);
         }
 
 
         [Authorize(Roles = "api.assignments.post")]
-        public override HttpResponseMessage Post(Assignment entity)
+        public override async Task<HttpResponseMessage> Post(Assignment entity)
         {
-            return base.Post(entity);
+            return await base.Post(entity);
         }
 
         [Authorize(Roles = "api.assignments.delete")]
-        public override HttpResponseMessage Delete(object id)
+        public override async Task<HttpResponseMessage> Delete(object id)
         {
-            return base.Delete(id);
+            return await base.Delete(id);
         }
     }
 }

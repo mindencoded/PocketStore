@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SchoolExpress.Data.Repositories
 {
@@ -24,6 +25,11 @@ namespace SchoolExpress.Data.Repositories
         public virtual T GetById(object id)
         {
             return DbSet.Find(id);
+        }
+
+        public virtual async Task<T> GetByIdAsync(object id)
+        {
+            return await DbSet.FindAsync(id);
         }
 
         public virtual void Add(T entity)

@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class ValidationActionAttribute : ActionFilterAttribute
+    public class ValidationAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(HttpActionContext context)
         {

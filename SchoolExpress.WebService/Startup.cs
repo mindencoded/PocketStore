@@ -92,7 +92,7 @@ namespace SchoolExpress.WebService
                 });
                 appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             }
-            config.Filters.Add(new ValidationActionAttribute());
+            config.Filters.Add(new ValidationAttribute());
             appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(new FileServerOptions
             {

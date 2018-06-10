@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.Domain;
 using SchoolExpress.Data.Uows;
@@ -23,9 +24,9 @@ namespace SchoolExpress.WebService.Controllers.Api
 
         [Route("{id}")]
         [HttpGet]
-        public virtual T Get(object id)
+        public virtual async Task<T> Get(object id)
         {
-            T entity = Uow.GetRepositoryForEntityType<T>().GetById(id);
+            T entity = await Uow.GetRepositoryForEntityType<T>().GetByIdAsync(id);
             if (entity != null)
                 return entity;
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
@@ -33,19 +34,19 @@ namespace SchoolExpress.WebService.Controllers.Api
 
         [Route("")]
         [HttpPut]
-        protected virtual HttpResponseMessage Put(T entity)
+        protected virtual async Task<HttpResponseMessage> Put(T entity)
         {
             Uow.GetRepositoryForEntityType<T>().Update(entity);
-            Uow.Commit();
+            await Uow.CommitAsync();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         [Route("")]
         [HttpPost]
-        public virtual HttpResponseMessage Post(T entity)
+        public virtual async Task<HttpResponseMessage> Post(T entity)
         {
             Uow.GetRepositoryForEntityType<T>().Add(entity);
-            Uow.Commit();
+            await Uow.CommitAsync();
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
             response.Headers.Location =
                 new Uri(Request.RequestUri.AbsoluteUri +
@@ -57,10 +58,10 @@ namespace SchoolExpress.WebService.Controllers.Api
 
         [Route("{id:int}")]
         [HttpDelete]
-        public virtual HttpResponseMessage Delete(object id)
+        public virtual async Task<HttpResponseMessage> Delete(object id)
         {
             Uow.GetRepositoryForEntityType<T>().Delete(id);
-            Uow.Commit();
+            await Uow.CommitAsync();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
     }

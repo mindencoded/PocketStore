@@ -216,7 +216,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="Utils\UnityResolver.cs" />
-    <Compile Include="Filters\ValidationActionAttribute.cs" />
+    <Compile Include="Filters\ValidationAttribute.cs" />
     <Compile Include="RunService.cs" />
   </ItemGroup>
   <ItemGroup>

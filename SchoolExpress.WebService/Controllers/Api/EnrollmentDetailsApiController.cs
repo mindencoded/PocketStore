@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.Domain;
 using SchoolExpress.Data.Repositories;
@@ -56,27 +57,27 @@ namespace SchoolExpress.WebService.Controllers.Api
         }
 
         [Authorize(Roles = "api.enrollmentdetails.get")]
-        public override EnrollmentDetail Get(object id)
+        public override Task<EnrollmentDetail> Get(object id)
         {
             throw new NotImplementedException();
         }
 
 
         [Authorize(Roles = "api.enrollmentdetails.put")]
-        protected override HttpResponseMessage Put(EnrollmentDetail entity)
+        protected override async Task<HttpResponseMessage> Put(EnrollmentDetail entity)
         {
-            return base.Put(entity);
+            return await base.Put(entity);
         }
 
 
         [Authorize(Roles = "api.enrollmentdetails.post")]
-        public override HttpResponseMessage Post(EnrollmentDetail entity)
+        public override async Task<HttpResponseMessage> Post(EnrollmentDetail entity)
         {
-            return base.Post(entity);
+            return await base.Post(entity);
         }
 
         [Authorize(Roles = "api.enrollmentdetails.delete")]
-        public override HttpResponseMessage Delete(object id)
+        public override Task<HttpResponseMessage> Delete(object id)
         {
             throw new NotImplementedException();
         }
