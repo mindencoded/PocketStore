@@ -54,7 +54,8 @@ namespace SchoolExpress.WebService
             UnityResolver dependencyResolver = new UnityResolver(container);
             config.DependencyResolver = dependencyResolver;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
+                PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
@@ -77,7 +78,7 @@ namespace SchoolExpress.WebService
             {
                 config.Filters.Add(new JwtAuthorizeAttribute());
             }
-            
+
             if (authenticationModes.Contains("OAUTH"))
             {
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
@@ -92,8 +93,7 @@ namespace SchoolExpress.WebService
                 });
                 appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
             }
-            config.Filters.Add(new ValidationAttribute());
-            appBuilder.UseWebApi(config);
+
             appBuilder.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
@@ -103,6 +103,8 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
+            config.Filters.Add(new ValidationAttribute());
+            appBuilder.UseWebApi(config);
         }
     }
 }

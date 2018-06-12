@@ -37,7 +37,7 @@ namespace SchoolExpress.WebService
         private static string GetAppId()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+            var attribute = (GuidAttribute) assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
             var id = attribute.Value;
             return id;
         }

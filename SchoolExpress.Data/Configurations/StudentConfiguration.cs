@@ -3,7 +3,7 @@ using SchoolExpress.Domain;
 
 namespace SchoolExpress.Data.Configurations
 {
-    internal class GradeConfiguration : EntityTypeConfiguration<Grade>
+    public class StudentConfiguration : EntityTypeConfiguration<Student>
     {
     }
 }

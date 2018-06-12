@@ -11,11 +11,7 @@ namespace SchoolExpress.Domain
         public int AcademicTermId { get; set; }
 
         public virtual AcademicTerm AcademicTerm { get; set; }
-
-        public int GradeId { get; set; }
-
-        public virtual Grade Grade { get; set; }
-
+        
         public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
 
         public override object[] GetId()

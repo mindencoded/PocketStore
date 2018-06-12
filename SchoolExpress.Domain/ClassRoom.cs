@@ -6,6 +6,10 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
+        public int CampusId { get; set; }
+
+        public virtual Campus Campus { get; set; }
+        
         public string Description { get; set; }
 
         public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }

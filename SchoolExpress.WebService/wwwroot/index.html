@@ -87,7 +87,7 @@
             .done(function(data) {
                 $('#course').text(formatItem(data));
             })
-            .fail(function(jqXHR, textStatus, err) {
+            .fail(function(jqXhr, textStatus, err) {
                 $('#course').text('Error: ' + err);
             });
     }

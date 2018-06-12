@@ -38,6 +38,7 @@ namespace SchoolExpress.WebService.Providers
                 {
                     identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
+
                 AuthenticationTicket ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
                 context.Validated(ticket);
             }

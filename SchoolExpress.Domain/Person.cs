@@ -9,17 +9,15 @@ namespace SchoolExpress.Domain
 
         public string Document { get; set; }
 
-        public string InternalCode { get; set; }
-
         public string Name { get; set; }
 
         public string LastName { get; set; }
 
         public DateTime Birthday { get; set; }
 
-        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Speaker> Speakers { get; set; }
 
         public override object[] GetId()
         {

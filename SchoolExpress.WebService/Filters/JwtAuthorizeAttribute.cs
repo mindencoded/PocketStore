@@ -51,13 +51,14 @@ namespace SchoolExpress.WebService.Filters
                                     claims.Add(roleClaim);
                                 }
                             }
+
                             actionContext.RequestContext.Principal =
                                 new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
-                            
                         }
                     }
                 }
             }
+
             //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
             base.OnAuthorization(actionContext);
         }

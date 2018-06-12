@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Data.Repositories
 {
-    public interface IGradeRepository : IRepository<Grade>
+    public interface ICampusRepository : IRepository<Campus>
     {
     }
 }

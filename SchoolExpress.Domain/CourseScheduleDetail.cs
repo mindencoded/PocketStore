@@ -36,9 +36,9 @@ namespace SchoolExpress.Domain
 
         public virtual ClassRoom ClassRoom { get; set; }
 
-        public int TeacherId { get; set; }
+        public int SpeakerId { get; set; }
 
-        public virtual Person Teacher { get; set; }
+        public virtual Speaker Speaker { get; set; }
 
         public IList<Day> Days { get; set; }
 

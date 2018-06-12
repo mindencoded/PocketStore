@@ -7,11 +7,11 @@ namespace SchoolExpress.Data.Configurations
     {
         public EnrollmentDetailConfiguration()
         {
-            HasKey(x => new {x.AssignmentId, x.EnrollmentId});
+            HasKey(x => new {x.CourseId, x.EnrollmentId});
 
-            HasRequired(x => x.Assignment)
+            HasRequired(x => x.Course)
                 .WithMany(x => x.EnrollmentDetails)
-                .HasForeignKey(x => x.AssignmentId);
+                .HasForeignKey(x => x.CourseId);
 
             HasRequired(x => x.Enrollment)
                 .WithMany(x => x.EnrollmentDetails)

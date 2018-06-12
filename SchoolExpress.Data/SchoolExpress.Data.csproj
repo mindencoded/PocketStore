@@ -58,60 +58,57 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\AcademicTermConfiguration.cs" />
-    <Compile Include="Configurations\AssignmentConfiguration.cs" />
+    <Compile Include="Configurations\CampusConfiguration.cs" />
+    <Compile Include="Configurations\CareerConfiguration.cs" />
     <Compile Include="Configurations\ClassRoomConfiguration.cs" />
     <Compile Include="Configurations\CourseConfiguration.cs" />
+    <Compile Include="Configurations\DegreeConfiguration.cs" />
     <Compile Include="Configurations\EnrollmentConfiguration.cs" />
     <Compile Include="Configurations\EnrollmentDetailConfiguration.cs" />
-    <Compile Include="Configurations\GradeConfiguration.cs" />
     <Compile Include="Configurations\PersonConfiguration.cs" />
     <Compile Include="Configurations\CourseScheduleConfiguration.cs" />
     <Compile Include="Configurations\CourseScheduleDetailConfiguration.cs" />
+    <Compile Include="Configurations\SpeakerConfiguration.cs" />
+    <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
     <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
     <Compile Include="Helpers\IRepositoryProvider.cs" />
     <Compile Include="Helpers\PredicateBuilder.cs" />
     <Compile Include="Helpers\RepositoryFactories.cs" />
-    <Compile Include="Migrations\201805012333370_Initial.cs" />
-    <Compile Include="Migrations\201805012333370_Initial.Designer.cs">
-      <DependentUpon>201805012333370_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805020710246_Set_MaxLength_String_Ids.cs" />
-    <Compile Include="Migrations\201805020710246_Set_MaxLength_String_Ids.Designer.cs">
-      <DependentUpon>201805020710246_Set_MaxLength_String_Ids.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805180726319_RemoveTableAudience.cs" />
-    <Compile Include="Migrations\201805180726319_RemoveTableAudience.Designer.cs">
-      <DependentUpon>201805180726319_RemoveTableAudience.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AcademicTermRepository.cs" />
-    <Compile Include="Repositories\AssignmentRepository.cs" />
+    <Compile Include="Repositories\CampusRepository.cs" />
+    <Compile Include="Repositories\CareerRepository.cs" />
     <Compile Include="Repositories\ClassRoomRepository.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
+    <Compile Include="Repositories\DegreeRepository.cs" />
     <Compile Include="Repositories\EnrollmentDetailRepository.cs" />
     <Compile Include="Repositories\EnrollmentRepository.cs" />
-    <Compile Include="Repositories\GradeRepository.cs" />
     <Compile Include="Repositories\IAcademicTermRepository.cs" />
-    <Compile Include="Repositories\IAssignmentRepository.cs" />
+    <Compile Include="Repositories\ICampusRepository.cs" />
     <Compile Include="Repositories\IClassRoomRepository.cs" />
     <Compile Include="Repositories\ICourseRepository.cs" />
     <Compile Include="Repositories\ICourseScheduleDetailRepository.cs" />
     <Compile Include="Repositories\ICourseScheduleRepository.cs" />
+    <Compile Include="Repositories\ICareerRepository.cs" />
+    <Compile Include="Repositories\IDegreeRepository.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\ISpeakerRepository.cs" />
+    <Compile Include="Repositories\IStudentRepository.cs" />
     <Compile Include="Repositories\IUserRoleRepository.cs" />
     <Compile Include="Repositories\IUserLoginRepository.cs" />
     <Compile Include="Repositories\IUserClaimRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\SpeakerRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Repositories\UserRoleRepository.cs" />
     <Compile Include="Repositories\UserLoginRepository.cs" />
     <Compile Include="Repositories\UserClaimRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\IEnrollmentDetailRepository.cs" />
     <Compile Include="Repositories\IEnrollmentRepository.cs" />
-    <Compile Include="Repositories\IGradeRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
@@ -132,17 +129,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805012333370_Initial.resx">
-      <DependentUpon>201805012333370_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805020710246_Set_MaxLength_String_Ids.resx">
-      <DependentUpon>201805020710246_Set_MaxLength_String_Ids.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805180726319_RemoveTableAudience.resx">
-      <DependentUpon>201805180726319_RemoveTableAudience.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

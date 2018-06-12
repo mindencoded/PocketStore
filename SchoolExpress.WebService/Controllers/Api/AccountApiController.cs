@@ -30,5 +30,4 @@ namespace SchoolExpress.WebService.Controllers.Api
             return Ok();
         }
     }
-
 }

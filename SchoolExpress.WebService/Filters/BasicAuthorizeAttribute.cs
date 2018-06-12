@@ -63,6 +63,7 @@ namespace SchoolExpress.WebService.Filters
                     }
                 }
             }
+
             //actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
             base.OnActionExecuting(actionContext);
         }

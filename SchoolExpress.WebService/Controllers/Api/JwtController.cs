@@ -33,7 +33,12 @@ namespace SchoolExpress.WebService.Controllers.Api
                 string token =
                     CustomJwtAuthorizationProvider.GenerateToken(secretKey, user.Id, user.UserName, roles,
                         tokenExpiration);
-                return Ok(new { access_token = token, token_type = "bearer", expires_in = TimeSpan.FromMinutes(tokenExpiration).TotalSeconds });
+                return Ok(new
+                {
+                    access_token = token,
+                    token_type = "bearer",
+                    expires_in = TimeSpan.FromMinutes(tokenExpiration).TotalSeconds
+                });
             }
 
             return Unauthorized();

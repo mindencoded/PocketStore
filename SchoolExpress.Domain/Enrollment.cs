@@ -13,7 +13,7 @@ namespace SchoolExpress.Domain
 
         public int StudentId { get; set; }
 
-        public virtual Person Student { get; set; }
+        public virtual Student Student { get; set; }
 
         public virtual ICollection<EnrollmentDetail> EnrollmentDetails { get; set; }
 

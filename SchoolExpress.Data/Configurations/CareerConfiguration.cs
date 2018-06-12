@@ -3,7 +3,7 @@ using SchoolExpress.Domain;
 
 namespace SchoolExpress.Data.Configurations
 {
-    internal class AssignmentConfiguration : EntityTypeConfiguration<Assignment>
+    public class CareerConfiguration : EntityTypeConfiguration<Career>
     {
     }
 }
