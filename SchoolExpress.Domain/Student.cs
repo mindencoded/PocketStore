@@ -8,7 +8,7 @@ namespace SchoolExpress.Domain
 
         public int PersonId { get; set; }
 
-        public string InscriptionCode{ get; set; }
+        public string SubscriptionId { get; set; }
 
         public virtual Person Person { get; set; }
 
@@ -16,7 +16,7 @@ namespace SchoolExpress.Domain
 
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Data.Repositories
 {
-    public interface ICourseScheduleRepository : IRepository<CourseSchedule>
+    public interface ICareerScheduleRepository : IRepository<CareerSchedule>
     {
     }
 }

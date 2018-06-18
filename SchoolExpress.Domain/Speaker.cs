@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
@@ -11,15 +10,15 @@ namespace SchoolExpress.Domain
 
         public string Achievements { get; set; }
 
-        public string Biography { get; set; }
+        public bool PartTime { get; set; }
 
         public virtual Person Person { get; set; }
 
-        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
+        public virtual ICollection<CareerScheduleDetail> CareerScheduleDetails { get; set; }
 
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

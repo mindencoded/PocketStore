@@ -6,6 +6,8 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
+        public string Description { get; set; }
+
         public string Address { get; set; }
 
         public string Location { get; set; }
@@ -14,7 +16,7 @@ namespace SchoolExpress.Domain
 
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

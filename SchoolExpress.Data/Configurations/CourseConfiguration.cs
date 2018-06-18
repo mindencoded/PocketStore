@@ -3,7 +3,12 @@ using SchoolExpress.Domain;
 
 namespace SchoolExpress.Data.Configurations
 {
-    internal class CourseConfiguration : EntityTypeConfiguration<Course>
+    public class CourseConfiguration : EntityTypeConfiguration<Course>
     {
+        public CourseConfiguration()
+        {
+            HasIndex(x => new {x.Description}).IsUnique();
+            Property(x => x.Description).IsRequired();
+        }
     }
 }

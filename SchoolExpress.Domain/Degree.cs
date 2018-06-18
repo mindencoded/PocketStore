@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
@@ -13,7 +12,7 @@ namespace SchoolExpress.Domain
 
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

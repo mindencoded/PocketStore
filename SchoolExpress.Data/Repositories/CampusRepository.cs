@@ -1,5 +1,4 @@
-﻿
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using SchoolExpress.Domain;
 
 namespace SchoolExpress.Data.Repositories

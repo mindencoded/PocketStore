@@ -2,9 +2,9 @@
 {
     public class EnrollmentDetail : Entity
     {
-        public int CourseId { get; set; }
+        public int CareerDetailId { get; set; }
 
-        public virtual Course Course { get; set; }
+        public virtual CareerDetail CareerDetail { get; set; }
 
         public int EnrollmentId { get; set; }
 
@@ -14,7 +14,7 @@
 
         public override object[] GetId()
         {
-            return new object[] {CourseId, EnrollmentId};
+            return new object[] {CareerDetailId, EnrollmentId};
         }
     }
 }

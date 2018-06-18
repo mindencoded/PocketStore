@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
@@ -14,11 +12,13 @@ namespace SchoolExpress.Domain
 
         public virtual Degree Degree { get; set; }
 
-        public virtual ICollection<Course> Courses { get; set; }
-        
+        public virtual ICollection<CareerDetail> CareerDetails { get; set; }
+
+        public virtual ICollection<CareerSchedule> CareerSchedules { get; set; }
+
         public override object[] GetId()
         {
-            return new object[] { Id };
+            return new object[] {Id};
         }
     }
 }

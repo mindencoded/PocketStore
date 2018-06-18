@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$USER_HOME$/.Rider2018.1/system/log/SolutionBuilder/JetBrainsLog.ReSharperBuild_2018_05_12_14_02_58_2070.log" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/SchoolExpress.Data/SqlScripts/Data/Career.sql" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/SchoolExpress.Data/SqlScripts/Data/Course.sql" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/SchoolExpress.Data/SqlScripts/Data/Degree.sql" charset="windows-1252" />
   </component>
 </project>

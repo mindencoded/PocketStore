@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
@@ -7,13 +6,13 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
-        public string Document { get; set; }
+        public string IdentityCard { get; set; }
 
         public string Name { get; set; }
 
         public string LastName { get; set; }
 
-        public DateTime Birthday { get; set; }
+        public string Email { get; set; }
 
         public virtual ICollection<Student> Students { get; set; }
 

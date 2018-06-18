@@ -8,17 +8,7 @@ namespace SchoolExpress.Domain
 
         public string Description { get; set; }
 
-        public int Hours { get; set; }
-
-        public decimal CostByHour { get; set; }
-
-        public int CareerId { get; set; }
-
-        public virtual Career Career { get; set; }
-
-        public virtual ICollection<CourseScheduleDetail> CourseScheduleDetails { get; set; }
-
-        public virtual ICollection<EnrollmentDetail> EnrollmentDetails { get; set; }
+        public virtual ICollection<CareerDetail> CareerDetails { get; set; }
 
         public override object[] GetId()
         {

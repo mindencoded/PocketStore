@@ -2,7 +2,7 @@
 
 namespace SchoolExpress.Data.Repositories
 {
-    public interface  ISpeakerRepository : IRepository<Speaker>
+    public interface ISpeakerRepository : IRepository<Speaker>
     {
     }
 }

@@ -4,15 +4,15 @@ using System.Linq;
 
 namespace SchoolExpress.Domain
 {
-    public class CourseScheduleDetail : Entity
+    public class CareerScheduleDetail : Entity
     {
         private string _joinDays;
 
         public int Id { get; set; }
 
-        public TimeSpan StartTime { get; set; }
+        public TimeSpan? StartTime { get; set; }
 
-        public TimeSpan EndTime { get; set; }
+        public TimeSpan? EndTime { get; set; }
 
         public string JoinDays
         {
@@ -24,13 +24,10 @@ namespace SchoolExpress.Domain
             }
         }
 
-        public int CourseScheduleId { get; set; }
+        public int CareerScheduleId { get; set; }
 
-        public virtual CourseSchedule CourseSchedule { get; set; }
+        public virtual CareerSchedule CareerSchedule { get; set; }
 
-        public int CourseId { get; set; }
-
-        public virtual Course Course { get; set; }
 
         public int ClassRoomId { get; set; }
 
@@ -39,6 +36,10 @@ namespace SchoolExpress.Domain
         public int SpeakerId { get; set; }
 
         public virtual Speaker Speaker { get; set; }
+
+        public int CareerDetailId { get; set; }
+
+        public virtual CareerDetail CareerDetail { get; set; }
 
         public IList<Day> Days { get; set; }
 

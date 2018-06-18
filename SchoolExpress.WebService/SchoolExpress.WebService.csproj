@@ -153,8 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Api\CampusApiController.cs" />
+    <Compile Include="Controllers\Api\CareerDetailsApiController.cs" />
     <Compile Include="Controllers\Api\CareersApiController.cs" />
     <Compile Include="Controllers\Api\DegreesApiController.cs" />
+    <Compile Include="Controllers\Api\ModuleApiController.cs" />
+    <Compile Include="Controllers\Api\PeriodApiController.cs" />
     <Compile Include="Controllers\Api\SpeakerApiController.cs" />
     <Compile Include="Controllers\Api\StudentsApiController.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
@@ -165,7 +168,6 @@
     <Compile Include="Utils\HttpActionResult.cs" />
     <Compile Include="Providers\CustomJwtAuthorizationProvider.cs" />
     <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
-    <Compile Include="Controllers\Api\AcademicTermsApiController.cs" />
     <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
     <Compile Include="Controllers\Api\CrudApiController.cs" />
@@ -175,8 +177,8 @@
     <Compile Include="Controllers\Api\EnrollmentsApiController.cs" />
     <Compile Include="Controllers\Api\JwtController.cs" />
     <Compile Include="Controllers\Api\PersonsApiController.cs" />
-    <Compile Include="Controllers\Api\CourseScheduleDetailsApiController.cs" />
-    <Compile Include="Controllers\Api\CourseSchedulesApiController.cs" />
+    <Compile Include="Controllers\Api\CareerScheduleDetailsApiController.cs" />
+    <Compile Include="Controllers\Api\CareerSchedulesApiController.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Providers\CustomContentTypeProvider.cs" />
     <Compile Include="Providers\CustomDirectRouteProvider.cs" />

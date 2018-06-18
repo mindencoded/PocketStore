@@ -21,12 +21,12 @@ namespace SchoolExpress.WebService.Controllers.Api
 
         [HttpGet]
         [Authorize(Roles = "api.enrollmentdetails.get")]
-        [Route("{courseId:int}/{enrollmentId:int}")]
-        public EnrollmentDetail Get(int courseId, int enrollmentId)
+        [Route("{careerDetailId:int}/{enrollmentId:int}")]
+        public EnrollmentDetail Get(int careerDetailId, int enrollmentId)
         {
             EnrollmentDetail enrollmentDetail =
                 Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
-                    .FirstOrDefault(x => x.CourseId == courseId && x.EnrollmentId == enrollmentId);
+                    .FirstOrDefault(x => x.CareerDetailId == careerDetailId && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
                 return enrollmentDetail;
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
@@ -34,12 +34,12 @@ namespace SchoolExpress.WebService.Controllers.Api
 
         [HttpDelete]
         [Authorize(Roles = "api.enrollmentdetails.delete")]
-        [Route("{courseId:int}/{enrollmentId:int}")]
-        public HttpResponseMessage Delete(int courseId, int enrollmentId)
+        [Route("{careerDetailId:int}/{enrollmentId:int}")]
+        public HttpResponseMessage Delete(int careerDetailId, int enrollmentId)
         {
             EnrollmentDetail enrollmentDetail =
                 Uow.GetRepository<IEnrollmentDetailRepository>().GetAll()
-                    .FirstOrDefault(x => x.CourseId == courseId && x.EnrollmentId == enrollmentId);
+                    .FirstOrDefault(x => x.CareerDetailId == careerDetailId && x.EnrollmentId == enrollmentId);
             if (enrollmentDetail != null)
             {
                 Uow.GetRepository<IEnrollmentDetailRepository>().Delete(enrollmentDetail);
