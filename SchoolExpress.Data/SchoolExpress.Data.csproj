@@ -140,9 +140,13 @@
     <Content Include="SqlScripts\Data\Campus.sql" />
     <Content Include="SqlScripts\Data\Career.sql" />
     <Content Include="SqlScripts\Data\CareerDetail.sql" />
+    <Content Include="SqlScripts\Data\CareerSchedule.sql" />
+    <Content Include="SqlScripts\Data\CareerScheduleDetail.sql" />
     <Content Include="SqlScripts\Data\ClassRoom.sql" />
     <Content Include="SqlScripts\Data\Course.sql" />
     <Content Include="SqlScripts\Data\Degree.sql" />
+    <Content Include="SqlScripts\Data\Enrollment.sql" />
+    <Content Include="SqlScripts\Data\EnrollmentDetail.sql" />
     <Content Include="SqlScripts\Data\Module.sql" />
     <Content Include="SqlScripts\Data\Period.sql" />
     <Content Include="SqlScripts\Data\Person.sql" />

@@ -7,7 +7,8 @@ namespace SchoolExpress.Data.Configurations
     {
         public CareerScheduleDetailConfiguration()
         {
-            Property(x => x.JoinDays).HasMaxLength(33);
+            Property(x => x.Day).HasMaxLength(3);
+            Property(x => x.Day).HasColumnType("char");
             Property(x => x.StartTime).IsOptional();
             Property(x => x.EndTime).IsOptional();
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SchoolExpress.Domain
 {
@@ -7,9 +6,7 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
-        public DateTime InscriptionDate { get; set; }
-
-        public decimal TotalAmount { get; set; }
+        public decimal Total { get; set; }
 
         public int StudentId { get; set; }
 

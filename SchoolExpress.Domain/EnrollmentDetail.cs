@@ -12,6 +12,8 @@
 
         public decimal Discount { get; set; }
 
+        public decimal Total { get; set; }
+
         public override object[] GetId()
         {
             return new object[] {CareerDetailId, EnrollmentId};

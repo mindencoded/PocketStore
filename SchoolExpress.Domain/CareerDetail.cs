@@ -6,9 +6,9 @@ namespace SchoolExpress.Domain
     {
         public int Id { get; set; }
 
-        public decimal Hours { get; set; }
-
         public decimal Credits { get; set; }
+
+        public decimal CreditAmount { get; set; }
 
         public int CareerId { get; set; }
 

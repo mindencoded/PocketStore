@@ -9,6 +9,7 @@ namespace SchoolExpress.Data.Configurations
         {
             HasIndex(x => new { x.Description }).IsUnique();
             Property(x => x.Description).IsRequired();
+            HasIndex(x => new { x.PeriodId, x.CareerId, x.ModuleId }).IsUnique();
         }
     }
 }

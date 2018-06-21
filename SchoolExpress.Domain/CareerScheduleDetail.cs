@@ -1,33 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SchoolExpress.Domain
 {
     public class CareerScheduleDetail : Entity
     {
-        private string _joinDays;
-
         public int Id { get; set; }
 
         public TimeSpan? StartTime { get; set; }
 
-        public TimeSpan? EndTime { get; set; }
+        public TimeSpan? EndTime { get; set; }  
 
-        public string JoinDays
-        {
-            get => _joinDays;
-            set
-            {
-                SplitDays(_joinDays);
-                _joinDays = value;
-            }
-        }
+        public string Day { get; set; }
 
         public int CareerScheduleId { get; set; }
 
         public virtual CareerSchedule CareerSchedule { get; set; }
-
 
         public int ClassRoomId { get; set; }
 
@@ -40,15 +27,6 @@ namespace SchoolExpress.Domain
         public int CareerDetailId { get; set; }
 
         public virtual CareerDetail CareerDetail { get; set; }
-
-        public IList<Day> Days { get; set; }
-
-        public void SplitDays(string joinDays)
-        {
-            IList<string> days = joinDays.Split(',').ToList();
-            foreach (string day in days)
-                Days.Add(EnumUtil.Parse<Day>(day));
-        }
 
         public override object[] GetId()
         {
