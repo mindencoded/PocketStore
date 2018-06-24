@@ -2,13 +2,12 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using SchoolExpress.Data.Uows;
-using SchoolExpress.Domain;
+using SchoolExpress.WebService.Domain;
+using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
     [RoutePrefix("api/modules")]
-
     public class ModuleApiController : CrudApiController<Module>
     {
         public ModuleApiController(ISchoolExpressUow uow) : base(uow)

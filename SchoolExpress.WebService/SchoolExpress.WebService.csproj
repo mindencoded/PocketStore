@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RoleType>Worker</RoleType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +49,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -92,6 +98,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.0\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -106,7 +115,16 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -152,6 +170,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\CampusConfiguration.cs" />
+    <Compile Include="Configurations\CareerConfiguration.cs" />
+    <Compile Include="Configurations\CareerDetailConfiguration.cs" />
+    <Compile Include="Configurations\CareerScheduleConfiguration.cs" />
+    <Compile Include="Configurations\CareerScheduleDetailConfiguration.cs" />
+    <Compile Include="Configurations\ClassRoomConfiguration.cs" />
+    <Compile Include="Configurations\CourseConfiguration.cs" />
+    <Compile Include="Configurations\DegreeConfiguration.cs" />
+    <Compile Include="Configurations\EnrollmentConfiguration.cs" />
+    <Compile Include="Configurations\EnrollmentDetailConfiguration.cs" />
+    <Compile Include="Configurations\ModuleConfiguration.cs" />
+    <Compile Include="Configurations\PeriodConfiguration.cs" />
+    <Compile Include="Configurations\PersonConfiguration.cs" />
+    <Compile Include="Configurations\SpeakerConfiguration.cs" />
+    <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Controllers\Api\CampusApiController.cs" />
     <Compile Include="Controllers\Api\CareerDetailsApiController.cs" />
     <Compile Include="Controllers\Api\CareersApiController.cs" />
@@ -160,9 +193,80 @@
     <Compile Include="Controllers\Api\PeriodApiController.cs" />
     <Compile Include="Controllers\Api\SpeakerApiController.cs" />
     <Compile Include="Controllers\Api\StudentsApiController.cs" />
+    <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
+    <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
+    <Compile Include="Domain\Campus.cs" />
+    <Compile Include="Domain\Career.cs" />
+    <Compile Include="Domain\CareerDetail.cs" />
+    <Compile Include="Domain\CareerSchedule.cs" />
+    <Compile Include="Domain\CareerScheduleDetail.cs" />
+    <Compile Include="Domain\ClassRoom.cs" />
+    <Compile Include="Domain\Course.cs" />
+    <Compile Include="Domain\Day.cs" />
+    <Compile Include="Domain\Degree.cs" />
+    <Compile Include="Domain\Enrollment.cs" />
+    <Compile Include="Domain\EnrollmentDetail.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\EnumUtil.cs" />
+    <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\Module.cs" />
+    <Compile Include="Domain\Period.cs" />
+    <Compile Include="Domain\Person.cs" />
+    <Compile Include="Domain\Speaker.cs" />
+    <Compile Include="Domain\Student.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
+    <Compile Include="Helpers\IRepositoryProvider.cs" />
+    <Compile Include="Helpers\PredicateBuilder.cs" />
+    <Compile Include="Helpers\RepositoryFactories.cs" />
+    <Compile Include="Helpers\RepositoryProvider.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Repositories\CampusRepository.cs" />
+    <Compile Include="Repositories\CareerDetailRepository.cs" />
+    <Compile Include="Repositories\CareerRepository.cs" />
+    <Compile Include="Repositories\CareerScheduleDetailRepository.cs" />
+    <Compile Include="Repositories\CareerScheduleRepository.cs" />
+    <Compile Include="Repositories\ClassRoomRepository.cs" />
+    <Compile Include="Repositories\CourseRepository.cs" />
+    <Compile Include="Repositories\DegreeRepository.cs" />
+    <Compile Include="Repositories\EnrollmentDetailRepository.cs" />
+    <Compile Include="Repositories\EnrollmentRepository.cs" />
+    <Compile Include="Repositories\ICampusRepository.cs" />
+    <Compile Include="Repositories\ICareerDetailRepository.cs" />
+    <Compile Include="Repositories\ICareerRepository.cs" />
+    <Compile Include="Repositories\ICareerScheduleDetailRepository.cs" />
+    <Compile Include="Repositories\ICareerScheduleRepository.cs" />
+    <Compile Include="Repositories\IClassRoomRepository.cs" />
+    <Compile Include="Repositories\ICourseRepository.cs" />
+    <Compile Include="Repositories\IDegreeRepository.cs" />
+    <Compile Include="Repositories\IEnrollmentDetailRepository.cs" />
+    <Compile Include="Repositories\IEnrollmentRepository.cs" />
+    <Compile Include="Repositories\IModuleRepository.cs" />
+    <Compile Include="Repositories\IPeriodRepository.cs" />
+    <Compile Include="Repositories\IPersonRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\ISpeakerRepository.cs" />
+    <Compile Include="Repositories\IStudentRepository.cs" />
+    <Compile Include="Repositories\IUserClaimRepository.cs" />
+    <Compile Include="Repositories\IUserLoginRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IUserRoleRepository.cs" />
+    <Compile Include="Repositories\ModuleRepository.cs" />
+    <Compile Include="Repositories\PeriodRepository.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\SpeakerRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\UserClaimRepository.cs" />
+    <Compile Include="Repositories\UserLoginRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UserRoleRepository.cs" />
+    <Compile Include="Uows\ISchoolExpressUow.cs" />
+    <Compile Include="Uows\IUow.cs" />
+    <Compile Include="Uows\SchoolExpressUow.cs" />
     <Compile Include="Utils\ColoredConsoleOutLogger.cs" />
     <Compile Include="Utils\ColoresConsoleOutLoggerFactoryAdapter.cs" />
     <Compile Include="Utils\HttpActionResult.cs" />
@@ -208,6 +312,21 @@
     <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlScripts\Data\Campus.sql" />
+    <Content Include="SqlScripts\Data\Career.sql" />
+    <Content Include="SqlScripts\Data\CareerDetail.sql" />
+    <Content Include="SqlScripts\Data\CareerSchedule.sql" />
+    <Content Include="SqlScripts\Data\CareerScheduleDetail.sql" />
+    <Content Include="SqlScripts\Data\ClassRoom.sql" />
+    <Content Include="SqlScripts\Data\Course.sql" />
+    <Content Include="SqlScripts\Data\Degree.sql" />
+    <Content Include="SqlScripts\Data\Enrollment.sql" />
+    <Content Include="SqlScripts\Data\EnrollmentDetail.sql" />
+    <Content Include="SqlScripts\Data\Module.sql" />
+    <Content Include="SqlScripts\Data\Period.sql" />
+    <Content Include="SqlScripts\Data\Person.sql" />
+    <Content Include="SqlScripts\Data\Speaker.sql" />
+    <Content Include="SqlScripts\Data\Student.sql" />
     <Content Include="ssleay32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -239,15 +358,19 @@
     <Content Include="wwwroot\index.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="App.config" />
-    <None Include="App.Debug.config">
-      <DependentUpon>App.config</DependentUpon>
-    </None>
-    <None Include="App.Release.config">
-      <DependentUpon>App.config</DependentUpon>
+    <None Include="App.config">
+      <TransformOnBuild>true</TransformOnBuild>
     </None>
     <None Include="AddHost.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
     </None>
     <None Include="DbMigration.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -270,16 +393,6 @@
     <None Include="packages.config" />
     <None Include="wwwroot\config.json" />
     <None Include="wwwroot\package.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SchoolExpress.Domain\SchoolExpress.Domain.csproj">
-      <Project>{cefc3b36-8e9a-40f3-8c36-b1a78d93fbe6}</Project>
-      <Name>SchoolExpress.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SchoolExpress.Data\SchoolExpress.Data.csproj">
-      <Project>{06341735-c14d-4898-a7ec-842b36d37202}</Project>
-      <Name>SchoolExpress.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreateSslCertificate.cmd">
@@ -326,5 +439,12 @@
     </PropertyGroup>
     <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
     <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
   </Target>
 </Project>

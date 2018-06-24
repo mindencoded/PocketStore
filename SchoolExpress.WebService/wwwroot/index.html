@@ -64,7 +64,8 @@
     $(document).ready(function() {
         // Send an AJAX request
         $.getJSON(uri)
-            .done(function(data) {
+            .done(function (data) {
+                console.log(data);
                 // On success, 'data' contains a list of contacts.
                 $.each(data,
                     function(key, course) {
@@ -78,7 +79,7 @@
     });
 
     function formatItem(course) {
-        return 'Description: ' + course['Description'] + ', GradeId: ' + course['GradeId'];
+        return 'Code: ' + course['Code'] + ', Description: ' + course['Description'];
     }
 
     function search() {

@@ -4,10 +4,10 @@ using System.Configuration;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Identity.EntityFramework;
-using SchoolExpress.Data.Repositories;
-using SchoolExpress.Data.Uows;
 using SchoolExpress.WebService.Models;
 using SchoolExpress.WebService.Providers;
+using SchoolExpress.WebService.Repositories;
+using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {

@@ -5,9 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using SchoolExpress.Domain;
-using SchoolExpress.Data.Repositories;
-using SchoolExpress.Data.Uows;
+using SchoolExpress.WebService.Domain;
+using SchoolExpress.WebService.Repositories;
+using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
