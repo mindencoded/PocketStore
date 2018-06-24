@@ -391,7 +391,7 @@
     <None Include="DeleteUrl.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="entityFramework.config" />
+    <None Include="defaultConnectionFactory.config" />
     <None Include="packages.config" />
     <None Include="wwwroot\config.json" />
     <None Include="wwwroot\package.json" />
