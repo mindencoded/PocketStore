@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
-using System.Data.Entity.Core.Common;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity.SqlServer;
 using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -24,30 +22,40 @@ namespace SchoolExpress.WebService
         public static IUnityContainer GetContainer()
         {
             UnityContainer container = new UnityContainer();
-            string connectionName = ConfigurationManager.AppSettings["ConnectionName"];
-            ConnectionStringSettings connectionStringSettings = @ConfigurationManager.ConnectionStrings[connectionName];           
+            string schoolExpressConnection = ConfigurationManager.AppSettings["SchoolExpressConnection"];
+            ConnectionStringSettings connectionStringSettings =
+                @ConfigurationManager.ConnectionStrings[schoolExpressConnection];
             string providerName = connectionStringSettings.ProviderName;
             string connectionString = connectionStringSettings.ConnectionString;
+
             if (providerName == "Npgsql")
             {
                 DbConfiguration.Loaded += (_, a) =>
                 {
-                    a.ReplaceService<DbProviderServices>((s, k) => new NpgsqlServices());
+                    //a.ReplaceService<DbProviderServices>((s, k) => new NpgsqlServices());
+                    //a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
                     a.ReplaceService<IDbConnectionFactory>((s, k) => new NpgsqlConnectionFactory());
-                    a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
                 };
             }
-            else
+            else if (providerName == "System.Data.SqlClient")
             {
                 DbConfiguration.Loaded += (_, a) =>
                 {
-                    a.ReplaceService<DbProviderServices>((s, k) => SqlProviderServices.Instance);
-                    a.ReplaceService<IDbConnectionFactory>((s, k) => new SqlConnectionFactory());
-                    a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
+                    //a.ReplaceService<DbProviderServices>((s, k) => SqlProviderServices.Instance);
+                    //a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
+                    if (connectionString.Contains("MSSQLLocalDB"))
+                    {
+                        a.ReplaceService<IDbConnectionFactory>((s, k) => new LocalDbConnectionFactory("v11.0"));
+                    }
+                    else
+                    {
+                        a.ReplaceService<IDbConnectionFactory>((s, k) => new SqlConnectionFactory());
+                    }
                 };
             }
 
-            container.RegisterType<SchoolExpressDbContext>(new PerThreadLifetimeManager(), new InjectionConstructor(connectionString));
+            container.RegisterType<SchoolExpressDbContext>(new PerThreadLifetimeManager(),
+                new InjectionConstructor(connectionString));
             IDictionary<Type, Func<DbContext, object>> factories = new Dictionary<Type, Func<DbContext, object>>();
             Type[] repositoryTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
                 .Where(t => t.GetInterfaces()
@@ -68,7 +76,8 @@ namespace SchoolExpress.WebService
 
             container.RegisterType<RepositoryFactories>(new InjectionConstructor(factories));
             container.RegisterType<ISchoolExpressUow, SchoolExpressUow>();
-            container.RegisterType<IUserStore<IdentityUser>, UserStore<IdentityUser>>(new InjectionConstructor(container.Resolve<SchoolExpressDbContext>()));
+            container.RegisterType<IUserStore<IdentityUser>, UserStore<IdentityUser>>(
+                new InjectionConstructor(container.Resolve<SchoolExpressDbContext>()));
             return container;
         }
     }
