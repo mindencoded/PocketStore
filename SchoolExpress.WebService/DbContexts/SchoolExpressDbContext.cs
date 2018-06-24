@@ -13,8 +13,7 @@ namespace SchoolExpress.WebService.DbContexts
 {
     public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
     {
-        public static readonly ConnectionStringSettings ConnectionStringSettings =
-            @ConfigurationManager.ConnectionStrings[ConfigurationManager.AppSettings["SchoolExpressConnection"]];
+        public static readonly ConnectionStringSettings ConnectionStringSettings = @ConfigurationManager.ConnectionStrings["SchoolExpressConnection"];
 
         public SchoolExpressDbContext() : base(ConnectionStringSettings.ConnectionString)
         {
