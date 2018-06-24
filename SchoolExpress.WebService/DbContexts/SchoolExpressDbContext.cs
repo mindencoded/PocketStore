@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -13,19 +11,8 @@ namespace SchoolExpress.WebService.DbContexts
 {
     public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
     {
-        public static readonly ConnectionStringSettings ConnectionStringSettings = @ConfigurationManager.ConnectionStrings["SchoolExpressConnection"];
-
-        public SchoolExpressDbContext() : base(ConnectionStringSettings.ConnectionString)
+        public SchoolExpressDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
-            string providerName = ConnectionStringSettings.ProviderName;
-            if (providerName == "System.Data.SqlClient")
-            {
-                DbProviderFactory providerFactory = DbProviderFactories.GetFactory(providerName);
-
-
-                //= new System.Data.Entity.Infrastructure.SqlConnectionFactory();
-            }
-
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
             //Database.SetInitializer(new SchoolExpressInitializer());

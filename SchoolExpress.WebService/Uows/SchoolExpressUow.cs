@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Threading.Tasks;
+using SchoolExpress.WebService.DbContexts;
 using SchoolExpress.WebService.Helpers;
 using SchoolExpress.WebService.Repositories;
 
@@ -8,17 +8,17 @@ namespace SchoolExpress.WebService.Uows
 {
     public class SchoolExpressUow : ISchoolExpressUow
     {
-        private readonly DbContext _dbContext;
+        private readonly SchoolExpressDbContext _dbContext;
 
         private readonly IRepositoryProvider _repositoryProvider;
 
         public SchoolExpressUow(RepositoryProvider repositoryProvider)
         {
-            _dbContext = repositoryProvider.DbContext;
+            _dbContext = (SchoolExpressDbContext) repositoryProvider.DbContext;
             _repositoryProvider = repositoryProvider;
         }
 
-        public SchoolExpressUow(DbContext dbContext, RepositoryFactories repositoryFactories)
+        public SchoolExpressUow(SchoolExpressDbContext dbContext, RepositoryFactories repositoryFactories)
         {
             _dbContext = dbContext;
             _repositoryProvider = new RepositoryProvider(dbContext, repositoryFactories);

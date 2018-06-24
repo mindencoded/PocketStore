@@ -193,6 +193,7 @@
     <Compile Include="Controllers\Api\PeriodApiController.cs" />
     <Compile Include="Controllers\Api\SpeakerApiController.cs" />
     <Compile Include="Controllers\Api\StudentsApiController.cs" />
+    <Compile Include="DbContexts\CustomProviderInvariantName.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
     <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
     <Compile Include="Domain\Campus.cs" />
@@ -312,21 +313,21 @@
     <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlScripts\Data\Campus.sql" />
-    <Content Include="SqlScripts\Data\Career.sql" />
-    <Content Include="SqlScripts\Data\CareerDetail.sql" />
-    <Content Include="SqlScripts\Data\CareerSchedule.sql" />
-    <Content Include="SqlScripts\Data\CareerScheduleDetail.sql" />
-    <Content Include="SqlScripts\Data\ClassRoom.sql" />
-    <Content Include="SqlScripts\Data\Course.sql" />
-    <Content Include="SqlScripts\Data\Degree.sql" />
-    <Content Include="SqlScripts\Data\Enrollment.sql" />
-    <Content Include="SqlScripts\Data\EnrollmentDetail.sql" />
-    <Content Include="SqlScripts\Data\Module.sql" />
-    <Content Include="SqlScripts\Data\Period.sql" />
-    <Content Include="SqlScripts\Data\Person.sql" />
-    <Content Include="SqlScripts\Data\Speaker.sql" />
-    <Content Include="SqlScripts\Data\Student.sql" />
+    <Content Include="Scripts\Data\Campus.sql" />
+    <Content Include="Scripts\Data\Career.sql" />
+    <Content Include="Scripts\Data\CareerDetail.sql" />
+    <Content Include="Scripts\Data\CareerSchedule.sql" />
+    <Content Include="Scripts\Data\CareerScheduleDetail.sql" />
+    <Content Include="Scripts\Data\ClassRoom.sql" />
+    <Content Include="Scripts\Data\Course.sql" />
+    <Content Include="Scripts\Data\Degree.sql" />
+    <Content Include="Scripts\Data\Enrollment.sql" />
+    <Content Include="Scripts\Data\EnrollmentDetail.sql" />
+    <Content Include="Scripts\Data\Module.sql" />
+    <Content Include="Scripts\Data\Period.sql" />
+    <Content Include="Scripts\Data\Person.sql" />
+    <Content Include="Scripts\Data\Speaker.sql" />
+    <Content Include="Scripts\Data\Student.sql" />
     <Content Include="ssleay32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -372,24 +373,6 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
-    <None Include="Config\connectionStrings.pgsql.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\connectionStrings.mssqllocaldb.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\connectionStrings.mssql.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\entityFramework.pgsql.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\entityFramework.mssql.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Config\entityFramework.mssqllocaldb.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="DbMigration.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -408,6 +391,7 @@
     <None Include="DeleteUrl.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="entityFramework.config" />
     <None Include="packages.config" />
     <None Include="wwwroot\config.json" />
     <None Include="wwwroot\package.json" />

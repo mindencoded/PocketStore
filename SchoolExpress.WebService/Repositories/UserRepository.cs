@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SchoolExpress.WebService.DbContexts;
 
 namespace SchoolExpress.WebService.Repositories
 {
@@ -10,7 +10,7 @@ namespace SchoolExpress.WebService.Repositories
     {
         private readonly UserManager<IdentityUser> _userManager;
 
-        public UserRepository(DbContext dbContext) : base(dbContext)
+        public UserRepository(SchoolExpressDbContext dbContext) : base(dbContext)
         {
             _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(dbContext));
         }
