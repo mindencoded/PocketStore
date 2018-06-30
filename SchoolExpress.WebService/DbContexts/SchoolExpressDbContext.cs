@@ -1,22 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Npgsql;
 
 namespace SchoolExpress.WebService.DbContexts
 {
     public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
     {
-        public SchoolExpressDbContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        private static readonly string ConnectionName;
+        
+        static SchoolExpressDbContext()
+        {
+            ConnectionName = ConfigurationManager.AppSettings["ConnectionName"];
+            ConnectionStringSettings connectionStringSettings =
+                @ConfigurationManager.ConnectionStrings[ConnectionName];
+            string providerName = connectionStringSettings.ProviderName;
+            string connectionString = connectionStringSettings.ConnectionString;
+            SqlConnectionStringBuilder connectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
+
+            if (providerName == "Npgsql")
+            {
+                DbConfiguration.Loaded += (_, a) =>
+                {
+                    a.ReplaceService<IDbConnectionFactory>((s, k) => new NpgsqlConnectionFactory());
+                };
+            }
+
+            if (providerName == "System.Data.SqlClient")
+            {
+                DbConfiguration.Loaded += (_, a) =>
+                {
+                    if (connectionStringBuilder.DataSource == @"(localdb)\MSSQLLocalDB")
+                    {
+                        a.ReplaceService<IDbConnectionFactory>((s, k) => new LocalDbConnectionFactory("v11.0"));
+                    }
+                    else
+                    {
+                        a.ReplaceService<IDbConnectionFactory>((s, k) => new SqlConnectionFactory());
+                    }
+                };
+            }
+        }
+
+        public SchoolExpressDbContext() : base("Name=" + ConnectionName)
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            //Database.SetInitializer(new SchoolExpressInitializer());
         }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

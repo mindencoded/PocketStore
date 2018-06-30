@@ -18,6 +18,8 @@ namespace SchoolExpress.WebService.Domain
 
         public virtual ICollection<Speaker> Speakers { get; set; }
 
+        public virtual ICollection<UserAccount> UserAccounts { get; set; }
+
         public override object[] GetId()
         {
             return new object[] {Id};

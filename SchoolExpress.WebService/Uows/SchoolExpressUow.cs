@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SchoolExpress.WebService.DbContexts;
-using SchoolExpress.WebService.Helpers;
 using SchoolExpress.WebService.Repositories;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Uows
 {

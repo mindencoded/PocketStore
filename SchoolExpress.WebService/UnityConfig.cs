@@ -1,16 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Npgsql;
 using SchoolExpress.WebService.DbContexts;
-using SchoolExpress.WebService.Helpers;
 using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 using Unity;
 using Unity.Injection;
 using Unity.Lifetime;
@@ -21,41 +18,8 @@ namespace SchoolExpress.WebService
     {
         public static IUnityContainer GetContainer()
         {
-            UnityContainer container = new UnityContainer();
-            string schoolExpressConnection = ConfigurationManager.AppSettings["SchoolExpressConnection"];
-            ConnectionStringSettings connectionStringSettings =
-                @ConfigurationManager.ConnectionStrings[schoolExpressConnection];
-            string providerName = connectionStringSettings.ProviderName;
-            string connectionString = connectionStringSettings.ConnectionString;
-
-            if (providerName == "Npgsql")
-            {
-                DbConfiguration.Loaded += (_, a) =>
-                {
-                    //a.ReplaceService<DbProviderServices>((s, k) => new NpgsqlServices());
-                    //a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
-                    a.ReplaceService<IDbConnectionFactory>((s, k) => new NpgsqlConnectionFactory());
-                };
-            }
-            else if (providerName == "System.Data.SqlClient")
-            {
-                DbConfiguration.Loaded += (_, a) =>
-                {
-                    //a.ReplaceService<DbProviderServices>((s, k) => SqlProviderServices.Instance);
-                    //a.ReplaceService<IProviderInvariantName>((s, k) => new CustomProviderInvariantName(providerName));
-                    if (connectionString.Contains("MSSQLLocalDB"))
-                    {
-                        a.ReplaceService<IDbConnectionFactory>((s, k) => new LocalDbConnectionFactory("v11.0"));
-                    }
-                    else
-                    {
-                        a.ReplaceService<IDbConnectionFactory>((s, k) => new SqlConnectionFactory());
-                    }
-                };
-            }
-
-            container.RegisterType<SchoolExpressDbContext>(new PerThreadLifetimeManager(),
-                new InjectionConstructor(connectionString));
+            UnityContainer container = new UnityContainer();      
+            container.RegisterType<SchoolExpressDbContext>(new PerThreadLifetimeManager());
             IDictionary<Type, Func<DbContext, object>> factories = new Dictionary<Type, Func<DbContext, object>>();
             Type[] repositoryTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
                 .Where(t => t.GetInterfaces()

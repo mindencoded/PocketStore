@@ -185,17 +185,19 @@
     <Compile Include="Configurations\PersonConfiguration.cs" />
     <Compile Include="Configurations\SpeakerConfiguration.cs" />
     <Compile Include="Configurations\StudentConfiguration.cs" />
-    <Compile Include="Controllers\Api\CampusApiController.cs" />
-    <Compile Include="Controllers\Api\CareerDetailsApiController.cs" />
-    <Compile Include="Controllers\Api\CareersApiController.cs" />
-    <Compile Include="Controllers\Api\DegreesApiController.cs" />
-    <Compile Include="Controllers\Api\ModuleApiController.cs" />
-    <Compile Include="Controllers\Api\PeriodApiController.cs" />
-    <Compile Include="Controllers\Api\SpeakerApiController.cs" />
-    <Compile Include="Controllers\Api\StudentsApiController.cs" />
-    <Compile Include="DbContexts\CustomProviderInvariantName.cs" />
+    <Compile Include="Configurations\UserAccountConfiguration.cs" />
+    <Compile Include="Controllers\Api\Crud\CampusCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CareerDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CareersCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\DegreesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\ModuleCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\PeriodCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\SpeakerCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\StudentsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\UserAccountsCrudApiController.cs" />
+    <Compile Include="DbContexts\ProviderInvariantName.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
-    <Compile Include="DbContexts\SchoolExpressInitializer.cs" />
+    <Compile Include="Domain\UserAccount.cs" />
     <Compile Include="Domain\Campus.cs" />
     <Compile Include="Domain\Career.cs" />
     <Compile Include="Domain\CareerDetail.cs" />
@@ -217,10 +219,10 @@
     <Compile Include="Domain\Student.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
-    <Compile Include="Helpers\IRepositoryProvider.cs" />
-    <Compile Include="Helpers\PredicateBuilder.cs" />
-    <Compile Include="Helpers\RepositoryFactories.cs" />
-    <Compile Include="Helpers\RepositoryProvider.cs" />
+    <Compile Include="Utils\IRepositoryProvider.cs" />
+    <Compile Include="Utils\PredicateBuilder.cs" />
+    <Compile Include="Utils\RepositoryFactories.cs" />
+    <Compile Include="Utils\RepositoryProvider.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Repositories\CampusRepository.cs" />
@@ -250,6 +252,7 @@
     <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\ISpeakerRepository.cs" />
     <Compile Include="Repositories\IStudentRepository.cs" />
+    <Compile Include="Repositories\IUserAccountRepository.cs" />
     <Compile Include="Repositories\IUserClaimRepository.cs" />
     <Compile Include="Repositories\IUserLoginRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
@@ -261,6 +264,7 @@
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\SpeakerRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\UserAccountRepository.cs" />
     <Compile Include="Repositories\UserClaimRepository.cs" />
     <Compile Include="Repositories\UserLoginRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -275,15 +279,15 @@
     <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
     <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
-    <Compile Include="Controllers\Api\CrudApiController.cs" />
-    <Compile Include="Controllers\Api\ClassRoomsApiController.cs" />
-    <Compile Include="Controllers\Api\CoursesApiController.cs" />
-    <Compile Include="Controllers\Api\EnrollmentDetailsApiController.cs" />
-    <Compile Include="Controllers\Api\EnrollmentsApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\ClassRoomsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CoursesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\EnrollmentDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\EnrollmentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\JwtController.cs" />
-    <Compile Include="Controllers\Api\PersonsApiController.cs" />
-    <Compile Include="Controllers\Api\CareerScheduleDetailsApiController.cs" />
-    <Compile Include="Controllers\Api\CareerSchedulesApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\PersonsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CareerScheduleDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Crud\CareerSchedulesCrudApiController.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Providers\CustomContentTypeProvider.cs" />
     <Compile Include="Providers\CustomDirectRouteProvider.cs" />
@@ -296,6 +300,7 @@
     <Compile Include="Utils\SHA.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnityConfig.cs" />
+    <Compile Include="Utils\TypesConversionTool.cs" />
     <Compile Include="Utils\UnityResolver.cs" />
     <Compile Include="Filters\ValidationAttribute.cs" />
     <Compile Include="RunService.cs" />
@@ -313,21 +318,108 @@
     <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\Data\Campus.sql" />
-    <Content Include="Scripts\Data\Career.sql" />
-    <Content Include="Scripts\Data\CareerDetail.sql" />
-    <Content Include="Scripts\Data\CareerSchedule.sql" />
-    <Content Include="Scripts\Data\CareerScheduleDetail.sql" />
-    <Content Include="Scripts\Data\ClassRoom.sql" />
-    <Content Include="Scripts\Data\Course.sql" />
-    <Content Include="Scripts\Data\Degree.sql" />
-    <Content Include="Scripts\Data\Enrollment.sql" />
-    <Content Include="Scripts\Data\EnrollmentDetail.sql" />
-    <Content Include="Scripts\Data\Module.sql" />
-    <Content Include="Scripts\Data\Period.sql" />
-    <Content Include="Scripts\Data\Person.sql" />
-    <Content Include="Scripts\Data\Speaker.sql" />
-    <Content Include="Scripts\Data\Student.sql" />
+    <Content Include="sql\mssql\Campus.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Career.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\CareerDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\CareerSchedule.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\CareerScheduleDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\ClassRoom.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\CleanTables.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Course.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Degree.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Enrollment.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\EnrollmentDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Module.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Period.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Person.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Speaker.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\Student.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\mssql\ResetIdentities.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Campus.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Career.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\CareerDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\CareerSchedule.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\CareerScheduleDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\ClassRoom.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\CleanTables.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Course.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Degree.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Enrollment.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\EnrollmentDetail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Module.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Period.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Person.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\ResetIdentities.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Speaker.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\pgsql\Student.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="ssleay32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -373,6 +465,57 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="Configs\ConnectionFactory.pgsql.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Configs\ConnectionFactory.mssql.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Campus.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Career.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\CareerDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\CareerSchedule.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\CareerScheduleDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ClassRoom.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Course.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Degree.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Enrollment.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\EnrollmentDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Module.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Period.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Person.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Speaker.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Student.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DbMigration.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -391,7 +534,9 @@
     <None Include="DeleteUrl.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="defaultConnectionFactory.config" />
+    <None Include="Configs\ConnectionFactory.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="wwwroot\config.json" />
     <None Include="wwwroot\package.json" />
