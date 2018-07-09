@@ -1,4 +1,4 @@
-﻿SET NOCOUNT ON
+SET NOCOUNT ON
 DELETE FROM [dbo].[CareerScheduleDetail];
 DELETE FROM [dbo].[CareerSchedule];
 DELETE FROM [dbo].[EnrollmentDetail];

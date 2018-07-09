@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[Enrollment] ON;
+SET IDENTITY_INSERT [dbo].[Enrollment] ON;
 INSERT INTO [dbo].[Enrollment] ([Id], [StudentId], [Total], [LastModified], [Created], [Status]) VALUES ( 1,  1, 210, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Enrollment] ([Id], [StudentId], [Total], [LastModified], [Created], [Status]) VALUES ( 2,  2, 210, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Enrollment] ([Id], [StudentId], [Total], [LastModified], [Created], [Status]) VALUES ( 3,  3, 210, GETDATE(), GETDATE(), 1);

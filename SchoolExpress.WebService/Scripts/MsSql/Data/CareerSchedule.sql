@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[CareerSchedule] ON;
+SET IDENTITY_INSERT [dbo].[CareerSchedule] ON;
 -- Period: 1, Career: 1
 INSERT INTO [dbo].[CareerSchedule] ([Id], [Description], [PeriodId], [CareerId], [ModuleId], [LastModified], [Created], [Status]) VALUES (1,  '2018 I, Administración de Negocios Internacionales, Ciclo I',				1, 1, 1, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[CareerSchedule] ([Id], [Description], [PeriodId], [CareerId], [ModuleId], [LastModified], [Created], [Status]) VALUES (2,  '2018 I, Administración de Negocios Internacionales, Ciclo II',				1, 1, 2, GETDATE(), GETDATE(), 1);

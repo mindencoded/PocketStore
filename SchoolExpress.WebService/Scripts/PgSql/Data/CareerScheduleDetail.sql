@@ -1,4 +1,4 @@
-﻿-- CareerSchedule 1
+-- CareerSchedule 1
 INSERT INTO "dbo"."CareerScheduleDetail" ("Id", "CareerDetailId", "CareerScheduleId", "ClassRoomId", "SpeakerId", "Day", "StartTime", "EndTime", "LastModified", "Created", "Status") VALUES (1,     1, 1, 1, 1, 'Mon', '08:00:00', '10:00:00', NOW(), NOW(), true);
 INSERT INTO "dbo"."CareerScheduleDetail" ("Id", "CareerDetailId", "CareerScheduleId", "ClassRoomId", "SpeakerId", "Day", "StartTime", "EndTime", "LastModified", "Created", "Status") VALUES (2,     2, 1, 2, 2, 'Mon', '10:00:00', '12:00:00', NOW(), NOW(), true);
 INSERT INTO "dbo"."CareerScheduleDetail" ("Id", "CareerDetailId", "CareerScheduleId", "ClassRoomId", "SpeakerId", "Day", "StartTime", "EndTime", "LastModified", "Created", "Status") VALUES (3,     3, 1, 3, 3, 'Mon', '12:00:00', '14:00:00', NOW(), NOW(), true);

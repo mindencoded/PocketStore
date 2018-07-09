@@ -1,2 +1,2 @@
-﻿INSERT INTO "dbo"."Campus" ("Id", "Description", "Address", "Location", "LastModified", "Created", "Status") VALUES (1, 'Campus Principal', '', '', NOW(), NOW(), true);
+INSERT INTO "dbo"."Campus" ("Id", "Description", "Address", "Location", "LastModified", "Created", "Status") VALUES (1, 'Campus Principal', '', '', NOW(), NOW(), true);
 SELECT setval(pg_get_serial_sequence('"dbo"."Campus"', 'Id'), CAST((SELECT MAX("Id") FROM "dbo"."Campus") AS INTEGER));

@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[Person] ON;
+SET IDENTITY_INSERT [dbo].[Person] ON;
 --SPEAKERS
 INSERT INTO [dbo].[Person] ([Id], [IdentityCard], [Name], [LastName], [Email], [LastModified], [Created], [Status]) VALUES (1,  '00000001', 'José Enrique', 'Silva Calderón', 'UO859632@email.com', GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Person] ([Id], [IdentityCard], [Name], [LastName], [Email], [LastModified], [Created], [Status]) VALUES (2,  '00000002', 'Ronald', 'Huacca Incacutipa', 'UO859633@email.com', GETDATE(), GETDATE(), 1);

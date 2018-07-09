@@ -1,4 +1,4 @@
-﻿-- Career: 1, Module: 1
+-- Career: 1, Module: 1
 INSERT INTO "dbo"."CareerDetail" ("Id", "Credits", "CreditAmount", "CareerId", "CourseId", "LastModified", "Created", "Status") VALUES (  1,  3, 10, 1,   1, NOW(), NOW(), true);
 INSERT INTO "dbo"."CareerDetail" ("Id", "Credits", "CreditAmount", "CareerId", "CourseId", "LastModified", "Created", "Status") VALUES (  2,  3, 10, 1,   2, NOW(), NOW(), true);
 INSERT INTO "dbo"."CareerDetail" ("Id", "Credits", "CreditAmount", "CareerId", "CourseId", "LastModified", "Created", "Status") VALUES (  3,  3, 10, 1,   3, NOW(), NOW(), true);

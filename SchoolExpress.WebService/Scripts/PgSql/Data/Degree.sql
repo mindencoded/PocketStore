@@ -1,4 +1,4 @@
-﻿INSERT INTO "dbo"."Degree" ("Id", "Description", "LastModified", "Created", "Status") VALUES (1,'Bachiller',NOW(), NOW(), true);
+INSERT INTO "dbo"."Degree" ("Id", "Description", "LastModified", "Created", "Status") VALUES (1,'Bachiller',NOW(), NOW(), true);
 INSERT INTO "dbo"."Degree" ("Id", "Description", "LastModified", "Created", "Status") VALUES (2,'Pregrado',NOW(), NOW(), true);
 INSERT INTO "dbo"."Degree" ("Id", "Description", "LastModified", "Created", "Status") VALUES (3,'Grado',NOW(), NOW(), true);
 INSERT INTO "dbo"."Degree" ("Id", "Description", "LastModified", "Created", "Status") VALUES (4,'Postgrado',NOW(), NOW(), true);

@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[Speaker] ON;
+SET IDENTITY_INSERT [dbo].[Speaker] ON;
 INSERT INTO [dbo].[Speaker] ([Id], [PersonId], [Achievements], [PartTime], [LastModified], [Created], [Status]) VALUES ( 1,  1, 'Maestro en Administración de Negocios de la Escuela de Postgrado Neumann, Licenciado en Administración de Empresas de la Universidad Católica de Santa María', 0, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Speaker] ([Id], [PersonId], [Achievements], [PartTime], [LastModified], [Created], [Status]) VALUES ( 2,  2, 'Maestría en Contabilidad: Auditoría en el Escuela de Posgrado de la Universidad Nacional Jorge Basadre Grohmann, Contador Público con mención en Auditoría de la Universidad Privada de Tacna', 0, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Speaker] ([Id], [PersonId], [Achievements], [PartTime], [LastModified], [Created], [Status]) VALUES ( 3,  3, 'Maestro en Administración de Negocios de la Escuela de Postgrado Neumann, Ingeniero Comercial de la Universidad Privada de Tacna', 0, GETDATE(), GETDATE(), 1);

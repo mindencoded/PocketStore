@@ -1,4 +1,4 @@
-﻿-- Enrollment : 1
+-- Enrollment : 1
 INSERT INTO "dbo"."EnrollmentDetail" ("EnrollmentId", "CareerDetailId", "Discount", "Total", "LastModified", "Created", "Status") VALUES (  1,   1, 0, 30, NOW(), NOW(), true);
 INSERT INTO "dbo"."EnrollmentDetail" ("EnrollmentId", "CareerDetailId", "Discount", "Total", "LastModified", "Created", "Status") VALUES (  1,   2, 0, 30, NOW(), NOW(), true);
 INSERT INTO "dbo"."EnrollmentDetail" ("EnrollmentId", "CareerDetailId", "Discount", "Total", "LastModified", "Created", "Status") VALUES (  1,   3, 0, 30, NOW(), NOW(), true);

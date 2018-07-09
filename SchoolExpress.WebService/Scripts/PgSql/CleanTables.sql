@@ -1,4 +1,4 @@
-﻿DELETE FROM "dbo"."CareerScheduleDetail";
+DELETE FROM "dbo"."CareerScheduleDetail";
 DELETE FROM "dbo"."CareerSchedule";
 DELETE FROM "dbo"."EnrollmentDetail";
 DELETE FROM "dbo"."Enrollment";

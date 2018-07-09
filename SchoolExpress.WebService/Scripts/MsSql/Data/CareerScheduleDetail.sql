@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[CareerScheduleDetail] ON;
+SET IDENTITY_INSERT [dbo].[CareerScheduleDetail] ON;
 -- CareerSchedule 1
 INSERT INTO [dbo].[CareerScheduleDetail] ([Id], [CareerDetailId], [CareerScheduleId], [ClassRoomId], [SpeakerId], [Day], [StartTime], [EndTime], [LastModified], [Created], [Status]) VALUES (1,     1, 1, 1, 1, 'Mon', '08:00:00', '10:00:00', GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[CareerScheduleDetail] ([Id], [CareerDetailId], [CareerScheduleId], [ClassRoomId], [SpeakerId], [Day], [StartTime], [EndTime], [LastModified], [Created], [Status]) VALUES (2,     2, 1, 2, 2, 'Mon', '10:00:00', '12:00:00', GETDATE(), GETDATE(), 1);

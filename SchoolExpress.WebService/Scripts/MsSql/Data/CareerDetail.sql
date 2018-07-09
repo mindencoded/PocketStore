@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[CareerDetail] ON;
+SET IDENTITY_INSERT [dbo].[CareerDetail] ON;
 -- Career: 1, Module: 1
 INSERT INTO [dbo].[CareerDetail] ([Id], [Credits], [CreditAmount], [CareerId], [CourseId], [LastModified], [Created], [Status]) VALUES (  1,  3, 10, 1,   1, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[CareerDetail] ([Id], [Credits], [CreditAmount], [CareerId], [CourseId], [LastModified], [Created], [Status]) VALUES (  2,  3, 10, 1,   2, GETDATE(), GETDATE(), 1);

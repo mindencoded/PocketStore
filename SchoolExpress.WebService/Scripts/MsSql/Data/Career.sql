@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[Career] ON;
+SET IDENTITY_INSERT [dbo].[Career] ON;
 INSERT INTO [dbo].[Career]([Id], [Description], [DegreeId], [LastModified], [Created], [Status]) VALUES (1, 'Administración de Negocios Internacionales', 3, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Career]([Id], [Description], [DegreeId], [LastModified], [Created], [Status]) VALUES (2, 'Contabilidad', 3, GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Career]([Id], [Description], [DegreeId], [LastModified], [Created], [Status]) VALUES (3, 'Maestría en Administración de Negocios (MBA Internacional)', 5, GETDATE(), GETDATE(), 1);

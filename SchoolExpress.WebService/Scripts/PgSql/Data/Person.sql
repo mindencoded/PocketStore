@@ -1,4 +1,4 @@
-﻿--SPEAKERS
+--SPEAKERS
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (1,  '00000001', 'José Enrique', 'Silva Calderón', 'UO859632@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (2,  '00000002', 'Ronald', 'Huacca Incacutipa', 'UO859633@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (3,  '00000003', 'Enrique Alejandro', 'Cabellos Barboza', 'UO875964@email.com', NOW(), NOW(), true);
@@ -34,7 +34,7 @@ INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (32, '00000033', 'Íñigo', 'Díaz Ubieta',	'UO226784@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (33, '00000034', 'Bruno', 'Fernández Espina', 'UO217327@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (34, '00000035', 'Héctor', 'Fernández Fernández-nespral','UO226310@email.com', NOW(), NOW(), true);
-INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (34, '00000036', 'Pedro', 'Fernández Somoano', 'UO224862@email.com', NOW(), NOW(), true);
+INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (35, '00000036', 'Pedro', 'Fernández Somoano', 'UO224862@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (36, '00000037', 'Alejandra', 'García Fernández','UO217358@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (37, '00000038', 'Beatriz', 'García García', 'UO225962@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (38, '00000039', 'Pablo', 'García García', 'UO226448@email.com', NOW(), NOW(), true);
@@ -63,4 +63,4 @@ INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (61, '00000062', 'Ramón', 'Torrecillas Reig', 'UO219037@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (62, '00000063', 'Mario', 'Villa Carro',	'UO210010@email.com', NOW(), NOW(), true);
 INSERT INTO "dbo"."Person" ("Id", "IdentityCard", "Name", "LastName", "Email", "LastModified", "Created", "Status") VALUES (63, '00000064', 'Jorge', 'Zapico Álvarez', 'UO225895@email.com', NOW(), NOW(), true);
-SELECT setval(pg_get_serial_sequence('"dbo"."Person"', '"Id"'), CAST((SELECT MAX("Id") FROM "dbo"."Person") AS INTEGER));
+SELECT setval(pg_get_serial_sequence('"dbo"."Person"', 'Id'), CAST((SELECT MAX("Id") FROM "dbo"."Person") AS INTEGER));

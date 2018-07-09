@@ -1,4 +1,4 @@
-﻿INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES ( 1,  1, 210, NOW(), NOW(), true);
+INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES ( 1,  1, 210, NOW(), NOW(), true);
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES ( 2,  2, 210, NOW(), NOW(), true);
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES ( 3,  3, 210, NOW(), NOW(), true);
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES ( 4,  4, 210, NOW(), NOW(), true);
@@ -38,4 +38,4 @@ INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Cre
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES (38, 38, 210, NOW(), NOW(), true);
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES (39, 39, 300, NOW(), NOW(), true);
 INSERT INTO "dbo"."Enrollment" ("Id", "StudentId", "Total", "LastModified", "Created", "Status") VALUES (40, 40, 210, NOW(), NOW(), true);
-SELECT setval(pg_get_serial_sequence('"dbo"."Enrollment"', '"Id"'), CAST((SELECT MAX("Id") FROM "dbo"."Enrollment") AS INTEGER));
+SELECT setval(pg_get_serial_sequence('"dbo"."Enrollment"', 'Id'), CAST((SELECT MAX("Id") FROM "dbo"."Enrollment") AS INTEGER));

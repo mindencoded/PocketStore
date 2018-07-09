@@ -1,4 +1,4 @@
-﻿INSERT INTO "dbo"."Student" ("Id", "PersonId", "SubscriptionId", "LastModified", "Created", "Status") VALUES (1, 24,  'UO220200', NOW(), NOW(), true);
+INSERT INTO "dbo"."Student" ("Id", "PersonId", "SubscriptionId", "LastModified", "Created", "Status") VALUES (1, 24,  'UO220200', NOW(), NOW(), true);
 INSERT INTO "dbo"."Student" ("Id", "PersonId", "SubscriptionId", "LastModified", "Created", "Status") VALUES (2, 25,  'UO221371', NOW(), NOW(), true);
 INSERT INTO "dbo"."Student" ("Id", "PersonId", "SubscriptionId", "LastModified", "Created", "Status") VALUES (3, 26,  'UO225476', NOW(), NOW(), true);
 INSERT INTO "dbo"."Student" ("Id", "PersonId", "SubscriptionId", "LastModified", "Created", "Status") VALUES (4, 27,  'UO218844', NOW(), NOW(), true);

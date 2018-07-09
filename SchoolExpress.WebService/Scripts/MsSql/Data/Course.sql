@@ -1,4 +1,4 @@
-﻿SET IDENTITY_INSERT [dbo].[Course] ON;
+SET IDENTITY_INSERT [dbo].[Course] ON;
 INSERT INTO [dbo].[Course] ([Id], [Code], [Description], [BackgroundColor], [LastModified], [Created], [Status]) VALUES (1,   'UC-0001',  'Administración I',										'#ff4000', GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Course] ([Id], [Code], [Description], [BackgroundColor], [LastModified], [Created], [Status]) VALUES (2,   'UC-0002',  'Economía',												'#ff8000', GETDATE(), GETDATE(), 1);
 INSERT INTO [dbo].[Course] ([Id], [Code], [Description], [BackgroundColor], [LastModified], [Created], [Status]) VALUES (3,   'UC-0003',  'Contabilidad I',											'#ffbf00', GETDATE(), GETDATE(), 1);

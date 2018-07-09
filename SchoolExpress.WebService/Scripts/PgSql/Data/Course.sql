@@ -1,4 +1,4 @@
-﻿INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (1,   'UC-0001',  'Administración I',											'#ff4000', NOW(), NOW(), true);
+INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (1,   'UC-0001',  'Administración I',											'#ff4000', NOW(), NOW(), true);
 INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (2,   'UC-0002',  'Economía',													'#ff8000', NOW(), NOW(), true);
 INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (3,   'UC-0003',  'Contabilidad I',											'#ffbf00', NOW(), NOW(), true);
 INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (4,   'UC-0004',  'Matemática I',												'#ffff00', NOW(), NOW(), true);
@@ -122,59 +122,3 @@ INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "Las
 INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (122, 'UC-0122', 'Modelos y Herramientas para las Relaciones Comunitarias',	'#ff8000', NOW(), NOW(), true);
 INSERT INTO "dbo"."Course" ("Id", "Code", "Description", "BackgroundColor", "LastModified", "Created", "Status") VALUES (123, 'UC-0123', 'Aseguramiento de la RSE ISO 26000',							'#ffbf00', NOW(), NOW(), true);
 SELECT setval(pg_get_serial_sequence('"dbo"."Course"', 'Id'), CAST((SELECT MAX("Id") FROM "dbo"."Course") AS INTEGER));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
