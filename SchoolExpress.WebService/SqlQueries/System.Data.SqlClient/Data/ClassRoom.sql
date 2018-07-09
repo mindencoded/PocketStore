@@ -1,0 +1,7 @@
+SET IDENTITY+AF8-INSERT +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- ON+ADs-
+INSERT INTO +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- (+AFs-Id+AF0-, +AFs-Description+AF0-, +AFs-CampusId+AF0-, +AFs-LastModified+AF0-, +AFs-Created+AF0-, +AFs-Status+AF0-) VALUES (1, '101', 1, GETDATE(), GETDATE(), 1)+ADs-
+INSERT INTO +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- (+AFs-Id+AF0-, +AFs-Description+AF0-, +AFs-CampusId+AF0-, +AFs-LastModified+AF0-, +AFs-Created+AF0-, +AFs-Status+AF0-) VALUES (2, '102', 1, GETDATE(), GETDATE(), 1)+ADs-
+INSERT INTO +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- (+AFs-Id+AF0-, +AFs-Description+AF0-, +AFs-CampusId+AF0-, +AFs-LastModified+AF0-, +AFs-Created+AF0-, +AFs-Status+AF0-) VALUES (3, '103', 1, GETDATE(), GETDATE(), 1)+ADs-
+INSERT INTO +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- (+AFs-Id+AF0-, +AFs-Description+AF0-, +AFs-CampusId+AF0-, +AFs-LastModified+AF0-, +AFs-Created+AF0-, +AFs-Status+AF0-) VALUES (4, '201', 1, GETDATE(), GETDATE(), 1)+ADs-
+INSERT INTO +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- (+AFs-Id+AF0-, +AFs-Description+AF0-, +AFs-CampusId+AF0-, +AFs-LastModified+AF0-, +AFs-Created+AF0-, +AFs-Status+AF0-) VALUES (5, '202', 1, GETDATE(), GETDATE(), 1)+ADs-
+SET IDENTITY+AF8-INSERT +AFs-dbo+AF0-.+AFs-ClassRoom+AF0- OFF+ADs-

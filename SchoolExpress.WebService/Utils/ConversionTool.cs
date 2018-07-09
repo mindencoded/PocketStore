@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Globalization;
 
 namespace SchoolExpress.WebService.Utils
 {
-    public class TypesConversionTool
+    public class ConversionTool
     {
         public static DateTime ConvertDateTime(string value)
         {
@@ -40,14 +39,20 @@ namespace SchoolExpress.WebService.Utils
             {
                 case "1":
                     return true;
+                case "t":
+                    return true;
                 case "0":
+                    return false;
+                case "f":
                     return false;
             }
 
             bool boolean;
-            bool.TryParse(value, out boolean);
-            return boolean;
-
+            if (bool.TryParse(value, out boolean))
+            {
+                return boolean;
+            }
+            return false;
         }
 
         public static bool? ConvertNullableBoolean(string value)
@@ -58,7 +63,11 @@ namespace SchoolExpress.WebService.Utils
             {
                 case "1":
                     return true;
+                case "t":
+                    return true;
                 case "0":
+                    return false;
+                case "f":
                     return false;
             }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -9,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Owin;
+using SchoolExpress.WebService.DbContexts;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Providers;
 using SchoolExpress.WebService.Utils;

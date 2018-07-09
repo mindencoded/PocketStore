@@ -10,20 +10,22 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Npgsql;
-using SchoolExpress.WebService.Domain;
 
 namespace SchoolExpress.WebService.DbContexts
 {
     public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
     {
         private static readonly string ConnectionName;
-        
+
+        public static string ProviderName { get; }
+
         static SchoolExpressDbContext()
         {
-            ConnectionName = ConfigurationManager.AppSettings["ConnectionName"];
+            ConnectionName = ConfigurationManager.AppSettings["SchoolExpressConnection"];
             ConnectionStringSettings connectionStringSettings =
                 @ConfigurationManager.ConnectionStrings[ConnectionName];
             string providerName = connectionStringSettings.ProviderName;
+            ProviderName = providerName;
             string connectionString = connectionStringSettings.ConnectionString;
             SqlConnectionStringBuilder connectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
 
@@ -55,9 +57,13 @@ namespace SchoolExpress.WebService.DbContexts
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            new SchoolExpressDbInitializer().Test(this);
+            Database.SetInitializer(new SchoolExpressDbInitializer());
+            if (!Database.Exists())
+            {
+                Database.Initialize(true);
+            }
         }
-        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -87,44 +93,5 @@ namespace SchoolExpress.WebService.DbContexts
                 modelBuilder.Configurations.Add(configInstance);
             }
         }
-
-        public virtual DbSet<Campus> Campuses { get; set; }
-
-        public virtual DbSet<Career> Careers { get; set; }
-
-        public virtual DbSet<CareerDetail> CareerDetails { get; set; }
-
-        public virtual DbSet<CareerSchedule> CareerSchedules { get; set; }
-
-        public virtual DbSet<CareerScheduleDetail> CareerScheduleDetails { get; set; }
-
-        public virtual DbSet<ClassRoom> ClassRooms { get; set; }
-
-        public virtual DbSet<Course> Courses { get; set; }
-
-        public virtual DbSet<Degree> Degrees { get; set; }
-
-        public virtual DbSet<Enrollment> Enrollments { get; set; }
-
-        public virtual DbSet<EnrollmentDetail> EnrollmentDetails { get; set; }
-
-        public virtual DbSet<Domain.Module> Modules { get; set; }
-
-        public virtual DbSet<Period> Periods { get; set; }
-
-        public virtual DbSet<Person> Persons { get; set; }
-
-        public virtual DbSet<Speaker> Speakers { get; set; }
-
-        public virtual DbSet<Student> Students { get; set; }
-
-        public virtual DbSet<UserAccount> UserAccounts { get; set; }
-
-        public virtual DbSet<IdentityUserClaim> UserClaims { get; set; }
-
-        public virtual DbSet<IdentityUserRole> UserRoles { get; set; }
-
-        public virtual DbSet<IdentityUserLogin> UserLogins { get; set; }
-
     }
 }

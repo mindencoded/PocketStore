@@ -302,7 +302,7 @@
     <Compile Include="Utils\SHA.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UnityConfig.cs" />
-    <Compile Include="Utils\TypesConversionTool.cs" />
+    <Compile Include="Utils\ConversionTool.cs" />
     <Compile Include="Utils\UnityResolver.cs" />
     <Compile Include="Filters\ValidationAttribute.cs" />
     <Compile Include="RunService.cs" />
@@ -323,106 +323,106 @@
     <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Campus.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Campus.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Career.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Career.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\CareerDetail.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\CareerSchedule.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerSchedule.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\CareerScheduleDetail.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerScheduleDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\ClassRoom.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\ClassRoom.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\CleanTables.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\CleanTables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Course.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Course.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Degree.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Degree.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Enrollment.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Enrollment.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\EnrollmentDetail.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\EnrollmentDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Module.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Module.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Period.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Period.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Person.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Person.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Speaker.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Speaker.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\Data\Student.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\Data\Student.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\MsSql\ResetIdentities.sql">
+    <Content Include="SqlQueries\System.Data.SqlClient\ResetIdentities.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Campus.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Campus.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Career.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Career.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\CareerDetail.sql">
+    <Content Include="SqlQueries\Npgsql\Data\CareerDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\CareerSchedule.sql">
+    <Content Include="SqlQueries\Npgsql\Data\CareerSchedule.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\CareerScheduleDetail.sql">
+    <Content Include="SqlQueries\Npgsql\Data\CareerScheduleDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\ClassRoom.sql">
+    <Content Include="SqlQueries\Npgsql\Data\ClassRoom.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\CleanTables.sql">
+    <Content Include="SqlQueries\Npgsql\CleanTables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Course.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Course.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Degree.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Degree.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Enrollment.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Enrollment.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\EnrollmentDetail.sql">
+    <Content Include="SqlQueries\Npgsql\Data\EnrollmentDetail.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Module.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Module.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Period.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Period.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Person.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Person.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\ResetIdentities.sql">
+    <Content Include="SqlQueries\Npgsql\ResetIdentities.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Speaker.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Speaker.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\PgSql\Data\Student.sql">
+    <Content Include="SqlQueries\Npgsql\Data\Student.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ssleay32.dll">
