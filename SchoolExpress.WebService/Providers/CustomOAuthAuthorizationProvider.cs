@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -39,7 +41,13 @@ namespace SchoolExpress.WebService.Providers
                     identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }
 
-                AuthenticationTicket ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
+                AuthenticationTicket ticket = new AuthenticationTicket(identity, new AuthenticationProperties
+                {
+                    AllowRefresh = true,
+                    IsPersistent = true,
+                    IssuedUtc = DateTimeOffset.Now,
+                    ExpiresUtc = DateTimeOffset.Now.AddMinutes(double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]))
+                });
                 context.Validated(ticket);
             }
             else

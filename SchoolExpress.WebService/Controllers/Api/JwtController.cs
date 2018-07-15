@@ -31,7 +31,7 @@ namespace SchoolExpress.WebService.Controllers.Api
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
                 string token =
-                    CustomJwtAuthorizationProvider.GenerateToken(secretKey, user.Id, user.UserName, roles,
+                    new CustomJwtAuthorizationProvider().GenerateToken(secretKey, user.Id, user.UserName, roles,
                         tokenExpiration);
                 return Ok(new
                 {

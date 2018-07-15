@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -10,7 +9,6 @@ using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Owin;
-using SchoolExpress.WebService.DbContexts;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Providers;
 using SchoolExpress.WebService.Utils;
@@ -81,14 +79,12 @@ namespace SchoolExpress.WebService
 
             if (authenticationModes.Contains("OAUTH"))
             {
-                double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
                 appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
                 {
                     ApplicationCanDisplayErrors = true,
                     AllowInsecureHttp = true,
                     TokenEndpointPath = new PathString("/oauth"),
-                    AccessTokenExpireTimeSpan =
-                        TimeSpan.FromMinutes(tokenExpiration),
+                    AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"])),
                     Provider = container.Resolve<CustomOAuthAuthorizationProvider>()
                 });
                 appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());

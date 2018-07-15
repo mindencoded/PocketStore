@@ -8,25 +8,32 @@ using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Providers
 {
-    public static class CustomJwtAuthorizationProvider
+    public class CustomJwtAuthorizationProvider
     {
         public static string Issuer { get; set; }
 
         public static string Audience { get; set; }
 
-        static CustomJwtAuthorizationProvider()
+        public CustomJwtAuthorizationProvider()
         {
             Issuer = "self";
             Audience = "http://www.example.com";
         }
 
-        public static string GenerateToken(string secretKey, string userId, string userName, IEnumerable<string> roles,
+        public CustomJwtAuthorizationProvider(string issuer, string audience)
+        {
+            Issuer = issuer;
+            Audience = audience;
+        }
+
+        public string GenerateToken(string secretKey, string userId, string userName, IEnumerable<string> roles,
             double expiration)
         {
             ClaimsIdentity identity = new ClaimsIdentity(new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, userId),
-                new Claim(ClaimTypes.Name, userName)
+                new Claim(ClaimTypes.Name, userName),
+                new Claim("sub", userName)
             }, "Bearer");
 
             foreach (string role in roles)
@@ -37,7 +44,7 @@ namespace SchoolExpress.WebService.Providers
             return CreateToken(secretKey, identity, expiration);
         }
 
-        public static ClaimsPrincipal GetPrincipal(string secretKey, string token)
+        public ClaimsPrincipal GetPrincipal(string secretKey, string token)
         {
             string sha = SHA.GenerateSHA256(secretKey);
             SymmetricSecurityKey signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(sha));
@@ -52,16 +59,27 @@ namespace SchoolExpress.WebService.Providers
                 {
                     Issuer
                 },
-                IssuerSigningKey = signingKey
+                IssuerSigningKey = signingKey,
+                RequireExpirationTime = true
             };
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+          
             SecurityToken securityToken;
-            ClaimsPrincipal principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken);
-            JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;
+            JwtSecurityTokenHandler securityTokenHandler = new JwtSecurityTokenHandler();
+            ClaimsPrincipal principal = securityTokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken); 
+            JwtSecurityToken jwtSecurityToken = securityToken as JwtSecurityToken;          
+            if (jwtSecurityToken != null)
+            {
+                DateTime validTo = jwtSecurityToken.ValidTo;
+                if (validTo < DateTime.UtcNow)
+                {
+                    throw new SecurityTokenExpiredException();
+                }
+            }
+
             return principal;
         }
 
-        private static string CreateToken(string secretKey, ClaimsIdentity identity, double expiration)
+        public string CreateToken(string secretKey, ClaimsIdentity identity, double expiration)
         {
             string sha = SHA.GenerateSHA256(secretKey);
             SecurityKey signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(sha));
@@ -74,13 +92,13 @@ namespace SchoolExpress.WebService.Providers
                 Issuer = Issuer,
                 Subject = identity,
                 SigningCredentials = signingCredentials,
-                Expires = DateTime.UtcNow.AddMinutes(expiration)
+                Expires = DateTime.UtcNow.AddMinutes(expiration),
+                NotBefore = DateTime.UtcNow
             };
 
-            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-
-            SecurityToken plainToken = tokenHandler.CreateToken(securityTokenDescriptor);
-            return tokenHandler.WriteToken(plainToken);
+            JwtSecurityTokenHandler securityTokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken securityToken = securityTokenHandler.CreateToken(securityTokenDescriptor);
+            return securityTokenHandler.WriteToken(securityToken);
         }
     }
 }

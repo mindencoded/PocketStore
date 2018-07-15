@@ -9,5 +9,3 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
---SELECT restart_sequence('UserClaim');
-

@@ -6,12 +6,15 @@ using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using Common.Logging;
 using SchoolExpress.WebService.Providers;
 
 namespace SchoolExpress.WebService.Filters
 {
     public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
     {
+        private static readonly ILog Log = LogManager.GetLogger<JwtAuthorizeAttribute>();
+
         public override void OnAuthorization(HttpActionContext actionContext)
         {
             AuthenticationHeaderValue authRequest = actionContext.Request.Headers.Authorization;
@@ -24,42 +27,43 @@ namespace SchoolExpress.WebService.Filters
                     ClaimsPrincipal principal = null;
                     try
                     {
-                        principal = CustomJwtAuthorizationProvider.GetPrincipal(secretKey, token);
+                        principal = new CustomJwtAuthorizationProvider().GetPrincipal(secretKey, token);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        // ignored
+                        Log.Error(ex.Message);
                     }
 
                     if (principal != null)
                     {
-                        ClaimsIdentity identity = principal.Identity as ClaimsIdentity;
-                        if (identity != null)
+                        ClaimsIdentity identity = (ClaimsIdentity) principal.Identity;
+                        Claim nameClaim = identity.FindFirst(ClaimTypes.Name);
+                        Claim nameIdentifierClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
+                        IList<Claim> claims = new List<Claim>
                         {
-                            Claim nameClaim = identity.FindFirst(ClaimTypes.Name);
-                            Claim nameIdentifierClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-                            IList<Claim> claims = new List<Claim>
+                            nameClaim,
+                            nameIdentifierClaim
+                        };
+                        IList<Claim> roleClaims = identity.FindAll(ClaimTypes.Role).ToList();
+                        if (roleClaims.Any())
+                        {
+                            foreach (Claim roleClaim in roleClaims)
                             {
-                                nameClaim,
-                                nameIdentifierClaim
-                            };
-                            IList<Claim> roleClaims = identity.FindAll(ClaimTypes.Role).ToList();
-                            if (roleClaims.Any())
-                            {
-                                foreach (Claim roleClaim in roleClaims)
-                                {
-                                    claims.Add(roleClaim);
-                                }
+                                claims.Add(roleClaim);
                             }
-
-                            actionContext.RequestContext.Principal =
-                                new ClaimsPrincipal(new ClaimsIdentity(claims, "Bearer"));
                         }
+
+                        actionContext.RequestContext.Principal =
+                            new ClaimsPrincipal(new ClaimsIdentity(claims, "bearer"));
+                    }
+                    else
+                    {
+                        //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized, "Unauthorized.");
                     }
                 }
             }
 
-            //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
+
             base.OnAuthorization(actionContext);
         }
     }

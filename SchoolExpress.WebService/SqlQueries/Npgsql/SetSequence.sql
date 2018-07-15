@@ -6,5 +6,3 @@ BEGIN
   END LOOP;
 END;
 $$ LANGUAGE plpgsql;
-
---SELECT set_sequence('Module');
