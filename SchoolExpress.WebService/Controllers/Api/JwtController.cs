@@ -24,7 +24,7 @@ namespace SchoolExpress.WebService.Controllers.Api
         public async Task<IHttpActionResult> Post([FromBody] UserLoginModel model)
         {
             IUserRepository repository = Uow.GetRepository<IUserRepository>();
-            IdentityUser user = await repository.FindUser(model.UserName, model.Password);
+            IdentityUser user = await repository.FindAsync(model.UserName, model.Password);
             if (user != null)
             {
                 IEnumerable<string> roles = await repository.GetRolesAsync(user.Id);

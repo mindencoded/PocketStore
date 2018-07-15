@@ -28,7 +28,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
 
 
         [Authorize(Roles = "api.crud.persons.put")]
-        protected override async Task<HttpResponseMessage> Put(Person entity)
+        public override async Task<HttpResponseMessage> Put(Person entity)
         {
             return await base.Put(entity);
         }

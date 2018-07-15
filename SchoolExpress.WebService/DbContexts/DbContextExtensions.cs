@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
+using System.Dynamic;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace SchoolExpress.WebService.DbContexts
 {
@@ -31,6 +37,43 @@ namespace SchoolExpress.WebService.DbContexts
         public static void Clear<T>(this DbSet<T> dbSet) where T : class
         {
             dbSet.RemoveRange(dbSet);
+        }
+
+        public static IEnumerable<dynamic> DynamicListFromSql(this DbContext context, string sql, Dictionary<string, object> Params)
+        {
+            using (var cmd = context.Database.Connection.CreateCommand())
+            {
+                cmd.CommandText = sql;
+                if (cmd.Connection.State != ConnectionState.Open) { cmd.Connection.Open(); }
+
+                foreach (KeyValuePair<string, object> p in Params)
+                {
+                    DbParameter dbParameter = cmd.CreateParameter();
+                    dbParameter.ParameterName = p.Key;
+                    dbParameter.Value = p.Value;
+                    cmd.Parameters.Add(dbParameter);
+                }
+
+                using (DbDataReader dataReader = cmd.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        IDictionary<string, object> row = new ExpandoObject();
+                        for (int fieldCount = 0; fieldCount < dataReader.FieldCount; fieldCount++)
+                        {
+                            row.Add(dataReader.GetName(fieldCount), dataReader[fieldCount]);
+                        }
+                        yield return row;
+                    }
+                }
+            }
+        }
+        
+        public static void ExecuteSqlCommand(this DbContext context, string path, params object[] parameters)
+        {
+            string sqlPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
+            string sqlContent = File.ReadAllText(sqlPath, Encoding.UTF8);
+            context.Database.ExecuteSqlCommand(sqlContent, parameters);
         }
     }
 }

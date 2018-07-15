@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Common.Logging;
+using SchoolExpress.WebService.DbContexts;
 using Topshelf;
 using Topshelf.Common.Logging;
 

@@ -5,14 +5,22 @@
       <driver-ref>sqlserver.jtds</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:jtds:sqlserver://./SchoolExpressDb;instance=LOCALDB#5B14C6BF;namedPipe=true</jdbc-url>
+      <jdbc-url>jdbc:jtds:sqlserver://./SchoolExpressDb;instance=OCALDB#A1890A9E;namedPipe=true</jdbc-url>
       <jdbc-additional-properties>
         <property name="LOCAL_DB_INSTANCE" value="MSSQLLocalDB" />
         <property name="LOCAL_DB_EXECUTABLE" value="C:/Program Files/Microsoft SQL Server/130/Tools/Binn/SqlLocalDB.exe" />
       </jdbc-additional-properties>
       <driver-properties>
         <property name="appName" value="DataGrip" />
+        <property name="INSTANCE" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - SchoolExpressDb@localhost" uuid="92e57335-21c9-4e91-93e4-e887869fedbf">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/SchoolExpressDb</jdbc-url>
+      <default-dialect>PostgreSQL</default-dialect>
     </data-source>
   </component>
 </project>

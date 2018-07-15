@@ -34,7 +34,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
 
         [Route("")]
         [HttpPut]
-        protected virtual async Task<HttpResponseMessage> Put(T entity)
+        public virtual async Task<HttpResponseMessage> Put(T entity)
         {
             Uow.GetRepositoryForEntityType<T>().Update(entity);
             await Uow.CommitAsync();

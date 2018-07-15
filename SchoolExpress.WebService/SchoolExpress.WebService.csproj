@@ -195,6 +195,7 @@
     <Compile Include="Controllers\Api\Crud\SpeakerCrudApiController.cs" />
     <Compile Include="Controllers\Api\Crud\StudentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Crud\UserAccountsCrudApiController.cs" />
+    <Compile Include="DbContexts\ExcecuteAlwaysInitializer.cs" />
     <Compile Include="DbContexts\DbContextExtensions.cs" />
     <Compile Include="DbContexts\ProviderInvariantName.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
@@ -308,6 +309,201 @@
     <Compile Include="RunService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataSources\Npgsql\Csv\Campus.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Career.csv" />
+    <Content Include="DataSources\Npgsql\Csv\CareerDetail.csv" />
+    <Content Include="DataSources\Npgsql\Csv\CareerSchedule.csv" />
+    <Content Include="DataSources\Npgsql\Csv\CareerScheduleDetail.csv" />
+    <Content Include="DataSources\Npgsql\Csv\ClassRoom.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Course.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Degree.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Enrollment.csv" />
+    <Content Include="DataSources\Npgsql\Csv\EnrollmentDetail.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Module.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Period.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Person.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Speaker.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Student.csv" />
+    <Content Include="DataSources\Npgsql\Sql\Campus.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Career.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\CareerDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\CareerSchedule.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\CareerScheduleDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\ClassRoom.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Course.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Degree.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Enrollment.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\EnrollmentDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Module.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Period.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Person.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Speaker.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Sql\Student.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Campus.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Career.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\CareerDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\CareerSchedule.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\CareerScheduleDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\ClassRoom.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Course.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Degree.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Enrollment.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\EnrollmentDetail.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Module.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Period.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Person.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Speaker.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\System.Data.SqlClient\Sql\Student.sql">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="replace-null.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -323,106 +519,19 @@
     <Content Include="openssl.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Campus.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Career.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerSchedule.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\CareerScheduleDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\ClassRoom.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="SqlQueries\Npgsql\SetSequence.sql" />
+    <Content Include="SqlQueries\Npgsql\RestartSequence.sql" />
+    <Content Include="SqlQueries\Npgsql\SetSequences.sql" />
     <Content Include="SqlQueries\System.Data.SqlClient\CleanTables.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Course.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Degree.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Enrollment.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\EnrollmentDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Module.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Period.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Person.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Speaker.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\System.Data.SqlClient\Data\Student.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SqlQueries\System.Data.SqlClient\ResetIdentities.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Campus.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Career.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\CareerDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\CareerSchedule.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\CareerScheduleDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\ClassRoom.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="SqlQueries\Npgsql\CleanTables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Course.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Degree.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Enrollment.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\EnrollmentDetail.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Module.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Period.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Person.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\ResetIdentities.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Speaker.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlQueries\Npgsql\Data\Student.sql">
+    <Content Include="SqlQueries\Npgsql\RestartSequences.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ssleay32.dll">
@@ -470,6 +579,102 @@
       <DependentUpon>App.config</DependentUpon>
       <IsTransformFile>True</IsTransformFile>
     </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Campus.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Career.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\CareerDetail.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\CareerSchedule.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\CareerScheduleDetail.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\ClassRoom.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Course.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Degree.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Enrollment.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\EnrollmentDetail.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Module.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Period.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Person.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Speaker.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataSources\System.Data.SqlClient\Csv\Student.csv">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="LoadFromDbToCsvFiles.mssql.bat">
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="LoadFromSqlFilesToDb.mssql.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -489,51 +694,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="LoadFromDbToCsvFiles.pgsql.bat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Campus.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Career.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\CareerDetail.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\CareerSchedule.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\CareerScheduleDetail.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\ClassRoom.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Course.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Degree.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Enrollment.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\EnrollmentDetail.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Module.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Period.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Person.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Speaker.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DataSources\Student.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DbMigration.bat">
@@ -558,9 +718,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="LoadFromDbToCsvFiles.mssql.bat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="sqlparams.conf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

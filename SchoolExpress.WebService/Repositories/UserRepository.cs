@@ -21,7 +21,7 @@ namespace SchoolExpress.WebService.Repositories
                 password);
         }
 
-        public async Task<IdentityUser> FindUser(string userName, string password)
+        public async Task<IdentityUser> FindAsync(string userName, string password)
         {
             return await _userManager.FindAsync(userName, password);
         }

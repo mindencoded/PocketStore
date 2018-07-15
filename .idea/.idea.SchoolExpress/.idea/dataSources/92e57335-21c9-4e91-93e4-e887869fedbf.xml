@@ -1,0 +1,2019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - SchoolExpressDb@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.8">
+    <root id="1">
+      <ServerVersion>10.4</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="SchoolExpressDb">
+      <ObjectId>82731</ObjectId>
+      <IntrospectionStateNumber>116</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12938</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <role id="4" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="10" parent="2" name="dbo">
+      <ObjectId>82732</ObjectId>
+      <IntrospectionTimestamp>2018-07-15.01:22:50.557</IntrospectionTimestamp>
+      <IntrospectionStateNumber>25215</IntrospectionStateNumber>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="2" name="information_schema">
+      <ObjectId>12648</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="13" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-07-15.01:22:02.998</IntrospectionTimestamp>
+      <IntrospectionStateNumber>24451</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="17" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="22" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="23" parent="10" name="Campus_Id_seq">
+      <ObjectId>82779</ObjectId>
+      <StateNumber>24452</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="24" parent="10" name="CareerDetail_Id_seq">
+      <ObjectId>82819</ObjectId>
+      <StateNumber>24603</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="25" parent="10" name="CareerScheduleDetail_Id_seq">
+      <ObjectId>82804</ObjectId>
+      <StateNumber>24913</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="26" parent="10" name="CareerSchedule_Id_seq">
+      <ObjectId>82847</ObjectId>
+      <StateNumber>24891</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="27" parent="10" name="Career_Id_seq">
+      <ObjectId>82834</ObjectId>
+      <StateNumber>24595</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="28" parent="10" name="ClassRoom_Id_seq">
+      <ObjectId>82791</ObjectId>
+      <StateNumber>24455</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="29" parent="10" name="Course_Id_seq">
+      <ObjectId>82898</ObjectId>
+      <StateNumber>24462</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="30" parent="10" name="Degree_Id_seq">
+      <ObjectId>82886</ObjectId>
+      <StateNumber>24587</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="31" parent="10" name="Enrollment_Id_seq">
+      <ObjectId>82922</ObjectId>
+      <StateNumber>25215</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="32" parent="10" name="Module_Id_seq">
+      <ObjectId>82862</ObjectId>
+      <StateNumber>24748</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="33" parent="10" name="Period_Id_seq">
+      <ObjectId>82874</ObjectId>
+      <StateNumber>24756</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="34" parent="10" name="Person_Id_seq">
+      <ObjectId>82948</ObjectId>
+      <StateNumber>24759</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="35" parent="10" name="Speaker_Id_seq">
+      <ObjectId>82961</ObjectId>
+      <StateNumber>24824</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="36" parent="10" name="Student_Id_seq">
+      <ObjectId>82935</ObjectId>
+      <StateNumber>24849</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="37" parent="10" name="UserClaim_Id_seq">
+      <ObjectId>82762</ObjectId>
+      <StateNumber>23329</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="38" parent="10" name="Campus">
+      <ObjectId>82781</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="39" parent="10" name="Career">
+      <ObjectId>82836</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="40" parent="10" name="CareerDetail">
+      <ObjectId>82821</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="41" parent="10" name="CareerSchedule">
+      <ObjectId>82849</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="42" parent="10" name="CareerScheduleDetail">
+      <ObjectId>82806</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="43" parent="10" name="ClassRoom">
+      <ObjectId>82793</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="44" parent="10" name="Course">
+      <ObjectId>82900</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="45" parent="10" name="Degree">
+      <ObjectId>82888</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="46" parent="10" name="Enrollment">
+      <ObjectId>82924</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="47" parent="10" name="EnrollmentDetail">
+      <ObjectId>82910</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="48" parent="10" name="Module">
+      <ObjectId>82864</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="49" parent="10" name="Period">
+      <ObjectId>82876</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="50" parent="10" name="Person">
+      <ObjectId>82950</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="51" parent="10" name="Role">
+      <ObjectId>82733</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="52" parent="10" name="Speaker">
+      <ObjectId>82963</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="53" parent="10" name="Student">
+      <ObjectId>82937</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="54" parent="10" name="User">
+      <ObjectId>82747</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="55" parent="10" name="UserAccount">
+      <ObjectId>82977</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="56" parent="10" name="UserClaim">
+      <ObjectId>82764</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="57" parent="10" name="UserLogin">
+      <ObjectId>82771</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="58" parent="10" name="UserRole">
+      <ObjectId>82740</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <table id="59" parent="10" name="__MigrationHistory">
+      <ObjectId>83129</ObjectId>
+      <StateNumber>15406</StateNumber>
+    </table>
+    <routine id="60" parent="16" name="restart_sequence">
+      <ObjectId>91411</ObjectId>
+      <StateNumber>24450</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>name character</ArgumentsDefinition>
+      <ResultsDefinition>void</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="61" parent="16" name="set_sequence">
+      <ObjectId>91412</ObjectId>
+      <StateNumber>24451</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>name character</ArgumentsDefinition>
+      <ResultsDefinition>void</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <column id="62" parent="38" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Campus_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Campus_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="63" parent="38" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="64" parent="38" name="Address">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="65" parent="38" name="Location">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="66" parent="38" name="LastModified">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="67" parent="38" name="Created">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="68" parent="38" name="Status">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="69" parent="38" name="PK_dbo.Campus">
+      <ObjectId>82789</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="70" parent="38" name="Campus_IX_Description">
+      <ObjectId>82993</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="38" name="PK_dbo.Campus">
+      <ObjectId>82790</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Campus</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="72" parent="39" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Career_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Career_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="73" parent="39" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="74" parent="39" name="DegreeId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="75" parent="39" name="LastModified">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="76" parent="39" name="Created">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="77" parent="39" name="Status">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="78" parent="39" name="PK_dbo.Career">
+      <ObjectId>82845</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="79" parent="39" name="Career_IX_Description">
+      <ObjectId>83001</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="80" parent="39" name="Career_IX_DegreeId">
+      <ObjectId>83002</ObjectId>
+      <ColNames>DegreeId</ColNames>
+    </index>
+    <key id="81" parent="39" name="PK_dbo.Career">
+      <ObjectId>82846</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Career</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="82" parent="39" name="FK_dbo.Career_dbo.Degree_DegreeId">
+      <ObjectId>83074</ObjectId>
+      <ColNames>DegreeId</ColNames>
+      <RefTableId>82888</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Degree</RefTableName>
+      <RefKeyName>PK_dbo.Degree</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="83" parent="40" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;CareerDetail_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;CareerDetail_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="84" parent="40" name="Credits">
+      <Position>2</Position>
+      <DataType>numeric(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="85" parent="40" name="CreditAmount">
+      <Position>3</Position>
+      <DataType>numeric(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="86" parent="40" name="CareerId">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="87" parent="40" name="CourseId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="88" parent="40" name="LastModified">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="89" parent="40" name="Created">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="90" parent="40" name="Status">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="91" parent="40" name="PK_dbo.CareerDetail">
+      <ObjectId>82832</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="92" parent="40" name="CareerDetail_IX_CareerId_CourseId">
+      <ObjectId>83000</ObjectId>
+      <ColNames>CareerId
+CourseId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="40" name="PK_dbo.CareerDetail">
+      <ObjectId>82833</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.CareerDetail</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="94" parent="40" name="FK_dbo.CareerDetail_dbo.Career_CareerId">
+      <ObjectId>83064</ObjectId>
+      <ColNames>CareerId</ColNames>
+      <RefTableId>82836</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Career</RefTableName>
+      <RefKeyName>PK_dbo.Career</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="95" parent="40" name="FK_dbo.CareerDetail_dbo.Course_CourseId">
+      <ObjectId>83069</ObjectId>
+      <ColNames>CourseId</ColNames>
+      <RefTableId>82900</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Course</RefTableName>
+      <RefKeyName>PK_dbo.Course</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="96" parent="41" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;CareerSchedule_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;CareerSchedule_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="97" parent="41" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="98" parent="41" name="CareerId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="99" parent="41" name="PeriodId">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="100" parent="41" name="ModuleId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="101" parent="41" name="LastModified">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="102" parent="41" name="Created">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="103" parent="41" name="Status">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="104" parent="41" name="PK_dbo.CareerSchedule">
+      <ObjectId>82860</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="105" parent="41" name="CareerSchedule_IX_Description">
+      <ObjectId>83003</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="106" parent="41" name="CareerSchedule_IX_PeriodId_CareerId_ModuleId">
+      <ObjectId>83004</ObjectId>
+      <ColNames>PeriodId
+CareerId
+ModuleId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="107" parent="41" name="PK_dbo.CareerSchedule">
+      <ObjectId>82861</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.CareerSchedule</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="108" parent="41" name="FK_dbo.CareerSchedule_dbo.Career_CareerId">
+      <ObjectId>83079</ObjectId>
+      <ColNames>CareerId</ColNames>
+      <RefTableId>82836</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Career</RefTableName>
+      <RefKeyName>PK_dbo.Career</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="109" parent="41" name="FK_dbo.CareerSchedule_dbo.Period_PeriodId">
+      <ObjectId>83089</ObjectId>
+      <ColNames>PeriodId</ColNames>
+      <RefTableId>82876</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Period</RefTableName>
+      <RefKeyName>PK_dbo.Period</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="110" parent="41" name="FK_dbo.CareerSchedule_dbo.Module_ModuleId">
+      <ObjectId>83084</ObjectId>
+      <ColNames>ModuleId</ColNames>
+      <RefTableId>82864</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Module</RefTableName>
+      <RefKeyName>PK_dbo.Module</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="111" parent="42" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;CareerScheduleDetail_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;CareerScheduleDetail_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="112" parent="42" name="StartTime">
+      <Position>2</Position>
+      <DataType>interval(6)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1186</TypeId>
+    </column>
+    <column id="113" parent="42" name="EndTime">
+      <Position>3</Position>
+      <DataType>interval(6)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1186</TypeId>
+    </column>
+    <column id="114" parent="42" name="Day">
+      <Position>4</Position>
+      <DataType>varchar(3)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="115" parent="42" name="CareerScheduleId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="116" parent="42" name="ClassRoomId">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="117" parent="42" name="SpeakerId">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="118" parent="42" name="CareerDetailId">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="119" parent="42" name="LastModified">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="120" parent="42" name="Created">
+      <Position>10</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="121" parent="42" name="Status">
+      <Position>11</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="122" parent="42" name="PK_dbo.CareerScheduleDetail">
+      <ObjectId>82817</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="123" parent="42" name="CareerScheduleDetail_IX_CareerScheduleId">
+      <ObjectId>82996</ObjectId>
+      <ColNames>CareerScheduleId</ColNames>
+    </index>
+    <index id="124" parent="42" name="CareerScheduleDetail_IX_ClassRoomId">
+      <ObjectId>82997</ObjectId>
+      <ColNames>ClassRoomId</ColNames>
+    </index>
+    <index id="125" parent="42" name="CareerScheduleDetail_IX_SpeakerId">
+      <ObjectId>82998</ObjectId>
+      <ColNames>SpeakerId</ColNames>
+    </index>
+    <index id="126" parent="42" name="CareerScheduleDetail_IX_CareerDetailId">
+      <ObjectId>82999</ObjectId>
+      <ColNames>CareerDetailId</ColNames>
+    </index>
+    <key id="127" parent="42" name="PK_dbo.CareerScheduleDetail">
+      <ObjectId>82818</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.CareerScheduleDetail</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="128" parent="42" name="FK_dbo.CareerScheduleDetail_dbo.CareerSchedule_CareerScheduleId">
+      <ObjectId>83044</ObjectId>
+      <ColNames>CareerScheduleId</ColNames>
+      <RefTableId>82849</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CareerSchedule</RefTableName>
+      <RefKeyName>PK_dbo.CareerSchedule</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="129" parent="42" name="FK_dbo.CareerScheduleDetail_dbo.ClassRoom_ClassRoomId">
+      <ObjectId>83059</ObjectId>
+      <ColNames>ClassRoomId</ColNames>
+      <RefTableId>82793</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ClassRoom</RefTableName>
+      <RefKeyName>PK_dbo.ClassRoom</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="130" parent="42" name="FK_dbo.CareerScheduleDetail_dbo.Speaker_SpeakerId">
+      <ObjectId>83054</ObjectId>
+      <ColNames>SpeakerId</ColNames>
+      <RefTableId>82963</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Speaker</RefTableName>
+      <RefKeyName>PK_dbo.Speaker</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="131" parent="42" name="FK_dbo.CareerScheduleDetail_dbo.CareerDetail_CareerDetailId">
+      <ObjectId>83049</ObjectId>
+      <ColNames>CareerDetailId</ColNames>
+      <RefTableId>82821</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CareerDetail</RefTableName>
+      <RefKeyName>PK_dbo.CareerDetail</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="132" parent="43" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;ClassRoom_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;ClassRoom_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="133" parent="43" name="CampusId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="134" parent="43" name="Description">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="135" parent="43" name="LastModified">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="136" parent="43" name="Created">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="137" parent="43" name="Status">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="138" parent="43" name="PK_dbo.ClassRoom">
+      <ObjectId>82802</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="139" parent="43" name="ClassRoom_IX_Description">
+      <ObjectId>82995</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="140" parent="43" name="ClassRoom_IX_CampusId">
+      <ObjectId>82994</ObjectId>
+      <ColNames>CampusId</ColNames>
+    </index>
+    <key id="141" parent="43" name="PK_dbo.ClassRoom">
+      <ObjectId>82803</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.ClassRoom</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="142" parent="43" name="FK_dbo.ClassRoom_dbo.Campus_CampusId">
+      <ObjectId>83039</ObjectId>
+      <ColNames>CampusId</ColNames>
+      <RefTableId>82781</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Campus</RefTableName>
+      <RefKeyName>PK_dbo.Campus</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="143" parent="44" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Course_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Course_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="144" parent="44" name="Code">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="145" parent="44" name="Description">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="146" parent="44" name="BackgroundColor">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="147" parent="44" name="LastModified">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="148" parent="44" name="Created">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="149" parent="44" name="Status">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="150" parent="44" name="PK_dbo.Course">
+      <ObjectId>82908</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="151" parent="44" name="Course_IX_Description">
+      <ObjectId>83008</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="152" parent="44" name="PK_dbo.Course">
+      <ObjectId>82909</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Course</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="153" parent="45" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Degree_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Degree_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="154" parent="45" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="155" parent="45" name="LastModified">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="156" parent="45" name="Created">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="157" parent="45" name="Status">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="158" parent="45" name="PK_dbo.Degree">
+      <ObjectId>82896</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="159" parent="45" name="Degree_IX_Description">
+      <ObjectId>83007</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="160" parent="45" name="PK_dbo.Degree">
+      <ObjectId>82897</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Degree</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="161" parent="46" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Enrollment_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Enrollment_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="162" parent="46" name="Total">
+      <Position>2</Position>
+      <DataType>numeric(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="163" parent="46" name="StudentId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="164" parent="46" name="LastModified">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="165" parent="46" name="Created">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="166" parent="46" name="Status">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="167" parent="46" name="PK_dbo.Enrollment">
+      <ObjectId>82933</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="168" parent="46" name="Enrollment_IX_StudentId">
+      <ObjectId>83011</ObjectId>
+      <ColNames>StudentId</ColNames>
+    </index>
+    <key id="169" parent="46" name="PK_dbo.Enrollment">
+      <ObjectId>82934</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Enrollment</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="170" parent="46" name="FK_dbo.Enrollment_dbo.Student_StudentId">
+      <ObjectId>83104</ObjectId>
+      <ColNames>StudentId</ColNames>
+      <RefTableId>82937</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Student</RefTableName>
+      <RefKeyName>PK_dbo.Student</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="171" parent="47" name="CareerDetailId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="172" parent="47" name="EnrollmentId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="173" parent="47" name="Discount">
+      <Position>3</Position>
+      <DataType>numeric(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="174" parent="47" name="Total">
+      <Position>4</Position>
+      <DataType>numeric(18,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="175" parent="47" name="LastModified">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="176" parent="47" name="Created">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="177" parent="47" name="Status">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="178" parent="47" name="PK_dbo.EnrollmentDetail">
+      <ObjectId>82920</ObjectId>
+      <ColNames>CareerDetailId
+EnrollmentId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="179" parent="47" name="EnrollmentDetail_IX_CareerDetailId">
+      <ObjectId>83009</ObjectId>
+      <ColNames>CareerDetailId</ColNames>
+    </index>
+    <index id="180" parent="47" name="EnrollmentDetail_IX_EnrollmentId">
+      <ObjectId>83010</ObjectId>
+      <ColNames>EnrollmentId</ColNames>
+    </index>
+    <key id="181" parent="47" name="PK_dbo.EnrollmentDetail">
+      <ObjectId>82921</ObjectId>
+      <ColNames>CareerDetailId
+EnrollmentId</ColNames>
+      <UnderlyingIndexName>PK_dbo.EnrollmentDetail</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="182" parent="47" name="FK_dbo.EnrollmentDetail_dbo.CareerDetail_CareerDetailId">
+      <ObjectId>83094</ObjectId>
+      <ColNames>CareerDetailId</ColNames>
+      <RefTableId>82821</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CareerDetail</RefTableName>
+      <RefKeyName>PK_dbo.CareerDetail</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="183" parent="47" name="FK_dbo.EnrollmentDetail_dbo.Enrollment_EnrollmentId">
+      <ObjectId>83099</ObjectId>
+      <ColNames>EnrollmentId</ColNames>
+      <RefTableId>82924</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Enrollment</RefTableName>
+      <RefKeyName>PK_dbo.Enrollment</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="184" parent="48" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Module_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Module_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="185" parent="48" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="186" parent="48" name="LastModified">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="187" parent="48" name="Created">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="188" parent="48" name="Status">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="189" parent="48" name="PK_dbo.Module">
+      <ObjectId>82872</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="190" parent="48" name="Module_IX_Description">
+      <ObjectId>83005</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="191" parent="48" name="PK_dbo.Module">
+      <ObjectId>82873</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Module</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="192" parent="49" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Period_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Period_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="193" parent="49" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="194" parent="49" name="StartDate">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="195" parent="49" name="EndDate">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="196" parent="49" name="LastModified">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="197" parent="49" name="Created">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="198" parent="49" name="Status">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="199" parent="49" name="PK_dbo.Period">
+      <ObjectId>82884</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="200" parent="49" name="Period_IX_Description">
+      <ObjectId>83006</ObjectId>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="201" parent="49" name="PK_dbo.Period">
+      <ObjectId>82885</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Period</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="202" parent="50" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Person_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Person_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="203" parent="50" name="IdentityCard">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="204" parent="50" name="Name">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="205" parent="50" name="LastName">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="206" parent="50" name="Email">
+      <Position>5</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="207" parent="50" name="LastModified">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="208" parent="50" name="Created">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="209" parent="50" name="Status">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="210" parent="50" name="PK_dbo.Person">
+      <ObjectId>82959</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="211" parent="50" name="Person_IX_IdentityCard">
+      <ObjectId>83014</ObjectId>
+      <ColNames>IdentityCard</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="212" parent="50" name="Person_IX_Email">
+      <ObjectId>83015</ObjectId>
+      <ColNames>Email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="213" parent="50" name="PK_dbo.Person">
+      <ObjectId>82960</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Person</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="214" parent="51" name="Id">
+      <Position>1</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="215" parent="51" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="216" parent="51" name="PK_dbo.Role">
+      <ObjectId>82738</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="217" parent="51" name="Role_RoleNameIndex">
+      <ObjectId>82987</ObjectId>
+      <ColNames>Name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="218" parent="51" name="PK_dbo.Role">
+      <ObjectId>82739</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Role</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="219" parent="52" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Speaker_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Speaker_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="220" parent="52" name="PersonId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="221" parent="52" name="Achievements">
+      <Position>3</Position>
+      <DataType>varchar(500)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="222" parent="52" name="PartTime">
+      <Position>4</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="223" parent="52" name="LastModified">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="224" parent="52" name="Created">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="225" parent="52" name="Status">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="226" parent="52" name="PK_dbo.Speaker">
+      <ObjectId>82975</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="227" parent="52" name="Speaker_IX_PersonId">
+      <ObjectId>83016</ObjectId>
+      <ColNames>PersonId</ColNames>
+    </index>
+    <key id="228" parent="52" name="PK_dbo.Speaker">
+      <ObjectId>82976</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Speaker</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="229" parent="52" name="FK_dbo.Speaker_dbo.Person_PersonId">
+      <ObjectId>83114</ObjectId>
+      <ColNames>PersonId</ColNames>
+      <RefTableId>82950</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Person</RefTableName>
+      <RefKeyName>PK_dbo.Person</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="230" parent="53" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;Student_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;Student_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="231" parent="53" name="PersonId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="232" parent="53" name="SubscriptionId">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="233" parent="53" name="LastModified">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="234" parent="53" name="Created">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="235" parent="53" name="Status">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="236" parent="53" name="PK_dbo.Student">
+      <ObjectId>82946</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="237" parent="53" name="Student_IX_SubscriptionId">
+      <ObjectId>83013</ObjectId>
+      <ColNames>SubscriptionId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="238" parent="53" name="Student_IX_PersonId">
+      <ObjectId>83012</ObjectId>
+      <ColNames>PersonId</ColNames>
+    </index>
+    <key id="239" parent="53" name="PK_dbo.Student">
+      <ObjectId>82947</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.Student</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="240" parent="53" name="FK_dbo.Student_dbo.Person_PersonId">
+      <ObjectId>83109</ObjectId>
+      <ColNames>PersonId</ColNames>
+      <RefTableId>82950</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Person</RefTableName>
+      <RefKeyName>PK_dbo.Person</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="241" parent="54" name="Id">
+      <Position>1</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="242" parent="54" name="Email">
+      <Position>2</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="243" parent="54" name="EmailConfirmed">
+      <Position>3</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="244" parent="54" name="PasswordHash">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="245" parent="54" name="SecurityStamp">
+      <Position>5</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="246" parent="54" name="PhoneNumber">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="247" parent="54" name="PhoneNumberConfirmed">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="248" parent="54" name="TwoFactorEnabled">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="249" parent="54" name="LockoutEndDateUtc">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="250" parent="54" name="LockoutEnabled">
+      <Position>10</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="251" parent="54" name="AccessFailedCount">
+      <Position>11</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="252" parent="54" name="UserName">
+      <Position>12</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="253" parent="54" name="PK_dbo.User">
+      <ObjectId>82760</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="254" parent="54" name="User_UserNameIndex">
+      <ObjectId>82990</ObjectId>
+      <ColNames>UserName</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="255" parent="54" name="PK_dbo.User">
+      <ObjectId>82761</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.User</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="256" parent="55" name="UserId">
+      <Position>1</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="257" parent="55" name="PersonId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="258" parent="55" name="LastModified">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="259" parent="55" name="Created">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;0001-01-01 00:00:00&apos;::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="260" parent="55" name="Status">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="261" parent="55" name="PK_dbo.UserAccount">
+      <ObjectId>82985</ObjectId>
+      <ColNames>UserId
+PersonId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="262" parent="55" name="UserAccount_IX_UserId">
+      <ObjectId>83017</ObjectId>
+      <ColNames>UserId</ColNames>
+    </index>
+    <index id="263" parent="55" name="UserAccount_IX_PersonId">
+      <ObjectId>83018</ObjectId>
+      <ColNames>PersonId</ColNames>
+    </index>
+    <key id="264" parent="55" name="PK_dbo.UserAccount">
+      <ObjectId>82986</ObjectId>
+      <ColNames>UserId
+PersonId</ColNames>
+      <UnderlyingIndexName>PK_dbo.UserAccount</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="265" parent="55" name="FK_dbo.UserAccount_dbo.User_UserId">
+      <ObjectId>83124</ObjectId>
+      <ColNames>UserId</ColNames>
+      <RefTableId>82747</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>User</RefTableName>
+      <RefKeyName>PK_dbo.User</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="266" parent="55" name="FK_dbo.UserAccount_dbo.Person_PersonId">
+      <ObjectId>83119</ObjectId>
+      <ColNames>PersonId</ColNames>
+      <RefTableId>82950</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Person</RefTableName>
+      <RefKeyName>PK_dbo.Person</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="267" parent="56" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>nextval(&apos;dbo.&quot;UserClaim_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>dbo.&quot;UserClaim_Id_seq&quot;</SequenceName>
+    </column>
+    <column id="268" parent="56" name="UserId">
+      <Position>2</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="269" parent="56" name="ClaimType">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="270" parent="56" name="ClaimValue">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>15406</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="271" parent="56" name="PK_dbo.UserClaim">
+      <ObjectId>82769</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="272" parent="56" name="UserClaim_IX_UserId">
+      <ObjectId>82991</ObjectId>
+      <ColNames>UserId</ColNames>
+    </index>
+    <key id="273" parent="56" name="PK_dbo.UserClaim">
+      <ObjectId>82770</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_dbo.UserClaim</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="274" parent="56" name="FK_dbo.UserClaim_dbo.User_UserId">
+      <ObjectId>83029</ObjectId>
+      <ColNames>UserId</ColNames>
+      <RefTableId>82747</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>User</RefTableName>
+      <RefKeyName>PK_dbo.User</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="275" parent="57" name="LoginProvider">
+      <Position>1</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="276" parent="57" name="ProviderKey">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="277" parent="57" name="UserId">
+      <Position>3</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="278" parent="57" name="PK_dbo.UserLogin">
+      <ObjectId>82777</ObjectId>
+      <ColNames>LoginProvider
+ProviderKey
+UserId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="279" parent="57" name="UserLogin_IX_UserId">
+      <ObjectId>82992</ObjectId>
+      <ColNames>UserId</ColNames>
+    </index>
+    <key id="280" parent="57" name="PK_dbo.UserLogin">
+      <ObjectId>82778</ObjectId>
+      <ColNames>LoginProvider
+ProviderKey
+UserId</ColNames>
+      <UnderlyingIndexName>PK_dbo.UserLogin</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="281" parent="57" name="FK_dbo.UserLogin_dbo.User_UserId">
+      <ObjectId>83034</ObjectId>
+      <ColNames>UserId</ColNames>
+      <RefTableId>82747</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>User</RefTableName>
+      <RefKeyName>PK_dbo.User</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="282" parent="58" name="UserId">
+      <Position>1</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="283" parent="58" name="RoleId">
+      <Position>2</Position>
+      <DataType>varchar(36)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="284" parent="58" name="PK_dbo.UserRole">
+      <ObjectId>82745</ObjectId>
+      <ColNames>UserId
+RoleId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="285" parent="58" name="UserRole_IX_UserId">
+      <ObjectId>82988</ObjectId>
+      <ColNames>UserId</ColNames>
+    </index>
+    <index id="286" parent="58" name="UserRole_IX_RoleId">
+      <ObjectId>82989</ObjectId>
+      <ColNames>RoleId</ColNames>
+    </index>
+    <key id="287" parent="58" name="PK_dbo.UserRole">
+      <ObjectId>82746</ObjectId>
+      <ColNames>UserId
+RoleId</ColNames>
+      <UnderlyingIndexName>PK_dbo.UserRole</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="288" parent="58" name="FK_dbo.UserRole_dbo.User_UserId">
+      <ObjectId>83024</ObjectId>
+      <ColNames>UserId</ColNames>
+      <RefTableId>82747</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>User</RefTableName>
+      <RefKeyName>PK_dbo.User</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="289" parent="58" name="FK_dbo.UserRole_dbo.Role_RoleId">
+      <ObjectId>83019</ObjectId>
+      <ColNames>RoleId</ColNames>
+      <RefTableId>82733</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Role</RefTableName>
+      <RefKeyName>PK_dbo.Role</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="290" parent="59" name="MigrationId">
+      <Position>1</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="291" parent="59" name="ContextKey">
+      <Position>2</Position>
+      <DataType>varchar(300)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="292" parent="59" name="Model">
+      <Position>3</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;\x&apos;::bytea</DefaultExpression>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="293" parent="59" name="ProductVersion">
+      <Position>4</Position>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>15406</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="294" parent="59" name="PK_dbo.__MigrationHistory">
+      <ObjectId>83139</ObjectId>
+      <ColNames>MigrationId
+ContextKey</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="295" parent="59" name="PK_dbo.__MigrationHistory">
+      <ObjectId>83140</ObjectId>
+      <ColNames>MigrationId
+ContextKey</ColNames>
+      <UnderlyingIndexName>PK_dbo.__MigrationHistory</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <argument id="296" parent="60" name="name">
+      <Position>1</Position>
+      <DataType>char|0s</DataType>
+    </argument>
+    <argument id="297" parent="60">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>void|0s</DataType>
+    </argument>
+    <argument id="298" parent="61" name="name">
+      <Position>1</Position>
+      <DataType>char|0s</DataType>
+    </argument>
+    <argument id="299" parent="61">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>void|0s</DataType>
+    </argument>
+  </database-model>
+</dataSource>

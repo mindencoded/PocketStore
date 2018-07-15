@@ -6,9 +6,9 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="SchoolExpress.sln" t="IncludeFlat" />
       <e p="SchoolExpress.WebService" t="IncludeRecursive">
-        <e p="AddHost.cmd" t="Include" />
-        <e p="AddSslCertificate.cmd" t="Include" />
-        <e p="AddUrl.cmd" t="Include" />
+        <e p="AddHost.bat" t="Include" />
+        <e p="AddSslCertificate.bat" t="Include" />
+        <e p="AddUrl.bat" t="Include" />
         <e p="App.config" t="Include" />
         <e p="App.Debug.config" t="Include" />
         <e p="App.Release.config" t="Include" />
@@ -66,17 +66,91 @@
           </e>
           <e p="OData" t="Include" />
         </e>
-        <e p="CreateSslCertificate.cmd" t="Include" />
-        <e p="Data" t="Include" />
+        <e p="CreateSslCertificate.bat" t="Include" />
+        <e p="DataSources" t="Include">
+          <e p="Npgsql" t="Include">
+            <e p="Csv" t="Include">
+              <e p="Campus.csv" t="Include" />
+              <e p="Career.csv" t="Include" />
+              <e p="CareerDetail.csv" t="Include" />
+              <e p="CareerSchedule.csv" t="Include" />
+              <e p="CareerScheduleDetail.csv" t="Include" />
+              <e p="ClassRoom.csv" t="Include" />
+              <e p="Course.csv" t="Include" />
+              <e p="Degree.csv" t="Include" />
+              <e p="Enrollment.csv" t="Include" />
+              <e p="EnrollmentDetail.csv" t="Include" />
+              <e p="Module.csv" t="Include" />
+              <e p="Period.csv" t="Include" />
+              <e p="Person.csv" t="Include" />
+              <e p="Speaker.csv" t="Include" />
+              <e p="Student.csv" t="Include" />
+            </e>
+            <e p="Sql" t="Include">
+              <e p="Campus.sql" t="Include" />
+              <e p="Career.sql" t="Include" />
+              <e p="CareerDetail.sql" t="Include" />
+              <e p="CareerSchedule.sql" t="Include" />
+              <e p="CareerScheduleDetail.sql" t="Include" />
+              <e p="ClassRoom.sql" t="Include" />
+              <e p="Course.sql" t="Include" />
+              <e p="Degree.sql" t="Include" />
+              <e p="Enrollment.sql" t="Include" />
+              <e p="EnrollmentDetail.sql" t="Include" />
+              <e p="Module.sql" t="Include" />
+              <e p="Period.sql" t="Include" />
+              <e p="Person.sql" t="Include" />
+              <e p="Speaker.sql" t="Include" />
+              <e p="Student.sql" t="Include" />
+            </e>
+          </e>
+          <e p="System.Data.SqlClient" t="Include">
+            <e p="Csv" t="Include">
+              <e p="Campus.csv" t="Include" />
+              <e p="Career.csv" t="Include" />
+              <e p="CareerDetail.csv" t="Include" />
+              <e p="CareerSchedule.csv" t="Include" />
+              <e p="CareerScheduleDetail.csv" t="Include" />
+              <e p="ClassRoom.csv" t="Include" />
+              <e p="Course.csv" t="Include" />
+              <e p="Degree.csv" t="Include" />
+              <e p="Enrollment.csv" t="Include" />
+              <e p="EnrollmentDetail.csv" t="Include" />
+              <e p="Module.csv" t="Include" />
+              <e p="Period.csv" t="Include" />
+              <e p="Person.csv" t="Include" />
+              <e p="Speaker.csv" t="Include" />
+              <e p="Student.csv" t="Include" />
+            </e>
+            <e p="Sql" t="Include">
+              <e p="Campus.sql" t="Include" />
+              <e p="Career.sql" t="Include" />
+              <e p="CareerDetail.sql" t="Include" />
+              <e p="CareerSchedule.sql" t="Include" />
+              <e p="CareerScheduleDetail.sql" t="Include" />
+              <e p="ClassRoom.sql" t="Include" />
+              <e p="Course.sql" t="Include" />
+              <e p="Degree.sql" t="Include" />
+              <e p="Enrollment.sql" t="Include" />
+              <e p="EnrollmentDetail.sql" t="Include" />
+              <e p="Module.sql" t="Include" />
+              <e p="Period.sql" t="Include" />
+              <e p="Person.sql" t="Include" />
+              <e p="Speaker.sql" t="Include" />
+              <e p="Student.sql" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="DbContexts" t="Include">
           <e p="DbContextExtensions.cs" t="Include" />
+          <e p="ExcecuteAlwaysInitializer.cs" t="Include" />
           <e p="ProviderInvariantName.cs" t="Include" />
           <e p="SchoolExpressDbContext.cs" t="Include" />
           <e p="SchoolExpressDbInitializer.cs" t="Include" />
         </e>
-        <e p="DbMigration.cmd" t="Include" />
-        <e p="DeleteSslCertificate.cmd" t="Include" />
-        <e p="DeleteUrl.cmd" t="Include" />
+        <e p="DbMigration.bat" t="Include" />
+        <e p="DeleteSslCertificate.bat" t="Include" />
+        <e p="DeleteUrl.bat" t="Include" />
         <e p="Domain" t="Include">
           <e p="Campus.cs" t="Include" />
           <e p="Career.cs" t="Include" />
@@ -106,6 +180,12 @@
           <e p="ValidationAttribute.cs" t="Include" />
         </e>
         <e p="libeay32.dll" t="Include" />
+        <e p="LoadFromCsvFilesToDb.mssql.bat" t="Include" />
+        <e p="LoadFromCsvFilesToDb.pgsql.bat" t="Include" />
+        <e p="LoadFromDbToCsvFiles.mssql.bat" t="Include" />
+        <e p="LoadFromDbToCsvFiles.pgsql.bat" t="Include" />
+        <e p="LoadFromSqlFilesToDb.mssql.bat" t="Include" />
+        <e p="LoadFromSqlFilesToDb.pgsql.bat" t="Include" />
         <e p="migrate.exe" t="Include" />
         <e p="Migrations" t="Include">
           <e p="Configuration.cs" t="Include" />
@@ -129,6 +209,7 @@
           <e p="CustomJwtAuthorizationProvider.cs" t="Include" />
           <e p="CustomOAuthAuthorizationProvider.cs" t="Include" />
         </e>
+        <e p="replace-null.exe" t="Include" />
         <e p="Repositories" t="Include">
           <e p="CampusRepository.cs" t="Include" />
           <e p="CareerDetailRepository.cs" t="Include" />
@@ -175,51 +256,26 @@
           <e p="UserRepository.cs" t="Include" />
           <e p="UserRoleRepository.cs" t="Include" />
         </e>
+        <e p="Reverse.bat" t="Include" />
         <e p="RunService.cs" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
-        <e p="sql" t="Include">
-          <e p="mssql" t="Include">
-            <e p="BulkInsert.sql" t="Include" />
-            <e p="Campus.sql" t="Include" />
-            <e p="Career.sql" t="Include" />
-            <e p="CareerDetail.sql" t="Include" />
-            <e p="CareerSchedule.sql" t="Include" />
-            <e p="CareerScheduleDetail.sql" t="Include" />
-            <e p="ClassRoom.sql" t="Include" />
+        <e p="sqlparams.conf" t="Include" />
+        <e p="SqlQueries" t="Include">
+          <e p="Npgsql" t="Include">
             <e p="CleanTables.sql" t="Include" />
-            <e p="Course.sql" t="Include" />
-            <e p="Degree.sql" t="Include" />
-            <e p="Enrollment.sql" t="Include" />
-            <e p="EnrollmentDetail.sql" t="Include" />
-            <e p="Module.sql" t="Include" />
-            <e p="Period.sql" t="Include" />
-            <e p="Person.sql" t="Include" />
-            <e p="ResetIdentities.sql" t="Include" />
-            <e p="Speaker.sql" t="Include" />
-            <e p="Student.sql" t="Include" />
+            <e p="RestartSequence.sql" t="Include" />
+            <e p="RestartSequences.sql" t="Include" />
+            <e p="SetSequence.sql" t="Include" />
+            <e p="SetSequences.sql" t="Include" />
           </e>
-          <e p="pgsql" t="Include">
-            <e p="Campus.sql" t="Include" />
-            <e p="Career.sql" t="Include" />
-            <e p="CareerDetail.sql" t="Include" />
-            <e p="CareerSchedule.sql" t="Include" />
-            <e p="CareerScheduleDetail.sql" t="Include" />
-            <e p="ClassRoom.sql" t="Include" />
+          <e p="System.Data.SqlClient" t="Include">
             <e p="CleanTables.sql" t="Include" />
-            <e p="Course.sql" t="Include" />
-            <e p="Degree.sql" t="Include" />
-            <e p="Enrollment.sql" t="Include" />
-            <e p="EnrollmentDetail.sql" t="Include" />
-            <e p="Module.sql" t="Include" />
-            <e p="Period.sql" t="Include" />
-            <e p="Person.sql" t="Include" />
             <e p="ResetIdentities.sql" t="Include" />
-            <e p="Speaker.sql" t="Include" />
-            <e p="Student.sql" t="Include" />
           </e>
         </e>
         <e p="ssleay32.dll" t="Include" />
         <e p="Startup.cs" t="Include" />
+        <e p="test.bat" t="Include" />
         <e p="UnityConfig.cs" t="Include" />
         <e p="Uows" t="Include">
           <e p="ISchoolExpressUow.cs" t="Include" />
@@ -229,6 +285,7 @@
         <e p="Utils" t="Include">
           <e p="ColoredConsoleOutLogger.cs" t="Include" />
           <e p="ColoresConsoleOutLoggerFactoryAdapter.cs" t="Include" />
+          <e p="ConversionTool.cs" t="Include" />
           <e p="HttpActionResult.cs" t="Include" />
           <e p="HttpContext.cs" t="Include" />
           <e p="IRepositoryProvider.cs" t="Include" />
@@ -237,7 +294,6 @@
           <e p="RepositoryFactories.cs" t="Include" />
           <e p="RepositoryProvider.cs" t="Include" />
           <e p="SHA.cs" t="Include" />
-          <e p="TypesConversionTool.cs" t="Include" />
           <e p="UnityResolver.cs" t="Include" />
         </e>
         <e p="wwwroot" t="Include">

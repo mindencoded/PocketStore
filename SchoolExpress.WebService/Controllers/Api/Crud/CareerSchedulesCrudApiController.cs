@@ -29,7 +29,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
 
 
         [Authorize(Roles = "api.crud.careerschedules.put")]
-        protected override async Task<HttpResponseMessage> Put(CareerSchedule entity)
+        public override async Task<HttpResponseMessage> Put(CareerSchedule entity)
         {
             return await base.Put(entity);
         }

@@ -57,11 +57,13 @@ namespace SchoolExpress.WebService.DbContexts
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            Database.SetInitializer(new SchoolExpressDbInitializer());
             if (!Database.Exists())
             {
+                Database.SetInitializer(new SchoolExpressDbInitializer());
                 Database.Initialize(true);
             }
+
+            new ExcecuteAlwaysInitializer().InitializeDatabase(this);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

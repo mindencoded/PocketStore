@@ -9,7 +9,7 @@ namespace SchoolExpress.WebService.Repositories
     {
         Task<IdentityResult> CreateAsync(IdentityUser entity, string password);
 
-        Task<IdentityUser> FindUser(string userName, string password);
+        Task<IdentityUser> FindAsync(string userName, string password);
 
         Task<IList<string>> GetRolesAsync(string userId);
 
