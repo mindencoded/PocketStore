@@ -252,26 +252,16 @@
     <Compile Include="Repositories\IPeriodRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\ISpeakerRepository.cs" />
     <Compile Include="Repositories\IStudentRepository.cs" />
     <Compile Include="Repositories\IUserAccountRepository.cs" />
-    <Compile Include="Repositories\IUserClaimRepository.cs" />
-    <Compile Include="Repositories\IUserLoginRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
-    <Compile Include="Repositories\IUserRoleRepository.cs" />
     <Compile Include="Repositories\ModuleRepository.cs" />
     <Compile Include="Repositories\PeriodRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\SpeakerRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Repositories\UserAccountRepository.cs" />
-    <Compile Include="Repositories\UserClaimRepository.cs" />
-    <Compile Include="Repositories\UserLoginRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Repositories\UserRoleRepository.cs" />
     <Compile Include="Uows\ISchoolExpressUow.cs" />
     <Compile Include="Uows\IUow.cs" />
     <Compile Include="Uows\SchoolExpressUow.cs" />
@@ -304,26 +294,57 @@
     <Compile Include="Startup.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="Utils\ConversionTool.cs" />
+    <Compile Include="Utils\UnhandledExceptionLogger.cs" />
     <Compile Include="Utils\UnityResolver.cs" />
     <Compile Include="Filters\ValidationAttribute.cs" />
     <Compile Include="RunService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataSources\Npgsql\Csv\Campus.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Career.csv" />
-    <Content Include="DataSources\Npgsql\Csv\CareerDetail.csv" />
-    <Content Include="DataSources\Npgsql\Csv\CareerSchedule.csv" />
-    <Content Include="DataSources\Npgsql\Csv\CareerScheduleDetail.csv" />
-    <Content Include="DataSources\Npgsql\Csv\ClassRoom.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Course.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Degree.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Enrollment.csv" />
-    <Content Include="DataSources\Npgsql\Csv\EnrollmentDetail.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Module.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Period.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Person.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Speaker.csv" />
-    <Content Include="DataSources\Npgsql\Csv\Student.csv" />
+    <Content Include="DataSources\Npgsql\Csv\Campus.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Career.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\CareerDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\CareerSchedule.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\CareerScheduleDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\ClassRoom.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Course.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Degree.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Enrollment.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\EnrollmentDetail.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Module.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Period.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Person.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Speaker.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Npgsql\Csv\Student.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="DataSources\Npgsql\Sql\Campus.sql">
       <TransformOnBuild>false</TransformOnBuild>
       <Link>
@@ -698,6 +719,9 @@
     </None>
     <None Include="DbMigration.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
     </None>
     <None Include="Certificates\ca.conf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -716,6 +740,9 @@
     </None>
     <None Include="Configs\ConnectionFactory.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SchoolExpress.log">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="sqlparams.conf">

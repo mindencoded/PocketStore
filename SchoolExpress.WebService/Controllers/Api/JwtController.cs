@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolExpress.WebService.Models;
 using SchoolExpress.WebService.Providers;
-using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
@@ -14,8 +14,11 @@ namespace SchoolExpress.WebService.Controllers.Api
     [RoutePrefix("jwt")]
     public class JwtController : BaseApiController
     {
+
+        private ISchoolExpressUow _uow;
         public JwtController(ISchoolExpressUow uow) : base(uow)
         {
+            _uow = uow;
         }
 
         [HttpPost]
@@ -23,11 +26,11 @@ namespace SchoolExpress.WebService.Controllers.Api
         [AllowAnonymous]
         public async Task<IHttpActionResult> Post([FromBody] UserLoginModel model)
         {
-            IUserRepository repository = Uow.GetRepository<IUserRepository>();
-            IdentityUser user = await repository.FindAsync(model.UserName, model.Password);
+            UserManager<IdentityUser> userManager = _uow.UserManager();
+            IdentityUser user = await userManager.FindAsync(model.UserName, model.Password);
             if (user != null)
             {
-                IEnumerable<string> roles = await repository.GetRolesAsync(user.Id);
+                IEnumerable<string> roles = await userManager.GetRolesAsync(user.Id);
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
                 string token =

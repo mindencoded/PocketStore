@@ -12,11 +12,11 @@ namespace SchoolExpress.WebService.Providers
 {
     public class CustomOAuthAuthorizationProvider : OAuthAuthorizationServerProvider
     {
-        private readonly UserManager<IdentityUser> _manager;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public CustomOAuthAuthorizationProvider(UserManager<IdentityUser> manager)
+        public CustomOAuthAuthorizationProvider(UserManager<IdentityUser> userManager)
         {
-            _manager = manager;
+            _userManager = userManager;
         }
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -29,10 +29,10 @@ namespace SchoolExpress.WebService.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] {"*"});
-            IdentityUser user = await _manager.FindAsync(context.UserName, context.Password);
+            IdentityUser user = await _userManager.FindAsync(context.UserName, context.Password);
             if (user != null)
             {
-                IList<string> roles = await _manager.GetRolesAsync(user.Id);
+                IList<string> roles = await _userManager.GetRolesAsync(user.Id);
                 ClaimsIdentity identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim("sub", user.UserName));
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));

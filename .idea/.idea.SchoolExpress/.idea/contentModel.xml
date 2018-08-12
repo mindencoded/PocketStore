@@ -235,29 +235,19 @@
           <e p="IPeriodRepository.cs" t="Include" />
           <e p="IPersonRepository.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
-          <e p="IRoleRepository.cs" t="Include" />
           <e p="ISpeakerRepository.cs" t="Include" />
           <e p="IStudentRepository.cs" t="Include" />
           <e p="IUserAccountRepository.cs" t="Include" />
-          <e p="IUserClaimRepository.cs" t="Include" />
-          <e p="IUserLoginRepository.cs" t="Include" />
-          <e p="IUserRepository.cs" t="Include" />
-          <e p="IUserRoleRepository.cs" t="Include" />
           <e p="ModuleRepository.cs" t="Include" />
           <e p="PeriodRepository.cs" t="Include" />
           <e p="PersonRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
-          <e p="RoleRepository.cs" t="Include" />
           <e p="SpeakerRepository.cs" t="Include" />
           <e p="StudentRepository.cs" t="Include" />
           <e p="UserAccountRepository.cs" t="Include" />
-          <e p="UserClaimRepository.cs" t="Include" />
-          <e p="UserLoginRepository.cs" t="Include" />
-          <e p="UserRepository.cs" t="Include" />
-          <e p="UserRoleRepository.cs" t="Include" />
         </e>
-        <e p="Reverse.bat" t="Include" />
         <e p="RunService.cs" t="Include" />
+        <e p="SchoolExpress.log" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
         <e p="sqlparams.conf" t="Include" />
         <e p="SqlQueries" t="Include">
@@ -275,7 +265,6 @@
         </e>
         <e p="ssleay32.dll" t="Include" />
         <e p="Startup.cs" t="Include" />
-        <e p="test.bat" t="Include" />
         <e p="UnityConfig.cs" t="Include" />
         <e p="Uows" t="Include">
           <e p="ISchoolExpressUow.cs" t="Include" />
@@ -294,6 +283,7 @@
           <e p="RepositoryFactories.cs" t="Include" />
           <e p="RepositoryProvider.cs" t="Include" />
           <e p="SHA.cs" t="Include" />
+          <e p="UnhandledExceptionLogger.cs" t="Include" />
           <e p="UnityResolver.cs" t="Include" />
         </e>
         <e p="wwwroot" t="Include">

@@ -13,7 +13,7 @@ namespace SchoolExpress.WebService.Filters
 {
     public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
     {
-        private static readonly ILog Log = LogManager.GetLogger<JwtAuthorizeAttribute>();
+        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {

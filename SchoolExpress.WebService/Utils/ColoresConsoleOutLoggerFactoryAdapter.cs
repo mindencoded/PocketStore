@@ -41,6 +41,8 @@ namespace SchoolExpress.WebService.Utils
     /// <author>Erich Eichinger</author>
     public class ColoredConsoleOutLoggerFactoryAdapter : AbstractSimpleLoggerFactoryAdapter
     {
+        private readonly bool _useTraceSource;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleOutLoggerFactoryAdapter"/> class using default 
         /// settings.
@@ -65,6 +67,7 @@ namespace SchoolExpress.WebService.Utils
         public ColoredConsoleOutLoggerFactoryAdapter(NameValueCollection properties)
             : base(properties)
         {
+            _useTraceSource = ArgUtils.TryParse(false, properties["useTraceSource"]);
         }
 
         /// <summary>
@@ -78,12 +81,22 @@ namespace SchoolExpress.WebService.Utils
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AbstractSimpleLoggerFactoryAdapter"/> class with 
+        /// default settings for the loggers created by this factory.
+        /// </summary>
+        public ColoredConsoleOutLoggerFactoryAdapter(LogLevel level, bool showDateTime, bool showLogName, bool showLevel, string dateTimeFormat, bool useTraceSource)
+            : base(level, showDateTime, showLogName, showLevel, dateTimeFormat)
+        {
+            _useTraceSource = useTraceSource;
+        }
+
+        /// <summary>
         /// Creates a new <see cref="ColoredConsoleOutLogger"/> instance.
         /// </summary>
         protected override ILog CreateLogger(string name, LogLevel level, bool showLevel, bool showDateTime,
             bool showLogName, string dateTimeFormat)
         {
-            ILog log = new ColoredConsoleOutLogger(name, level, showLevel, showDateTime, showLogName, dateTimeFormat);
+            ILog log = new ColoredConsoleOutLogger(_useTraceSource, name, level, showLevel, showDateTime, showLogName, dateTimeFormat);
             return log;
         }
     }

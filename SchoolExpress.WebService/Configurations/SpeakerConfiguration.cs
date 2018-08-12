@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using SchoolExpress.WebService.Domain;
 
 namespace SchoolExpress.WebService.Configurations
@@ -7,6 +8,8 @@ namespace SchoolExpress.WebService.Configurations
     {
         public SpeakerConfiguration()
         {
+            HasKey(x => x.Id);
+            Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Achievements).HasMaxLength(500);
         }
     }

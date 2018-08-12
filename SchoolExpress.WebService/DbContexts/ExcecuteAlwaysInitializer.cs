@@ -13,18 +13,21 @@ namespace SchoolExpress.WebService.DbContexts
         public void InitializeDatabase(SchoolExpressDbContext context)
         {
             IList<AuthorizeAttribute> authorizeAttributes = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(type => typeof(ApiController).IsAssignableFrom(type)) //filter controllers
+                .Where(type => typeof(ApiController).IsAssignableFrom(type))
                 .SelectMany(type => type.GetMethods())
                 .Where(method => method.IsPublic && method.IsDefined(typeof(AuthorizeAttribute), true))
                 .Select(m => m.GetCustomAttributes(typeof(AuthorizeAttribute), true).First() as AuthorizeAttribute).ToList();
             UserManager<IdentityUser> userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(context));
             RoleManager<IdentityRole> roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-          
+
 
             IdentityUser admin = userManager.FindByName("admin");
             if (admin == null)
             {
-                admin = new IdentityUser("admin");
+                admin = new IdentityUser
+                {
+                    UserName = "admin"
+                };
                 userManager.Create(admin, "admin123");
             }
 
@@ -45,7 +48,7 @@ namespace SchoolExpress.WebService.DbContexts
 
                 if (!exist)
                 {
-                    roleManager.Create(new IdentityRole(role));                  
+                    roleManager.Create(new IdentityRole { Name = role});                  
                 }
 
                 if (!userManager.IsInRole(admin.Id, role))

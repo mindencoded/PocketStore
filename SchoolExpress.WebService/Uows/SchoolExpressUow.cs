@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolExpress.WebService.DbContexts;
 using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Utils;
@@ -43,6 +45,16 @@ namespace SchoolExpress.WebService.Uows
         {
             return _repositoryProvider.GetRepository<T>();
         }
+
+        public UserManager<IdentityUser> UserManager()
+        {
+            return new UserManager<IdentityUser>(new UserStore<IdentityUser>(_dbContext));
+        }
+        
+        public RoleManager<IdentityRole> RoleManager()
+        {
+            return new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_dbContext));
+        }       
 
         #region IDisposable
 

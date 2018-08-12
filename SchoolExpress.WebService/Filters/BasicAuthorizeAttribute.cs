@@ -14,11 +14,11 @@ namespace SchoolExpress.WebService.Filters
 {
     public class BasicAuthorizeAttribute : ActionFilterAttribute
     {
-        private readonly UserManager<IdentityUser> _manager;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public BasicAuthorizeAttribute(UserManager<IdentityUser> manager)
+        public BasicAuthorizeAttribute(UserManager<IdentityUser> userManager)
         {
-            _manager = manager;
+            _userManager = userManager;
         }
 
         public override void OnActionExecuting(HttpActionContext actionContext)
@@ -34,7 +34,7 @@ namespace SchoolExpress.WebService.Filters
                     string password = decodedToken.Substring(decodedToken.IndexOf(":", StringComparison.Ordinal) + 1);
                     if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
                     {
-                        IdentityUser user = _manager.Find(username, password);
+                        IdentityUser user = _userManager.Find(username, password);
                         if (user != null)
                         {
                             IList<Claim> claims = new List<Claim>
@@ -50,7 +50,7 @@ namespace SchoolExpress.WebService.Filters
                                 string[] roles = authorizeAttribute.Roles.Split(',');
                                 foreach (var role in roles)
                                 {
-                                    if (_manager.IsInRole(user.Id, role))
+                                    if (_userManager.IsInRole(user.Id, role))
                                     {
                                         claims.Add(new Claim(ClaimTypes.Role, role));
                                     }

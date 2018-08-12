@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolExpress.WebService.Models;
-using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api
@@ -10,8 +10,10 @@ namespace SchoolExpress.WebService.Controllers.Api
     [RoutePrefix("account")]
     public class AccountApiController : BaseApiController
     {
+        private ISchoolExpressUow _uow;
         public AccountApiController(ISchoolExpressUow uow) : base(uow)
         {
+            _uow = uow;
         }
 
         [HttpPost]
@@ -19,14 +21,13 @@ namespace SchoolExpress.WebService.Controllers.Api
         [Route("register")]
         public async Task<IHttpActionResult> Register([FromBody] UserRegisterModel model)
         {
-            IdentityUser identityUser = new IdentityUser
+            IdentityUser user = new IdentityUser
             {
                 UserName = model.UserName
             };
-
-            IUserRepository repository = Uow.GetRepository<IUserRepository>();
-            await repository.CreateAsync(identityUser, model.Password);
-            Uow.Commit();
+            UserManager<IdentityUser> userManager = _uow.UserManager();
+            await userManager.CreateAsync(user, model.Password);
+            _uow.Commit();
             return Ok();
         }
     }

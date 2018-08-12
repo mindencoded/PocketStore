@@ -132,7 +132,7 @@ namespace SchoolExpress.WebService.DbContexts
                         IList<dynamic> results = context.DynamicListFromSql("SELECT table_schema, table_name, column_name FROM information_schema.columns WHERE column_default LIKE 'nextval%' AND table_name = '"+ entityName + "';", new Dictionary<string, object>()).ToList();
                         foreach (var result in results)
                         {
-                            var setval = context.Database.SqlQuery<int>("SELECT setval(pg_get_serial_sequence('\"" + result.table_schema + "\".\"" + result.table_name + "\"', '" + result.column_name + "'), CAST((SELECT MAX(\"" + result.column_name + "\") FROM \"" + result.table_schema + "\".\"" + result.table_name + "\") AS INTEGER));");
+                            context.Database.SqlQuery<int>("SELECT setval(pg_get_serial_sequence('\"" + result.table_schema + "\".\"" + result.table_name + "\"', '" + result.column_name + "'), CAST((SELECT MAX(\"" + result.column_name + "\") FROM \"" + result.table_schema + "\".\"" + result.table_name + "\") AS INTEGER));");
                         }
                     }
                 }

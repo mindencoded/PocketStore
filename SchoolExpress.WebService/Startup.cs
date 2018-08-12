@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.ExceptionHandling;
 using Microsoft.Owin;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security.OAuth;
@@ -21,6 +22,8 @@ namespace SchoolExpress.WebService
         public void Configuration(IAppBuilder appBuilder)
         {
             HttpConfiguration config = new HttpConfiguration();
+
+            config.Services.Replace(typeof(IExceptionLogger), new UnhandledExceptionLogger());
 
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 

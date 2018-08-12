@@ -7,7 +7,7 @@ namespace SchoolExpress.WebService
 {
     public class RunService : IDisposable
     {
-        private static readonly ILog Log = LogManager.GetLogger<RunService>();
+        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
         private IDisposable _app;
 
         public void Start()
