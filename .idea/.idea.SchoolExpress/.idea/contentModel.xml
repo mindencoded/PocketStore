@@ -17,7 +17,7 @@
           <e p="ca.conf" t="Include" />
         </e>
         <e p="Configs" t="Include">
-          <e p="ConnectionFactory.config" t="Include" />
+          <e p="ConnectionFactory.localdb.config" t="Include" />
           <e p="ConnectionFactory.mssql.config" t="Include" />
           <e p="ConnectionFactory.pgsql.config" t="Include" />
         </e>
@@ -280,6 +280,8 @@
           <e p="IRepositoryProvider.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
+          <e p="QueryableExtension.cs" t="Include" />
+          <e p="QueryResponse.cs" t="Include" />
           <e p="RepositoryFactories.cs" t="Include" />
           <e p="RepositoryProvider.cs" t="Include" />
           <e p="SHA.cs" t="Include" />

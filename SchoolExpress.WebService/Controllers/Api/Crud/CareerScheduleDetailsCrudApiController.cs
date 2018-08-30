@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api.Crud
 {
@@ -16,9 +16,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
         }
 
         [Authorize(Roles = "api.crud.careerscheduledetails.get")]
-        public override IEnumerable<CareerScheduleDetail> Get()
+        public override QueryResponse<CareerScheduleDetail> Get(int page, int pageSize, string orderBy)
         {
-            return base.Get();
+            return base.Get(page, pageSize, orderBy);
         }
 
         [Authorize(Roles = "api.crud.careerscheduledetails.get")]
@@ -33,7 +33,6 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
         {
             return await base.Put(entity);
         }
-
 
         [Authorize(Roles = "api.crud.careerscheduledetails.post")]
         public override async Task<HttpResponseMessage> Post(CareerScheduleDetail entity)

@@ -52,12 +52,12 @@ namespace SchoolExpress.WebService
                 "ApiControllerAction",
                 "api/{controller}/{action}"
             );
+            
             IUnityContainer container = UnityConfig.GetContainer();
             UnityResolver dependencyResolver = new UnityResolver(container);
             config.DependencyResolver = dependencyResolver;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
-                PreserveReferencesHandling.None;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -69,28 +69,32 @@ namespace SchoolExpress.WebService
             {
                 config.Filters.Add(new AnonymousAuthorizeAttribute());
             }
-
-            if (authenticationModes.Contains("BASIC"))
+            else
             {
-                config.Filters.Add(container.Resolve<BasicAuthorizeAttribute>());
-            }
-
-            if (authenticationModes.Contains("JWT"))
-            {
-                config.Filters.Add(new JwtAuthorizeAttribute());
-            }
-
-            if (authenticationModes.Contains("OAUTH"))
-            {
-                appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+                if (authenticationModes.Contains("BASIC"))
                 {
-                    ApplicationCanDisplayErrors = true,
-                    AllowInsecureHttp = true,
-                    TokenEndpointPath = new PathString("/oauth"),
-                    AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"])),
-                    Provider = container.Resolve<CustomOAuthAuthorizationProvider>()
-                });
-                appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+                    config.Filters.Add(container.Resolve<BasicAuthorizeAttribute>());
+                }
+
+                if (authenticationModes.Contains("JWT"))
+                {
+                    config.Filters.Add(new JwtAuthorizeAttribute());
+                }
+
+                if (authenticationModes.Contains("OAUTH"))
+                {
+                    appBuilder.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+                    {
+                        ApplicationCanDisplayErrors = true,
+                        AllowInsecureHttp = true,
+                        TokenEndpointPath = new PathString("/oauth"),
+                        AccessTokenExpireTimeSpan =
+                            TimeSpan.FromMinutes(
+                                double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"])),
+                        Provider = container.Resolve<CustomOAuthAuthorizationProvider>()
+                    });
+                    appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+                }
             }
 
             appBuilder.UseFileServer(new FileServerOptions
@@ -102,6 +106,7 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
+            
             config.Filters.Add(new ValidationAttribute());
             appBuilder.UseWebApi(config);
         }

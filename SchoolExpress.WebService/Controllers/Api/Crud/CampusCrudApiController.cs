@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api.Crud
 {
@@ -15,9 +15,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Crud
         }
 
         [Authorize(Roles = "api.crud.campus.get")]
-        public override IEnumerable<Campus> Get()
+        public override QueryResponse<Campus> Get(int page, int pageSize, string orderBy)
         {
-            return base.Get();
+            return base.Get(page, pageSize, orderBy);
         }
 
         [Authorize(Roles = "api.crud.campus.get")]

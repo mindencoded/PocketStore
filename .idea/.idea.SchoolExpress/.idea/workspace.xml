@@ -2,53 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7865693d-3bd9-4ae1-9789-fa5a589e06e4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CampusConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CampusConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerDetailConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerDetailConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleDetailConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleDetailConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ClassRoomConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ClassRoomConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CourseConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CourseConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/DegreeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/DegreeConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/EnrollmentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/EnrollmentConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ModuleConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ModuleConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PeriodConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PeriodConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PersonConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PersonConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/SpeakerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/SpeakerConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/StudentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/StudentConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/AccountApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/AccountApiController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/JwtController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/JwtController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/ExcecuteAlwaysInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/ExcecuteAlwaysInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.localdb.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbMigration.bat" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbMigration.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/JwtAuthorizeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/JwtAuthorizeAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IRoleRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserClaimRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserLoginRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRoleRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/RoleRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserClaimRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserLoginRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRoleRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/RunService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/RunService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/ISchoolExpressUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/ISchoolExpressUow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/SchoolExpressUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/SchoolExpressUow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoredConsoleOutLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoredConsoleOutLogger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,56 +47,26 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="SQL Server (jTds) - SchoolExpressDb" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="SQL Server (jTds) - SchoolExpressDb" type="feb32156:DbDataSourceImpl" />
-        <item name="SchoolExpressDb: database" type="bdf80c8a:MssqlImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="SQL Server (jTds) - SchoolExpressDb" type="feb32156:DbDataSourceImpl" />
-        <item name="SchoolExpressDb: database" type="bdf80c8a:MssqlImplModel$Database" />
-        <item name="dbo: schema" type="3adcb6a6:MssqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ColoresConsoleOutLoggerFactoryAdapter.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs">
+      <file leaf-file-name="PeriodCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="315">
+              <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
               <folding>
-                <marker date="1534036571562" expanded="false" signature="6:100" ph="..." />
-                <marker date="1534036571562" expanded="true" signature="142:4277" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="149:1395" ph="/// Factory for creating &lt;see cref=&quot;ILog&quot; /&gt; instances that write data to &lt;see cref=&quot;Console.Out&quot; /&gt;. ... " />
-                <marker date="1534036571562" expanded="true" signature="1487:4275" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="1550:1720" ph="/// Initializes a new instance of the &lt;see cref=&quot;ConsoleOutLoggerFactoryAdapter&quot;/&gt; class using default  ... " />
-                <marker date="1534036571562" expanded="true" signature="1800:1820" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="1830:2570" ph="/// Initializes a new instance of the &lt;see cref=&quot;ColoredConsoleOutLoggerFactoryAdapter&quot;/&gt; class. ... " />
-                <marker date="1534036571562" expanded="true" signature="2686:2792" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="2802:3015" ph="/// Initializes a new instance of the &lt;see cref=&quot;AbstractSimpleLoggerFactoryAdapter&quot;/&gt; class with  ... " />
-                <marker date="1534036571562" expanded="true" signature="3252:3272" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="3282:3495" ph="/// Initializes a new instance of the &lt;see cref=&quot;AbstractSimpleLoggerFactoryAdapter&quot;/&gt; class with  ... " />
-                <marker date="1534036571562" expanded="true" signature="3741:3807" ph="{...}" />
-                <marker date="1534036571562" expanded="true" signature="3817:3927" ph="/// Creates a new &lt;see cref=&quot;ColoredConsoleOutLogger&quot;/&gt; instance. ... " />
-                <marker date="1534036571562" expanded="true" signature="4089:4269" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="6:223" ph="..." />
+                <marker date="1534107366224" expanded="true" signature="389:1435" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="469:489" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="616:681" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="792:851" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="980:1043" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="1173:1237" ph="{...}" />
+                <marker date="1534107366224" expanded="true" signature="1367:1429" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.Release.config" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -125,8 +74,165 @@
       <file leaf-file-name="App.config" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.config">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonsCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+              <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
+              <folding>
+                <marker date="1534107366318" expanded="true" signature="6:223" ph="..." />
+                <marker date="1534107366318" expanded="true" signature="390:1438" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="471:491" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="618:683" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="794:853" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="982:1045" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="1176:1240" ph="{...}" />
+                <marker date="1534107366318" expanded="true" signature="1370:1432" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpeakerCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
+              <folding>
+                <marker date="1534107366044" expanded="true" signature="6:223" ph="..." />
+                <marker date="1534107366044" expanded="true" signature="392:1448" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="473:493" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="622:687" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="800:859" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="990:1053" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="1185:1249" ph="{...}" />
+                <marker date="1534107366044" expanded="true" signature="1380:1442" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentsCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="9" selection-start-line="18" selection-start-column="8" selection-end-line="21" selection-end-column="9" />
+              <folding>
+                <marker date="1534107366693" expanded="true" signature="6:223" ph="..." />
+                <marker date="1534107366693" expanded="true" signature="393:1450" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="475:495" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="624:689" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="802:861" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="992:1055" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="1187:1251" ph="{...}" />
+                <marker date="1534107366693" expanded="true" signature="1382:1444" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAccountsCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding>
+                <marker date="1534107366427" expanded="true" signature="6:223" ph="..." />
+                <marker date="1534107366427" expanded="true" signature="280:1505" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="405:1503" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="491:511" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="648:713" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="834:893" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="1032:1095" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="1236:1300" ph="{...}" />
+                <marker date="1534107366427" expanded="true" signature="1435:1497" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnrollmentDetailsCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <marker date="1534107365950" expanded="true" signature="6:247" ph="..." />
+                <marker date="1534107365950" expanded="true" signature="460:3070" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="551:571" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="789:1221" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="1447:2062" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="1733:1956" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="2072:2240" ph="/* [Authorize(Roles = &quot;api.crud.enrollmentdetails.get&quot;)] ... */" />
+                <marker date="1534107365950" expanded="true" signature="2365:2434" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="2583:2646" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="2797:2861" ph="{...}" />
+                <marker date="1534107365950" expanded="true" signature="2995:3064" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CampusCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1534105835344" expanded="false" signature="6:189" ph="..." />
+                <marker date="1534105835344" expanded="true" signature="354:1395" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="434:454" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="580:645" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="755:814" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="942:1005" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="1134:1198" ph="{...}" />
+                <marker date="1534105835344" expanded="true" signature="1327:1389" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <folding>
+                <marker date="1534107609376" expanded="false" signature="6:300" ph="..." />
+                <marker date="1534107609376" expanded="true" signature="451:2791" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="515:535" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="657:1222" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="700:839" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="1101:1211" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="1317:1578" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="1686:1877" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="1987:2475" ph="{...}" />
+                <marker date="1534107609376" expanded="true" signature="2598:2785" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoursesCrudApiController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <folding>
+                <marker date="1534105835096" expanded="false" signature="6:189" ph="..." />
+                <marker date="1534105835096" expanded="true" signature="356:1402" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="437:457" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="584:649" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="760:819" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="947:1010" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="1140:1204" ph="{...}" />
+                <marker date="1534105835096" expanded="true" signature="1334:1396" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,20 +293,27 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserAccount.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/CareerDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Period.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/IEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/UnhandledExceptionLogger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Enrollment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/EnrollmentDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/CareerScheduleDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserAccountRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Module.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.pgsql.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/ExcecuteAlwaysInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.localdb.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.mssql.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/JwtAuthorizeAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/ValidationAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38948B15-C728-43EA-B1AC-030402A22DF7/62/493847c5/ApiController.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4F7B722-9334-4B23-AE14-915565EBF79F/d6/55aadde4/HttpMessageInvoker.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/Repository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerDetailConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PersonConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/069D344C-A74E-48C6-A99C-7AE60A38E1BE/b4/e190bfab/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
@@ -233,54 +346,33 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/JwtController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/RunService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoredConsoleOutLogger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Reverse.bat" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/LoadFromCsvFilesToDb.mssql.bat" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/sqlparams.conf" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/LoadFromSqlFilesToDb.mssql.bat" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/test.bat" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CampusConfiguration.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerConfiguration.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerDetailConfiguration.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleConfiguration.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleDetailConfiguration.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ClassRoomConfiguration.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CourseConfiguration.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/DegreeConfiguration.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Configurations/EnrollmentConfiguration.cs" />
@@ -307,9 +399,30 @@
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Uows/SchoolExpressUow.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/DbMigration.bat" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserRole.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoredConsoleOutLogger.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/index.html" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtension.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/App.config" />
       </list>
     </option>
@@ -338,7 +451,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -357,6 +469,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -464,11 +577,13 @@
       <workItem from="1533966748513" duration="545000" />
       <workItem from="1534001962480" duration="13045000" />
       <workItem from="1534042927089" duration="3079000" />
+      <workItem from="1534090347868" duration="7942000" />
+      <workItem from="1534110776483" duration="794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218932000" />
+    <option name="totallyTimeSpent" value="227668000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,7 +596,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32838285" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32980332" />
@@ -492,14 +606,13 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.32838285" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6754917" weight="0.4117647" />
       <window_info anchor="bottom" id="NuGet" order="13" sideWeight="0.4969743" weight="0.4950495" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21785174" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22390318" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="11" weight="0.32838285" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32817337" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76172465" weight="0.43343654" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76172465" weight="0.54334366" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -507,26 +620,27 @@
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.339934" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="NuGet" order="12" sideWeight="0.4969743" weight="0.4950495" />
       <window_info active="true" anchor="bottom" id="Database Console" order="14" visible="true" weight="0.339934" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32838285" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32838285" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20877458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32838285" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32838285" />
       <window_info anchor="bottom" id="Unit Tests" order="13" weight="0.32838285" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6754917" weight="0.42079207" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3245083" side_tool="true" weight="0.38778877" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.32838285" />
@@ -545,12 +659,53 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs</url>
+          <line>19</line>
+          <properties documentPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" initialLine="18">
+            <startOffsets>
+              <startOffset value="625" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="626" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs</url>
+          <line>24</line>
+          <properties documentPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" initialLine="24">
+            <startOffsets>
+              <startOffset value="680" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="700" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs</url>
+          <line>19</line>
+          <properties documentPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" initialLine="19">
+            <startOffsets>
+              <startOffset value="607" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="639" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception">
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
@@ -559,158 +714,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CourseConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Enrollment.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerScheduleDetailConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/DegreeConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/EnrollmentConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/EnrollmentDetail.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PeriodConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/PersonConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/SpeakerConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/StudentConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserAccount.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/UserAccountConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/DbContextExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/IEntity.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Entity.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Role.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Module.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" selection-start-line="12" selection-start-column="7" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserAccountRepository.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/EnrollmentDetailConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/ModuleConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/User.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/ValidationAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/JwtAuthorizeAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IRoleRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/RoleRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRoleRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRoleRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRepository.cs" />
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationProvider.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -722,13 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="9" selection-start-line="12" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -777,9 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Migrations/Configuration.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbMigration.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -787,61 +780,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserRole.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
-          <folding>
-            <marker date="1534038864306" expanded="false" signature="6:380" ph="..." />
-            <marker date="1534038864306" expanded="true" signature="503:4500" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="657:2067" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1247:1465" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1313:1450" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1523:2057" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1589:2042" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1696:1853" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="1878:2024" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="2141:2444" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="2297:2443" ph="{...}" />
-            <marker date="1534038864306" expanded="true" signature="4484:4494" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserRole.cs" />
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/AccountApiController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <marker date="1534024107929" expanded="false" signature="6:92" ph="..." />
-            <marker date="1534024107929" expanded="true" signature="838:1004" ph="{...}" />
-            <marker date="1534024107929" expanded="true" signature="838:1010" ph="{...}" />
-            <marker date="1534024107929" expanded="true" signature="838:1012" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1534045348342" expanded="false" signature="6:82" ph="..." />
-            <marker date="1534045348342" expanded="true" signature="118:866" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="145:864" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="270:858" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="296:756" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="347:740" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="454:677" ph="{...}" />
-            <marker date="1534045348342" expanded="true" signature="789:848" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,12 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <marker date="1534044805004" expanded="false" signature="7:63" ph="..." />
-            <marker date="1534044805004" expanded="true" signature="105:410" ph="{...}" />
-            <marker date="1534044805004" expanded="true" signature="167:408" ph="{...}" />
-            <marker date="1534044805004" expanded="true" signature="314:402" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,63 +799,336 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="94" column="26" lean-forward="true" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
-          <folding>
-            <marker date="1534045773840" expanded="true" signature="6:143" ph="..." />
-            <marker date="1534045773840" expanded="true" signature="185:5878" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="251:5876" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="423:732" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="744:1507" ph="/// Creates and initializes a logger that writes messages to &lt;see cref=&quot;Console.Out&quot; /&gt;. ... " />
-            <marker date="1534045773840" expanded="true" signature="1761:1781" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="1791:2518" ph="/// Creates a new TraceLogger instance. ... " />
-            <marker date="1534045773840" expanded="true" signature="2781:2945" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="2823:2935" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="2955:3406" ph="/// Do the actual logging by constructing the log message using a &lt;see cref=&quot;StringBuilder&quot; /&gt; then ... " />
-            <marker date="1534045773840" expanded="true" signature="3497:4377" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="3807:4213" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="3921:4068" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="4092:4199" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="4252:4367" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="4442:5138" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="4482:5128" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="5208:5870" ph="{...}" />
-            <marker date="1534045773840" expanded="true" signature="5248:5860" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoresConsoleOutLoggerFactoryAdapter.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1534036571562" expanded="false" signature="6:100" ph="..." />
-            <marker date="1534036571562" expanded="true" signature="142:4277" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="149:1395" ph="/// Factory for creating &lt;see cref=&quot;ILog&quot; /&gt; instances that write data to &lt;see cref=&quot;Console.Out&quot; /&gt;. ... " />
-            <marker date="1534036571562" expanded="true" signature="1487:4275" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="1550:1720" ph="/// Initializes a new instance of the &lt;see cref=&quot;ConsoleOutLoggerFactoryAdapter&quot;/&gt; class using default  ... " />
-            <marker date="1534036571562" expanded="true" signature="1800:1820" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="1830:2570" ph="/// Initializes a new instance of the &lt;see cref=&quot;ColoredConsoleOutLoggerFactoryAdapter&quot;/&gt; class. ... " />
-            <marker date="1534036571562" expanded="true" signature="2686:2792" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="2802:3015" ph="/// Initializes a new instance of the &lt;see cref=&quot;AbstractSimpleLoggerFactoryAdapter&quot;/&gt; class with  ... " />
-            <marker date="1534036571562" expanded="true" signature="3252:3272" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="3282:3495" ph="/// Initializes a new instance of the &lt;see cref=&quot;AbstractSimpleLoggerFactoryAdapter&quot;/&gt; class with  ... " />
-            <marker date="1534036571562" expanded="true" signature="3741:3807" ph="{...}" />
-            <marker date="1534036571562" expanded="true" signature="3817:3927" ph="/// Creates a new &lt;see cref=&quot;ColoredConsoleOutLogger&quot;/&gt; instance. ... " />
-            <marker date="1534036571562" expanded="true" signature="4089:4269" ph="{...}" />
-          </folding>
-        </state>
+        <state relative-caret-position="-968" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.mssql.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.pgsql.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.localdb.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Period.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/app/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/app/css/normalize.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/app/css/secondary.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/app/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Migrations/Configuration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/DbContextExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="81" column="8" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtension.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/Repository.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="9" selection-start-line="19" selection-start-column="7" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="9" selection-start-line="18" selection-start-column="8" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1534107366224" expanded="true" signature="6:223" ph="..." />
+            <marker date="1534107366224" expanded="true" signature="389:1435" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="469:489" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="616:681" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="792:851" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="980:1043" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="1173:1237" ph="{...}" />
+            <marker date="1534107366224" expanded="true" signature="1367:1429" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1534107366318" expanded="true" signature="6:223" ph="..." />
+            <marker date="1534107366318" expanded="true" signature="390:1438" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="471:491" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="618:683" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="794:853" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="982:1045" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="1176:1240" ph="{...}" />
+            <marker date="1534107366318" expanded="true" signature="1370:1432" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1534107366044" expanded="true" signature="6:223" ph="..." />
+            <marker date="1534107366044" expanded="true" signature="392:1448" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="473:493" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="622:687" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="800:859" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="990:1053" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="1185:1249" ph="{...}" />
+            <marker date="1534107366044" expanded="true" signature="1380:1442" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="9" selection-start-line="18" selection-start-column="8" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1534107366693" expanded="true" signature="6:223" ph="..." />
+            <marker date="1534107366693" expanded="true" signature="393:1450" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="475:495" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="624:689" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="802:861" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="992:1055" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="1187:1251" ph="{...}" />
+            <marker date="1534107366693" expanded="true" signature="1382:1444" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <marker date="1534107366427" expanded="true" signature="6:223" ph="..." />
+            <marker date="1534107366427" expanded="true" signature="280:1505" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="405:1503" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="491:511" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="648:713" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="834:893" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="1032:1095" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="1236:1300" ph="{...}" />
+            <marker date="1534107366427" expanded="true" signature="1435:1497" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <marker date="1534107365950" expanded="true" signature="6:247" ph="..." />
+            <marker date="1534107365950" expanded="true" signature="460:3070" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="551:571" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="789:1221" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="1447:2062" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="1733:1956" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="2072:2240" ph="/* [Authorize(Roles = &quot;api.crud.enrollmentdetails.get&quot;)] ... */" />
+            <marker date="1534107365950" expanded="true" signature="2365:2434" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="2583:2646" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="2797:2861" ph="{...}" />
+            <marker date="1534107365950" expanded="true" signature="2995:3064" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <marker date="1534105835096" expanded="false" signature="6:189" ph="..." />
+            <marker date="1534105835096" expanded="true" signature="356:1402" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="437:457" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="584:649" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="760:819" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="947:1010" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="1140:1204" ph="{...}" />
+            <marker date="1534105835096" expanded="true" signature="1334:1396" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1534105835344" expanded="false" signature="6:189" ph="..." />
+            <marker date="1534105835344" expanded="true" signature="354:1395" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="434:454" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="580:645" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="755:814" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="942:1005" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="1134:1198" ph="{...}" />
+            <marker date="1534105835344" expanded="true" signature="1327:1389" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <marker date="1534107609376" expanded="false" signature="6:300" ph="..." />
+            <marker date="1534107609376" expanded="true" signature="451:2791" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="515:535" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="657:1222" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="700:839" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="1101:1211" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="1317:1578" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="1686:1877" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="1987:2475" ph="{...}" />
+            <marker date="1534107609376" expanded="true" signature="2598:2785" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.config">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state relative-caret-position="135">
+          <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
         </state>
       </provider>
     </entry>
