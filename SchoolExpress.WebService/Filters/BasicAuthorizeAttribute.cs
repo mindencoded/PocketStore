@@ -48,7 +48,7 @@ namespace SchoolExpress.WebService.Filters
                             if (authorizeAttribute != null)
                             {
                                 string[] roles = authorizeAttribute.Roles.Split(',');
-                                foreach (var role in roles)
+                                foreach (string role in roles)
                                 {
                                     if (_userManager.IsInRole(user.Id, role))
                                     {

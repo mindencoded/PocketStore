@@ -108,6 +108,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
@@ -189,15 +190,15 @@
     <Compile Include="Configurations\SpeakerConfiguration.cs" />
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\UserAccountConfiguration.cs" />
-    <Compile Include="Controllers\Api\Crud\CampusCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CareerDetailsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CareersCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\DegreesCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\ModuleCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\PeriodCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\SpeakerCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\StudentsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\UserAccountsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CampusCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CareerDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CareersCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\DegreesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\ModuleCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\PeriodCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\SpeakerCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\StudentsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\UserAccountsCrudApiController.cs" />
     <Compile Include="DbContexts\ExcecuteAlwaysInitializer.cs" />
     <Compile Include="DbContexts\DbContextExtensions.cs" />
     <Compile Include="DbContexts\ProviderInvariantName.cs" />
@@ -225,10 +226,13 @@
     <Compile Include="Domain\Student.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
+    <Compile Include="Handlers\CustomLogHandler.cs" />
     <Compile Include="Utils\IRepositoryProvider.cs" />
+    <Compile Include="Utils\LogMetadata.cs" />
     <Compile Include="Utils\PredicateBuilder.cs" />
     <Compile Include="Utils\QueryableExtension.cs" />
     <Compile Include="Utils\QueryResponse.cs" />
+    <Compile Include="Utils\RelationalOperator.cs" />
     <Compile Include="Utils\RepositoryFactories.cs" />
     <Compile Include="Utils\RepositoryProvider.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -277,15 +281,15 @@
     <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
     <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\BaseApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\ClassRoomsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CoursesCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\EnrollmentDetailsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\EnrollmentsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\ClassRoomsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CoursesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\EnrollmentDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\EnrollmentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\JwtController.cs" />
-    <Compile Include="Controllers\Api\Crud\PersonsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CareerScheduleDetailsCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Crud\CareerSchedulesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\PersonsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CareerScheduleDetailsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CareerSchedulesCrudApiController.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Providers\CustomContentTypeProvider.cs" />
     <Compile Include="Providers\CustomDirectRouteProvider.cs" />

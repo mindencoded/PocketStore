@@ -11,6 +11,7 @@ using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Owin;
 using SchoolExpress.WebService.Filters;
+using SchoolExpress.WebService.Handlers;
 using SchoolExpress.WebService.Providers;
 using SchoolExpress.WebService.Utils;
 using Unity;
@@ -108,6 +109,7 @@ namespace SchoolExpress.WebService
             });
             
             config.Filters.Add(new ValidationAttribute());
+            config.MessageHandlers.Add(new CustomLogHandler());
             appBuilder.UseWebApi(config);
         }
     }

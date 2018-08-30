@@ -22,13 +22,13 @@ namespace SchoolExpress.WebService.DbContexts
 
         public static string[] GetKeyNames(this DbContext context, Type entityType)
         {
-            var metadata = ((IObjectContextAdapter) context).ObjectContext.MetadataWorkspace;
+            MetadataWorkspace metadata = ((IObjectContextAdapter) context).ObjectContext.MetadataWorkspace;
 
             // Get the mapping between CLR types and metadata OSpace
-            var objectItemCollection = ((ObjectItemCollection) metadata.GetItemCollection(DataSpace.OSpace));
+            ObjectItemCollection objectItemCollection = ((ObjectItemCollection) metadata.GetItemCollection(DataSpace.OSpace));
 
             // Get metadata for given CLR type
-            var entityMetadata = metadata
+            EntityType entityMetadata = metadata
                 .GetItems<EntityType>(DataSpace.OSpace)
                 .Single(e => objectItemCollection.GetClrType(e) == entityType);
             return entityMetadata.KeyProperties.Select(p => p.Name).ToArray();
@@ -41,7 +41,7 @@ namespace SchoolExpress.WebService.DbContexts
 
         public static IEnumerable<dynamic> DynamicListFromSql(this DbContext context, string sql, Dictionary<string, object> Params)
         {
-            using (var cmd = context.Database.Connection.CreateCommand())
+            using (DbCommand cmd = context.Database.Connection.CreateCommand())
             {
                 cmd.CommandText = sql;
                 if (cmd.Connection.State != ConnectionState.Open) { cmd.Connection.Open(); }

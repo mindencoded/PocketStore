@@ -5,43 +5,49 @@ using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
 using SchoolExpress.WebService.Utils;
 
-namespace SchoolExpress.WebService.Controllers.Api.Crud
+namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
     [Authorize]
-    [RoutePrefix("api/crud/enrollments")]
+    [RoutePrefix("api/cruds/enrollments")]
     public class EnrollmentsCrudApiController : CrudApiController<Enrollment>
     {
         public EnrollmentsCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 
-        [Authorize(Roles = "api.crud.enrollments.get")]
-        public override QueryResponse<Enrollment> Get(int page, int pageSize, string orderBy)
+        [Authorize(Roles = "api.cruds.enrollments.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.crud.enrollments.get")]
-        public override async Task<Enrollment> Get(object id)
+        [Authorize(Roles = "api.cruds.enrollments.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        {
+            return base.Get(page, pageSize, orderBy, where);
+        }
+
+        [Authorize(Roles = "api.cruds.enrollments.get")]
+        public override async Task<HttpResponseMessage> Get(object id)
         {
             return await base.Get(id);
         }
 
 
-        [Authorize(Roles = "api.crud.enrollments.put")]
+        [Authorize(Roles = "api.cruds.enrollments.put")]
         public override async Task<HttpResponseMessage> Put(Enrollment entity)
         {
             return await base.Put(entity);
         }
 
 
-        [Authorize(Roles = "api.crud.enrollments.put")]
+        [Authorize(Roles = "api.cruds.enrollments.put")]
         public override async Task<HttpResponseMessage> Post(Enrollment entity)
         {
             return await base.Post(entity);
         }
 
-        [Authorize(Roles = "api.crud.enrollments.delete")]
+        [Authorize(Roles = "api.cruds.enrollments.delete")]
         public override async Task<HttpResponseMessage> Delete(object id)
         {
             return await base.Delete(id);

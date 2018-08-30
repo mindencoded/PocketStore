@@ -5,41 +5,47 @@ using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
 using SchoolExpress.WebService.Utils;
 
-namespace SchoolExpress.WebService.Controllers.Api.Crud
+namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
-    [RoutePrefix("api/crud/degrees")]
+    [RoutePrefix("api/cruds/degrees")]
     public class DegreesCrudApiController : CrudApiController<Degree>
     {
         public DegreesCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 
-        [Authorize(Roles = "api.crud.degrees.get")]
-        public override QueryResponse<Degree> Get(int page, int pageSize, string orderBy)
+        [Authorize(Roles = "api.cruds.degrees.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.crud.degrees.get")]
-        public override async Task<Degree> Get(object id)
+        [Authorize(Roles = "api.cruds.degrees.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        {
+            return base.Get(page, pageSize, orderBy, where);
+        }
+
+        [Authorize(Roles = "api.cruds.degrees.get")]
+        public override async Task<HttpResponseMessage> Get(object id)
         {
             return await base.Get(id);
         }
 
 
-        [Authorize(Roles = "api.crud.degrees.put")]
+        [Authorize(Roles = "api.cruds.degrees.put")]
         public override async Task<HttpResponseMessage> Put(Degree entity)
         {
             return await base.Put(entity);
         }
 
-        [Authorize(Roles = "api.crud.degrees.post")]
+        [Authorize(Roles = "api.cruds.degrees.post")]
         public override async Task<HttpResponseMessage> Post(Degree entity)
         {
             return await base.Post(entity);
         }
 
-        [Authorize(Roles = "api.crud.degrees.delete")]
+        [Authorize(Roles = "api.cruds.degrees.delete")]
         public override async Task<HttpResponseMessage> Delete(object id)
         {
             return await base.Delete(id);

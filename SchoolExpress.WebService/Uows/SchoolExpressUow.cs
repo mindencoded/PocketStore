@@ -54,7 +54,12 @@ namespace SchoolExpress.WebService.Uows
         public RoleManager<IdentityRole> RoleManager()
         {
             return new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(_dbContext));
-        }       
+        }
+
+        public void ValidateOnSaveEnabled(bool state)
+        {
+            _dbContext.Configuration.ValidateOnSaveEnabled = state;
+        }
 
         #region IDisposable
 

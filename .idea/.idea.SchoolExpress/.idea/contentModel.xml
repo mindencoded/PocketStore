@@ -43,7 +43,7 @@
           <e p="Api" t="Include">
             <e p="AccountApiController.cs" t="Include" />
             <e p="BaseApiController.cs" t="Include" />
-            <e p="Crud" t="Include">
+            <e p="Cruds" t="Include">
               <e p="CampusCrudApiController.cs" t="Include" />
               <e p="CareerDetailsCrudApiController.cs" t="Include" />
               <e p="CareerScheduleDetailsCrudApiController.cs" t="Include" />
@@ -179,6 +179,9 @@
           <e p="JwtAuthorizeAttribute.cs" t="Include" />
           <e p="ValidationAttribute.cs" t="Include" />
         </e>
+        <e p="Handlers" t="Include">
+          <e p="CustomLogHandler.cs" t="Include" />
+        </e>
         <e p="libeay32.dll" t="Include" />
         <e p="LoadFromCsvFilesToDb.mssql.bat" t="Include" />
         <e p="LoadFromCsvFilesToDb.pgsql.bat" t="Include" />
@@ -278,10 +281,12 @@
           <e p="HttpActionResult.cs" t="Include" />
           <e p="HttpContext.cs" t="Include" />
           <e p="IRepositoryProvider.cs" t="Include" />
+          <e p="LogMetadata.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
           <e p="QueryableExtension.cs" t="Include" />
           <e p="QueryResponse.cs" t="Include" />
+          <e p="RelationalOperator.cs" t="Include" />
           <e p="RepositoryFactories.cs" t="Include" />
           <e p="RepositoryProvider.cs" t="Include" />
           <e p="SHA.cs" t="Include" />

@@ -5,42 +5,47 @@ using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
 using SchoolExpress.WebService.Utils;
 
-namespace SchoolExpress.WebService.Controllers.Api.Crud
+namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
     [Authorize]
-    [RoutePrefix("api/crud/careerscheduledetails")]
+    [RoutePrefix("api/cruds/careerscheduledetails")]
     public class CareerScheduleDetailsCrudApiController : CrudApiController<CareerScheduleDetail>
     {
         public CareerScheduleDetailsCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 
-        [Authorize(Roles = "api.crud.careerscheduledetails.get")]
-        public override QueryResponse<CareerScheduleDetail> Get(int page, int pageSize, string orderBy)
+        [Authorize(Roles = "api.cruds.careerscheduledetails.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.crud.careerscheduledetails.get")]
-        public override async Task<CareerScheduleDetail> Get(object id)
+        [Authorize(Roles = "api.cruds.careerscheduledetails.get")]
+        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        {
+            return base.Get(page, pageSize, orderBy, where);
+        }
+
+        [Authorize(Roles = "api.cruds.careerscheduledetails.get")]
+        public override async Task<HttpResponseMessage> Get(object id)
         {
             return await base.Get(id);
         }
 
-
-        [Authorize(Roles = "api.crud.careerscheduledetails.put")]
+        [Authorize(Roles = "api.cruds.careerscheduledetails.put")]
         public override async Task<HttpResponseMessage> Put(CareerScheduleDetail entity)
         {
             return await base.Put(entity);
         }
 
-        [Authorize(Roles = "api.crud.careerscheduledetails.post")]
+        [Authorize(Roles = "api.cruds.careerscheduledetails.post")]
         public override async Task<HttpResponseMessage> Post(CareerScheduleDetail entity)
         {
             return await base.Post(entity);
         }
 
-        [Authorize(Roles = "api.crud.careerscheduledetails.delete")]
+        [Authorize(Roles = "api.cruds.careerscheduledetails.delete")]
         public override async Task<HttpResponseMessage> Delete(object id)
         {
             return await base.Delete(id);

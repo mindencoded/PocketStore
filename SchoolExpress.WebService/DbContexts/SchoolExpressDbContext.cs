@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -63,12 +63,17 @@ namespace SchoolExpress.WebService.DbContexts
                 Database.SetInitializer(new SchoolExpressDbInitializer());
                 Database.Initialize(true);
             }
-            new ExcecuteAlwaysInitializer().InitializeDatabase(this);
+
+            string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
+            if (!authenticationModes.Contains("NONE"))
+            {
+                new ExcecuteAlwaysInitializer().InitializeDatabase(this);
+            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);            
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<IdentityUser>().ToTable("User");
             modelBuilder.Entity<IdentityRole>().ToTable("Role");
             modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
@@ -92,7 +97,37 @@ namespace SchoolExpress.WebService.DbContexts
             {
                 dynamic configInstance = Activator.CreateInstance(type);
                 modelBuilder.Configurations.Add(configInstance);
-            }         
+            }
         }
+
+        /*protected override DbEntityValidationResult ValidateEntity(
+            DbEntityEntry entityEntry,
+            IDictionary<object, object> items)
+        {
+            DbEntityValidationResult result = base.ValidateEntity(entityEntry, items);
+            IEnumerable<DbValidationError> falseErrors = result.ValidationErrors
+                .Where(error =>
+                {
+
+                    if (entityEntry.State != EntityState.Modified)
+                    {
+                        return false;
+                    }
+
+                    DbMemberEntry member = entityEntry.Member(error.PropertyName);
+                    DbPropertyEntry property = member as DbPropertyEntry;
+                    if (property != null)
+                    {
+                        return !property.IsModified;
+                    }
+
+                    return false; //not false err;
+
+                });
+
+            foreach (DbValidationError error in falseErrors.ToArray())
+                result.ValidationErrors.Remove(error);
+            return result;
+        }*/
     }
 }
