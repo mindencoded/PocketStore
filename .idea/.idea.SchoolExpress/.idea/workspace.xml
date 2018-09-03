@@ -2,48 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7865693d-3bd9-4ae1-9789-fa5a589e06e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Certificates/ca.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Certificates/ca.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Handlers/CustomLogHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/LogMetadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/dataSources/92e57335-21c9-4e91-93e4-e887869fedbf/storage_v2/_src_/database/SchoolExpressDb.2ppV6Q/schema/dbo.sYMBAA.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/dataSources/c950ff9f-8b25-475f-a5e2-2658da0ddc16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/dataSources/c950ff9f-8b25-475f-a5e2-2658da0ddc16.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Configs/ConnectionFactory.localdb.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CampusCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerDetailsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerScheduleDetailsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareerSchedulesCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CoursesCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/DegreesCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentDetailsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PeriodCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/PersonsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/SpeakerCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/StudentsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/UserAccountsCrudApiController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/DbContextExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/DbContextExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/SchoolExpressDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Filters/BasicAuthorizeAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Handlers/CustomLogHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Handlers/CustomLogHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/RunService.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/IUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/IUow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/SchoolExpressUow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Uows/SchoolExpressUow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/packages.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.sln" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,7 +51,28 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="WorkerRole.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/WorkerRole.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <marker date="1535902101485" expanded="true" signature="6:142" ph="..." />
+                <marker date="1535902101485" expanded="true" signature="178:1434" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="225:1432" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="471:1250" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="532:852" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="703:837" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="898:997" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="1289:1426" ph="{...}" />
+                <marker date="1535902101485" expanded="true" signature="1329:1389" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -120,6 +109,7 @@
       <find>GetLogger(&quot;SchoolExpress&quot;)</find>
       <find>DbContext.Set&lt;T&gt;</find>
       <find>var</find>
+      <find>TraceSource</find>
     </findStrings>
     <replaceStrings>
       <replace>email.com</replace>
@@ -147,13 +137,12 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Enrollment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5795B2A3-00EF-4167-8B2A-AC0860B4B382/f5/91e618e8/HttpRequestMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/EnrollmentDetail.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.Release.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/CareerScheduleDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Domain/Module.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38948B15-C728-43EA-B1AC-030402A22DF7/62/493847c5/ApiController.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/RunService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/UnityConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B4F7B722-9334-4B23-AE14-915565EBF79F/d6/55aadde4/HttpMessageInvoker.cs" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/069D344C-A74E-48C6-A99C-7AE60A38E1BE/b4/e190bfab/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
@@ -162,6 +151,7 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Handlers/CustomLogHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Providers/CustomOAuthAuthorizationProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/WorkerRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/AccountApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/LogMetadata.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/BaseApiController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -226,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/DbMigration.bat" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Domain/UserRole.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/ColoredConsoleOutLogger.cs" />
@@ -277,6 +266,7 @@
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/LogMetadata.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Handlers/CustomLogHandler.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/WorkerRole.cs" />
       </list>
     </option>
   </component>
@@ -309,12 +299,7 @@
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SchoolExpress (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SchoolExpress (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SchoolExpress.WebService" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="SchoolExpress (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -439,11 +424,13 @@
       <workItem from="1535297710098" duration="579000" />
       <workItem from="1535311092370" duration="6119000" />
       <workItem from="1535598186515" duration="4822000" />
+      <workItem from="1535900740228" duration="241000" />
+      <workItem from="1535901243150" duration="830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270722000" />
+    <option name="totallyTimeSpent" value="271793000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,25 +449,25 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.23827533" side_tool="true" weight="0.4339934" />
       <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.4009288" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32838285" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.4009288" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6754917" weight="0.4117647" />
       <window_info anchor="bottom" id="NuGet" order="13" sideWeight="0.4969743" weight="0.4950495" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.22692889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.23373677" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="11" weight="0.32817337" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
+      <window_info anchor="bottom" id="Find" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.503096" side_tool="true" weight="0.22995462" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76172465" weight="0.54643965" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.76172465" weight="0.54643965" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.339934" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32817337" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.339934" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="NuGet" order="13" sideWeight="0.4969743" weight="0.4950495" />
@@ -553,7 +540,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/CareersCrudApiController.cs" />
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ClassRoomsCrudApiController.cs" />
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/EnrollmentsCrudApiController.cs" />
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Crud/ModuleCrudApiController.cs" />
@@ -783,56 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
           <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
-          <folding>
-            <marker date="1535609570108" expanded="false" signature="6:545" ph="..." />
-            <marker date="1535609570108" expanded="true" signature="603:12467" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="688:12465" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="752:772" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="939:1034" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="1223:1319" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="1540:1638" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="1762:5667" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="1805:1944" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="2118:2653" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="2188:2639" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="2391:2498" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="2523:2621" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="2787:4710" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="3146:4568" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="3318:4087" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="3489:3966" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="3711:3940" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="4112:4550" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="4319:4528" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="4817:4925" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="4942:5076" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="5159:5332" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="5349:5440" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="5548:5656" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="5754:10090" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="5865:10054" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="6062:10040" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="6230:6380" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="6530:6696" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="6881:8474" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="7272:7814" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="7572:7739" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="7843:8196" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="8001:8121" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="8499:10022" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="8726:8873" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="8902:9002" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="9161:9782" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="9328:9443" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="10203:10681" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="10328:10575" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="10406:10560" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="10789:10980" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="11090:11685" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="11324:11646" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="11811:12149" ph="{...}" />
-            <marker date="1535609570108" expanded="true" signature="12272:12459" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -840,17 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-          <folding>
-            <marker date="1535608790546" expanded="true" signature="6:181" ph="..." />
-            <marker date="1535608790546" expanded="true" signature="226:2366" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="286:2364" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="512:1052" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="1138:1665" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="1215:1400" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="1522:1622" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="1779:2353" ph="{...}" />
-            <marker date="1535608790546" expanded="true" signature="2198:2299" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,11 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding>
-            <marker date="1535608558430" expanded="false" signature="6:31" ph="..." />
-            <marker date="1535608558430" expanded="true" signature="73:583" ph="{...}" />
-            <marker date="1535608558430" expanded="true" signature="104:581" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,24 +790,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="111" column="52" selection-start-line="111" selection-start-column="52" selection-end-line="111" selection-end-column="52" />
-          <folding>
-            <marker date="1535324415844" expanded="false" signature="6:488" ph="..." />
-            <marker date="1535324415844" expanded="true" signature="524:4564" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="551:4562" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="615:4556" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="2590:2689" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="2706:3894" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="2779:2901" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="2959:3064" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="3124:3880" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="3258:3759" ph="{...}" />
-            <marker date="1535324415844" expanded="true" signature="3967:4366" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.log">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/WorkerRole.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <marker date="1535902101485" expanded="true" signature="6:142" ph="..." />
+            <marker date="1535902101485" expanded="true" signature="178:1434" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="225:1432" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="471:1250" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="532:852" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="703:837" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="898:997" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="1289:1426" ph="{...}" />
+            <marker date="1535902101485" expanded="true" signature="1329:1389" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

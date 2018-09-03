@@ -16,11 +16,11 @@ namespace SchoolExpress.WebService
                 HostFactory.Run(c =>
                 {
                     c.UseCommonLogging();
-                    c.Service<RunService>(s =>
+                    c.Service<WorkerRole>(s =>
                     {
-                        s.ConstructUsing(() => new RunService());
-                        s.WhenStarted((a) => a.Start());
-                        s.WhenStopped((a) => a.Stop());
+                        s.ConstructUsing(() => new WorkerRole());
+                        s.WhenStarted((a) => a.OnStart());
+                        s.WhenStopped((a) => a.OnStop());
                     });
                     c.RunAsLocalService();
                 });

@@ -11,7 +11,8 @@ namespace SchoolExpress.WebService.Handlers
     
     public class CustomLogHandler: DelegatingHandler
     {
-        private static readonly ILog Log = LogManager.GetLogger<CustomLogHandler>();
+        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
+
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {

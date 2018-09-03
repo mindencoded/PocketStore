@@ -4,6 +4,17 @@
     <e p="C:\Users\Asus\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SchoolExpress.-884183340.00" t="ExcludeRecursive" />
     <e p="D:\Projects\SchoolExpress" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
+      <e p="SchoolExpress.AzureCloudService" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="SchoolExpress.AzureCloudService.ccproj" t="IncludeRecursive" />
+        <e p="SchoolExpress.WebServiceContent" t="Include">
+          <e p="diagnostics.wadcfgx" t="Include" />
+        </e>
+        <e p="ServiceConfiguration.Cloud.cscfg" t="Include" />
+        <e p="ServiceConfiguration.Local.cscfg" t="Include" />
+        <e p="ServiceDefinition.csdef" t="Include" />
+      </e>
       <e p="SchoolExpress.sln" t="IncludeFlat" />
       <e p="SchoolExpress.WebService" t="IncludeRecursive">
         <e p="AddHost.bat" t="Include" />
@@ -249,7 +260,6 @@
           <e p="StudentRepository.cs" t="Include" />
           <e p="UserAccountRepository.cs" t="Include" />
         </e>
-        <e p="RunService.cs" t="Include" />
         <e p="SchoolExpress.log" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
         <e p="sqlparams.conf" t="Include" />
@@ -281,6 +291,7 @@
           <e p="HttpActionResult.cs" t="Include" />
           <e p="HttpContext.cs" t="Include" />
           <e p="IRepositoryProvider.cs" t="Include" />
+          <e p="JsonExtensions.cs" t="Include" />
           <e p="LogMetadata.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
@@ -293,6 +304,7 @@
           <e p="UnhandledExceptionLogger.cs" t="Include" />
           <e p="UnityResolver.cs" t="Include" />
         </e>
+        <e p="WorkerRole.cs" t="Include" />
         <e p="wwwroot" t="Include">
           <e p="app" t="Include">
             <e p="css" t="Include">
