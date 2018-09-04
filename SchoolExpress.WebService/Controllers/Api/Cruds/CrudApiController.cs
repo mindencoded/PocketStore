@@ -40,15 +40,17 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         {
             return await CreateQuery(page, pageSize, orderBy, where, null);
         }
-        
+
         [Route("{page:int}/{pageSize:int}/{orderBy}/{where}/{select}")]
         [HttpGet]
-        public virtual async Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where, string select)
+        public virtual async Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where,
+            string select)
         {
             return await CreateQuery(page, pageSize, orderBy, where, select);
         }
 
-        private async Task<QueryResponse> CreateQuery(int page, int pageSize, string orderBy, string where, string select)
+        private async Task<QueryResponse> CreateQuery(int page, int pageSize, string orderBy, string where,
+            string select)
         {
             if (pageSize < page)
             {
@@ -73,13 +75,13 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                 }
             }
 
-            IQueryable<T> query = Uow.GetRepositoryForEntityType<T>().GetAll();       
+            IQueryable<T> query = Uow.GetRepositoryForEntityType<T>().GetAll();
             if (!string.IsNullOrEmpty(where))
             {
                 int countParam = 0;
                 IList<object> parameters = new List<object>();
                 IList<string> andExpressionsList = new List<string>();
-               
+
                 string[] andExpressions = Regex.Split(where, "AND", RegexOptions.IgnoreCase);
                 foreach (string andExpression in andExpressions)
                 {
@@ -95,7 +97,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                             {
                                 orExpressionsList.Add(expression);
                                 parameters.Add(value);
-                                countParam++; 
+                                countParam++;
                             }
                         }
 
@@ -114,9 +116,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                     }
                 }
 
-                query = query.Where(string.Join(" AND ", andExpressionsList.ToArray()), parameters.ToArray());                
+                query = query.Where(string.Join(" AND ", andExpressionsList.ToArray()), parameters.ToArray());
             }
-            
+
             int total = await query.CountAsync();
             if (page == 0 && pageSize == 0)
             {
@@ -124,25 +126,31 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             }
             else
             {
-                query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip((page - 1) * pageSize).Take(pageSize);
+                query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip((page - 1) * pageSize)
+                    .Take(pageSize);
             }
 
             IList<dynamic> result;
             if (!string.IsNullOrEmpty(select))
             {
-                result = await query.Select(new StringBuilder().Append("new (").Append(select).Append(")").ToString()).ToListAsync();           
+                result = await query.Select(new StringBuilder().Append("new (").Append(select).Append(")").ToString())
+                    .ToListAsync();
             }
             else
             {
-                result   = await query.ToListAsync<dynamic>();
-            }     
-            
+                result = await query.ToListAsync<dynamic>();
+            }
+
             int count = result.Count();
+            int pages = CalculateTotalPages(total, pageSize);
             return new QueryResponse
             {
                 Value = result,
                 Count = count,
-                Total = total
+                Total = total,
+                Pages = pages,
+                Page = page,
+                PageSize = pageSize
             };
         }
 
@@ -253,7 +261,8 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             {
                 return new HttpResponseMessage
                 {
-                    Content = new ObjectContent<T>(entity, new JsonMediaTypeFormatter(), new MediaTypeHeaderValue("application/json"))
+                    Content = new ObjectContent<T>(entity, new JsonMediaTypeFormatter(),
+                        new MediaTypeHeaderValue("application/json"))
                 };
             }
 
@@ -284,6 +293,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                                 ? "/" + string.Join("/", ((IEntity) entity).GetId())
                                 : ""));
             }
+
             return response;
         }
 
@@ -305,6 +315,18 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             Uow.GetRepositoryForEntityType<T>().Delete(id);
             await Uow.CommitAsync();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
+        }
+
+        private int CalculateTotalPages(int totalItems, int itemsPerPage)
+        {
+            int totalPages = totalItems / itemsPerPage;
+
+            if (totalItems % itemsPerPage != 0)
+            {
+                totalPages++; // Last page with only 1 item left
+            }
+
+            return totalPages;
         }
     }
 }
