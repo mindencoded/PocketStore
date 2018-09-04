@@ -261,7 +261,6 @@
     <Compile Include="Utils\JsonExtensions.cs" />
     <Compile Include="Utils\LogMetadata.cs" />
     <Compile Include="Utils\PredicateBuilder.cs" />
-    <Compile Include="Utils\QueryableExtension.cs" />
     <Compile Include="Utils\QueryResponse.cs" />
     <Compile Include="Utils\RelationalOperator.cs" />
     <Compile Include="Utils\RepositoryFactories.cs" />

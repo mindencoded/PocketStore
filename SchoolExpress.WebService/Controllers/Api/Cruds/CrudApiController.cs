@@ -124,7 +124,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             }
             else
             {
-                query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip(page).Take(pageSize);
+                query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip((page - 1) * pageSize).Take(pageSize);
             }
 
             IList<dynamic> result;
