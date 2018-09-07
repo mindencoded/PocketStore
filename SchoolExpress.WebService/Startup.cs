@@ -10,6 +10,7 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Owin;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Handlers;
@@ -63,7 +64,7 @@ namespace SchoolExpress.WebService
                 PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
-            //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             appBuilder.Use<OwinContextMiddleware>();
 
             string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
