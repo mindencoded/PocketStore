@@ -9,18 +9,18 @@ using SchoolExpress.WebService.Utils;
 namespace SchoolExpress.WebService.Handlers
 {
     
-    public class CustomLogHandler: DelegatingHandler
+    public class HttpLogHandler: DelegatingHandler
     {
-        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
+        private static readonly ILog Logger = LogManager.GetLogger("customTraceSource");
 
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             LogMetadata logMetadata = BuildRequestMetadata(request);
-            Log.TraceFormat("Initiated request: \"{0}\" {1}", logMetadata.Method, logMetadata.RequestUri);
+            Logger.TraceFormat("Initiated request: \"{0}\" {1}", logMetadata.Method, logMetadata.RequestUri);
             HttpResponseMessage response = await base.SendAsync(request, cancellationToken);
             logMetadata = BuildResponseMetadata(logMetadata, response);
-            Log.TraceFormat("Completed request: {0} with status {1} {2}", logMetadata.ResponseUri, logMetadata.Scheme, (int) logMetadata.StatusCode);
+            Logger.TraceFormat("Completed request: {0} with status {1} {2}", logMetadata.ResponseUri, logMetadata.Scheme, (int) logMetadata.StatusCode);
             return response;
         }
         

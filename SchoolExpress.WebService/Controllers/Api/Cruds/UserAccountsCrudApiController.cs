@@ -15,15 +15,21 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         }
 
         [Authorize(Roles = "api.cruds.useraccounts.get")]
-        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy)
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
         [Authorize(Roles = "api.cruds.useraccounts.get")]
-        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
             return base.Get(page, pageSize, orderBy, where);
+        }
+        
+        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where, string select)
+        {
+            return base.Get(page, pageSize, orderBy, where, select);
         }
 
         [Authorize(Roles = "api.cruds.useraccounts.get")]
@@ -32,13 +38,11 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             return await base.Get(id);
         }
 
-
         [Authorize(Roles = "api.cruds.useraccounts.put")]
         public override async Task<HttpResponseMessage> Put(UserAccount entity)
         {
             return await base.Put(entity);
         }
-
 
         [Authorize(Roles = "api.cruds.useraccounts.post")]
         public override async Task<HttpResponseMessage> Post(UserAccount entity)

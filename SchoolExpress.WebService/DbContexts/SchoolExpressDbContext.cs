@@ -63,11 +63,7 @@ namespace SchoolExpress.WebService.DbContexts
                 Database.Initialize(true);
             }
 
-            string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
-            if (!authenticationModes.Contains("NONE"))
-            {
-                new ExcecuteAlwaysInitializer().InitializeDatabase(this);
-            }
+            new ExcecuteAlwaysInitializer().InitializeDatabase(this);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

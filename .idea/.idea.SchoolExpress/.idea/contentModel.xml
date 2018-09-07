@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Asus\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SchoolExpress.-884183340.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Asus\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Asus\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_SchoolExpress.-884183340.00" t="ExcludeRecursive" />
     <e p="D:\Projects\SchoolExpress" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="SchoolExpress.AzureCloudService" t="IncludeRecursive">
@@ -55,7 +56,7 @@
             <e p="AccountApiController.cs" t="Include" />
             <e p="BaseApiController.cs" t="Include" />
             <e p="Cruds" t="Include">
-              <e p="CampusCrudApiController.cs" t="Include" />
+              <e p="CampusesCrudApiController.cs" t="Include" />
               <e p="CareerDetailsCrudApiController.cs" t="Include" />
               <e p="CareerScheduleDetailsCrudApiController.cs" t="Include" />
               <e p="CareerSchedulesCrudApiController.cs" t="Include" />
@@ -66,10 +67,10 @@
               <e p="DegreesCrudApiController.cs" t="Include" />
               <e p="EnrollmentDetailsCrudApiController.cs" t="Include" />
               <e p="EnrollmentsCrudApiController.cs" t="Include" />
-              <e p="ModuleCrudApiController.cs" t="Include" />
-              <e p="PeriodCrudApiController.cs" t="Include" />
-              <e p="PersonsCrudApiController.cs" t="Include" />
-              <e p="SpeakerCrudApiController.cs" t="Include" />
+              <e p="ModulesCrudApiController.cs" t="Include" />
+              <e p="PeopleCrudApiController.cs" t="Include" />
+              <e p="PeriodsCrudApiController.cs" t="Include" />
+              <e p="SpeakersCrudApiController.cs" t="Include" />
               <e p="StudentsCrudApiController.cs" t="Include" />
               <e p="UserAccountsCrudApiController.cs" t="Include" />
             </e>
@@ -295,7 +296,6 @@
           <e p="LogMetadata.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
-          <e p="QueryableExtension.cs" t="Include" />
           <e p="QueryResponse.cs" t="Include" />
           <e p="RelationalOperator.cs" t="Include" />
           <e p="RepositoryFactories.cs" t="Include" />
@@ -324,6 +324,29 @@
           <e p="config.json" t="Include" />
           <e p="gulpfile.js" t="Include" />
           <e p="index.html" t="Include" />
+          <e p="node_modules" t="ExcludeRecursive">
+            <e p="beeper" t="IncludeRecursive" />
+            <e p="browser-sync" t="IncludeRecursive" />
+            <e p="browserify" t="IncludeRecursive" />
+            <e p="connect" t="IncludeRecursive" />
+            <e p="cssnano" t="IncludeRecursive" />
+            <e p="del" t="IncludeRecursive" />
+            <e p="gulp" t="IncludeRecursive" />
+            <e p="gulp-concat" t="IncludeRecursive" />
+            <e p="gulp-imagemin" t="IncludeRecursive" />
+            <e p="gulp-jshint" t="IncludeRecursive" />
+            <e p="gulp-plumber" t="IncludeRecursive" />
+            <e p="gulp-postcss" t="IncludeRecursive" />
+            <e p="gulp-uglify" t="IncludeRecursive" />
+            <e p="jquery" t="IncludeRecursive" />
+            <e p="jshint" t="IncludeRecursive" />
+            <e p="knockout" t="IncludeRecursive" />
+            <e p="normalize.css" t="IncludeRecursive" />
+            <e p="postcss-cssnext" t="IncludeRecursive" />
+            <e p="serve-static" t="IncludeRecursive" />
+            <e p="vinyl-buffer" t="IncludeRecursive" />
+            <e p="vinyl-source-stream" t="IncludeRecursive" />
+          </e>
           <e p="package.json" t="Include" />
         </e>
       </e>

@@ -9,15 +9,14 @@ namespace SchoolExpress.WebService
 {
     public class WorkerRole : RoleEntryPoint, ServiceControl
     {
-        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
+        private static readonly ILog Logger = LogManager.GetLogger("customTraceSource");
         private IDisposable _app;
 
         public override bool OnStart()
-        {
+        {        
             string baseUri = ConfigurationManager.AppSettings["BaseUri"];
             try
             {
-
                 RoleInstanceEndpoint endpoint = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["ApiEndpoint"];
                 if (endpoint != null)
                 {
@@ -30,7 +29,8 @@ namespace SchoolExpress.WebService
 
             _app = WebApp.Start<Startup>(new StartOptions(baseUri));
 
-            Log.InfoFormat("Server running in: {0}", baseUri);
+            Logger.InfoFormat("Server running in: {0}", baseUri);
+
             return base.OnStart();
         }
 

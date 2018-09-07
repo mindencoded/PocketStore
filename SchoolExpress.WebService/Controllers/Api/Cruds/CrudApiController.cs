@@ -29,33 +29,52 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
 
         [Route("{page:int}/{pageSize:int}/{orderBy}")]
         [HttpGet]
-        public virtual async Task<QueryResponse> Get(int page, int pageSize, string orderBy)
+        public virtual async Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
-            return await CreateQuery(page, pageSize, orderBy, null, null);
+            QueryResponse queryResponse = await CreateQuery(page, pageSize, orderBy, null, null);
+            return new HttpResponseMessage
+            {
+                Content = new ObjectContent<QueryResponse>(queryResponse, new JsonMediaTypeFormatter(),
+                    new MediaTypeHeaderValue("application/json"))
+            };
         }
 
         [Route("{page:int}/{pageSize:int}/{orderBy}/{where}")]
         [HttpGet]
-        public virtual async Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        public virtual async Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
-            return await CreateQuery(page, pageSize, orderBy, where, null);
+            QueryResponse queryResponse = await CreateQuery(page, pageSize, orderBy, where, null);
+            return new HttpResponseMessage
+            {
+                Content = new ObjectContent<QueryResponse>(queryResponse, new JsonMediaTypeFormatter(),
+                    new MediaTypeHeaderValue("application/json"))
+            };
         }
 
         [Route("{page:int}/{pageSize:int}/{orderBy}/{where}/{select}")]
         [HttpGet]
-        public virtual async Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where,
+        public virtual async Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where,
             string select)
         {
-            return await CreateQuery(page, pageSize, orderBy, where, select);
+            QueryResponse queryResponse = await CreateQuery(page, pageSize, orderBy, where, select);
+            return new HttpResponseMessage
+            {
+                Content = new ObjectContent<QueryResponse>(queryResponse, new JsonMediaTypeFormatter(),
+                    new MediaTypeHeaderValue("application/json"))
+            };
         }
 
         private async Task<QueryResponse> CreateQuery(int page, int pageSize, string orderBy, string where,
             string select)
         {
-            if (pageSize < page)
+            if (page <= 0)
+            {       
+                throw new ArgumentOutOfRangeException(nameof(page), "page must be greater than 0 (zero)");
+            }
+            /*if (pageSize < page)
             {
                 throw new ArgumentOutOfRangeException(nameof(pageSize), "pageSize must be greater than page");
-            }
+            }*/
 
             IList<string> orderByList = new List<string>();
             string[] orderByArray = orderBy.Split(',');
@@ -120,15 +139,10 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             }
 
             int total = await query.CountAsync();
-            if (page == 0 && pageSize == 0)
-            {
-                query = query.OrderBy(string.Join(",", orderByList.ToArray()));
-            }
-            else
-            {
-                query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip((page - 1) * pageSize)
-                    .Take(pageSize);
-            }
+           
+            
+            query = query.OrderBy(string.Join(",", orderByList.ToArray())).Skip((page - 1) * pageSize).Take(pageSize);
+            
 
             IList<dynamic> result;
             if (!string.IsNullOrEmpty(select))
@@ -141,7 +155,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                 result = await query.ToListAsync<dynamic>();
             }
 
-            int count = result.Count();
+            int count = result.Count;
             int pages = CalculateTotalPages(total, pageSize);
             return new QueryResponse
             {

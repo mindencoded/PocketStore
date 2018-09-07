@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -53,12 +54,13 @@ namespace SchoolExpress.WebService
                 "ApiControllerAction",
                 "api/{controller}/{action}"
             );
-            
+
             IUnityContainer container = UnityConfig.GetContainer();
             UnityResolver dependencyResolver = new UnityResolver(container);
             config.DependencyResolver = dependencyResolver;
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.None;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling =
+                PreserveReferencesHandling.None;
             config.Formatters.JsonFormatter.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -107,9 +109,13 @@ namespace SchoolExpress.WebService
                 FileSystem = new PhysicalFileSystem("./wwwroot"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
-            
+
             config.Filters.Add(new ValidationAttribute());
-            config.MessageHandlers.Add(new CustomLogHandler());
+            if (Debugger.IsAttached)
+            {
+                config.MessageHandlers.Add(new HttpLogHandler());
+            }
+
             appBuilder.UseWebApi(config);
         }
     }

@@ -6,11 +6,11 @@ namespace SchoolExpress.WebService.Utils
 {
     public class UnhandledExceptionLogger : ExceptionLogger
     {
-        private static ILog _log = LogManager.GetLogger("TraceSourceApp");
+        private static readonly ILog Logger = LogManager.GetLogger("customTraceSource");
 
         public override void Log(ExceptionLoggerContext context)
-        {         
-           _log.Error(context.ExceptionContext.Exception);
+        {
+            Logger.Error(context.ExceptionContext.Exception);
         }
     }
 }

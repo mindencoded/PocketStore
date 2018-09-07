@@ -7,7 +7,7 @@ namespace SchoolExpress.WebService
 {
     public class Program
     {
-        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
+        private static readonly ILog Logger = LogManager.GetLogger("customTraceSource");
 
         private static void Main()
         {
@@ -19,15 +19,15 @@ namespace SchoolExpress.WebService
                     c.Service<WorkerRole>(s =>
                     {
                         s.ConstructUsing(() => new WorkerRole());
-                        s.WhenStarted((a) => a.OnStart());
-                        s.WhenStopped((a) => a.OnStop());
+                        s.WhenStarted(a => a.OnStart());
+                        s.WhenStopped(a => a.OnStop());
                     });
                     c.RunAsLocalService();
                 });
             }
             catch (Exception ex)
             {
-                Log.Error(ex);
+                Logger.Error(ex);
             }
         }
     }

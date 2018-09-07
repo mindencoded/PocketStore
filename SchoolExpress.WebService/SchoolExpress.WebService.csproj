@@ -44,6 +44,9 @@
     <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Common.Logging.MultipleLogger, Version=0.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.MultipleLogger.3.4.1\lib\net40\Common.Logging.MultipleLogger.dll</HintPath>
+    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.8.11\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
@@ -220,13 +223,13 @@
     <Compile Include="Configurations\SpeakerConfiguration.cs" />
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\UserAccountConfiguration.cs" />
-    <Compile Include="Controllers\Api\Cruds\CampusCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\CampusesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareerDetailsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareersCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\DegreesCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Cruds\ModuleCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Cruds\PeriodCrudApiController.cs" />
-    <Compile Include="Controllers\Api\Cruds\SpeakerCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\ModulesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\PeriodsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\SpeakersCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\StudentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\UserAccountsCrudApiController.cs" />
     <Compile Include="DbContexts\ExcecuteAlwaysInitializer.cs" />
@@ -256,7 +259,8 @@
     <Compile Include="Domain\Student.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
-    <Compile Include="Handlers\CustomLogHandler.cs" />
+    <Compile Include="Handlers\HttpLogHandler.cs" />
+    <Compile Include="Utils\ColoredConsoleTraceListener.cs" />
     <Compile Include="Utils\IRepositoryProvider.cs" />
     <Compile Include="Utils\JsonExtensions.cs" />
     <Compile Include="Utils\LogMetadata.cs" />
@@ -317,7 +321,7 @@
     <Compile Include="Controllers\Api\Cruds\EnrollmentDetailsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\EnrollmentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\JwtController.cs" />
-    <Compile Include="Controllers\Api\Cruds\PersonsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\PeopleCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareerScheduleDetailsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareerSchedulesCrudApiController.cs" />
     <Compile Include="Models\UserLoginModel.cs" />

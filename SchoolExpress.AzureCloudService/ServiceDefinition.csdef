@@ -9,5 +9,7 @@
     </Endpoints>
     <Certificates>
     </Certificates>
+    <LocalResources>
+    </LocalResources>
   </WorkerRole>
 </ServiceDefinition>

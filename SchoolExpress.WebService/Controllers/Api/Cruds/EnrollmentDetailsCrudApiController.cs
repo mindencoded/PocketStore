@@ -56,15 +56,21 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         }
 
         [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
-        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy)
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
         [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
-        public override Task<QueryResponse> Get(int page, int pageSize, string orderBy, string where)
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
             return base.Get(page, pageSize, orderBy, where);
+        }
+        
+        [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
+        public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where, string select)
+        {
+            return base.Get(page, pageSize, orderBy, where, select);
         }
 
         [Authorize(Roles = "api.cruds.enrollmentdetails.get")]

@@ -8,9 +8,9 @@ using SchoolExpress.WebService.Utils;
 namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
     [RoutePrefix("api/cruds/speakers")]
-    public class SpeakerCrudApiController : CrudApiController<Speaker>
+    public class SpeakersCrudApiController : CrudApiController<Speaker>
     {
-        public SpeakerCrudApiController(ISchoolExpressUow uow) : base(uow)
+        public SpeakersCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 

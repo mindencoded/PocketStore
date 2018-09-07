@@ -8,9 +8,9 @@ using SchoolExpress.WebService.Utils;
 namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
     [RoutePrefix("api/cruds/periods")]
-    public class PeriodCrudApiController : CrudApiController<Period>
+    public class PeriodsCrudApiController : CrudApiController<Period>
     {
-        public PeriodCrudApiController(ISchoolExpressUow uow) : base(uow)
+        public PeriodsCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 

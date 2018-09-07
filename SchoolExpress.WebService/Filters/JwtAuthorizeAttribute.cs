@@ -13,7 +13,7 @@ namespace SchoolExpress.WebService.Filters
 {
     public class JwtAuthorizeAttribute : AuthorizationFilterAttribute
     {
-        private static readonly ILog Log = LogManager.GetLogger("TraceSourceApp");
+        private static readonly ILog Logger = LogManager.GetLogger("customTraceSource");
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {
@@ -31,7 +31,7 @@ namespace SchoolExpress.WebService.Filters
                     }
                     catch (Exception ex)
                     {
-                        Log.Error(ex.Message);
+                        Logger.Error(ex.Message);
                     }
 
                     if (principal != null)
