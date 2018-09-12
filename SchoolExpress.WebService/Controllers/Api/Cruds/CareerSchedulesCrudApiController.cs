@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
-using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
@@ -51,6 +50,12 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         public override async Task<HttpResponseMessage> Post(CareerSchedule entity)
         {
             return await base.Post(entity);
+        }
+        
+        [Authorize(Roles = "api.cruds.careerschedules.patch")]
+        public override async Task<HttpResponseMessage> Patch([FromBody] string json)
+        {
+            return await base.Patch(json);
         }
 
         [Authorize(Roles = "api.cruds.careerschedules.delete")]

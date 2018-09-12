@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Claims;
@@ -7,21 +8,23 @@ using System.Text;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using SchoolExpress.WebService.Repositories;
+using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Filters
 {
-    public class BasicAuthorizeAttribute : ActionFilterAttribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    public class BasicAuthorizeAttribute : AuthorizationFilterAttribute
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ISchoolExpressUow _uow;
 
-        public BasicAuthorizeAttribute(UserManager<IdentityUser> userManager)
+        public BasicAuthorizeAttribute(ISchoolExpressUow uow)
         {
-            _userManager = userManager;
+            _uow = uow;
         }
 
-        public override void OnActionExecuting(HttpActionContext actionContext)
+        public override void OnAuthorization(HttpActionContext actionContext)
         {
             AuthenticationHeaderValue authRequest = actionContext.Request.Headers.Authorization;
             if (authRequest != null && authRequest.Scheme.Equals("basic", StringComparison.OrdinalIgnoreCase))
@@ -34,13 +37,19 @@ namespace SchoolExpress.WebService.Filters
                     string password = decodedToken.Substring(decodedToken.IndexOf(":", StringComparison.Ordinal) + 1);
                     if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
                     {
-                        IdentityUser user = _userManager.Find(username, password);
+                        IUserRepository userRepository = _uow.GetRepository<IUserRepository>();
+                        string hash = Md5Tool.CreateUtf8Hash(password);
+                        dynamic user = userRepository.GetQueryable().AsNoTracking().Include(x => x.UserRoles.Select(y => y.Role)).Where(x => x.UserName == username && x.Password == hash).Select(x => new
+                        {
+                            x.UserName,
+                            Roles = x.UserRoles.Select(y => y.Role.Name)
+                        }).FirstOrDefault();
                         if (user != null)
                         {
                             IList<Claim> claims = new List<Claim>
                             {
                                 new Claim(ClaimTypes.Name, user.UserName),
-                                new Claim(ClaimTypes.NameIdentifier, user.Id)
+                                new Claim(ClaimTypes.NameIdentifier, user.UserName)
                             };
                             AuthorizeAttribute authorizeAttribute = actionContext.ActionDescriptor
                                 .GetCustomAttributes<AuthorizeAttribute>(true)
@@ -50,7 +59,7 @@ namespace SchoolExpress.WebService.Filters
                                 string[] roles = authorizeAttribute.Roles.Split(',');
                                 foreach (string role in roles)
                                 {
-                                    if (_userManager.IsInRole(user.Id, role))
+                                    if (user.Roles.Contains(role))
                                     {
                                         claims.Add(new Claim(ClaimTypes.Role, role));
                                     }
@@ -65,7 +74,7 @@ namespace SchoolExpress.WebService.Filters
             }
 
             //actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
-            base.OnActionExecuting(actionContext);
+            base.OnAuthorization(actionContext);
         }
     }
 }

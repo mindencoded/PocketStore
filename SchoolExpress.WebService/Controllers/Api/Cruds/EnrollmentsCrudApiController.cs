@@ -52,6 +52,12 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         {
             return await base.Post(entity);
         }
+        
+        [Authorize(Roles = "api.cruds.enrollments.patch")]
+        public override async Task<HttpResponseMessage> Patch([FromBody] string json)
+        {
+            return await base.Patch(json);
+        }
 
         [Authorize(Roles = "api.cruds.enrollments.delete")]
         public override async Task<HttpResponseMessage> Delete(object id)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -11,50 +11,49 @@ using SchoolExpress.WebService.Uows;
 
 namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
-    [Authorize]
-    [RoutePrefix("api/cruds/enrollmentdetails")]
-    public class EnrollmentDetailsCrudApiController : CrudApiController<EnrollmentDetail>
+    [RoutePrefix("api/cruds/userroles")]
+    public class UserRolesCrudApiController: CrudApiController<UserRole>
     {
-        public EnrollmentDetailsCrudApiController(ISchoolExpressUow uow) : base(uow)
+        public UserRolesCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
-
+        
         [HttpGet]
-        [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
-        [Route("{careerDetailId:int}/{enrollmentId:int}")]
-        public async Task<HttpResponseMessage> Get(int careerDetailId, int enrollmentId)
+        [Authorize(Roles = "api.cruds.userroles.get")]
+        [Route("{userId:int}/{roleId:int}")]
+        public async Task<HttpResponseMessage> Get(int userId, int roleId)
         {
-            EnrollmentDetail enrollmentDetail =
-                await Uow.GetRepository<IEnrollmentDetailRepository>().FindAsync(careerDetailId, enrollmentId);
-            if (enrollmentDetail != null)
-                return Request.CreateResponse(HttpStatusCode.OK, enrollmentDetail, new JsonMediaTypeFormatter(),
+            UserRole userRole =
+                await Uow.GetRepository<IUserRoleRepository>().FindAsync(userId, roleId);
+            if (userRole != null)
+                return Request.CreateResponse(HttpStatusCode.OK, userRole, new JsonMediaTypeFormatter(),
                     new MediaTypeHeaderValue("application/json"));
             throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
         }
-
+        
         [HttpDelete]
-        [Authorize(Roles = "api.cruds.enrollmentdetails.delete")]
-        [Route("{careerDetailId:int}/{enrollmentId:int}")]
-        public async Task<HttpResponseMessage> Delete(int careerDetailId, int enrollmentId)
+        [Authorize(Roles = "api.cruds.userroles.delete")]
+        [Route("{userId:int}/{roleId:int}")]
+        public async Task<HttpResponseMessage> Delete(int userId, int roleId)
         {
-            await Uow.GetRepository<IEnrollmentDetailRepository>().DeleteAsync(careerDetailId, enrollmentId);
+            await Uow.GetRepository<IUserRoleRepository>().DeleteAsync(userId, roleId);
             Uow.Commit();
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
-
-        [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
+        
+        [Authorize(Roles = "api.cruds.userroles.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
+        [Authorize(Roles = "api.cruds.userroles.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
             return base.Get(page, pageSize, orderBy, where);
         }
         
-        [Authorize(Roles = "api.cruds.enrollmentdetails.get")]
+        [Authorize(Roles = "api.cruds.userroles.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where, string select)
         {
             return base.Get(page, pageSize, orderBy, where, select);
@@ -65,24 +64,25 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             throw new NotImplementedException();
         }
 
-        [Authorize(Roles = "api.cruds.enrollmentdetails.put")]
-        public override async Task<HttpResponseMessage> Put(EnrollmentDetail entity)
+
+        [Authorize(Roles = "api.cruds.userroles.put")]
+        public override async Task<HttpResponseMessage> Put(UserRole entity)
         {
             return await base.Put(entity);
         }
 
-        [Authorize(Roles = "api.cruds.enrollmentdetails.post")]
-        public override async Task<HttpResponseMessage> Post(EnrollmentDetail entity)
+        [Authorize(Roles = "api.cruds.userroles.post")]
+        public override async Task<HttpResponseMessage> Post(UserRole entity)
         {
             return await base.Post(entity);
         }
         
-        [Authorize(Roles = "api.cruds.enrollmentdetails.patch")]
+        [Authorize(Roles = "api.cruds.userroles.patch")]
         public override async Task<HttpResponseMessage> Patch([FromBody] string json)
         {
             return await base.Patch(json);
         }
-
+        
         public override Task<HttpResponseMessage> Delete(object id)
         {
             throw new NotImplementedException();

@@ -62,9 +62,6 @@
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.3.0.0\lib\net452\Microsoft.Azure.KeyVault.Core.dll</HintPath>
     </Reference>
@@ -220,23 +217,31 @@
     <Compile Include="Configurations\ModuleConfiguration.cs" />
     <Compile Include="Configurations\PeriodConfiguration.cs" />
     <Compile Include="Configurations\PersonConfiguration.cs" />
+    <Compile Include="Configurations\RoleConfiguration.cs" />
     <Compile Include="Configurations\SpeakerConfiguration.cs" />
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\UserAccountConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Configurations\UserRoleConfiguration.cs" />
     <Compile Include="Controllers\Api\Cruds\CampusesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareerDetailsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\CareersCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\DegreesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\ModulesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\PeriodsCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\RolesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\SpeakersCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\StudentsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\UserAccountsCrudApiController.cs" />
-    <Compile Include="DbContexts\ExcecuteAlwaysInitializer.cs" />
+    <Compile Include="Controllers\Api\Cruds\UserRolesCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Cruds\UsersCrudApiController.cs" />
+    <Compile Include="DbContexts\ExecuteAlwaysInitializer.cs" />
     <Compile Include="DbContexts\DbContextExtensions.cs" />
+    <Compile Include="DbContexts\PopulateDataInitializer.cs" />
     <Compile Include="DbContexts\ProviderInvariantName.cs" />
     <Compile Include="DbContexts\SchoolExpressDbContext.cs" />
-    <Compile Include="DbContexts\SchoolExpressDbInitializer.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\UserAccount.cs" />
     <Compile Include="Domain\Campus.cs" />
     <Compile Include="Domain\Career.cs" />
@@ -257,13 +262,21 @@
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\Speaker.cs" />
     <Compile Include="Domain\Student.cs" />
+    <Compile Include="Domain\UserRole.cs" />
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
     <Compile Include="Handlers\HttpLogHandler.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IUserRoleRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UserRoleRepository.cs" />
     <Compile Include="Utils\ColoredConsoleTraceListener.cs" />
     <Compile Include="Utils\IRepositoryProvider.cs" />
     <Compile Include="Utils\JsonExtensions.cs" />
     <Compile Include="Utils\LogMetadata.cs" />
+    <Compile Include="Utils\Md5Tool.cs" />
     <Compile Include="Utils\PredicateBuilder.cs" />
     <Compile Include="Utils\QueryResponse.cs" />
     <Compile Include="Utils\RelationalOperator.cs" />
@@ -576,6 +589,9 @@
     </Content>
     <Content Include="migrate.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TransformOnBuild>false</TransformOnBuild>
+      <Link>
+      </Link>
     </Content>
     <Content Include="netsh.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

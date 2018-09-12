@@ -5,7 +5,7 @@ namespace SchoolExpress.WebService.Domain
     public class CareerScheduleDetail : Entity
     {
         public int Id { get; set; }
-
+        
         public TimeSpan? StartTime { get; set; }
 
         public TimeSpan? EndTime { get; set; }
@@ -27,7 +27,7 @@ namespace SchoolExpress.WebService.Domain
         public int CareerDetailId { get; set; }
 
         public virtual CareerDetail CareerDetail { get; set; }
-
+        
         public override object[] GetId()
         {
             return new object[] {Id};

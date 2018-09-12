@@ -23,24 +23,14 @@ namespace SchoolExpress.WebService.Repositories
         }
 
         protected DbContext DbContext { get; }
-
+        
         protected DbSet<T> DbSet { get; }
-
-        public virtual IQueryable<T> GetAll()
+        
+        public virtual IQueryable<T> GetQueryable()
         {
-            return DbSet.AsNoTracking();
+            return DbSet;
         }
-
-        public virtual T GetById(object id)
-        {
-            return DbSet.Find(id);
-        }
-
-        public virtual async Task<T> GetByIdAsync(object id)
-        {
-            return await DbSet.FindAsync(id);
-        }
-
+       
         public virtual void Add(T entity)
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
@@ -74,7 +64,7 @@ namespace SchoolExpress.WebService.Repositories
                         typeof(T).Name));
                 }
             }
-            string[] keyNames = DbContext.GetKeyNames<T>();
+           string[] keyNames = DbContext.GetKeyNames<T>();
             DbEntityEntry entry = DbContext.Entry(instance);
             IEntity entity = instance as IEntity;
             if (entity != null)
@@ -151,19 +141,35 @@ namespace SchoolExpress.WebService.Repositories
 
         public virtual void Delete(object id)
         {
-            T entity = GetById(id);
+            T entity = DbSet.Find(id);
             if (entity != null)
             {
-                Delete(entity);
-            }
+                DbContext.Entry(entity).State = EntityState.Deleted;
+            }    
+        }
+        
+        public virtual async Task DeleteAsync(object id)
+        {
+            T entity = await DbSet.FindAsync(id);
+            if (entity != null)
+            {
+                DbContext.Entry(entity).State = EntityState.Deleted;
+            }    
+        }
+        
+        public void Detach(T entity)
+        {
+            DbContext.Entry(entity).State = EntityState.Detached;
         }
 
-        public virtual void Dispose()
+        public virtual T Find(object id)
         {
-            if (DbContext != null)
-            {
-                DbContext.Dispose();
-            }
+            return DbSet.Find(id);
+        }
+        
+        public virtual async Task<T> FindAsync(object id)
+        {
+            return await DbSet.FindAsync(id);
         }
     }
 }

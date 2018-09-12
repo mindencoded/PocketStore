@@ -9,9 +9,11 @@ namespace SchoolExpress.WebService.Models
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 
-        [DataType(DataType.Text)]
         [StringLength(100)]
+        [Required(AllowEmptyStrings = false)]
         [Display(Name = "Email")]
+        [EmailAddress]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required(AllowEmptyStrings = false)]

@@ -38,7 +38,6 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             return await base.Get(id);
         }
 
-
         [Authorize(Roles = "api.cruds.students.put")]
         public override async Task<HttpResponseMessage> Put(Student entity)
         {
@@ -49,6 +48,12 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         public override async Task<HttpResponseMessage> Post(Student entity)
         {
             return await base.Post(entity);
+        }
+        
+        [Authorize(Roles = "api.cruds.students.patch")]
+        public override async Task<HttpResponseMessage> Patch([FromBody] string json)
+        {
+            return await base.Patch(json);
         }
 
         [Authorize(Roles = "api.cruds.students.delete")]

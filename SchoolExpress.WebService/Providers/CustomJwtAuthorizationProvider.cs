@@ -26,14 +26,14 @@ namespace SchoolExpress.WebService.Providers
             Audience = audience;
         }
 
-        public string GenerateToken(string secretKey, string userId, string userName, IEnumerable<string> roles,
+        public string GenerateToken(string secretKey, string userName, IEnumerable<string> roles,
             double expiration)
         {
             ClaimsIdentity identity = new ClaimsIdentity(new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, userId),
+                new Claim(ClaimTypes.NameIdentifier, userName),
                 new Claim(ClaimTypes.Name, userName),
-                new Claim("sub", userName)
+                //new Claim("sub", userName)
             }, "Bearer");
 
             foreach (string role in roles)

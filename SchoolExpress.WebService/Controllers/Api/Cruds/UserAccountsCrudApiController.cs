@@ -1,9 +1,13 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using SchoolExpress.WebService.Domain;
+using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
-using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api.Cruds
 {
@@ -12,6 +16,29 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
     {
         public UserAccountsCrudApiController(ISchoolExpressUow uow) : base(uow)
         {
+        }
+        
+        [HttpGet]
+        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        [Route("{userId:int}/{personId:int}")]
+        public async Task<HttpResponseMessage> Get(int userId, int personId)
+        {
+            UserAccount userAccount =
+                await Uow.GetRepository<IUserAccountRepository>().FindAsync(userId, personId);
+            if (userAccount != null)
+                return Request.CreateResponse(HttpStatusCode.OK, userAccount, new JsonMediaTypeFormatter(),
+                    new MediaTypeHeaderValue("application/json"));
+            throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
+        }
+        
+        [HttpDelete]
+        [Authorize(Roles = "api.cruds.useraccounts.delete")]
+        [Route("{userId:int}/{personId:int}")]
+        public async Task<HttpResponseMessage> Delete(int userId, int personId)
+        {
+            await Uow.GetRepository<IUserAccountRepository>().DeleteAsync(userId, personId);
+            Uow.Commit();
+            return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
         [Authorize(Roles = "api.cruds.useraccounts.get")]
@@ -32,10 +59,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             return base.Get(page, pageSize, orderBy, where, select);
         }
 
-        [Authorize(Roles = "api.cruds.useraccounts.get")]
-        public override async Task<HttpResponseMessage> Get(object id)
+        public override Task<HttpResponseMessage> Get(object id)
         {
-            return await base.Get(id);
+            throw new NotImplementedException();
         }
 
         [Authorize(Roles = "api.cruds.useraccounts.put")]
@@ -49,11 +75,16 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         {
             return await base.Post(entity);
         }
-
-        [Authorize(Roles = "api.cruds.useraccounts.delete")]
-        public override async Task<HttpResponseMessage> Delete(object id)
+        
+        [Authorize(Roles = "api.cruds.useraccounts.patch")]
+        public override async Task<HttpResponseMessage> Patch([FromBody] string json)
         {
-            return await base.Delete(id);
+            return await base.Patch(json);
+        }
+
+        public override Task<HttpResponseMessage> Delete(object id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

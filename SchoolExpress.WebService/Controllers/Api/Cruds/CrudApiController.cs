@@ -94,9 +94,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
                 }
             }
 
-            IQueryable<T> query = Uow.GetRepositoryForEntityType<T>().GetAll();
-            if (!string.IsNullOrEmpty(where))
-            {
+            IQueryable<T> query = Uow.GetRepositoryForEntityType<T>().GetQueryable().AsNoTracking();
+                         if (!string.IsNullOrEmpty(where))
+                         {
                 int countParam = 0;
                 IList<object> parameters = new List<object>();
                 IList<string> andExpressionsList = new List<string>();
@@ -270,7 +270,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         [HttpGet]
         public virtual async Task<HttpResponseMessage> Get(object id)
         {
-            T entity = await Uow.GetRepositoryForEntityType<T>().GetByIdAsync(id);
+            T entity = await Uow.GetRepositoryForEntityType<T>().FindAsync(id);
             if (entity != null)
             {
                 return new HttpResponseMessage

@@ -8,12 +8,13 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
-using Microsoft.AspNet.Identity.EntityFramework;
+using System.Threading;
+using System.Threading.Tasks;
 using Npgsql;
 
 namespace SchoolExpress.WebService.DbContexts
 {
-    public class SchoolExpressDbContext : IdentityDbContext<IdentityUser>
+    public class SchoolExpressDbContext : DbContext
     {
         private static readonly string ConnectionName;
 
@@ -41,7 +42,7 @@ namespace SchoolExpress.WebService.DbContexts
             {
                 DbConfiguration.Loaded += (_, a) =>
                 {
-                    if (connectionStringBuilder.DataSource == @"(localdb)\MSSQLLocalDB")
+                    if (connectionStringBuilder.DataSource.Equals(@"(localdb)\MSSQLLocalDB", StringComparison.OrdinalIgnoreCase))
                     {
                         a.ReplaceService<IDbConnectionFactory>((s, k) => new LocalDbConnectionFactory("v11.0"));
                     }
@@ -57,30 +58,18 @@ namespace SchoolExpress.WebService.DbContexts
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            if (!Database.Exists())
+            //Configuration.AutoDetectChangesEnabled = false;
+            if (Database.CreateIfNotExists())
             {
-                Database.SetInitializer(new SchoolExpressDbInitializer());
-                Database.Initialize(true);
+                new PopulateDataInitializer().InitializeDatabase(this);
             }
-
-            new ExcecuteAlwaysInitializer().InitializeDatabase(this);
+            //Database.Log = s => Debug.WriteLine(s);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<IdentityUser>().ToTable("User");
-            modelBuilder.Entity<IdentityRole>().ToTable("Role");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRole");
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaim");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogin");
+            base.OnModelCreating(modelBuilder);          
             modelBuilder.Properties<string>().Configure(s => s.HasMaxLength(100));
-            modelBuilder.Entity<IdentityUser>().Property(p => p.Id).HasMaxLength(36);
-            modelBuilder.Entity<IdentityRole>().Property(p => p.Id).HasMaxLength(36);
-            modelBuilder.Entity<IdentityUserRole>().Property(p => p.RoleId).HasMaxLength(36);
-            modelBuilder.Entity<IdentityUserRole>().Property(p => p.UserId).HasMaxLength(36);
-            modelBuilder.Entity<IdentityUserClaim>().Property(p => p.UserId).HasMaxLength(36);
-            modelBuilder.Entity<IdentityUserLogin>().Property(p => p.UserId).HasMaxLength(36);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
@@ -95,34 +84,48 @@ namespace SchoolExpress.WebService.DbContexts
             }
         }
 
-        /*protected override DbEntityValidationResult ValidateEntity(
-            DbEntityEntry entityEntry,
-            IDictionary<object, object> items)
+        public override int SaveChanges()
         {
-            DbEntityValidationResult result = base.ValidateEntity(entityEntry, items);
-            IEnumerable<DbValidationError> falseErrors = result.ValidationErrors
-                .Where(error =>
+            ConfigureEntries();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync()
+        {
+            ConfigureEntries();
+            return await base.SaveChangesAsync();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            ConfigureEntries();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        private void ConfigureEntries()
+        {
+            foreach (var entry in ChangeTracker.Entries())
+            {
+                switch (entry.State)
                 {
-
-                    if (entityEntry.State != EntityState.Modified)
-                    {
-                        return false;
-                    }
-
-                    DbMemberEntry member = entityEntry.Member(error.PropertyName);
-                    DbPropertyEntry property = member as DbPropertyEntry;
-                    if (property != null)
-                    {
-                        return !property.IsModified;
-                    }
-
-                    return false; //not false err;
-
-                });
-
-            foreach (DbValidationError error in falseErrors.ToArray())
-                result.ValidationErrors.Remove(error);
-            return result;
-        }*/
+                    case EntityState.Added:
+                        if (entry.CurrentValues.PropertyNames.Contains("Created"))
+                        {
+                            entry.Property("Created").CurrentValue = DateTime.Now;
+                        }                      
+                        break;
+                    case EntityState.Modified:
+                        if (entry.CurrentValues.PropertyNames.Contains("Created"))
+                        {
+                            entry.Property("Created").IsModified = false;
+                        }
+                        if (entry.CurrentValues.PropertyNames.Contains("LastModified"))
+                        {
+                            entry.Property("LastModified").CurrentValue = DateTime.Now;
+                        }
+                        break;
+                }
+            }
+        }
     }
 }

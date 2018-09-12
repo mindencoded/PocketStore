@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-
-namespace SchoolExpress.WebService.Domain
+﻿namespace SchoolExpress.WebService.Domain
 {
     public class UserAccount : Entity
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
-        public virtual IdentityUser User { get; set; }
+        public virtual User User { get; set; }
 
         public int PersonId { get; set; }
 

@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Models;
+using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
@@ -21,13 +22,15 @@ namespace SchoolExpress.WebService.Controllers.Api
         [Route("register")]
         public async Task<IHttpActionResult> Register([FromBody] UserRegisterModel model)
         {
-            IdentityUser user = new IdentityUser
+            IUserRepository userRepository = _uow.GetRepository<IUserRepository>();
+            User user = new User
             {
-                UserName = model.UserName
+                UserName = model.UserName,
+                Email = model.Email,
+                Password = Md5Tool.CreateUtf8Hash(model.Password)
             };
-            UserManager<IdentityUser> userManager = _uow.UserManager();
-            await userManager.CreateAsync(user, model.Password);
-            _uow.Commit();
+            userRepository.Add(user);
+            await _uow.CommitAsync();
             return Ok();
         }
     }

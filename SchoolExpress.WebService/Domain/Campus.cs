@@ -13,7 +13,7 @@ namespace SchoolExpress.WebService.Domain
         public string Location { get; set; }
 
         public virtual ICollection<ClassRoom> ClassRooms { get; set; }
-
+                  
         public override object[] GetId()
         {
             return new object[] {Id};

@@ -10,12 +10,12 @@ using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.DbContexts
 {
-    public class SchoolExpressDbInitializer : DropCreateDatabaseAlways<SchoolExpressDbContext>
+    public class PopulateDataInitializer : IDatabaseInitializer<SchoolExpressDbContext>
     {
-        protected override void Seed(SchoolExpressDbContext context)
-        {         
+        public void InitializeDatabase(SchoolExpressDbContext context)
+        {
             string[] entityNames =
-            {
+          {
                 "Campus",
                 "ClassRoom",
                 "Course",
@@ -74,7 +74,8 @@ namespace SchoolExpress.WebService.DbContexts
                             {
                                 object entity = Activator.CreateInstance(entityType);
                                 string[] values = line.Split('|');
-                                for (int i = 0; i < values.Length; i++) {                               
+                                for (int i = 0; i < values.Length; i++)
+                                {
                                     PropertyInfo propertyInfo = entityType.GetProperty(properties[i]);
                                     if (propertyInfo != null)
                                     {
@@ -121,7 +122,7 @@ namespace SchoolExpress.WebService.DbContexts
                     }
 
                     context.SaveChanges();
-               
+
                     if (SchoolExpressDbContext.ProviderName == "System.Data.SqlClient" && tableHasIdentity)
                     {
                         context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT " + entityName + " OFF;");
@@ -129,7 +130,7 @@ namespace SchoolExpress.WebService.DbContexts
 
                     if (SchoolExpressDbContext.ProviderName == "Npgsql")
                     {
-                        IList<dynamic> results = context.DynamicListFromSql("SELECT table_schema, table_name, column_name FROM information_schema.columns WHERE column_default LIKE 'nextval%' AND table_name = '"+ entityName + "';", new Dictionary<string, object>()).ToList();
+                        IList<dynamic> results = context.DynamicListFromSql("SELECT table_schema, table_name, column_name FROM information_schema.columns WHERE column_default LIKE 'nextval%' AND table_name = '" + entityName + "';", new Dictionary<string, object>()).ToList();
                         foreach (var result in results)
                         {
                             context.Database.SqlQuery<int>("SELECT setval(pg_get_serial_sequence('\"" + result.table_schema + "\".\"" + result.table_name + "\"', '" + result.column_name + "'), CAST((SELECT MAX(\"" + result.column_name + "\") FROM \"" + result.table_schema + "\".\"" + result.table_name + "\") AS INTEGER));");
@@ -137,7 +138,6 @@ namespace SchoolExpress.WebService.DbContexts
                     }
                 }
             }
-            base.Seed(context);
         }
     }
 }

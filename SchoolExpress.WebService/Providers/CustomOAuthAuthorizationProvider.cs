@@ -1,22 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using SchoolExpress.WebService.Repositories;
+using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Providers
 {
     public class CustomOAuthAuthorizationProvider : OAuthAuthorizationServerProvider
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly ISchoolExpressUow _uow;
 
-        public CustomOAuthAuthorizationProvider(UserManager<IdentityUser> userManager)
+        public CustomOAuthAuthorizationProvider(ISchoolExpressUow uow)
         {
-            _userManager = userManager;
+            _uow = uow;
         }
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -29,14 +31,20 @@ namespace SchoolExpress.WebService.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] {"*"});
-            IdentityUser user = await _userManager.FindAsync(context.UserName, context.Password);
+            IUserRepository userRepository = _uow.GetRepository<IUserRepository>();
+            string hash = Md5Tool.CreateUtf8Hash(context.Password);
+            dynamic user = await userRepository.GetQueryable().AsNoTracking().Include(x => x.UserRoles.Select(y => y.Role)).Where(x => x.UserName == context.UserName && x.Password == hash).Select(x => new
+            {
+                x.UserName,
+                Roles = x.UserRoles.Select(y => y.Role.Name)
+            }).FirstOrDefaultAsync();
             if (user != null)
             {
-                IList<string> roles = await _userManager.GetRolesAsync(user.Id);
                 ClaimsIdentity identity = new ClaimsIdentity(context.Options.AuthenticationType);
-                identity.AddClaim(new Claim("sub", user.UserName));
+                //identity.AddClaim(new Claim("sub", user.UserName));
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-                foreach (string role in roles)
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserName));
+                foreach (string role in user.Roles)
                 {
                     identity.AddClaim(new Claim(ClaimTypes.Role, role));
                 }

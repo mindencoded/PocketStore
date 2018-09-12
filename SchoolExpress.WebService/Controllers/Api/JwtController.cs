@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using SchoolExpress.WebService.Models;
 using SchoolExpress.WebService.Providers;
+using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
+using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api
 {
@@ -26,16 +27,19 @@ namespace SchoolExpress.WebService.Controllers.Api
         [AllowAnonymous]
         public async Task<IHttpActionResult> Post([FromBody] UserLoginModel model)
         {
-            UserManager<IdentityUser> userManager = _uow.UserManager();
-            IdentityUser user = await userManager.FindAsync(model.UserName, model.Password);
+            IUserRepository userRepository = _uow.GetRepository<IUserRepository>();
+            string hash = Md5Tool.CreateUtf8Hash(model.Password);
+            dynamic user = await userRepository.GetQueryable().AsNoTracking().Include(x => x.UserRoles.Select(y => y.Role)).Where(x => x.UserName == model.UserName && x.Password == hash).Select(x => new
+            {
+                x.UserName,
+                Roles = x.UserRoles.Select(y => y.Role.Name)
+            }).FirstOrDefaultAsync();
             if (user != null)
             {
-                IEnumerable<string> roles = await userManager.GetRolesAsync(user.Id);
+               
                 string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                 double tokenExpiration = double.Parse(ConfigurationManager.AppSettings["TokenExpirationMinutes"]);
-                string token =
-                    new CustomJwtAuthorizationProvider().GenerateToken(secretKey, user.Id, user.UserName, roles,
-                        tokenExpiration);
+                string token =  new CustomJwtAuthorizationProvider().GenerateToken(secretKey, user.UserName, user.Roles, tokenExpiration);
                 return Ok(new
                 {
                     access_token = token,

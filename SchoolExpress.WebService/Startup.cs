@@ -12,6 +12,7 @@ using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
+using SchoolExpress.WebService.DbContexts;
 using SchoolExpress.WebService.Filters;
 using SchoolExpress.WebService.Handlers;
 using SchoolExpress.WebService.Providers;
@@ -66,6 +67,7 @@ namespace SchoolExpress.WebService
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             appBuilder.Use<OwinContextMiddleware>();
+            config.Filters.Add(new ValidationAttribute());
 
             string[] authenticationModes = ConfigurationManager.AppSettings["AuthenticationModes"].Split(',');
 
@@ -78,6 +80,7 @@ namespace SchoolExpress.WebService
                 if (authenticationModes.Contains("BASIC"))
                 {
                     config.Filters.Add(container.Resolve<BasicAuthorizeAttribute>());
+                    
                 }
 
                 if (authenticationModes.Contains("JWT"))
@@ -111,13 +114,17 @@ namespace SchoolExpress.WebService
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
 
-            config.Filters.Add(new ValidationAttribute());
             if (Debugger.IsAttached)
             {
                 config.MessageHandlers.Add(new HttpLogHandler());
             }
 
             appBuilder.UseWebApi(config);
+
+            if (Debugger.IsAttached)
+            {
+                new ExecuteAlwaysInitializer().InitializeDatabase(container.Resolve<SchoolExpressDbContext>());
+            }
         }
     }
 }

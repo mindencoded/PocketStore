@@ -5,7 +5,7 @@ namespace SchoolExpress.WebService.Domain
     public class CareerSchedule : Entity
     {
         public int Id { get; set; }
-
+        
         public string Description { get; set; }
 
         public int CareerId { get; set; }
@@ -21,7 +21,7 @@ namespace SchoolExpress.WebService.Domain
         public virtual Module Module { get; set; }
 
         public virtual ICollection<CareerScheduleDetail> CareerScheduleDetails { get; set; }
-
+        
         public override object[] GetId()
         {
             return new object[] {Id};

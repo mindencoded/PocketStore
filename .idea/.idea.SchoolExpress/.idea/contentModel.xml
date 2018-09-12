@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\Asus\.Rider2018.2\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\Asus\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Asus\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_SchoolExpress.-884183340.00" t="ExcludeRecursive" />
     <e p="D:\Projects\SchoolExpress" t="IncludeFlat">
@@ -47,9 +48,12 @@
           <e p="ModuleConfiguration.cs" t="Include" />
           <e p="PeriodConfiguration.cs" t="Include" />
           <e p="PersonConfiguration.cs" t="Include" />
+          <e p="RoleConfiguration.cs" t="Include" />
           <e p="SpeakerConfiguration.cs" t="Include" />
           <e p="StudentConfiguration.cs" t="Include" />
           <e p="UserAccountConfiguration.cs" t="Include" />
+          <e p="UserConfiguration.cs" t="Include" />
+          <e p="UserRoleConfiguration.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="Api" t="Include">
@@ -70,9 +74,12 @@
               <e p="ModulesCrudApiController.cs" t="Include" />
               <e p="PeopleCrudApiController.cs" t="Include" />
               <e p="PeriodsCrudApiController.cs" t="Include" />
+              <e p="RolesCrudApiController.cs" t="Include" />
               <e p="SpeakersCrudApiController.cs" t="Include" />
               <e p="StudentsCrudApiController.cs" t="Include" />
               <e p="UserAccountsCrudApiController.cs" t="Include" />
+              <e p="UserRolesCrudApiController.cs" t="Include" />
+              <e p="UsersCrudApiController.cs" t="Include" />
             </e>
             <e p="JwtController.cs" t="Include" />
           </e>
@@ -155,10 +162,10 @@
         </e>
         <e p="DbContexts" t="Include">
           <e p="DbContextExtensions.cs" t="Include" />
-          <e p="ExcecuteAlwaysInitializer.cs" t="Include" />
+          <e p="ExecuteAlwaysInitializer.cs" t="Include" />
+          <e p="PopulateDataInitializer.cs" t="Include" />
           <e p="ProviderInvariantName.cs" t="Include" />
           <e p="SchoolExpressDbContext.cs" t="Include" />
-          <e p="SchoolExpressDbInitializer.cs" t="Include" />
         </e>
         <e p="DbMigration.bat" t="Include" />
         <e p="DeleteSslCertificate.bat" t="Include" />
@@ -181,9 +188,12 @@
           <e p="Module.cs" t="Include" />
           <e p="Period.cs" t="Include" />
           <e p="Person.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
           <e p="Speaker.cs" t="Include" />
           <e p="Student.cs" t="Include" />
+          <e p="User.cs" t="Include" />
           <e p="UserAccount.cs" t="Include" />
+          <e p="UserRole.cs" t="Include" />
         </e>
         <e p="Filters" t="Include">
           <e p="AnonymousAuthorizeAttribute.cs" t="Include" />
@@ -192,7 +202,7 @@
           <e p="ValidationAttribute.cs" t="Include" />
         </e>
         <e p="Handlers" t="Include">
-          <e p="CustomLogHandler.cs" t="Include" />
+          <e p="HttpLogHandler.cs" t="Include" />
         </e>
         <e p="libeay32.dll" t="Include" />
         <e p="LoadFromCsvFilesToDb.mssql.bat" t="Include" />
@@ -250,16 +260,22 @@
           <e p="IPeriodRepository.cs" t="Include" />
           <e p="IPersonRepository.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
+          <e p="IRoleRepository.cs" t="Include" />
           <e p="ISpeakerRepository.cs" t="Include" />
           <e p="IStudentRepository.cs" t="Include" />
           <e p="IUserAccountRepository.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+          <e p="IUserRoleRepository.cs" t="Include" />
           <e p="ModuleRepository.cs" t="Include" />
           <e p="PeriodRepository.cs" t="Include" />
           <e p="PersonRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
+          <e p="RoleRepository.cs" t="Include" />
           <e p="SpeakerRepository.cs" t="Include" />
           <e p="StudentRepository.cs" t="Include" />
           <e p="UserAccountRepository.cs" t="Include" />
+          <e p="UserRepository.cs" t="Include" />
+          <e p="UserRoleRepository.cs" t="Include" />
         </e>
         <e p="SchoolExpress.log" t="Include" />
         <e p="SchoolExpress.WebService.csproj" t="IncludeRecursive" />
@@ -287,6 +303,7 @@
         </e>
         <e p="Utils" t="Include">
           <e p="ColoredConsoleOutLogger.cs" t="Include" />
+          <e p="ColoredConsoleTraceListener.cs" t="Include" />
           <e p="ColoresConsoleOutLoggerFactoryAdapter.cs" t="Include" />
           <e p="ConversionTool.cs" t="Include" />
           <e p="HttpActionResult.cs" t="Include" />
@@ -294,6 +311,7 @@
           <e p="IRepositoryProvider.cs" t="Include" />
           <e p="JsonExtensions.cs" t="Include" />
           <e p="LogMetadata.cs" t="Include" />
+          <e p="Md5Tool.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
           <e p="QueryResponse.cs" t="Include" />

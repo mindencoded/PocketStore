@@ -7,6 +7,8 @@ namespace SchoolExpress.WebService.Domain
         protected Entity()
         {
             Status = true;
+            Created = DateTime.Now;
+            LastModified = DateTime.Now;
         }
 
         public DateTime LastModified { get; set; }

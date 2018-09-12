@@ -56,10 +56,10 @@ namespace SchoolExpress.WebService.Filters
                         actionContext.RequestContext.Principal =
                             new ClaimsPrincipal(new ClaimsIdentity(claims, "bearer"));
                     }
-                    else
-                    {
-                        //actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized, "Unauthorized.");
-                    }
+                    //else
+                    //{
+                    //    actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized, "Unauthorized.");
+                    //}
                 }
             }
 
