@@ -314,6 +314,7 @@
           <e p="Md5Tool.cs" t="Include" />
           <e p="OwinContextMiddleware.cs" t="Include" />
           <e p="PredicateBuilder.cs" t="Include" />
+          <e p="QueryableExtensions.cs" t="Include" />
           <e p="QueryResponse.cs" t="Include" />
           <e p="RelationalOperator.cs" t="Include" />
           <e p="RepositoryFactories.cs" t="Include" />

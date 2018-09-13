@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7865693d-3bd9-4ae1-9789-fa5a589e06e4" name="Default" comment="update gitignore with Jetbrains Rider specifications">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7865693d-3bd9-4ae1-9789-fa5a589e06e4" name="Default" comment="update gitignore">
+      <change afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SchoolExpress/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExpress.WebService/SchoolExpress.WebService.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +48,7 @@
     <session id="405308192">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.100" value="1" />
           <entry key="project.open.time.109" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -63,9 +66,10 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bat" value="7" />
+          <entry key="ccproj" value="1" />
           <entry key="conf" value="1" />
           <entry key="config" value="6" />
-          <entry key="cs" value="392" />
+          <entry key="cs" value="397" />
           <entry key="gitignore" value="2" />
           <entry key="sql" value="1" />
           <entry key="userrole" value="1" />
@@ -74,8 +78,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bat" value="6" />
-          <entry key="C#" value="392" />
+          <entry key="C#" value="397" />
           <entry key="Config" value="6" />
+          <entry key="Csproj" value="1" />
           <entry key="Database Element" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="1" />
@@ -84,22 +89,52 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="bat" value="117" />
-          <entry key="cs" value="4421" />
+          <entry key="cs" value="4735" />
           <entry key="gitignore" value="2" />
-          <entry key="txt" value="71" />
+          <entry key="txt" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="117" />
-          <entry key="C#" value="4421" />
-          <entry key="PLAIN_TEXT" value="73" />
+          <entry key="C#" value="4735" />
+          <entry key="PLAIN_TEXT" value="74" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+              <folding>
+                <marker date="1536800092321" expanded="false" signature="6:376" ph="..." />
+                <marker date="1536800092321" expanded="true" signature="434:5029" ph="{...}" />
+                <marker date="1536800092321" expanded="true" signature="519:5027" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="583:603" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="776:1254" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="1058:1243" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="1449:1919" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="1723:1908" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="2150:2622" ph="{...}" />
+                <marker date="1536800092321" expanded="true" signature="2426:2611" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="2743:3242" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="2865:3136" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="2943:3121" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="3350:3541" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="3651:4247" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="3885:4207" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="4373:4711" ph="{...}" />
+                <marker date="1536800092321" expanded="false" signature="4834:5021" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,9 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GetPropValue</find>
-      <find>AccessTokenExpire</find>
-      <find>uniovi.es</find>
       <find>Last,</find>
       <find>Email,</find>
       <find>Person (</find>
@@ -140,6 +172,9 @@
       <find>careers</find>
       <find>enrollmentId</find>
       <find>UserAccount</find>
+      <find>QueryResponse</find>
+      <find>AsNoTracking()</find>
+      <find>AsNoTracking().As</find>
     </findStrings>
     <replaceStrings>
       <replace>email.com</replace>
@@ -172,6 +207,7 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/App.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/ClassRoomsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/DegreesCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CareerDetailsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/PeriodsCrudApiController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -189,6 +225,7 @@
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/RepositoryProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CareerConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/StudentConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/JsonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/SpeakerConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Configurations/CourseConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryResponse.cs" root0="SKIP_HIGHLIGHTING" />
@@ -310,7 +347,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/CareerScheduleDetailRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/ICareerScheduleDetailRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/CareerScheduleRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/ICareerScheduleRepository.cs" />
@@ -334,7 +370,6 @@
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/SpeakerRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/StudentRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRepository.cs" />
-        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/App.config" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Domain/Campus.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Domain/CareerScheduleDetail.cs" />
@@ -361,6 +396,8 @@
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserAccountRepository.cs" />
         <option value="$PROJECT_DIR$/SchoolExpress.WebService/Repositories/UserRoleRepository.cs" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs" />
+        <option value="$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtensions.cs" />
       </list>
     </option>
   </component>
@@ -394,6 +431,11 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="SchoolExpress" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="SchoolExpress" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="SchoolExpress.WebService" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -535,7 +577,7 @@
       <workItem from="1536503750739" duration="23027000" />
       <workItem from="1536676578602" duration="9422000" />
       <workItem from="1536721017953" duration="2919000" />
-      <workItem from="1536768139773" duration="9628000" />
+      <workItem from="1536768139773" duration="15001000" />
     </task>
     <task id="LOCAL-00001" summary="Remove Microsoft.AspNet.Identity.EntityFramework package">
       <created>1536785194886</created>
@@ -551,11 +593,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536785570553</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update gitignore">
+      <created>1536792337858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536792337858</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323121000" />
+    <option name="totallyTimeSpent" value="328494000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -569,7 +618,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.27382752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.27382752" />
       <window_info id="Structure" order="1" sideWeight="0.503096" side_tool="true" weight="0.22995462" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" weight="0.36153847" />
@@ -582,7 +631,7 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3276923" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.23827533" side_tool="true" weight="0.43384615" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3276923" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.6754917" visible="true" weight="0.41846153" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6754917" weight="0.41846153" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.3276923" />
       <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="NuGet" order="13" sideWeight="0.4969743" weight="0.49384615" />
@@ -594,7 +643,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32980332" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.27382752" />
@@ -636,7 +685,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove Microsoft.AspNet.Identity.EntityFramework package" />
     <MESSAGE value="update gitignore with Jetbrains Rider specifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore with Jetbrains Rider specifications" />
+    <MESSAGE value="update gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -690,41 +740,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IPersonRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/ISpeakerRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IStudentRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/ModuleRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IModuleRepository.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1049,67 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <marker date="1536686954458" expanded="false" signature="6:545" ph="..." />
-            <marker date="1536686954458" expanded="true" signature="603:13814" ph="{...}" />
-            <marker date="1536686954458" expanded="true" signature="688:13812" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="752:772" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="945:1305" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="1109:1294" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="1500:1861" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="1665:1850" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="2092:2455" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="2259:2444" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="2591:6667" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="2628:2770" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="2783:2946" ph="/* if (pageSize &lt; page) ... */" />
-            <marker date="1536686954458" expanded="false" signature="3120:3655" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="3190:3641" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="3393:3500" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="3525:3623" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="3816:5720" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="4173:5594" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="4345:5113" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="4516:4992" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="4738:4966" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="5138:5576" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="5345:5554" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="6011:6194" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="6211:6300" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="6451:6656" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="6754:11090" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="6865:11054" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="7062:11040" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="7230:7380" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="7530:7696" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="7881:9474" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="8272:8814" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="8572:8739" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="8843:9196" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="9001:9121" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="9499:11022" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="9726:9873" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="9902:10002" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="10161:10782" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="10328:10443" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="11203:11702" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="11325:11596" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="11403:11581" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="11810:12001" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="12111:12707" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="12345:12667" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="12833:13171" ph="{...}" />
-            <marker date="1536686954458" expanded="true" signature="13294:13481" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="13556:13806" ph="{...}" />
-            <marker date="1536686954458" expanded="false" signature="13671:13764" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Repositories/IUserRoleRepository.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1329,6 +1283,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="252" column="21" lean-forward="true" selection-start-line="252" selection-start-column="21" selection-end-line="252" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.AzureCloudService/SchoolExpress.AzureCloudService.ccproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="111" column="47" lean-forward="true" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+          <folding>
+            <marker date="1536644912814" expanded="false" signature="6:594" ph="..." />
+            <marker date="1536644912814" expanded="true" signature="630:4927" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="657:4925" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="721:4919" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="2757:2856" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="2873:4082" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="2946:3089" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="3147:3252" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="3312:4068" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="3446:3947" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="4155:4554" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="4594:4688" ph="{...}" />
+            <marker date="1536644912814" expanded="true" signature="4769:4909" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/DbContexts/DbContextExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+          <folding>
+            <marker date="1536637845713" expanded="false" signature="6:280" ph="..." />
+            <marker date="1536637845713" expanded="true" signature="327:3087" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="373:3085" ph="{...}" />
+            <marker date="1536637845713" expanded="false" signature="489:566" ph="{...}" />
+            <marker date="1536637845713" expanded="false" signature="651:1288" ph="{...}" />
+            <marker date="1536637845713" expanded="false" signature="1362:1420" ph="{...}" />
+            <marker date="1536637845713" expanded="false" signature="1554:2706" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="1644:2696" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="1858:2120" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="2191:2682" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="2255:2664" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="2455:2600" ph="{...}" />
+            <marker date="1536637845713" expanded="true" signature="2825:3079" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/JsonExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1534392309344" expanded="false" signature="7:126" ph="..." />
+            <marker date="1534392309344" expanded="true" signature="168:758" ph="{...}" />
+            <marker date="1534392309344" expanded="true" signature="209:756" ph="{...}" />
+            <marker date="1534392309344" expanded="true" signature="274:750" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Utils/QueryableExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="26" selection-end-column="15" />
+          <folding>
+            <marker date="1536800092275" expanded="true" signature="6:257" ph="..." />
+            <marker date="1536800092275" expanded="true" signature="299:9250" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="345:9248" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="549:4458" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="586:715" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="728:892" ph="/* if (pageSize &lt; page) ... */" />
+            <marker date="1536800092275" expanded="true" signature="1066:1601" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="1136:1587" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="1339:1446" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="1471:1569" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="1649:3546" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="1993:3420" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="2165:2936" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="2336:2815" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="2561:2789" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="2961:3402" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="3171:3380" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="3802:3985" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="4002:4091" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="4242:4447" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="4572:8908" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="4683:8872" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="4880:8858" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="5048:5198" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="5348:5514" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="5699:7292" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="6090:6632" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="6390:6557" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="6661:7014" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="6819:6939" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="7317:8840" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="7544:7691" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="7720:7820" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="7979:8600" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="8146:8261" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="8991:9241" ph="{...}" />
+            <marker date="1536800092275" expanded="true" signature="9106:9199" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SchoolExpress.WebService/Controllers/Api/Cruds/CrudApiController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+          <folding>
+            <marker date="1536800092321" expanded="false" signature="6:376" ph="..." />
+            <marker date="1536800092321" expanded="true" signature="434:5029" ph="{...}" />
+            <marker date="1536800092321" expanded="true" signature="519:5027" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="583:603" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="776:1254" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="1058:1243" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="1449:1919" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="1723:1908" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="2150:2622" ph="{...}" />
+            <marker date="1536800092321" expanded="true" signature="2426:2611" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="2743:3242" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="2865:3136" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="2943:3121" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="3350:3541" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="3651:4247" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="3885:4207" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="4373:4711" ph="{...}" />
+            <marker date="1536800092321" expanded="false" signature="4834:5021" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

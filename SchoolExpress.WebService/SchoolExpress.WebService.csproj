@@ -278,7 +278,7 @@
     <Compile Include="Utils\LogMetadata.cs" />
     <Compile Include="Utils\Md5Tool.cs" />
     <Compile Include="Utils\PredicateBuilder.cs" />
-    <Compile Include="Utils\QueryResponse.cs" />
+    <Compile Include="Utils\QueryableExtensions.cs" />
     <Compile Include="Utils\RelationalOperator.cs" />
     <Compile Include="Utils\RepositoryFactories.cs" />
     <Compile Include="Utils\RepositoryProvider.cs" />
