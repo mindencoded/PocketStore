@@ -8,14 +8,6 @@ namespace SchoolExpress.WebService.Configurations
         public UserAccountConfiguration()
         {
             HasKey(x => new { x.UserId, x.PersonId });
-            HasRequired(e => e.Person)
-                .WithMany(e => e.UserAccounts)
-                .HasForeignKey(e => new { e.PersonId })
-                .WillCascadeOnDelete(false);
-            HasRequired(e => e.User)
-                .WithMany()
-                .HasForeignKey(e => new { e.UserId })
-                .WillCascadeOnDelete(false);
         }
     }
 }

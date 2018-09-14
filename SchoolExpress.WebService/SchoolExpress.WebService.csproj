@@ -168,6 +168,7 @@
     <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -235,6 +236,9 @@
     <Compile Include="Controllers\Api\Cruds\UserAccountsCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\UserRolesCrudApiController.cs" />
     <Compile Include="Controllers\Api\Cruds\UsersCrudApiController.cs" />
+    <Compile Include="Controllers\Api\Reports\SpeakerCareerSchedulesReportApiController.cs" />
+    <Compile Include="Controllers\Api\Reports\GenericReportApiController.cs" />
+    <Compile Include="Controllers\Api\Reports\StudentEnrollmentDetailsReportApiController.cs" />
     <Compile Include="DbContexts\ExecuteAlwaysInitializer.cs" />
     <Compile Include="DbContexts\DbContextExtensions.cs" />
     <Compile Include="DbContexts\PopulateDataInitializer.cs" />
@@ -266,6 +270,11 @@
     <Compile Include="Filters\AnonymousAuthorizeAttribute.cs" />
     <Compile Include="Filters\BasicAuthorizeAttribute.cs" />
     <Compile Include="Handlers\HttpLogHandler.cs" />
+    <Compile Include="Models\SpeakerCareerScheduleDetailModel.cs" />
+    <Compile Include="Models\SpeakerCareerScheduleModel.cs" />
+    <Compile Include="Models\StudentEnrollmentQueryModel.cs" />
+    <Compile Include="Models\StudentEnrollmentDetailResultModel.cs" />
+    <Compile Include="Models\StudentEnrollmentResultModel.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\IUserRoleRepository.cs" />

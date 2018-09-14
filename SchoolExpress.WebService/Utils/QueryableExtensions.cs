@@ -46,7 +46,7 @@ namespace SchoolExpress.WebService.Utils
             }
 
 
-            if (!string.IsNullOrEmpty(where))
+            if (!string.IsNullOrEmpty(where) && where != "null")
             {
                 int countParam = 0;
                 IList<object> parameters = new List<object>();

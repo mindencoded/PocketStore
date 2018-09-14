@@ -119,12 +119,12 @@ namespace SchoolExpress.WebService
                 config.MessageHandlers.Add(new HttpLogHandler());
             }
 
-            appBuilder.UseWebApi(config);
-
-            if (Debugger.IsAttached)
+            if (!authenticationModes.Contains("NONE"))
             {
                 new ExecuteAlwaysInitializer().InitializeDatabase(container.Resolve<SchoolExpressDbContext>());
             }
+
+            appBuilder.UseWebApi(config);
         }
     }
 }

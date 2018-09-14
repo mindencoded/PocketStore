@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SchoolExpressDb" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.__MigrationHistory" Member="__MigrationHistory">
+    <Type Name="__MigrationHistory">
+      <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContextKey" Type="System.String" DbType="NVarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ProductVersion" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campus" Member="Campus">
+    <Type Name="Campus">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.ClassRoom_dbo.Campus_CampusId" Member="ClassRoom" ThisKey="Id" OtherKey="CampusId" Type="ClassRoom" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Career" Member="Career">
+    <Type Name="Career">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DegreeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.Career_dbo.Degree_DegreeId" Member="Degree" ThisKey="DegreeId" OtherKey="Id" Type="Degree" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerDetail_dbo.Career_CareerId" Member="CareerDetail" ThisKey="Id" OtherKey="CareerId" Type="CareerDetail" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Career_CareerId" Member="CareerSchedule" ThisKey="Id" OtherKey="CareerId" Type="CareerSchedule" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CareerDetail" Member="CareerDetail">
+    <Type Name="CareerDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Credits" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerDetail_dbo.Career_CareerId" Member="Career" ThisKey="CareerId" OtherKey="Id" Type="Career" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerDetail_dbo.Course_CourseId" Member="Course" ThisKey="CourseId" OtherKey="Id" Type="Course" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.CareerDetail_CareerDetailId" Member="CareerScheduleDetail" ThisKey="Id" OtherKey="CareerDetailId" Type="CareerScheduleDetail" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.EnrollmentDetail_dbo.CareerDetail_CareerDetailId" Member="EnrollmentDetail" ThisKey="Id" OtherKey="CareerDetailId" Type="EnrollmentDetail" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CareerSchedule" Member="CareerSchedule">
+    <Type Name="CareerSchedule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CareerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Career_CareerId" Member="Career" ThisKey="CareerId" OtherKey="Id" Type="Career" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Module_ModuleId" Member="Module" ThisKey="ModuleId" OtherKey="Id" Type="Module" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Period_PeriodId" Member="Period" ThisKey="PeriodId" OtherKey="Id" Type="Period" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.CareerSchedule_CareerScheduleId" Member="CareerScheduleDetail" ThisKey="Id" OtherKey="CareerScheduleId" Type="CareerScheduleDetail" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CareerScheduleDetail" Member="CareerScheduleDetail">
+    <Type Name="CareerScheduleDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.TimeSpan" DbType="Time(7)" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.TimeSpan" DbType="Time(7)" CanBeNull="true" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="CareerScheduleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpeakerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CareerDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.CareerDetail_CareerDetailId" Member="CareerDetail" ThisKey="CareerDetailId" OtherKey="Id" Type="CareerDetail" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.CareerSchedule_CareerScheduleId" Member="CareerSchedule" ThisKey="CareerScheduleId" OtherKey="Id" Type="CareerSchedule" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.ClassRoom_ClassRoomId" Member="ClassRoom" ThisKey="ClassRoomId" OtherKey="Id" Type="ClassRoom" IsForeignKey="true" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.Speaker_SpeakerId" Member="Speaker" ThisKey="SpeakerId" OtherKey="Id" Type="Speaker" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClassRoom" Member="ClassRoom">
+    <Type Name="ClassRoom">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampusId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.ClassRoom_ClassRoomId" Member="CareerScheduleDetail" ThisKey="Id" OtherKey="ClassRoomId" Type="CareerScheduleDetail" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.ClassRoom_dbo.Campus_CampusId" Member="Campus" ThisKey="CampusId" OtherKey="Id" Type="Campus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Course" Member="Course">
+    <Type Name="Course">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="BackgroundColor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerDetail_dbo.Course_CourseId" Member="CareerDetail" ThisKey="Id" OtherKey="CourseId" Type="CareerDetail" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Degree" Member="Degree">
+    <Type Name="Degree">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.Career_dbo.Degree_DegreeId" Member="Career" ThisKey="Id" OtherKey="DegreeId" Type="Career" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enrollment" Member="Enrollment">
+    <Type Name="Enrollment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.Enrollment_dbo.Student_StudentId" Member="Student" ThisKey="StudentId" OtherKey="Id" Type="Student" IsForeignKey="true" />
+      <Association Name="FK_dbo.EnrollmentDetail_dbo.Enrollment_EnrollmentId" Member="EnrollmentDetail" ThisKey="Id" OtherKey="EnrollmentId" Type="EnrollmentDetail" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnrollmentDetail" Member="EnrollmentDetail">
+    <Type Name="EnrollmentDetail">
+      <Column Name="CareerDetailId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EnrollmentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.EnrollmentDetail_dbo.CareerDetail_CareerDetailId" Member="CareerDetail" ThisKey="CareerDetailId" OtherKey="Id" Type="CareerDetail" IsForeignKey="true" />
+      <Association Name="FK_dbo.EnrollmentDetail_dbo.Enrollment_EnrollmentId" Member="Enrollment" ThisKey="EnrollmentId" OtherKey="Id" Type="Enrollment" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Module" Member="Module">
+    <Type Name="Module">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Module_ModuleId" Member="CareerSchedule" ThisKey="Id" OtherKey="ModuleId" Type="CareerSchedule" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Period" Member="Period">
+    <Type Name="Period">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerSchedule_dbo.Period_PeriodId" Member="CareerSchedule" ThisKey="Id" OtherKey="PeriodId" Type="CareerSchedule" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Person">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdentityCard" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.Speaker_dbo.Person_PersonId" Member="Speaker" ThisKey="Id" OtherKey="PersonId" Type="Speaker" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.Student_dbo.Person_PersonId" Member="Student" ThisKey="Id" OtherKey="PersonId" Type="Student" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.UserAccount_dbo.Person_PersonId" Member="UserAccount" ThisKey="Id" OtherKey="PersonId" Type="UserAccount" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Role">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.UserRole_dbo.Role_RoleId" Member="UserRole" ThisKey="Id" OtherKey="RoleId" Type="UserRole" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Speaker" Member="Speaker">
+    <Type Name="Speaker">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Achievements" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PartTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.CareerScheduleDetail_dbo.Speaker_SpeakerId" Member="CareerScheduleDetail" ThisKey="Id" OtherKey="SpeakerId" Type="CareerScheduleDetail" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.Speaker_dbo.Person_PersonId" Member="Person" ThisKey="PersonId" OtherKey="Id" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Student">
+    <Type Name="Student">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptionId" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.Enrollment_dbo.Student_StudentId" Member="Enrollment" ThisKey="Id" OtherKey="StudentId" Type="Enrollment" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.Student_dbo.Person_PersonId" Member="Person" ThisKey="PersonId" OtherKey="Id" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User" Member="User">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.UserAccount_dbo.User_UserId" Member="UserAccount" ThisKey="Id" OtherKey="UserId" Type="UserAccount" DeleteRule="NO ACTION" />
+      <Association Name="FK_dbo.UserRole_dbo.User_UserId" Member="UserRole" ThisKey="Id" OtherKey="UserId" Type="UserRole" DeleteRule="NO ACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccount" Member="UserAccount">
+    <Type Name="UserAccount">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.UserAccount_dbo.Person_PersonId" Member="Person" ThisKey="PersonId" OtherKey="Id" Type="Person" IsForeignKey="true" />
+      <Association Name="FK_dbo.UserAccount_dbo.User_UserId" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRole">
+    <Type Name="UserRole">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_dbo.UserRole_dbo.Role_RoleId" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+      <Association Name="FK_dbo.UserRole_dbo.User_UserId" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

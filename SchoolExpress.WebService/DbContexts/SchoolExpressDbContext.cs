@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Npgsql;
+using SchoolExpress.WebService.Domain;
 
 namespace SchoolExpress.WebService.DbContexts
 {
@@ -42,7 +43,8 @@ namespace SchoolExpress.WebService.DbContexts
             {
                 DbConfiguration.Loaded += (_, a) =>
                 {
-                    if (connectionStringBuilder.DataSource.Equals(@"(localdb)\MSSQLLocalDB", StringComparison.OrdinalIgnoreCase))
+                    if (connectionStringBuilder.DataSource.Equals(@"(localdb)\MSSQLLocalDB",
+                        StringComparison.OrdinalIgnoreCase))
                     {
                         a.ReplaceService<IDbConnectionFactory>((s, k) => new LocalDbConnectionFactory("v11.0"));
                     }
@@ -58,17 +60,15 @@ namespace SchoolExpress.WebService.DbContexts
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
-            //Configuration.AutoDetectChangesEnabled = false;
             if (Database.CreateIfNotExists())
             {
                 new PopulateDataInitializer().InitializeDatabase(this);
             }
-            //Database.Log = s => Debug.WriteLine(s);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);          
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Properties<string>().Configure(s => s.HasMaxLength(100));
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
@@ -112,17 +112,20 @@ namespace SchoolExpress.WebService.DbContexts
                         if (entry.CurrentValues.PropertyNames.Contains("Created"))
                         {
                             entry.Property("Created").CurrentValue = DateTime.Now;
-                        }                      
+                        }
+
                         break;
                     case EntityState.Modified:
                         if (entry.CurrentValues.PropertyNames.Contains("Created"))
                         {
                             entry.Property("Created").IsModified = false;
                         }
+
                         if (entry.CurrentValues.PropertyNames.Contains("LastModified"))
                         {
                             entry.Property("LastModified").CurrentValue = DateTime.Now;
                         }
+
                         break;
                 }
             }
