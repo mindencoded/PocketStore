@@ -4,59 +4,58 @@ using System.Web.Http;
 using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
 
-namespace SchoolExpress.WebService.Controllers.Api.Cruds
+namespace SchoolExpress.WebService.Controllers.Api.Maintenances
 {
-    [RoutePrefix("api/cruds/careers")]
-    public class CareersCrudApiController : CrudApiController<Career>
+    [RoutePrefix("api/maintenances/people")]
+    public class PeopleMaintenanceApiController : MaintenanceApiController<Person>
     {
-        public CareersCrudApiController(ISchoolExpressUow uow) : base(uow)
+        public PeopleMaintenanceApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
 
-        [Authorize(Roles = "api.cruds.careers.get")]
+        [Authorize(Roles = "api.maintenances.people.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.cruds.careers.get")]
+        [Authorize(Roles = "api.maintenances.people.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
             return base.Get(page, pageSize, orderBy, where);
         }
         
-        [Authorize(Roles = "api.cruds.careers.get")]
+        [Authorize(Roles = "api.maintenances.people.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where, string select)
         {
             return base.Get(page, pageSize, orderBy, where, select);
         }
 
-        [Authorize(Roles = "api.cruds.careers.get")]
+        [Authorize(Roles = "api.maintenances.people.get")]
         public override async Task<HttpResponseMessage> Get(object id)
         {
             return await base.Get(id);
         }
 
-
-        [Authorize(Roles = "api.cruds.careers.put")]
-        public override async Task<HttpResponseMessage> Put(Career entity)
+        [Authorize(Roles = "api.maintenances.people.put")]
+        public override async Task<HttpResponseMessage> Put(Person entity)
         {
             return await base.Put(entity);
         }
 
-        [Authorize(Roles = "api.cruds.careers.post")]
-        public override async Task<HttpResponseMessage> Post(Career entity)
+        [Authorize(Roles = "api.maintenances.people.post")]
+        public override async Task<HttpResponseMessage> Post(Person entity)
         {
             return await base.Post(entity);
         }
-        
-        [Authorize(Roles = "api.cruds.careers.patch")]
+
+        [Authorize(Roles = "api.maintenances.people.patch")]
         public override async Task<HttpResponseMessage> Patch([FromBody] string json)
         {
             return await base.Patch(json);
-        }
+        }       
 
-        [Authorize(Roles = "api.cruds.careers.delete")]
+        [Authorize(Roles = "api.maintenances.people.delete")]
         public override async Task<HttpResponseMessage> Delete(object id)
         {
             return await base.Delete(id);

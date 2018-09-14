@@ -9,17 +9,17 @@ using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Repositories;
 using SchoolExpress.WebService.Uows;
 
-namespace SchoolExpress.WebService.Controllers.Api.Cruds
+namespace SchoolExpress.WebService.Controllers.Api.Maintenances
 {
-    [RoutePrefix("api/cruds/useraccounts")]
-    public class UserAccountsCrudApiController : CrudApiController<UserAccount>
+    [RoutePrefix("api/maintenances/useraccounts")]
+    public class UserAccountsMaintenanceApiController : MaintenanceApiController<UserAccount>
     {
-        public UserAccountsCrudApiController(ISchoolExpressUow uow) : base(uow)
+        public UserAccountsMaintenanceApiController(ISchoolExpressUow uow) : base(uow)
         {
         }
         
         [HttpGet]
-        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        [Authorize(Roles = "api.maintenances.useraccounts.get")]
         [Route("{userId:int}/{personId:int}")]
         public async Task<HttpResponseMessage> Get(int userId, int personId)
         {
@@ -32,7 +32,7 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
         }
         
         [HttpDelete]
-        [Authorize(Roles = "api.cruds.useraccounts.delete")]
+        [Authorize(Roles = "api.maintenances.useraccounts.delete")]
         [Route("{userId:int}/{personId:int}")]
         public async Task<HttpResponseMessage> Delete(int userId, int personId)
         {
@@ -41,19 +41,19 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             return new HttpResponseMessage(HttpStatusCode.NoContent);
         }
 
-        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        [Authorize(Roles = "api.maintenances.useraccounts.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy)
         {
             return base.Get(page, pageSize, orderBy);
         }
 
-        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        [Authorize(Roles = "api.maintenances.useraccounts.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where)
         {
             return base.Get(page, pageSize, orderBy, where);
         }
         
-        [Authorize(Roles = "api.cruds.useraccounts.get")]
+        [Authorize(Roles = "api.maintenances.useraccounts.get")]
         public override Task<HttpResponseMessage> Get(int page, int pageSize, string orderBy, string where, string select)
         {
             return base.Get(page, pageSize, orderBy, where, select);
@@ -64,19 +64,19 @@ namespace SchoolExpress.WebService.Controllers.Api.Cruds
             throw new NotImplementedException();
         }
 
-        [Authorize(Roles = "api.cruds.useraccounts.put")]
+        [Authorize(Roles = "api.maintenances.useraccounts.put")]
         public override async Task<HttpResponseMessage> Put(UserAccount entity)
         {
             return await base.Put(entity);
         }
 
-        [Authorize(Roles = "api.cruds.useraccounts.post")]
+        [Authorize(Roles = "api.maintenances.useraccounts.post")]
         public override async Task<HttpResponseMessage> Post(UserAccount entity)
         {
             return await base.Post(entity);
         }
         
-        [Authorize(Roles = "api.cruds.useraccounts.patch")]
+        [Authorize(Roles = "api.maintenances.useraccounts.patch")]
         public override async Task<HttpResponseMessage> Patch([FromBody] string json)
         {
             return await base.Patch(json);

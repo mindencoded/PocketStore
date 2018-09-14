@@ -13,11 +13,11 @@ using SchoolExpress.WebService.Domain;
 using SchoolExpress.WebService.Uows;
 using SchoolExpress.WebService.Utils;
 
-namespace SchoolExpress.WebService.Controllers.Api.Cruds
+namespace SchoolExpress.WebService.Controllers.Api.Maintenances
 {
-    public abstract class CrudApiController<T> : BaseApiController where T : class
+    public abstract class MaintenanceApiController<T> : BaseApiController where T : class
     {
-        protected CrudApiController(IUow uow) : base(uow)
+        protected MaintenanceApiController(IUow uow) : base(uow)
         {
         }
 
