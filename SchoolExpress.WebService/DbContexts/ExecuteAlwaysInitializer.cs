@@ -92,9 +92,21 @@ namespace SchoolExpress.WebService.DbContexts
 
                 if (!exist)
                 {
+                    
                     Role role = roleDbSet.AsNoTracking().FirstOrDefault(x => x.Name == existingRoleName);
                     if (role != null)
                     {
+                        UserRole userRole = new UserRole
+                        {
+                            UserId = user.Id,
+                            RoleId = role.Id
+                        };
+
+                        userRoleDbSet.Attach(userRole);
+                        userRoleDbSet.Remove(userRole);
+                        context.SaveChanges();
+                        context.Entry(userRole).State = EntityState.Detached;
+
                         roleDbSet.Attach(role);
                         roleDbSet.Remove(role);
                         context.SaveChanges();
