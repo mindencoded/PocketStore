@@ -107,10 +107,8 @@ namespace SchoolExpress.WebService
             appBuilder.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
-                EnableDirectoryBrowsing = true,
-                EnableDefaultFiles = true,
-                DefaultFilesOptions = {DefaultFileNames = {"index.html"}},
-                FileSystem = new PhysicalFileSystem("./wwwroot"),
+                EnableDirectoryBrowsing = Debugger.IsAttached,
+                FileSystem = new PhysicalFileSystem("./"),
                 StaticFileOptions = {ContentTypeProvider = new CustomContentTypeProvider()}
             });
 

@@ -37,6 +37,8 @@ namespace SchoolExpress.WebService
 
             _app = WebApp.Start<Startup>(new StartOptions(baseUri));
             Logger.InfoFormat("Server running in: {0}", baseUri);
+            if(Debugger.IsAttached) Process.Start(baseUri);
+
             return base.OnStart();
         }
 
