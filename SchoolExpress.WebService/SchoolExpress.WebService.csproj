@@ -237,7 +237,7 @@
     <Compile Include="Controllers\Api\Maintenances\UserRolesMaintenanceApiController.cs" />
     <Compile Include="Controllers\Api\Maintenances\UsersMaintenanceApiController.cs" />
     <Compile Include="Controllers\Api\Reports\SpeakerCareerSchedulesReportApiController.cs" />
-    <Compile Include="Controllers\Api\Reports\GenericReportApiController.cs" />
+    <Compile Include="Controllers\Api\Reports\ReportApiController.cs" />
     <Compile Include="Controllers\Api\Reports\StudentEnrollmentDetailsReportApiController.cs" />
     <Compile Include="DbContexts\ExecuteAlwaysInitializer.cs" />
     <Compile Include="DbContexts\DbContextExtensions.cs" />

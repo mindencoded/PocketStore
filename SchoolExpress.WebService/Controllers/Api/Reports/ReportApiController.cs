@@ -12,9 +12,9 @@ using SchoolExpress.WebService.Utils;
 
 namespace SchoolExpress.WebService.Controllers.Api.Reports
 {
-    public abstract class GenericReportApiController<TResponseModel> : BaseApiController where TResponseModel : class
+    public abstract class ReportApiController<TResponseModel> : BaseApiController where TResponseModel : class
     {
-        protected GenericReportApiController(IUow uow) : base(uow)
+        protected ReportApiController(IUow uow) : base(uow)
         {
         }
 

@@ -10,7 +10,7 @@ using SchoolExpress.WebService.Uows;
 namespace SchoolExpress.WebService.Controllers.Api.Reports
 {
     [RoutePrefix("api/reports/speakercareerschedules")]
-    public class SpeakerCareerSchedulesReportApiController : GenericReportApiController<SpeakerCareerScheduleModel>
+    public class SpeakerCareerSchedulesReportApiController : ReportApiController<SpeakerCareerScheduleModel>
     {
         public SpeakerCareerSchedulesReportApiController(ISchoolExpressUow uow) : base(uow)
         {
