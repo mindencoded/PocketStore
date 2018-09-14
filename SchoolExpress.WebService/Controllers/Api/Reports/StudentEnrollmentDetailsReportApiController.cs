@@ -10,7 +10,7 @@ using SchoolExpress.WebService.Uows;
 namespace SchoolExpress.WebService.Controllers.Api.Reports
 {
     [RoutePrefix("api/reports/studentenrollmentdetails")]
-    public class StudentEnrollmentDetailsReportApiController : GenericReportApiController<StudentEnrollmentResultModel,
+    public class StudentEnrollmentDetailsReportApiController : ReportApiController<StudentEnrollmentResultModel,
         StudentEnrollmentQueryModel>
     {
         public StudentEnrollmentDetailsReportApiController(ISchoolExpressUow uow) : base(uow)

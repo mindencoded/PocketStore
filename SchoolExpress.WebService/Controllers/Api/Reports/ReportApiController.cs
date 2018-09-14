@@ -80,9 +80,9 @@ namespace SchoolExpress.WebService.Controllers.Api.Reports
         protected abstract IQueryable<TResponseModel> CreateReport();
     }
 
-    public abstract class GenericReportApiController<TResponseModel, TRequestModel> : BaseApiController where TResponseModel : class where TRequestModel : class
+    public abstract class ReportApiController<TResponseModel, TRequestModel> : BaseApiController where TResponseModel : class where TRequestModel : class
     {
-        protected GenericReportApiController(IUow uow) : base(uow)
+        protected ReportApiController(IUow uow) : base(uow)
         {
         }
 
